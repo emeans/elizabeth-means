@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button } from '@emeansbit/base-ui.button';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <p>
           An amazing website is coming soon! 
         </p>
+
+        <Button>bit.dev test button</Button>
       </header>
     </div>
   );
