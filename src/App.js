@@ -10,7 +10,6 @@ function App() {
         <p>
           An amazing website is coming soon! 
         </p>
-
         <Button>bit.dev test button</Button>
       </header>
     </div>
