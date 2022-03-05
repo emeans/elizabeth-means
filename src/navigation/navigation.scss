@@ -1,0 +1,21 @@
+nav {
+    margin: 0px 48px 16px 48px;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: #0D0D0D;
+    }
+
+    .text-link {
+        margin-top: 36px;
+    }
+
+    .header-logo {
+        font-family: proxima-nova, sans-serif;
+        font-weight: bold;
+        font-size: 60px;
+        color: #183834;
+    }
+}
