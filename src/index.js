@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import { 
@@ -8,21 +8,28 @@ import {
     Navigate,
     Routes,
     Route,
- } from "react-router-dom";
+ } from 'react-router-dom';
 import About from './routes/about';
 import Home from './routes/home';
 import Error from './routes/error';
+import Playground from './routes/playground';
+import Portfolio from './routes/portfolio';
+import GetInTouch from './routes/getintouch';
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} > 
-                    <Route index element={<Navigate replace to="home" />} />
-                    <Route path="home" element={<Home />} />
-                    <Route path="about" element={<About />} />
+                <Route path='/' element={<App />} > 
+                    <Route index element={<Navigate replace to='home' />} />
+                    <Route path='home' element={<Home />} />
+                    <Route path='about' element={<About />} />
+                    <Route path='portfolio' element={<Portfolio />} />
+                    {/* <Route path='playground' element={<Playground />} /> */}
+
+                    <Route path='getintouch' element={<GetInTouch />} />
                 </Route>
-                <Route path="*" element={<Error /> } />
+                <Route path='*' element={<Error /> } />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

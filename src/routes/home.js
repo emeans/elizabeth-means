@@ -1,9 +1,10 @@
-import PopOutPortrait from "../about/pop-out-portrait";
+import './home.scss';
 
 export default function Home() {
     return (
-        <div>
-            <PopOutPortrait></PopOutPortrait>
+        <div className='content'>
+            <p>A container for projects and things </p>
+            <div className='test'>with stuff</div>
         </div>
     );
 }

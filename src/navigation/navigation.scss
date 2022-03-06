@@ -1,7 +1,16 @@
 nav {
-    margin: 0px 48px 16px 48px;
+    // margin: 0px 48px 16px 48px;
     display: flex;
-    justify-content: space-between;
+    div {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    // backdrop-filter:  blur(2px);saturate(20%) 
+      
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: saturate(85%) blur(10px);
+        backdrop-filter: saturate(85%) blur(10px);
+    }
 
     a {
         text-decoration: none;
@@ -10,6 +19,13 @@ nav {
 
     .text-link {
         margin-top: 36px;
+        text-align: end;
+        font-weight: 500;
+
+        a {
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
     }
 
     .header-logo {

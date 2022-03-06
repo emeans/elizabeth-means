@@ -1,0 +1,39 @@
+footer {
+    background-color: #183834;
+    height: calc( 75vh - 150px );
+
+    .rotated {
+        transform: rotate(180deg);
+
+        .hero-rip {
+            background-image: url(../assets/rips.png);
+            background-position: top;
+            background-repeat: repeat-x;
+            background-size: contain;
+            bottom: -0.1rem;
+            height: 9.2rem;
+            left: 0;
+            position: absolute;
+            right: 0;
+            z-index: 2;
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 9.2rem;
+        color: #ffffff;
+        align-items: center;
+
+        .social-media-links {
+            flex-direction: column;
+        }
+
+        .contact-form {
+            flex-direction: column;
+        }
+    }
+}

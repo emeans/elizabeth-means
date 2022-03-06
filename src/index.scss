@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: yorkten-slab-extended, sans-serif;
+    font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+div {
+    width: 100%;
+}
+
+p {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    font-family: yorkten-slab-extended, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: yorkten-slab-extended, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+h3 {
+    font-family: yorkten-slab-extended, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
