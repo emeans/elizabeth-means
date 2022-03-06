@@ -1,6 +1,6 @@
 footer {
     background-color: #183834;
-    height: calc( 75vh - 150px );
+    padding-bottom: 2%;
 
     .rotated {
         transform: rotate(180deg);
@@ -21,43 +21,62 @@ footer {
 
     .footer-content {
         display: flex;
+        flex-direction: column;
         width: 90%;
         padding-left: 5%;
         padding-right: 5%;
-        padding-top: 9.2rem;
+        padding-top: 6rem;
         color: #ffffff;
-        align-items: center;
 
-        .social-media-links {
+        .row {
             display: flex;
-            flex-direction: row;
+            align-items: flex-start;
             
-            a {
-                margin-right: 32px;
-                width: 32px;
-
-                div {
-                    height: 32px;
-                    width: 32px;
-                    cursor: pointer;
-                }
-
-                .github {
-                    background-image: url('../assets/github-mark-light-32px.png');
-                }
-
-                .linkedin {
-                    background-image: url('../assets/linkedin-logo-light-32px.png');
+            .column-left {
+                padding-right: 5%;
+    
+                p {
+                    margin-bottom: 64px;
                 }
     
-                .codepen {
-                    background-image: url('../assets/codepen-logo-light-32px.png');
+                .social-media-links {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    a {
+                        margin-right: 32px;
+                        width: 32px;
+        
+                        div {
+                            height: 32px;
+                            width: 32px;
+                            cursor: pointer;
+                        }
+        
+                        .github {
+                            background-image: url('../assets/github-mark-light-32px.png');
+                        }
+        
+                        .linkedin {
+                            background-image: url('../assets/linkedin-logo-light-32px.png');
+                        }
+            
+                        .codepen {
+                            background-image: url('../assets/codepen-logo-light-32px.png');
+                        }
+                    }
                 }
+            }
+    
+            .column-right {
+                display: flex;
+                justify-content: center;
             }
         }
 
-        .contact-form {
-            flex-direction: column;
+        .copyright {
+            position: bottom;
+            margin-top: auto;
         }
     }
 }

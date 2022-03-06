@@ -1,22 +1,22 @@
 body {
     margin: 0;
     font-family: yorkten-slab-extended, sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     width: 100%;
     background-color: #ffffff;
-    height: 100vh;
+    min-height: calc(100vh - 450px);
 }
 
 div {
     width: 100%;
 }
 
-p {
+p, input, textarea {
     font-family: proxima-nova, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 h1 {

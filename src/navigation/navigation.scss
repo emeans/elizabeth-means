@@ -1,15 +1,15 @@
 nav {
-    // margin: 0px 48px 16px 48px;
     display: flex;
+    border-bottom: 1px solid #F7F7F7;
+
     div {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 6%;
+        padding-right: 6%;
     }
-    // backdrop-filter:  blur(2px);saturate(20%) 
       
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        -webkit-backdrop-filter: saturate(85%) blur(10px);
-        backdrop-filter: saturate(85%) blur(10px);
+        -webkit-backdrop-filter: saturate(85%) blur(8px);
+        backdrop-filter: saturate(85%) blur(8px);
     }
 
     a {
@@ -18,7 +18,7 @@ nav {
     }
 
     .text-link {
-        margin-top: 36px;
+        margin-top: 48px;
         text-align: end;
         font-weight: 500;
 
@@ -31,7 +31,7 @@ nav {
     .header-logo {
         font-family: proxima-nova, sans-serif;
         font-weight: bold;
-        font-size: 60px;
+        font-size: 72px;
         color: #183834;
     }
 }

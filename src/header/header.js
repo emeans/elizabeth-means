@@ -7,7 +7,7 @@ export default function Header() {
             <section className='hero'>
                 <div className='introduction'>
                     <div className='intro-text'>
-                        <h1>Hey there, I'm Elizabeth... </h1>
+                        <h1>Hey there, I'm Elizabeth… </h1>
                         <p>Pommy ipsum smeg head whizz morris dancers come hither, bugger codswallop gob. Taking the mick middle class bog roll bow ties are cool posh nosh off t'shop, stew and dumps taking the mick know your onions pulled a right corker 'tis, anorak mince pies tosser warts and all knackered, complete mare stupendous proper on the beat.</p>
                     </div>
                     <PopOutPortrait></PopOutPortrait>
