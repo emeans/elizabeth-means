@@ -35,9 +35,27 @@ export default function Footer() {
                                 aria-label='Codepen'>
                                     <div className='codepen'></div>
                             </a>
-                            {/* Behance */}
-                            {/* Dribbble */}
-                            {/* Instagram */}
+                            <a
+                                href='https://www.behance.net/emeans'
+                                target='_blank'
+                                rel='noreferrer'
+                                aria-label='Behance'>
+                                    <div className='behance'></div>
+                            </a>
+                            <a
+                                href='https://dribbble.com/emeans'
+                                target='_blank'
+                                rel='noreferrer'
+                                aria-label='Dribbble'>
+                                    <div className='dribbble'></div>
+                            </a>
+                            <a
+                                href='https://dribbble.com/emeans'
+                                target='_blank'
+                                rel='noreferrer'
+                                aria-label='Instagram'>
+                                    <div className='instagram'></div>
+                            </a>
                         </div>
                     </div>
 
