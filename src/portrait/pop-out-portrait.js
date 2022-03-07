@@ -14,9 +14,9 @@ export default function PopOutPortrait()  {
                     />
                 </div>
             </div>
-            <div className="divider"></div>
+            {/* <div className="divider"></div>
             <div className="name">elizabeth</div>
-            <div className="title">UX Engineer</div>
+            <div className="title">UX Engineer</div> */}
         </div>
     );
 }

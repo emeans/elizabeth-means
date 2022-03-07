@@ -50,7 +50,7 @@ export default function Footer() {
                                     <div className='dribbble'></div>
                             </a>
                             <a
-                                href='https://dribbble.com/emeans'
+                                href='https://www.instagram.com/emeans.ux'
                                 target='_blank'
                                 rel='noreferrer'
                                 aria-label='Instagram'>

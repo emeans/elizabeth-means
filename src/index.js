@@ -15,19 +15,22 @@ import Error from './routes/error';
 import Playground from './routes/playground';
 import Portfolio from './routes/portfolio';
 import GetInTouch from './routes/getintouch';
+import UnderConstruction from './routes/under-construction';
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />} > 
+                    {/* <Route index element={<Navigate replace to='underconstruction' />} /> */}
                     <Route index element={<Navigate replace to='home' />} />
                     <Route path='home' element={<Home />} />
                     <Route path='about' element={<About />} />
                     <Route path='portfolio' element={<Portfolio />} />
                     {/* <Route path='playground' element={<Playground />} /> */}
-
                     <Route path='getintouch' element={<GetInTouch />} />
+
+                    <Route path='underconstruction' element={<UnderConstruction />} />
                 </Route>
                 <Route path='*' element={<Error /> } />
             </Routes>

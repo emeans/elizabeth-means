@@ -9,19 +9,32 @@ import Navigation from './navigation/navigation';
 
 function App() {
     let location = useLocation();
-    let header = null;
-    if (location.pathname === '/home') {
-        header = <Header></Header>;
+    let renderApp = null;
+debugger;
+    if (location.pathname === '/underconstruction') {
+        renderApp = <Outlet />;
+    } else {
+        let header = null;
+        if (location.pathname === '/home') {
+            header = <Header></Header>;
+        }
+
+        renderApp = (
+            <div className='sticky-nav'>
+                {header}
+                <Navigation></Navigation>
+                <main>
+                    <Outlet />
+                </main>
+                <Footer></Footer>
+            </div>);
     }
+    
+    
 
     return (
-        <div className='sticky-nav'>
-           {header}
-            <Navigation></Navigation>
-            <main>
-                <Outlet />
-            </main>
-        <Footer></Footer>
+        <div>
+            {renderApp}
         </div>
     );
 }

@@ -30,7 +30,6 @@ export default function Navigation() {
                     }}>
                     About
                 </NavLink>
-                <span></span>
                 <NavLink 
                     aria-label='Portfolio'
                     to='/portfolio' 
@@ -41,7 +40,6 @@ export default function Navigation() {
                     }}>
                     Portfolio
                 </NavLink>
-                <span></span>
                 {/* {' '} | {' '}
                 <NavLink 
                     aria-label='Playground'
@@ -53,7 +51,6 @@ export default function Navigation() {
                     }}>
                     Playground
                 </NavLink> */}
-                <span></span>
                 <NavLink 
                     aria-label='GetInTouch'
                     to='/getintouch' 
@@ -64,6 +61,29 @@ export default function Navigation() {
                     }}>
                     Get In Touch
                 </NavLink>
+                <span className='social-media-links'>
+                    <a
+                        href='https://www.linkedin.com/in/elizabeth-a-means/'
+                        target='_blank'
+                        rel='noreferrer'
+                        aria-label='LinkedIn'>
+                            <div className='linkedin'></div>
+                    </a>
+                    <a
+                        href='https://github.com/emeans'
+                        target='_blank'
+                        rel='noreferrer'
+                        aria-label='Github'>
+                            <div className='github'></div>
+                    </a>
+                    <a
+                        href='https://codepen.io/emeans'
+                        target='_blank'
+                        rel='noreferrer'
+                        aria-label='Codepen'>
+                            <div className='codepen'></div>
+                    </a>
+                </span>
             </div>
         </nav>
     );
