@@ -20,10 +20,10 @@ export default class ContactForm extends React.Component {
         });
     }
   
-    // handleSubmit(event) {
-    //   alert('A name was submitted: ' + this.state.name + ' with email: ' + this.state.email + ' and message: ' + this.state.message);
-    //   event.preventDefault();
-    // }
+    handleSubmit(event) {
+      alert('A name was submitted: ' + this.state.name + ' with email: ' + this.state.email + ' and message: ' + this.state.message);
+      event.preventDefault();
+    }
   
     render() {
       return (
