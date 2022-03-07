@@ -21,8 +21,8 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />} > 
-                    {/* <Route index element={<Navigate replace to='underconstruction' />} /> */}
-                    <Route index element={<Navigate replace to='home' />} />
+                    <Route index element={<Navigate replace to='underconstruction' />} />
+                    {/* <Route index element={<Navigate replace to='home' />} /> */}
                     <Route path='home' element={<Home />} />
                     <Route path='about' element={<About />} />
                     <Route path='portfolio' element={<Portfolio />} />
