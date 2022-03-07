@@ -12,7 +12,6 @@ import {
 import About from './routes/about';
 import Home from './routes/home';
 import Error from './routes/error';
-import Playground from './routes/playground';
 import Portfolio from './routes/portfolio';
 import GetInTouch from './routes/getintouch';
 import UnderConstruction from './routes/under-construction';
