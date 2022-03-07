@@ -3,8 +3,8 @@ import './under-construction.scss';
 export default function UnderConstruction() {
 
     /* Set width of all animated text to match container */
-    let parent = document.querySelectorAll('.animate-text');
-    for(let i = 0; i < parent.length; i++) {
+    let parent: any = document.querySelectorAll('.animate-text');
+    for (let i = 0; i < parent.length; i++) {
         parent[i].style.width = parent[i].children[0].clientWidth + "px"; 
     };
 
