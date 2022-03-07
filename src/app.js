@@ -10,7 +10,7 @@ import Navigation from './navigation/navigation';
 function App() {
     let location = useLocation();
     let renderApp = null;
-debugger;
+
     if (location.pathname === '/underconstruction') {
         renderApp = <Outlet />;
     } else {
@@ -29,8 +29,6 @@ debugger;
                 <Footer></Footer>
             </div>);
     }
-    
-    
 
     return (
         <div>
