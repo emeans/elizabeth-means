@@ -1,5 +1,3 @@
 export default function Playground() {
-    return (
-        <h2>Playground</h2>
-    );
+	return <h2>Playground</h2>
 }

@@ -1,5 +1,3 @@
 export default function GetInTouch() {
-    return (
-        <h2>Get In Touch</h2>
-    );
+	return <h2>Get In Touch</h2>
 }
