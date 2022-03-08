@@ -10,6 +10,13 @@ interface IState {
 	message?: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const encode = (data: any) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 export default class ContactForm extends React.Component<IProps, IState> {
 	constructor(props: IProps) {
 		super(props)
@@ -35,20 +42,28 @@ export default class ContactForm extends React.Component<IProps, IState> {
 	 * @param event formEvent
 	 */
 	handleSubmit(formEvent: FormEvent) {
-		alert(
-			'A name was submitted: ' +
-				this.state.name +
-				' with email: ' +
-				this.state.email +
-				' and message: ' +
-				this.state.message,
-		)
+		// alert(
+		// 	'A name was submitted: ' +
+		// 		this.state.name +
+		// 		' with email: ' +
+		// 		this.state.email +
+		// 		' and message: ' +
+		// 		this.state.message,
+		// )
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state })
+          })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
 		formEvent.preventDefault()
 	}
 
 	render() {
 		return (
-			<form name='contact' method='POST' data-netlify='true'>
+			<form name='contact' method='POST' data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
 				<input
 					aria-label='name'
 					name='name'
@@ -76,7 +91,6 @@ export default class ContactForm extends React.Component<IProps, IState> {
 					value={this.state.message}
 					onChange={this.handleChange}
 				/>
-
 				<input type='submit' className='send' value='Send' />
 			</form>
 		)
