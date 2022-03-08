@@ -9,7 +9,7 @@ export default function Footer() {
             </div>
             
             <div className='footer-content'>
-                <h2>Let's connect!</h2>
+                <h2>Let&apos;s connect!</h2>
                 <div className='row'>
                     <div className='column-left'>
                         <p>Here are few other places you can find me on the web and peruse my work. If you are interested in working together, or just want to drop me a friendly hello, feel free to use the form at right to send a message.</p>

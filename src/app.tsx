@@ -8,7 +8,7 @@ import Footer from './footer/footer';
 import Navigation from './navigation/navigation';
 
 function App() {
-    let location = useLocation();
+    const location = useLocation();
     let renderApp = null;
 
     if (location.pathname === '/underconstruction') {

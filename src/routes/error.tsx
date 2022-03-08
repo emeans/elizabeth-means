@@ -3,10 +3,10 @@ import './error.scss';
 export default function Error() {
 
     /* Set width of all animated text to match container */
-    let parent: any = document.querySelectorAll('.animate-text');
+    const parent: NodeListOf<Element> = document.querySelectorAll('.animate-text');
     for (let i = 0; i < parent.length; i++) {
-        parent[i].style.width = parent[i].children[0].clientWidth + "px"; 
-    };
+        (parent[i] as HTMLElement).style.width = parent[i].children[0].clientWidth + "px"; 
+    }
 
     return (
         <div className='error-page'>

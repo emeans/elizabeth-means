@@ -1,8 +1,8 @@
-import React, { FormEvent, Props } from 'react';
+import React, { FormEvent } from 'react';
 import './contact-form.scss';
 
-interface IProps {
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface IProps {}
 
 interface IState {
     name?: string;

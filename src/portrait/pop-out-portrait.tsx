@@ -1,4 +1,3 @@
-import React from 'react';
 import './pop-out-portrait.scss';
 
 export default function PopOutPortrait()  {
