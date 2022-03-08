@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.scss'
 import App from './app'
 import reportWebVitals from './reportWebVitals'
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
+import { HashRouter, Navigate, Routes, Route } from 'react-router-dom'
 import About from './routes/about'
 import Home from './routes/home'
 import Error from './routes/error'
@@ -13,7 +13,7 @@ import UnderConstruction from './routes/under-construction'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<HashRouter>
 			<Routes>
 				<Route path='/' element={<App />}>
 					<Route index element={<Navigate replace to='underconstruction' />} />
@@ -28,7 +28,7 @@ ReactDOM.render(
 				</Route>
 				<Route path='*' element={<Error />} />
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	</React.StrictMode>,
 	document.getElementById('root'),
 )
