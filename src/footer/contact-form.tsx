@@ -25,8 +25,8 @@ export default class ContactForm extends React.Component<IProps, IState> {
 			email: '',
 			message: '',
 		}
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this) // Required for testing form submissions
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
@@ -42,20 +42,18 @@ export default class ContactForm extends React.Component<IProps, IState> {
 	 * @param event formEvent
 	 */
 	handleSubmit(formEvent: FormEvent) {
-		alert(
-			'A name was submitted: ' +
-				this.state.name +
-				' with email: ' +
-				this.state.email +
-				' and message: ' +
-				this.state.message,
-		)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...this.state })
           })
-            .then(() => alert("Success!"))
+            .then(() => {
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: '',
+                });
+            })
             .catch(error => alert(error));
 		formEvent.preventDefault()
 	}
