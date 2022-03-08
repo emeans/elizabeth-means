@@ -42,14 +42,14 @@ export default class ContactForm extends React.Component<IProps, IState> {
 	 * @param event formEvent
 	 */
 	handleSubmit(formEvent: FormEvent) {
-		// alert(
-		// 	'A name was submitted: ' +
-		// 		this.state.name +
-		// 		' with email: ' +
-		// 		this.state.email +
-		// 		' and message: ' +
-		// 		this.state.message,
-		// )
+		alert(
+			'A name was submitted: ' +
+				this.state.name +
+				' with email: ' +
+				this.state.email +
+				' and message: ' +
+				this.state.message,
+		)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -62,7 +62,7 @@ export default class ContactForm extends React.Component<IProps, IState> {
 
 	render() {
 		return (
-			<form name='contact' method='POST' data-netlify="true">
+			<form name='contact' onSubmit={this.handleSubmit}>
                 <input type="hidden" name="form-name" value="contact" />
 				<input
 					aria-label='name'
@@ -78,7 +78,7 @@ export default class ContactForm extends React.Component<IProps, IState> {
 					name='email'
 					placeholder='Email'
 					required
-					type='text'
+					type='email'
 					value={this.state.email}
 					onChange={this.handleChange}
 				/>
