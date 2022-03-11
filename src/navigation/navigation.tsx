@@ -38,7 +38,7 @@ export default function Navigation() {
 					}}>
 					<h4>Portfolio</h4>
 				</NavLink>
-                <NavLink 
+                {/* <NavLink 
                     aria-label='Playground'
                     to='/playground' 
                     style={({ isActive }) => {
@@ -47,7 +47,7 @@ export default function Navigation() {
                         };
                     }}>
                     <h4>Playground</h4>
-                </NavLink>
+                </NavLink> */}
 				<NavLink
 					aria-label='GetInTouch'
 					to='/getintouch'

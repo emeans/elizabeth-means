@@ -15,6 +15,11 @@ body {
 	background-color: $neutral-white;
 	height: 100vh;
 
+	#root {
+		width: 100vw;
+		height: 100vh;
+	}
+
 	h1 {
 		font-family: $headline-font-family;
 		font-weight: $headline-font-weight;

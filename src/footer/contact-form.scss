@@ -1,31 +1,33 @@
-form {
-	width: 80%;
-	display: flex;
-	align-items: flex-end;
-	min-width: 90%;
-	flex-direction: column;
-	align-items: stretch;
+@import '../scss-partials/fonts';
+@import '../scss-partials/colors';
+@import '../scss-partials/mediaqueries';
 
-	legend {
-		color: #ffffff !important;
-	}
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 
 	textarea,
 	input {
-		padding: 12px;
-		margin: 8px;
-		min-width: 300px;
-		max-width: 1000px;
-		background-color: #fff;
+		padding: 8px;
+		margin-bottom: 8px;
+		background-color: $neutral-white;
 		border-radius: 2px;
 		border: none;
 	}
 
 	.send {
+		font-family: $headline-font-family;
+		font-weight: $paragraph-font-weight;
+		background-color: $green-leaf;
 		align-self: flex-end;
-		width: 50px;
-		font-family: yorkten-slab-extended, sans-serif;
-		font-weight: 500;
-		background-color: #7ad860;
+
+		@media only screen and (max-width: $media-large2) {
+			width: 100%;
+		}
+
+		@media only screen and (min-width: $media-large2) {
+			width: 25%;
+		}
 	}
 }
