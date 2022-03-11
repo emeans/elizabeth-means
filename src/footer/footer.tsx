@@ -4,12 +4,10 @@ import './footer.scss'
 export default function Footer() {
 	return (
 		<footer>
-			<div className='rotated'>
-				<div className='hero-rip'></div>
-			</div>
+            <div className='hero-rip'></div>
 
 			<div className='footer-content'>
-				<h2>Let&apos;s connect!</h2>
+				<h1>Let&apos;s connect!</h1>
 				<div className='row'>
 					<div className='column-left'>
 						<p>

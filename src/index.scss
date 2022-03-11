@@ -1,66 +1,64 @@
-body {
+@import '../src/scss-partials/colors';
+@import '../src/scss-partials/fonts';
+
+* {
 	margin: 0;
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 300;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
-	width: 100%;
-	background-color: #ffffff;
+	width: 100vw;
+	background-color: $neutral-white;
 	height: 100vh;
-}
 
-div {
-	width: 100%;
-}
+	h1 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 3.8em;
+		line-height: 0.95;
+	}
 
-p,
-input,
-textarea {
-	font-family: proxima-nova, sans-serif;
-	font-weight: 500;
-}
+	h2 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 2em;
+	}
 
-h1 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 48px;
-}
+	h3 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 1.5em;
+	}
 
-h2 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 36px;
-}
+	h4 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 1.17em;
+	}
 
-h3 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 24px;
-}
+	h5 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 1em;
+	}
 
-.tooltip {
-	position: relative;
-	display: inline-block;
-}
+	h6 {
+		font-family: $headline-font-family;
+		font-weight: $headline-font-weight;
+		font-size: 0.83em;
+	}
 
-/* Tooltip text */
-.tooltip .tooltip-text {
-	visibility: hidden;
-	width: 120px;
-	background-color: #d9d9d9;
-	color: #0d0d0d;
-	text-align: center;
-	padding: 3px 0;
-	border-radius: 2px;
-	opacity: 0.95;
-
-	/* Position the tooltip text - see examples below! */
-	position: absolute;
-	z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltip-text {
-	visibility: visible;
+	p,
+	span,
+	input,
+	textarea {
+		font-family: $paragraph-font-family;
+		font-weight: $paragraph-fonr-weight;
+		font-size: 1.3rem;
+		line-height: 1.33;
+	}
 }

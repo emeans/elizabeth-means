@@ -2,30 +2,24 @@ footer {
 	background-color: #183834;
 	padding-bottom: 2%;
 
-	.rotated {
-		transform: rotate(180deg);
-
-		.hero-rip {
-			background-image: url(../assets/rips.png);
-			background-position: top;
-			background-repeat: repeat-x;
-			background-size: contain;
-			bottom: -0.1rem;
-			height: 9.2rem;
-			left: 0;
-			position: absolute;
-			right: 0;
-			z-index: 2;
-		}
+	.hero-rip {
+		background-image: url(../assets/rips-upsidedown.png);
+		background-position: top;
+		background-repeat: repeat-x;
+		background-size: contain;
+		top: -0.1rem;
+		height: 9.2rem;
+		left: 0;
+		right: 0;
+		z-index: 2;
 	}
 
 	.footer-content {
 		display: flex;
 		flex-direction: column;
-		width: 90%;
 		padding-left: 5%;
 		padding-right: 5%;
-		padding-top: 6rem;
+		padding-top: 147px;
 		color: #ffffff;
 
 		.row {
