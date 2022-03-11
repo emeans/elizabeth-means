@@ -83,7 +83,7 @@ header {
 		}
 	}
 
-	@media only screen and (min-width: $media-large) and (max-width: $media-xlarge) {
+	@media only screen and (min-width: $media-large) and (max-width: $media-xlarge2) {
 		.hero {
 			@media only screen and (min-height: $media-medium) {
 				min-height: calc(100vh - 7rem);
@@ -97,7 +97,7 @@ header {
 		}
 	}
 
-	@media only screen and (min-width: $media-xlarge) {
+	@media only screen and (min-width: $media-xlarge2) {
 		.hero {
 			min-height: calc(100vh - 7rem);
 			height: calc(100vh - 7rem);
