@@ -1,0 +1,81 @@
+@import '../scss-partials/colors';
+
+.mobile-menu {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 25px;
+}
+.mobile-menu span {
+	margin: 0 auto;
+	position: relative;
+	top: 13px;
+}
+.mobile-menu span:before,
+.mobile-menu span:after {
+	position: absolute;
+	content: '';
+}
+.mobile-menu span,
+.mobile-menu span:before,
+.mobile-menu span:after {
+	width: 30px;
+	height: 4px;
+	background-color: $neutral-black;
+	display: block;
+}
+.mobile-menu span:before {
+	margin-top: -13px;
+}
+.mobile-menu span:after {
+	margin-top: 13px;
+}
+
+.menu-button-animation span {
+	transition-duration: 0s;
+	transition-delay: 0.2s;
+
+	-webkit-transition-duration: 0s;
+	-webkit-transition-delay: 0.2s;
+}
+.menu-button-animation[data-menu-open='true'] span {
+	background-color: $transparent-black;
+	transition-delay: 0.2s;
+
+	-webkit-transition-delay: 0.2s;
+}
+.menu-button-animation span:before {
+	transition-property: margin, transform;
+	transition-duration: 0.2s;
+	transition-delay: 0.2s, 0s;
+
+	-webkit-transition-property: margin, -webkit-transform;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-delay: 0.2s, 0s;
+}
+.menu-button-animation[data-menu-open='true'] span:before {
+	-webkit-transform: rotate(45deg);
+	-webkit-transition-delay: 0s, 0.2s;
+
+	margin-top: 0;
+	transform: rotate(45deg);
+	transition-delay: 0s, 0.2s;
+}
+.menu-button-animation span:after {
+	transition-property: margin, transform;
+	transition-duration: 0.2s;
+	transition-delay: 0.2s, 0s;
+
+	-webkit-transition-property: margin, -webkit-transform;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-delay: 0.2s, 0s;
+}
+.menu-button-animation[data-menu-open='true'] span:after {
+	margin-top: 0;
+	transform: rotate(-45deg);
+	transition-delay: 0s, 0.2s;
+
+	-webkit-transform: rotate(-45deg);
+	-webkit-transition-delay: 0s, 0.2s;
+}

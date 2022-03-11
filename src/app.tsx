@@ -2,7 +2,8 @@ import './app.scss'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from './header/header'
 import Footer from './footer/footer'
-import Navigation from './navigation/navigation'
+import DesktopNavigation from './navigation/desktop-navigation'
+import MobileNavigation from './navigation/mobile-navigation'
 
 function App() {
 	const location = useLocation()
@@ -17,9 +18,10 @@ function App() {
 		}
 
 		renderApp = (
-			<div className='sticky-nav'>
+			<div>
+                <MobileNavigation></MobileNavigation>
 				{header}
-				<Navigation></Navigation>
+				<DesktopNavigation></DesktopNavigation>
 				<main>
 					<Outlet />
 				</main>

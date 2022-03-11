@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import './navigation.scss'
 
-export default function Navigation() {
+export default function DesktopNavigation() {
 	return (
-		<nav aria-label='Main Navigation'>
+		<nav className='desktop-navigation' aria-label='Main Navigation'>
 			<div>
 				<NavLink
 					aria-label='Home'
@@ -38,7 +38,7 @@ export default function Navigation() {
 					}}>
 					<h4>Portfolio</h4>
 				</NavLink>
-                {/* <NavLink 
+                <NavLink 
                     aria-label='Playground'
                     to='/playground' 
                     style={({ isActive }) => {
@@ -47,7 +47,7 @@ export default function Navigation() {
                         };
                     }}>
                     <h4>Playground</h4>
-                </NavLink> */}
+                </NavLink>
 				<NavLink
 					aria-label='GetInTouch'
 					to='/getintouch'

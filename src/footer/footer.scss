@@ -39,8 +39,10 @@ footer {
 				margin-bottom: 2rem;
 
 				a {
-					margin-right: 32px;
 					width: 32px;
+					&:not(:last-child) {
+						margin-right: 32px;
+					}
 
 					div {
 						height: 32px;
