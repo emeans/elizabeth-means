@@ -26,7 +26,7 @@ export default function Navigation() {
 							color: isActive ? '#7AD860' : '#0D0D0D',
 						}
 					}}>
-					About
+					<h4>About</h4>
 				</NavLink>
 				<NavLink
 					aria-label='Portfolio'
@@ -36,9 +36,8 @@ export default function Navigation() {
 							color: isActive ? '#7AD860' : '#0D0D0D',
 						}
 					}}>
-					Portfolio
+					<h4>Portfolio</h4>
 				</NavLink>
-				{/* {' '} | {' '}
                 <NavLink 
                     aria-label='Playground'
                     to='/playground' 
@@ -47,8 +46,8 @@ export default function Navigation() {
                             color: isActive ? '#7AD860' : '#0D0D0D',
                         };
                     }}>
-                    Playground
-                </NavLink> */}
+                    <h4>Playground</h4>
+                </NavLink>
 				<NavLink
 					aria-label='GetInTouch'
 					to='/getintouch'
@@ -57,7 +56,7 @@ export default function Navigation() {
 							color: isActive ? '#7AD860' : '#0D0D0D',
 						}
 					}}>
-					Get In Touch
+					<h4>Get In Touch</h4>
 				</NavLink>
 				<span className='social-media-links'>
 					<a

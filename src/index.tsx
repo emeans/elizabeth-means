@@ -10,6 +10,7 @@ import Error from './routes/error'
 import Portfolio from './routes/portfolio'
 import GetInTouch from './routes/getintouch'
 import UnderConstruction from './routes/under-construction'
+import Playground from './routes/playground'
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -21,7 +22,7 @@ ReactDOM.render(
 					<Route path='home' element={<Home />} />
 					<Route path='about' element={<About />} />
 					<Route path='portfolio' element={<Portfolio />} />
-					{/* <Route path='playground' element={<Playground />} /> */}
+					<Route path='playground' element={<Playground />} />
 					<Route path='getintouch' element={<GetInTouch />} />
 
 					<Route path='underconstruction' element={<UnderConstruction />} />
