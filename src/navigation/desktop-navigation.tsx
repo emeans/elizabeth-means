@@ -38,16 +38,16 @@ export default function DesktopNavigation() {
 					}}>
 					<h4>Portfolio</h4>
 				</NavLink>
-                <NavLink 
-                    aria-label='Playground'
-                    to='/playground' 
-                    style={({ isActive }) => {
-                        return {
-                            color: isActive ? '#7AD860' : '#0D0D0D',
-                        };
-                    }}>
-                    <h4>Playground</h4>
-                </NavLink>
+				<NavLink
+					aria-label='Playground'
+					to='/playground'
+					style={({ isActive }) => {
+						return {
+							color: isActive ? '#7AD860' : '#0D0D0D',
+						}
+					}}>
+					<h4>Playground</h4>
+				</NavLink>
 				<NavLink
 					aria-label='GetInTouch'
 					to='/getintouch'

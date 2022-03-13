@@ -1,8 +1,6 @@
 import React, { FormEvent } from 'react'
-import { IContactFormState, IProps } from '../types';
+import { IContactFormState, IProps } from '../types'
 import './contact-form.scss'
-
-
 
 export default class ContactForm extends React.Component<IProps, IContactFormState> {
 	constructor(props: IProps) {

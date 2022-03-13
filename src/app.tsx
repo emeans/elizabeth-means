@@ -19,7 +19,7 @@ function App() {
 
 		renderApp = (
 			<div>
-                <MobileNavigation></MobileNavigation>
+				<MobileNavigation></MobileNavigation>
 				{header}
 				<DesktopNavigation></DesktopNavigation>
 				<main>
