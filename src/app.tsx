@@ -1,9 +1,10 @@
-import './app.scss'
-import { Outlet, useLocation } from 'react-router-dom'
-import Header from './header/header'
-import Footer from './footer/footer'
-import DesktopNavigation from './navigation/desktop-navigation'
-import MobileNavigation from './navigation/mobile-navigation'
+import './app.scss';
+import { Outlet, useLocation } from 'react-router-dom';
+import Header from './header/header';
+import Footer from './footer/footer';
+import DesktopNavigation from './navigation/desktop-navigation';
+import MobileNavigation from './navigation/mobile-navigation';
+import configuration from './configuration.json';
 
 function App() {
 	const location = useLocation()
@@ -19,9 +20,15 @@ function App() {
 
 		renderApp = (
 			<div>
-				<MobileNavigation></MobileNavigation>
+				<MobileNavigation
+                    textLinks={configuration.navigation.textLinks}
+                    socialLinks={configuration.navigation.socialLinks}>
+                </MobileNavigation>
 				{header}
-				<DesktopNavigation></DesktopNavigation>
+				<DesktopNavigation
+                    textLinks={configuration.navigation.textLinks}
+                    socialLinks={configuration.navigation.socialLinks}>
+                </DesktopNavigation>
 				<main>
 					<Outlet />
 				</main>
@@ -30,7 +37,7 @@ function App() {
 		)
 	}
 
-	return <div>{renderApp}</div>
+	return renderApp;
 }
 
 export default App

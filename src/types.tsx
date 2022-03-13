@@ -10,6 +10,23 @@ export interface IContactFormState extends IState {
 	message?: string
 }
 
+export interface TextLink {
+    text: string;
+    link: string;
+}
+
+export interface SocialLink extends TextLink {
+    imageLocation: string;
+}
+
+export interface INavigationMenuProps extends IProps {
+    isToggleOn?: boolean;
+    onHandleMenuClick?: () => void;
+    textLinks?: TextLink[];
+    socialLinks?: SocialLink[];
+}
+
 export interface IMobileMenuState extends IState {
-	isToggleOn?: boolean
+	isToggleOn?: boolean;
+    handleMenuClick?: () => void;
 }

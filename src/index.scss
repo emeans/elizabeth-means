@@ -67,4 +67,10 @@ body {
 		font-size: 1.3rem;
 		line-height: 1.33;
 	}
+
+	a {
+		text-decoration: none;
+		color: $neutral-black;
+		white-space: nowrap;
+	}
 }

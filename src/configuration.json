@@ -1,38 +1,41 @@
 {
 	"navigation": {
-		"textLinks": [
+        "navLogoLink": {
+            
+        },
+		"socialLinks": [
 			{
-				"text": "About",
-				"link": "/about"
-			},
-			{
-				"text": "Portfolio",
-				"link": "/portfolio"
-			},
-			{
-				"text": "Playground",
-				"link": "/playground"
-			},
-			{
-				"text": "Get In Touch",
-				"link": "/getintouch"
-			}
-		],
-		"imageLinks": [
-			{
-				"text": "LinkedIn",
+				"text": "linkedin",
 				"link": "https://www.linkedin.com/in/elizabeth-a-means/",
 				"imageLocation": "../assets/24px/linkedin-logo-dark-24px.png"
 			},
 			{
-				"text": "Github",
+				"text": "github",
 				"link": "https://github.com/emeans",
 				"imageLocation": "../assets/24px/github-mark-dark-24px.png"
 			},
 			{
-				"text": "Codepen",
+				"text": "codepen",
 				"link": "https://codepen.io/emeans",
 				"imageLocation": "../assets/24px/codepen-logo-dark-24px.png"
+			}
+		],
+		"textLinks": [
+			{
+				"text": "about",
+				"link": "/about"
+			},
+			{
+				"text": "portfolio",
+				"link": "/portfolio"
+			},
+			{
+				"text": "playground",
+				"link": "/playground"
+			},
+			{
+				"text": "get in touch",
+				"link": "/getintouch"
 			}
 		]
 	}

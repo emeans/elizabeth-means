@@ -1,35 +1,34 @@
-@import '../scss-partials/colors';
+@import '../../scss-partials/colors';
 
-.mobile-menu {
+.menu-button {
 	position: relative;
 	display: inline-block;
 	width: 32px;
 	height: 24px;
 	margin: 25px;
-	z-index: 99;
 }
-.mobile-menu span {
+.menu-button span {
 	margin: 0 auto;
 	position: relative;
 	top: 10px;
 }
-.mobile-menu span:before,
-.mobile-menu span:after {
+.menu-button span:before,
+.menu-button span:after {
 	position: absolute;
 	content: '';
 }
-.mobile-menu span,
-.mobile-menu span:before,
-.mobile-menu span:after {
+.menu-button span,
+.menu-button span:before,
+.menu-button span:after {
 	width: 32px;
 	height: 4px;
 	background-color: $neutral-black;
 	display: block;
 }
-.mobile-menu span:before {
+.menu-button span:before {
 	margin-top: -10px;
 }
-.mobile-menu span:after {
+.menu-button span:after {
 	margin-top: 10px;
 }
 
