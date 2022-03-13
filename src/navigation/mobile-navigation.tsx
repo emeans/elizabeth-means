@@ -24,7 +24,7 @@ export default class MobileNavigation extends React.Component<IProps, IMobileMen
                     <span></span>
                 </div>
                 <div className='mobile-menu-content' data-menu-open={this.state.isToggleOn}>
-                    <ul className='menu-list-item' data-menu-open={this.state.isToggleOn}>
+                    <ul className='menu-list' data-menu-open={this.state.isToggleOn}>
                         <li>
                             <NavLink
                                 aria-label='About'
