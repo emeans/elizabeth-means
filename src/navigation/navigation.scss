@@ -1,74 +1,161 @@
 @import '../scss-partials/colors';
 @import '../scss-partials/mediaqueries';
 @import '../scss-partials/fonts';
+@import 'mobile-menu-button';
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$menuItems: 4;
 
 nav {
+	position: -webkit-sticky; /* for Safari */
+	position: sticky;
+	top: 0px;
 	display: flex;
+	align-self: flex-start;
+	z-index: 97;
 	border-bottom: 1px solid $neutral-gray-light;
-	z-index: 99;
-	height: 6rem;
 
-	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-		-webkit-backdrop-filter: saturate(85%) blur(8px);
-		backdrop-filter: saturate(85%) blur(8px);
-	}
-
-	div {
-		padding-left: 6%;
-		padding-right: 6%;
-	}
-
-	a {
-		text-decoration: none;
-		color: #0d0d0d;
-		white-space: nowrap;
-	}
-
-	.text-link {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		width: 100%;
-
-		a {
-			margin-right: 1rem;
-			margin-left: 1rem;
+	@media only screen and (max-width: $media-medium) {
+		&.desktop-navigation {
+			display: none;
 		}
 
-		.social-media-links {
+		&.mobile-navigation {
+			height: 80px;
+			background-color: $neutral-white;
+
+			.mobile-menu-content {
+				position: relative;
+				width: 100%;
+				height: 500px; /* need to calculate somehow */
+				margin-left: -82px;
+				margin-top: 79px;
+				overflow: hidden;
+				border-radius: 2px;
+				background-color: $neutral-white;
+
+				&[data-menu-open='true'] {
+					transform: none;
+					transition: transform 0.5s;
+				}
+
+				&[data-menu-open='false'] {
+					transform: translateY(calc(-100% + -80px));
+					transition: transform 0.5s;
+				}
+
+				ul.menu-list-item {
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					list-style: none;
+
+					li {
+						padding-left: 1.5rem;
+
+						a {
+							text-decoration: none;
+
+							h2 {
+								line-height: 1.5em;
+							}
+						}
+					}
+
+					&[data-menu-open='true'] {
+						transform: none;
+						transition-duration: 0.5s;
+						transition-delay: 0.3s;
+
+						-webkit-transform: none;
+						-webkit-transition-duration: 0.5s;
+						-webkit-transition-delay: 0.3s;
+					}
+
+					&[data-menu-open='false'] {
+						transform: translateX(calc(-100%));
+						transition-duration: 0s;
+
+						-webkit-transform: translateX(calc(-100%));
+						-webkit-transition-duration: 0s;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: $media-medium) {
+		&.mobile-navigation {
+			display: none;
+		}
+
+		&.desktop-navigation {
 			display: flex;
-			flex-direction: row;
-			justify-content: flex-end;
+			height: 6rem;
+
+			@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+				-webkit-backdrop-filter: saturate(85%) blur(8px);
+				backdrop-filter: saturate(85%) blur(8px);
+			}
 
 			div {
-				height: 24px;
-				width: 24px;
-				cursor: pointer;
+				padding-left: 6%;
+				padding-right: 6%;
 			}
 
-			.github {
-				background-image: url('../assets/24px/github-mark-dark-24px.png');
-				background-repeat: no-repeat;
+			a {
+				text-decoration: none;
+				color: #0d0d0d;
+				white-space: nowrap;
 			}
 
-			.linkedin {
-				background-image: url('../assets/24px/linkedin-logo-dark-24px.png');
-				background-repeat: no-repeat;
+			.text-link {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				align-items: center;
+				width: 100%;
+
+				a {
+					margin-right: 1rem;
+					margin-left: 1rem;
+				}
+
+				.social-media-links {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+
+					div {
+						height: 24px;
+						width: 24px;
+						cursor: pointer;
+					}
+
+					.github {
+						background-image: url('../assets/24px/github-mark-dark-24px.png');
+						background-repeat: no-repeat;
+					}
+
+					.linkedin {
+						background-image: url('../assets/24px/linkedin-logo-dark-24px.png');
+						background-repeat: no-repeat;
+					}
+
+					.codepen {
+						background-image: url('../assets/24px/codepen-logo-dark-24px.png');
+						background-repeat: no-repeat;
+					}
+				}
 			}
 
-			.codepen {
-				background-image: url('../assets/24px/codepen-logo-dark-24px.png');
-				background-repeat: no-repeat;
+			.header-logo {
+				font-family: $paragraph-font-family;
+				font-weight: bold;
+				font-size: 72px;
+				line-height: 5.5rem;
+				color: #183834;
 			}
 		}
-	}
-
-	.header-logo {
-		font-family: $paragraph-font-family;
-		font-weight: bold;
-		font-size: 72px;
-		line-height: 5.5rem;
-		color: #183834;
 	}
 }
