@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { IMobileMenuState, INavigationMenuProps } from '../types'
 import MobileMenuButton from './mobile-menu-button/mobile-menu-button'
-import MobileMenuContent from './mobile-menu-content/mobile-menu-content'
+import MobileMenuContent from './mobile-menu-content'
 import NavLogoLink from './nav-logo-link/nav-logo-link'
 import './navigation.scss'
 

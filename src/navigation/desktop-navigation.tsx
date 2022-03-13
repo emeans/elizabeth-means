@@ -6,7 +6,7 @@ import './navigation.scss';
 
 export default class DesktopNavigation extends React.Component<INavigationMenuProps, IState>  {
     render () {
-        const textLinks = this.props.textLinks!.map((link, i) => 
+        const textLinks = this.props.textLinks ? this.props.textLinks.map((link, i) => 
             <NavLink
                 key={i}
                 aria-label={link.text}
@@ -19,9 +19,9 @@ export default class DesktopNavigation extends React.Component<INavigationMenuPr
 
                 <h4>{link.text}</h4>
             </NavLink>
-        );
+        ) : null;
 
-        const socialLinks = this.props.socialLinks!.map((link, i) => 
+        const socialLinks = this.props.socialLinks ? this.props.socialLinks.map((link, i) => 
             <a 
                 key={i}
                 href={link.link}
@@ -31,7 +31,7 @@ export default class DesktopNavigation extends React.Component<INavigationMenuPr
                 <div className={link.text}></div>
             </a>
 
-        );
+        ) : null;
 
         return (
             <nav className='desktop-navigation' aria-label='Main Navigation'>

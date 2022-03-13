@@ -1,0 +1,124 @@
+@import '../scss-partials/colors';
+@import '../scss-partials/navigationproperties';
+
+.mobile-menu-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.mobile-text-links,
+	.mobile-social-links {
+		position: relative;
+		min-height: 100vh;
+		width: 100%;
+
+		&[data-menu-open='true'] {
+			background: rgba(89, 91, 95, 0.75);
+
+			ul.menu-list {
+				transform: none;
+				transition-duration: 0.4s;
+
+				transform: none;
+				transition-duration: 0.4s;
+
+				-webkit-transform: none;
+				-webkit-transition-duration: 0.4s;
+
+				li:first-of-type {
+					transform: none;
+					transition-delay: 0.05s;
+					transition-duration: 0.82s;
+
+					-webkit-transform: none;
+					-webkit-transition-delay: 0.05s;
+					-webkit-transition-duration: 0.82s;
+				}
+
+				li:nth-of-type(2) {
+					transform: none;
+					transition-delay: 0.1s;
+					transition-duration: 0.84s;
+
+					-webkit-transform: none;
+					-webkit-transition-delay: 0.1s;
+					-webkit-transition-duration: 0.84s;
+				}
+
+				li:nth-of-type(3) {
+					transform: none;
+					transition-delay: 0.15s;
+					transition-duration: 0.86s;
+
+					-webkit-transform: none;
+					-webkit-transition-delay: 0.15s;
+					-webkit-transition-duration: 0.86s;
+				}
+				li:nth-of-type(4) {
+					transform: none;
+					transition-delay: 0.2s;
+					transition-duration: 0.88s;
+
+					-webkit-transform: none;
+					-webkit-transition-delay: 0.2s;
+					-webkit-transition-duration: 0.88s;
+				}
+			}
+		}
+
+		ul.menu-list {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+			height: calc(100vh * 0.8);
+			background-color: $neutral-white;
+			border-bottom: 1px solid $neutral-gray-light;
+			transform: translateY(calc(-100% + -80px));
+			transition: transform 0s;
+			padding: 2rem;
+
+			li.text-link-list-item {
+				text-transform: capitalize;
+				transform: translateX(calc(-100%));
+				transition-duration: 0s;
+
+				-webkit-transform: translateX(calc(-100%));
+				-webkit-transition-duration: 0s;
+
+				a {
+					text-decoration: none;
+
+					h2 {
+						line-height: 2.5rem;
+					}
+				}
+			}
+
+			li.image-link-list-item {
+				align-self: flex-end;
+
+				div {
+					width: 24px;
+					height: 24px;
+					margin-bottom: 32px;
+					.github {
+						background-image: url('../assets/24px/github-mark-dark-24px.png');
+					}
+
+					.linkedin {
+						background-image: url('../assets/24px/linkedin-logo-dark-24px.png');
+					}
+
+					.codepen {
+						background-image: url('../assets/24px/codepen-logo-dark-24px.png');
+					}
+				}
+			}
+		}
+	}
+
+	.mobile-menu-content .mobile-social-links ul.menu-list {
+		justify-content: flex-end;
+	}
+}
