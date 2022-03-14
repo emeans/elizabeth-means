@@ -43,16 +43,18 @@ export default class MobileMenuContent extends React.Component<INavigationMenuPr
         ) : null;
         
         return(
-            <div className='mobile-menu-content'>
-                <div className='mobile-text-links' data-menu-open={this.props.isToggleOn}>
-                    <ul className='menu-list'>
-                        {textLinks}
-                    </ul>
-                </div>
-                <div className='mobile-social-links' data-menu-open={this.props.isToggleOn}>
-                    <ul className='menu-list'>
-                        {socialLinks}
-                    </ul>
+            <div className='mobile-menu-content' data-menu-open={this.props.isToggleOn}>
+                <div className='mobile-menu-inner-content' data-menu-open={this.props.isToggleOn}>
+                    <div className='mobile-text-links'>
+                        <ul className='menu-list'>
+                            {textLinks}
+                        </ul>
+                    </div>
+                    <div className='mobile-social-links'>
+                        <ul className='menu-list'>
+                            {socialLinks}
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
