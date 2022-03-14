@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { IState, INavigationMenuProps } from '../types';
-import NavLogoLink from './nav-logo-link/nav-logo-link';
+import NavLogoLink from './nav-logo-link';
 import './navigation.scss';
 
 export default class DesktopNavigation extends React.Component<INavigationMenuProps, IState>  {

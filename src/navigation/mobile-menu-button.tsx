@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMobileMenuState, INavigationMenuProps } from '../../types';
+import { IMobileMenuState, INavigationMenuProps } from '../types';
 import './mobile-menu-button.scss';
 
 export default class MobileMenuButton extends React.Component<INavigationMenuProps, IMobileMenuState> {
