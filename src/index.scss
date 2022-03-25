@@ -1,7 +1,5 @@
-@import '../src/scss-partials/colors';
-@import '../src/scss-partials/fonts';
-@import '../src/scss-partials/mediaqueries';
-
+@import './scss-partials/theme';
+// A few defaults
 * {
 	margin: 0;
 	padding: 0;
@@ -13,64 +11,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
 	width: 100vw;
-	background-color: $neutral-white;
 	height: 100vh;
 
 	#root {
 		width: 100vw;
 		height: 100vh;
-	}
-
-	h1 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 3.8rem;
-		line-height: 0.95;
-	}
-
-	h2 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 2rem;
-	}
-
-	h3 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 1.5rem;
-	}
-
-	h4 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 1.17rem;
-	}
-
-	h5 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 1rem;
-	}
-
-	h6 {
-		font-family: $headline-font-family;
-		font-weight: $headline-font-weight;
-		font-size: 0.83rem;
-	}
-
-	p,
-	span,
-	input,
-	textarea {
-		font-family: $paragraph-font-family;
-		font-weight: $paragraph-font-weight;
-		font-size: 1.3rem;
-		line-height: 1.33;
-	}
-
-	a {
-		text-decoration: none;
-		color: $neutral-black;
-		white-space: nowrap;
 	}
 }

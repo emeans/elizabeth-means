@@ -1,0 +1,29 @@
+@import './colors';
+@import './fonts';
+
+$theme-dark: (
+	body: (
+		bg: $color-nickel,
+		headline-font-family: $avant-garde-headline-font-family,
+		headline-font-weight: $avant-garde-headline-font-weight,
+		paragraph-font-family: $avant-garde-paragraph-font-family,
+		paragraph-font-weight: $avant-garde-paragraph-font-weight,
+		text-color: $color-white,
+		link-hover-color: $color-snow,
+	),
+	header: (
+		bg: $color-coal,
+		hero-rip-color: dark,
+	),
+	nav: (
+		logo-color: light,
+		social-icon-color: light,
+		border-bottom: $color-silver,
+		menu-button-transparent: $color-black-transparent,
+		menu-button-span: $color-black,
+	),
+	footer: (
+		bg: $color-coal,
+		social-icon-color: light,
+	),
+);

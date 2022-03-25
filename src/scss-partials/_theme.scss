@@ -1,0 +1,126 @@
+@import './theme-dark-map';
+
+@mixin themable($theme-name, $theme-map) {
+	body .#{$theme-name} {
+		// Loop through each of the keys (sections)
+		@each $section, $map in $theme-map {
+			@if ($section == body) {
+				background-color: map-get($map, bg);
+
+				h1 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 3.8rem;
+					line-height: 0.95;
+				}
+
+				h2 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 2rem;
+				}
+
+				h3 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 1.5rem;
+				}
+
+				h4 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 1.17rem;
+				}
+
+				h5 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 1rem;
+				}
+
+				h6 {
+					font-family: map-get($map, headline-font-family);
+					font-weight: map-get($map, headline-font-weight);
+					color: map-get($map, text-color);
+					font-size: 0.83rem;
+				}
+
+				p,
+				span,
+				input,
+				textarea {
+					font-family: map-get($map, paragraph-font-family);
+					font-weight: map-get($map, paragraph-font-weight);
+					color: map-get($map, text-color);
+					font-size: 1.3rem;
+					line-height: 1.33;
+				}
+
+				a {
+					text-decoration: none;
+					color: map-get($map, text-color);
+					white-space: nowrap;
+					&:hover,
+					&:active {
+						color: map-get($map, link-hover-color);
+					}
+				}
+			} @else {
+				#{$section} {
+					background-color: map-get($map, bg);
+					border-bottom: 1px solid map-get($map, border-bottom);
+
+					@if ($section == nav) {
+						.menu-button-animation[data-menu-open='true'] span {
+							background-color: map-get($map, menu-button-transparent);
+						}
+						.menu-button span:after {
+							background-color: map-get($map, menu-button-span);
+						}
+						.header-logo {
+							background-image: url('../assets/main-nav-logo-' + map-get(
+									$map,
+									logo-color
+								) + '.png');
+						}
+
+						.social-media-links,
+						.mobile-social-links {
+							.github {
+								background-image: url('../assets/24px/github-mark-' + map-get(
+										$map,
+										social-icon-color
+									) + '-24px.png');
+							}
+
+							.linkedin {
+								background-image: url('../assets/24px/linkedin-logo-' + map-get(
+										$map,
+										social-icon-color
+									) + '-24px.png');
+							}
+
+							.codepen {
+								background-image: url('../assets/24px/codepen-logo-' + map-get(
+										$map,
+										social-icon-color
+									) + '-24px.png');
+							}
+						}
+					}
+
+					@if ($section == header) {
+					}
+				}
+			}
+		}
+	}
+}
+
+@include themable(theme-dark, $theme-dark);
+// @include themable(theme-2, $theme-2);

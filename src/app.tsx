@@ -19,7 +19,7 @@ function App() {
 		}
 
 		renderApp = (
-			<div>
+			<div className='theme-dark'>
 				<MobileNavigation
                     textLinks={configuration.navigation.textLinks}
                     socialLinks={configuration.navigation.socialLinks}>
