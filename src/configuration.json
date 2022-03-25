@@ -6,18 +6,15 @@
 		"socialLinks": [
 			{
 				"text": "linkedin",
-				"link": "https://www.linkedin.com/in/elizabeth-a-means/",
-				"imageLocation": "../assets/24px/linkedin-logo-dark-24px.png"
+				"link": "https://www.linkedin.com/in/elizabeth-a-means/"
 			},
 			{
 				"text": "github",
-				"link": "https://github.com/emeans",
-				"imageLocation": "../assets/24px/github-mark-dark-24px.png"
+				"link": "https://github.com/emeans"
 			},
 			{
 				"text": "codepen",
-				"link": "https://codepen.io/emeans",
-				"imageLocation": "../assets/24px/codepen-logo-dark-24px.png"
+				"link": "https://codepen.io/emeans"
 			}
 		],
 		"textLinks": [
@@ -32,10 +29,6 @@
 			{
 				"text": "playground",
 				"link": "/playground"
-			},
-			{
-				"text": "get in touch",
-				"link": "/getintouch"
 			}
 		]
 	}

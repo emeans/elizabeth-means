@@ -8,7 +8,7 @@ import About from './routes/about'
 import Home from './routes/home'
 import Error from './routes/error'
 import Portfolio from './routes/portfolio'
-import GetInTouch from './routes/getintouch'
+// import GetInTouch from './routes/getintouch'
 import UnderConstruction from './routes/under-construction'
 import Playground from './routes/playground'
 
@@ -23,7 +23,7 @@ ReactDOM.render(
 					<Route path='about' element={<About />} />
 					<Route path='portfolio' element={<Portfolio />} />
 					<Route path='playground' element={<Playground />} />
-					<Route path='getintouch' element={<GetInTouch />} />
+					{/* <Route path='getintouch' element={<GetInTouch />} /> */}
 
 					<Route path='underconstruction' element={<UnderConstruction />} />
 				</Route>
@@ -37,4 +37,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals(console.log)

@@ -15,15 +15,11 @@ export interface TextLink {
     link: string;
 }
 
-export interface SocialLink extends TextLink {
-    imageLocation: string;
-}
-
 export interface INavigationMenuProps extends IProps {
     isToggleOn?: boolean;
     onHandleMenuClick?: () => void;
     textLinks?: TextLink[];
-    socialLinks?: SocialLink[];
+    socialLinks?: TextLink[];
 }
 
 export interface IMobileMenuState extends IState {
