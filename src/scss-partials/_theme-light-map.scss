@@ -1,0 +1,31 @@
+@import './colors';
+@import './fonts';
+
+$theme-light: (
+	body: (
+		bg: $color-white,
+		headline-font-family: $avant-garde-headline-font-family,
+		headline-font-weight: $avant-garde-headline-font-weight,
+		paragraph-font-family: $avant-garde-paragraph-font-family,
+		paragraph-font-weight: $avant-garde-paragraph-font-weight,
+		text-color: $color-coal,
+		link-hover-color: $color-lettuce,
+	),
+	header: (
+		bg: $color-silver,
+		hero-rip-color: light,
+	),
+	nav: (
+		header-logo: url('../assets/main-nav-logo-dark.png'),
+		social-github: url('../assets/24px/github-mark-dark-24px.png'),
+		social-linkedin: url('../assets/24px/linkedin-logo-dark-24px.png'),
+		social-codepen: url('../assets/24px/codepen-logo-dark-24px.png'),
+		border-bottom: $color-snow,
+		menu-button-transparent: $color-black-transparent,
+		menu-button-span: $color-black,
+	),
+	footer: (
+		bg: $color-silver,
+		social-icon-color: light,
+	),
+);

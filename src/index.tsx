@@ -8,28 +8,30 @@ import About from './routes/about'
 import Home from './routes/home'
 import Error from './routes/error'
 import Portfolio from './routes/portfolio'
-// import GetInTouch from './routes/getintouch'
 import UnderConstruction from './routes/under-construction'
 import Playground from './routes/playground'
+import { ThemeProvider } from './ThemeContext'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<HashRouter>
-			<Routes>
-				<Route path='/' element={<App />}>
-					<Route index element={<Navigate replace to='underconstruction' />} />
-					{/* <Route index element={<Navigate replace to='home' />} /> */}
-					<Route path='home' element={<Home />} />
-					<Route path='about' element={<About />} />
-					<Route path='portfolio' element={<Portfolio />} />
-					<Route path='playground' element={<Playground />} />
-					{/* <Route path='getintouch' element={<GetInTouch />} /> */}
+        <ThemeProvider>
+            <HashRouter>
+                <Routes>
+                    <Route path='/' element={<App />}>
+                        <Route index element={<Navigate replace to='underconstruction' />} />
+                        {/* <Route index element={<Navigate replace to='home' />} /> */}
+                        <Route path='home' element={<Home />} />
+                        <Route path='about' element={<About />} />
+                        <Route path='portfolio' element={<Portfolio />} />
+                        <Route path='playground' element={<Playground />} />
 
-					<Route path='underconstruction' element={<UnderConstruction />} />
-				</Route>
-				<Route path='*' element={<Error />} />
-			</Routes>
-		</HashRouter>
+                        <Route path='underconstruction' element={<UnderConstruction />} />
+                    </Route>
+                    <Route path='*' element={<Error />} />
+
+                </Routes>
+            </HashRouter>
+        </ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root'),
 )

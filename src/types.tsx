@@ -4,10 +4,18 @@ export interface IProps {}
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IState {}
 
+export interface IThemeProps {
+    children: any;
+}
+
+export interface IThemeState {
+    selectedTheme: string;
+}
+
 export interface IContactFormState extends IState {
-	name?: string
-	email?: string
-	message?: string
+	name?: string;
+	email?: string;
+	message?: string;
 }
 
 export interface TextLink {

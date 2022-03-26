@@ -1,4 +1,5 @@
 @import './theme-dark-map';
+@import './theme-light-map';
 
 @mixin themable($theme-name, $theme-map) {
 	body .#{$theme-name} {
@@ -79,6 +80,8 @@
 						.menu-button-animation[data-menu-open='true'] span {
 							background-color: map-get($map, menu-button-transparent);
 						}
+						.menu-button span,
+						.menu-button span:before,
 						.menu-button span:after {
 							background-color: map-get($map, menu-button-span);
 						}
@@ -120,4 +123,4 @@
 }
 
 @include themable(theme-dark, $theme-dark);
-// @include themable(theme-2, $theme-2);
+@include themable(theme-light, $theme-light);
