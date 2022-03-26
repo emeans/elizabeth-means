@@ -1,6 +1,3 @@
-@import '../scss-partials/colors';
-@import '../scss-partials/navigationproperties';
-
 .mobile-menu-content {
 	min-height: 100vh;
 
@@ -11,7 +8,7 @@
 	.mobile-menu-inner-content {
 		max-height: calc(100vh * 0.8);
 		transform: translateY(calc(-100% + -80px));
-		background-color: $neutral-white;
+		// background-color: $color-white;
 		transition: transform 0s;
 
 		&[data-menu-open='true'] {

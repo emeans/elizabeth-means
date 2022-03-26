@@ -1,4 +1,3 @@
-@import '../scss-partials/colors';
 @import '../scss-partials/mediaqueries';
 
 header {
@@ -7,7 +6,6 @@ header {
 		padding-bottom: 8rem;
 		padding-top: 4rem;
 		position: relative;
-		background-color: $green-mint;
 
 		.introduction {
 			display: flex;
@@ -25,7 +23,6 @@ header {
 		}
 
 		.hero-rip {
-			background-image: url(../assets/rips.png);
 			background-position: bottom;
 			background-repeat: repeat-x;
 			background-size: contain;

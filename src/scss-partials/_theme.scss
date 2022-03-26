@@ -73,9 +73,9 @@
 			} @else {
 				#{$section} {
 					background-color: map-get($map, bg);
-					border-bottom: 1px solid map-get($map, border-bottom);
 
 					@if ($section == nav) {
+						border-bottom: 1px solid map-get($map, border-bottom);
 						.menu-button-animation[data-menu-open='true'] span {
 							background-color: map-get($map, menu-button-transparent);
 						}
@@ -83,38 +83,35 @@
 							background-color: map-get($map, menu-button-span);
 						}
 						.header-logo {
-							background-image: url('../assets/main-nav-logo-' + map-get(
-									$map,
-									logo-color
-								) + '.png');
+							background-image: map-get($map, header-logo);
 						}
 
 						.social-media-links,
 						.mobile-social-links {
 							.github {
-								background-image: url('../assets/24px/github-mark-' + map-get(
-										$map,
-										social-icon-color
-									) + '-24px.png');
+								background-image: map-get($map, social-github);
 							}
 
 							.linkedin {
-								background-image: url('../assets/24px/linkedin-logo-' + map-get(
-										$map,
-										social-icon-color
-									) + '-24px.png');
+								background-image: map-get($map, social-linkedin);
 							}
 
 							.codepen {
-								background-image: url('../assets/24px/codepen-logo-' + map-get(
-										$map,
-										social-icon-color
-									) + '-24px.png');
+								background-image: map-get($map, social-codepen);
 							}
 						}
 					}
 
 					@if ($section == header) {
+						.hero .hero-rip {
+							// background-image:
+						}
+					}
+
+					@if ($section == footer) {
+						.hero .hero-rip {
+							// background-image:
+						}
 					}
 				}
 			}

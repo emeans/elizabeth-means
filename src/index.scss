@@ -1,4 +1,5 @@
 @import './scss-partials/theme';
+
 // A few defaults
 * {
 	margin: 0;
@@ -12,6 +13,10 @@ body {
 	display: flex;
 	width: 100vw;
 	height: 100vh;
+
+	.display-none {
+		display: none;
+	}
 
 	#root {
 		width: 100vw;

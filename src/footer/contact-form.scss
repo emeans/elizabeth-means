@@ -11,15 +11,15 @@ form {
 	input {
 		padding: 8px;
 		margin-bottom: 8px;
-		background-color: $neutral-white;
+		// background-color: $neutral-white;
 		border-radius: 2px;
 		border: none;
 	}
 
 	.send {
-		font-family: $headline-font-family;
-		font-weight: $paragraph-font-weight;
-		background-color: $green-leaf;
+		// font-family: $headline-font-family;
+		// font-weight: $paragraph-font-weight;
+		// background-color: $green-leaf;
 		align-self: flex-end;
 
 		@media only screen and (max-width: $media-large2) {

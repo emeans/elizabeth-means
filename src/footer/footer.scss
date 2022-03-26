@@ -1,12 +1,10 @@
-@import '../scss-partials/colors';
 @import '../scss-partials/mediaqueries';
 
 footer {
-	background-color: #183834;
 	padding-bottom: 2%;
 
 	.hero-rip {
-		background-image: url(../assets/rips-upsidedown.png);
+		// background-image: url(../assets/rips-upsidedown.png);
 		background-position: top;
 		background-repeat: repeat-x;
 		background-size: contain;
@@ -22,7 +20,6 @@ footer {
 		align-items: stretch;
 		padding-left: 5%;
 		padding-right: 5%;
-		color: $neutral-white;
 
 		.column-left {
 			order: 1;
@@ -89,7 +86,6 @@ footer {
 		margin-top: 4%;
 		padding-left: 5%;
 		padding-right: 5%;
-		color: $neutral-white;
 	}
 
 	@media only screen and (max-width: $media-large2) {

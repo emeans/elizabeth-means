@@ -1,5 +1,3 @@
-@import '../scss-partials/colors';
-
 .menu-button {
 	position: relative;
 	display: inline-block;
@@ -22,7 +20,6 @@
 .menu-button span:after {
 	width: 32px;
 	height: 4px;
-	background-color: $neutral-black;
 	display: block;
 }
 .menu-button span:before {
@@ -40,7 +37,6 @@
 	-webkit-transition-delay: 0.2s;
 }
 .menu-button-animation[data-menu-open='true'] span {
-	background-color: $transparent-black;
 	transition-delay: 0.2s;
 
 	-webkit-transition-delay: 0.2s;
