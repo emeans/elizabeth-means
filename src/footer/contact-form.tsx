@@ -2,6 +2,13 @@ import React, { FormEvent } from 'react'
 import { IContactFormState, IProps } from '../types'
 import './contact-form.scss'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const encode = (data: any) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
+
 export default class ContactForm extends React.Component<IProps, IContactFormState> {
 	constructor(props: IProps) {
 		super(props)
@@ -10,8 +17,8 @@ export default class ContactForm extends React.Component<IProps, IContactFormSta
 			email: '',
 			message: '',
 		}
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this) // Required for testing form submissions
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
@@ -27,20 +34,26 @@ export default class ContactForm extends React.Component<IProps, IContactFormSta
 	 * @param event formEvent
 	 */
 	handleSubmit(formEvent: FormEvent) {
-		alert(
-			'A name was submitted: ' +
-				this.state.name +
-				' with email: ' +
-				this.state.email +
-				' and message: ' +
-				this.state.message,
-		)
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state })
+          })
+            .then(() => {
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: '',
+                });
+            })
+            .catch(error => alert(error));
 		formEvent.preventDefault()
 	}
 
 	render() {
 		return (
-			<form name='contact' method='POST' data-netlify='true'>
+			<form name='contact' onSubmit={this.handleSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
 				<input
 					aria-label='name'
 					name='name'
@@ -55,7 +68,7 @@ export default class ContactForm extends React.Component<IProps, IContactFormSta
 					name='email'
 					placeholder='Email'
 					required
-					type='text'
+					type='email'
 					value={this.state.email}
 					onChange={this.handleChange}
 				/>
@@ -68,7 +81,6 @@ export default class ContactForm extends React.Component<IProps, IContactFormSta
 					value={this.state.message}
 					onChange={this.handleChange}
 				/>
-
 				<input type='submit' className='send' value='Send' />
 			</form>
 		)

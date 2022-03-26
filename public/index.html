@@ -31,6 +31,13 @@
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
+         <!-- A little help for the Netlify post-processing bots -->
+        <form class="display-none" name="contact" netlify netlify-honeypot="bot-field" hidden>
+            <input aria-label='name' type="text" name="name" />
+            <input aria-label='email' type="email" name="email" />
+            <textarea aria-label='message' name="message"></textarea>
+            <input type='submit' className='send' value='Send' />
+        </form>
 		<div id="root"></div>
 		<!--
       This HTML file is a template.
