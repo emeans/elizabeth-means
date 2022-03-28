@@ -3,16 +3,16 @@
 
 $theme-dark: (
 	body: (
-		bg: $color-nickel,
+		bg: $color-coal,
 		headline-font-family: $avant-garde-headline-font-family,
 		headline-font-weight: $avant-garde-headline-font-weight,
 		paragraph-font-family: $avant-garde-paragraph-font-family,
 		paragraph-font-weight: $avant-garde-paragraph-font-weight,
 		text-color: $color-white,
-		link-hover-color: $color-moon,
+		link-hover-color: $color-lettuce,
 	),
 	header: (
-		bg: $color-coal,
+		bg: $color-black,
 		hero-rip-color: dark,
 	),
 	nav: (
@@ -20,12 +20,19 @@ $theme-dark: (
 		social-github: url('../assets/24px/github-mark-light-24px.png'),
 		social-linkedin: url('../assets/24px/linkedin-logo-light-24px.png'),
 		social-codepen: url('../assets/24px/codepen-logo-light-24px.png'),
-		border-bottom: $color-silver,
+		border-bottom: $color-nickel,
 		menu-button-transparent: $color-white-transparent,
 		menu-button-span: $color-white,
+		is-active: $color-silver,
 	),
 	footer: (
-		bg: $color-coal,
-		social-icon-color: light,
+		bg: $color-black,
+		action-button-bg: $color-nickel,
+		social-github: url('../assets/32px/github-mark-light-32px.png'),
+		social-linkedin: url('../assets/32px/linkedin-logo-light-32px.png'),
+		social-codepen: url('../assets/32px/codepen-logo-light-32px.png'),
+		social-behance: url('../assets/32px/behance-logo-light-32px.png'),
+		social-dribbble: url('../assets/32px/dribbble-logo-light-32px.png'),
+		social-instagram: url('../assets/32px/instagram-logo-light-32px.png'),
 	),
 );

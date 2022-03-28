@@ -9,12 +9,7 @@ export default class NavLogoLink extends React.Component {
             <div className='header-logo-container'>
                 <NavLink
                     aria-label='home'
-                    to='/home'
-                    style={({ isActive }) => {
-                        return {
-                            color: isActive ? '#7AD860' : '#0D0D0D',
-                        }
-                    }}>
+                    to='/home'>
                     <div className='header-logo'></div>
                 </NavLink>
             </div>

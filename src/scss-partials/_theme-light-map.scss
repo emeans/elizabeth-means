@@ -23,9 +23,16 @@ $theme-light: (
 		border-bottom: $color-snow,
 		menu-button-transparent: $color-black-transparent,
 		menu-button-span: $color-black,
+		is-active: $color-nickel,
 	),
 	footer: (
 		bg: $color-silver,
-		social-icon-color: light,
+		action-button-bg: $color-snow,
+		social-github: url('../assets/32px/github-mark-dark-32px.png'),
+		social-linkedin: url('../assets/32px/linkedin-logo-dark-32px.png'),
+		social-codepen: url('../assets/32px/codepen-logo-dark-32px.png'),
+		social-behance: url('../assets/32px/behance-logo-dark-32px.png'),
+		social-dribbble: url('../assets/32px/dribbble-logo-dark-32px.png'),
+		social-instagram: url('../assets/32px/instagram-logo-dark-32px.png'),
 	),
 );

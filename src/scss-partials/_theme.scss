@@ -66,8 +66,7 @@
 					text-decoration: none;
 					color: map-get($map, text-color);
 					white-space: nowrap;
-					&:hover,
-					&:active {
+					&:hover {
 						color: map-get($map, link-hover-color);
 					}
 				}
@@ -77,6 +76,10 @@
 
 					@if ($section == nav) {
 						border-bottom: 1px solid map-get($map, border-bottom);
+
+						.text-link .active h4 {
+							color: map-get($map, is-active);
+						}
 						.menu-button-animation[data-menu-open='true'] span {
 							background-color: map-get($map, menu-button-transparent);
 						}
@@ -88,7 +91,6 @@
 						.header-logo {
 							background-image: map-get($map, header-logo);
 						}
-
 						.social-media-links,
 						.mobile-social-links {
 							.github {
@@ -114,6 +116,29 @@
 					@if ($section == footer) {
 						.hero .hero-rip {
 							// background-image:
+						}
+						.github {
+							background-image: map-get($map, social-github);
+						}
+						.linkedin {
+							background-image: map-get($map, social-linkedin);
+						}
+						.codepen {
+							background-image: map-get($map, social-codepen);
+						}
+						.behance {
+							background-image: map-get($map, social-behance);
+							background-repeat: no-repeat;
+							margin-top: 6px;
+						}
+						.dribbble {
+							background-image: map-get($map, social-dribbble);
+						}
+						.instagram {
+							background-image: map-get($map, social-instagram);
+						}
+						.send {
+							background-color: map-get($map, action-button-bg);
 						}
 					}
 				}

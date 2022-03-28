@@ -3,20 +3,16 @@ import { NavLink } from 'react-router-dom';
 import { IState, INavigationMenuProps } from '../types';
 import NavLogoLink from './nav-logo-link';
 import './navigation.scss';
+import { ThemeContext } from '../ThemeContext';
 
 export default class DesktopNavigation extends React.Component<INavigationMenuProps, IState>  {
     render () {
+        const theme = ThemeContext;
         const textLinks = this.props.textLinks ? this.props.textLinks.map((link, i) => 
             <NavLink
                 key={i}
                 aria-label={link.text}
-                to={link.link}
-                style={({ isActive }) => {
-                    return {
-                        color: isActive ? '#7AD860' : '#0D0D0D',
-                    }
-                }}>
-
+                to={link.link}>
                 <h4>{link.text}</h4>
             </NavLink>
         ) : null;
@@ -32,6 +28,7 @@ export default class DesktopNavigation extends React.Component<INavigationMenuPr
             </a>
 
         ) : null;
+        
 
         return (
             <nav className='desktop-navigation' aria-label='Main Navigation'>
