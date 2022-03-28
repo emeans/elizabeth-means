@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { IMobileMenuState, INavigationMenuProps } from '../types'
 import MobileMenuButton from './mobile-menu-button'
 import MobileMenuContent from './mobile-menu-content'
