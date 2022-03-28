@@ -5,6 +5,7 @@ export interface IProps {}
 export interface IState {}
 
 export interface IThemeProps {
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
     children: any;
 }
 

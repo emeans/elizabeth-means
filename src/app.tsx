@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 export default function App() {
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
     const theme: any = useContext(ThemeContext);
 
     const handleThemeSwitch = () => {

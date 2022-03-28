@@ -1,11 +1,15 @@
 import { createContext, useReducer } from "react";
 import { IThemeProps, IThemeState } from "./types";
 
+export interface IAction {
+    type?: string;
+}
+
 const initialState: IThemeState = {
   selectedTheme: 'theme-dark',
 };
 
-const themeReducer = (state: IThemeState, action: any) => {
+const themeReducer = (state: IThemeState, action: IAction) => {
     switch (action.type) {
         case "LIGHTMODE":
             return { selectedTheme: 'theme-light' };
