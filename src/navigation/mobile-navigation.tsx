@@ -35,7 +35,8 @@ export default class MobileNavigation extends React.Component<INavigationMenuPro
                     textLinks={this.props.textLinks}
                     socialLinks={this.props.socialLinks}
                     isToggleOn={this.state.isToggleOn}
-                    onHandleMenuClick={this.handleMenuClick} />
+                    onHandleMenuClick={this.handleMenuClick}
+                    onHandleThemeSwitch={this.props.onHandleThemeSwitch} />
 			</nav>
 		)
 	}

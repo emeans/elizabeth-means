@@ -12,7 +12,7 @@
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 3.8rem;
+					font-size: 3rem;
 					line-height: 0.95;
 				}
 
@@ -20,35 +20,35 @@
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 2rem;
+					font-size: 2.34rem;
 				}
 
 				h3 {
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 1.5rem;
+					font-size: 1.67rem;
 				}
 
 				h4 {
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 1.17rem;
+					font-size: 1rem;
 				}
 
 				h5 {
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 1rem;
+					font-size: 0.83rem;
 				}
 
 				h6 {
 					font-family: map-get($map, headline-font-family);
 					font-weight: map-get($map, headline-font-weight);
 					color: map-get($map, text-color);
-					font-size: 0.83rem;
+					font-size: 0.67rem;
 				}
 
 				p,
@@ -58,7 +58,7 @@
 					font-family: map-get($map, paragraph-font-family);
 					font-weight: map-get($map, paragraph-font-weight);
 					color: map-get($map, text-color);
-					font-size: 1.3rem;
+					font-size: 1rem;
 					line-height: 1.33;
 				}
 
@@ -76,10 +76,15 @@
 
 					@if ($section == nav) {
 						border-bottom: 1px solid map-get($map, border-bottom);
-
-						.text-link .active h4 {
-							color: map-get($map, is-active);
+						.theme-switcher {
+							background-color: map-get($map, theme-switcher);
 						}
+						// Mobile
+						.mobile-menu-header,
+						.mobile-menu-inner-content {
+							background-color: map-get($map, mobile-menu-header);
+						}
+
 						.menu-button-animation[data-menu-open='true'] span {
 							background-color: map-get($map, menu-button-transparent);
 						}
@@ -88,6 +93,12 @@
 						.menu-button span:after {
 							background-color: map-get($map, menu-button-span);
 						}
+
+						.text-link-list-item .active h2,
+						.text-link .active h4 {
+							color: map-get($map, is-active);
+						}
+
 						.header-logo {
 							background-image: map-get($map, header-logo);
 						}

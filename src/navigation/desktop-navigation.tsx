@@ -3,11 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { IState, INavigationMenuProps } from '../types';
 import NavLogoLink from './nav-logo-link';
 import './navigation.scss';
-import { ThemeContext } from '../ThemeContext';
 
 export default class DesktopNavigation extends React.Component<INavigationMenuProps, IState>  {
     render () {
-        const theme = ThemeContext;
         const textLinks = this.props.textLinks ? this.props.textLinks.map((link, i) => 
             <NavLink
                 key={i}
@@ -40,6 +38,7 @@ export default class DesktopNavigation extends React.Component<INavigationMenuPr
                     <span className='social-media-links'>
                         {socialLinks}
                     </span>
+                    <button className='theme-switcher' onClick={this.props.onHandleThemeSwitch}></button>
                 </div>
             </nav>
         )

@@ -31,15 +31,16 @@ export default function App() {
 
         renderApp = (
             <div className={theme.state.selectedTheme}>
-                <button onClick={handleThemeSwitch}>Switch Theme</button>
                 <MobileNavigation
                     textLinks={configuration.navigation.textLinks}
-                    socialLinks={configuration.navigation.socialLinks}>
+                    socialLinks={configuration.navigation.socialLinks}
+                    onHandleThemeSwitch={handleThemeSwitch}>
                 </MobileNavigation>
                 {header}
                 <DesktopNavigation
                     textLinks={configuration.navigation.textLinks}
-                    socialLinks={configuration.navigation.socialLinks}>
+                    socialLinks={configuration.navigation.socialLinks}
+                    onHandleThemeSwitch={handleThemeSwitch}>
                 </DesktopNavigation>
                 <main>
                     <Outlet />

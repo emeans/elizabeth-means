@@ -28,6 +28,7 @@ export interface INavigationMenuProps extends IProps {
     onHandleMenuClick?: () => void;
     textLinks?: TextLink[];
     socialLinks?: TextLink[];
+    onHandleThemeSwitch?: () => void;
 }
 
 export interface IMobileMenuState extends IState {

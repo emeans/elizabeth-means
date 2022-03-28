@@ -8,6 +8,7 @@ export default class MobileMenuContent extends React.Component<INavigationMenuPr
         super(props);
 
         this.handleMenuClick = this.handleMenuClick.bind(this)
+        this.handleThemeSwitch = this.handleThemeSwitch.bind(this);
     }
 
     handleMenuClick(): void {
@@ -15,7 +16,13 @@ export default class MobileMenuContent extends React.Component<INavigationMenuPr
             this.props.onHandleMenuClick();
         }
     }
-    
+
+    handleThemeSwitch(): void {
+        if (this.props.onHandleThemeSwitch) {
+            this.props.onHandleThemeSwitch();
+        }
+    }
+
     render() {
         const textLinks = this.props.textLinks ? this.props.textLinks.map((link, i) => 
             <li key={i} className='text-link-list-item'>
@@ -52,7 +59,10 @@ export default class MobileMenuContent extends React.Component<INavigationMenuPr
                     </div>
                     <div className='mobile-social-links'>
                         <ul className='menu-list'>
-                            {socialLinks}
+                            {socialLinks} 
+                            <li>
+                                <button type='button' className='theme-switcher image-link-list-item' onClick={this.handleThemeSwitch}></button>
+                            </li>
                         </ul>
                     </div>
                 </div>
