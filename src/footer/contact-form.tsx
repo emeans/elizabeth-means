@@ -1,23 +1,15 @@
 import React, { FormEvent } from 'react'
+import { IContactFormState, IProps } from '../types'
 import './contact-form.scss'
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IProps {}
-
-interface IState {
-	name?: string
-	email?: string
-	message?: string
-}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const encode = (data: any) => {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&");
-  }
+}
 
-export default class ContactForm extends React.Component<IProps, IState> {
+export default class ContactForm extends React.Component<IProps, IContactFormState> {
 	constructor(props: IProps) {
 		super(props)
 		this.state = {

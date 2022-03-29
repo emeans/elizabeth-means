@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Getting Started with React Portfolio App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then modified to become a multipage portfolio application.
+
+## Customization
+
+**configuration.json**
+This json object contains the majority of the user-specific content.
+
+**\_navigationproperties.scss**
+This file contains customizable images for the navigation menu links, in particular the header logo and any social media links.
 
 ## Available Scripts
 

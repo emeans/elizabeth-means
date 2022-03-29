@@ -1,70 +1,25 @@
-body {
+@import './scss-partials/theme';
+
+// A few defaults
+* {
 	margin: 0;
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 300;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
-	width: 100%;
-	background-color: #ffffff;
+	width: 100vw;
 	height: 100vh;
 
 	.display-none {
 		display: none;
 	}
-}
 
-div {
-	width: 100%;
-}
-
-p,
-input,
-textarea {
-	font-family: proxima-nova, sans-serif;
-	font-weight: 500;
-}
-
-h1 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 48px;
-}
-
-h2 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 36px;
-}
-
-h3 {
-	font-family: yorkten-slab-extended, sans-serif;
-	font-weight: 700;
-	font-size: 24px;
-}
-
-.tooltip {
-	position: relative;
-	display: inline-block;
-}
-
-/* Tooltip text */
-.tooltip .tooltip-text {
-	visibility: hidden;
-	width: 120px;
-	background-color: #d9d9d9;
-	color: #0d0d0d;
-	text-align: center;
-	padding: 3px 0;
-	border-radius: 2px;
-	opacity: 0.95;
-
-	/* Position the tooltip text - see examples below! */
-	position: absolute;
-	z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltip-text {
-	visibility: visible;
+	#root {
+		width: 100vw;
+		height: 100vh;
+	}
 }

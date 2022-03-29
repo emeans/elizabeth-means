@@ -1,69 +1,94 @@
+@import '../scss-partials/mediaqueries';
+
 nav {
+	position: -webkit-sticky; /* for Safari */
+	position: sticky;
+	top: 0px;
 	display: flex;
-	border-bottom: 1px solid #f7f7f7;
-	z-index: 99;
+	align-self: flex-start;
+	z-index: 97;
 
-	div {
-		padding-left: 6%;
-		padding-right: 6%;
+	.theme-switcher {
+		border-radius: 50%;
+		border: none;
+		width: 24px;
+		height: 24px;
 	}
 
-	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-		-webkit-backdrop-filter: saturate(85%) blur(8px);
-		backdrop-filter: saturate(85%) blur(8px);
-	}
-
-	a {
-		text-decoration: none;
-		color: #0d0d0d;
-	}
-
-	.text-link {
-		margin-top: 48px;
-		text-align: end;
-		font-weight: 500;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-
-		a {
-			margin-right: 1rem;
-			margin-left: 1rem;
+	@media only screen and (max-width: $media-medium) {
+		&.desktop-navigation {
+			display: none;
 		}
 
-		.social-media-links {
+		&.mobile-navigation {
+			width: 100%;
+			height: 74px;
 			display: flex;
-			flex-direction: row;
-			justify-content: flex-end;
-			margin-top: -4px;
+			flex-direction: column;
+
+			.mobile-menu-header {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				height: 74px;
+				padding-left: 25px;
+				z-index: 99;
+			}
+		}
+	}
+
+	@media only screen and (min-width: $media-medium) {
+		&.mobile-navigation {
+			display: none;
+		}
+
+		&.desktop-navigation {
+			display: flex;
+			height: 6rem;
+
+			.theme-switcher {
+				margin-left: 16px;
+			}
+
+			@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+				-webkit-backdrop-filter: saturate(85%) blur(8px);
+				backdrop-filter: saturate(85%) blur(8px);
+			}
 
 			div {
-				height: 24px;
-				width: 24px;
-				cursor: pointer;
+				padding-left: 6%;
+				padding-right: 6%;
 			}
 
-			.github {
-				background-image: url('../assets/24px/github-mark-dark-24px.png');
-				background-repeat: no-repeat;
-			}
+			.text-link {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				align-items: center;
+				width: 100%;
+				text-transform: capitalize;
 
-			.linkedin {
-				background-image: url('../assets/24px/linkedin-logo-dark-24px.png');
-				background-repeat: no-repeat;
-			}
+				a {
+					margin-right: 1rem;
+					margin-left: 1rem;
+				}
 
-			.codepen {
-				background-image: url('../assets/24px/codepen-logo-dark-24px.png');
-				background-repeat: no-repeat;
+				.social-media-links {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					text-transform: capitalize;
+
+					div {
+						height: 24px;
+						width: 24px;
+						cursor: pointer;
+						background-repeat: no-repeat;
+					}
+				}
 			}
 		}
-	}
-
-	.header-logo {
-		font-family: proxima-nova, sans-serif;
-		font-weight: bold;
-		font-size: 72px;
-		color: #183834;
 	}
 }

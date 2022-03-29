@@ -40,50 +40,28 @@
 				transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 			}
 		}
-	}
 
-	.container:hover .img {
-		transform: translateY(0) scale(1.2);
+		&:hover {
+			transform: scale(0.54);
+
+			.img {
+				transform: translateY(0) scale(1.2);
+			}
+		}
+
+		// &:after {
+		// 	// background-color: #ffffff;
+		// 	content: '';
+		// 	height: 10px;
+		// 	position: absolute;
+		// 	top: 390px;
+		// 	width: 100%;
+		// }
 	}
 
 	.img1 {
 		left: 22px;
 		top: 164px;
 		width: 340px;
-	}
-
-	.container:after {
-		// background-color: #ffffff;
-		content: '';
-		height: 10px;
-		position: absolute;
-		top: 390px;
-		width: 100%;
-	}
-
-	.container:hover {
-		transform: scale(0.54);
-	}
-
-	.divider {
-		background-color: #c36f00;
-		height: 1px;
-		width: 160px;
-	}
-
-	.name {
-		color: #0d0d0d;
-		font-size: 36px;
-		font-weight: 600;
-		margin-top: 16px;
-		text-align: center;
-	}
-
-	.title {
-		color: #0d0d0d;
-		font-size: 14px;
-		font-style: italic;
-		margin-top: 4px;
-		text-align: center;
 	}
 }

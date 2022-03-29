@@ -1,0 +1,35 @@
+{
+	"navigation": {
+        "navLogoLink": {
+            
+        },
+		"socialLinks": [
+			{
+				"text": "linkedin",
+				"link": "https://www.linkedin.com/in/elizabeth-a-means/"
+			},
+			{
+				"text": "github",
+				"link": "https://github.com/emeans"
+			},
+			{
+				"text": "codepen",
+				"link": "https://codepen.io/emeans"
+			}
+		],
+		"textLinks": [
+			{
+				"text": "about",
+				"link": "/about"
+			},
+			{
+				"text": "portfolio",
+				"link": "/portfolio"
+			},
+			{
+				"text": "playground",
+				"link": "/playground"
+			}
+		]
+	}
+}
