@@ -93,91 +93,23 @@ export default function Home() {
       {/* Resume Section */}
       <section id="resume" className={styles.resume}>
         <div className={styles.container}>
-          <h2>Resume</h2>
-          
-          {/* Experience */}
-          <div className={styles.resumeSection}>
-            <h3>Experience</h3>
-            
-            <div className={styles.resumeItem}>
-              <div className={styles.resumeItemHeader}>
-                <h4>Senior UX Designer</h4>
-                <span className={styles.resumeDate}>2022 - Present</span>
-              </div>
-              <p className={styles.resumeCompany}>Company Name</p>
-              <ul className={styles.resumeDetails}>
-                <li>Led user research initiatives and translated insights into design solutions</li>
-                <li>Collaborated with cross-functional teams to deliver user-centered products</li>
-                <li>Created wireframes, prototypes, and high-fidelity designs</li>
-                <li>Conducted usability testing and iterated based on feedback</li>
-              </ul>
-            </div>
-
-            <div className={styles.resumeItem}>
-              <div className={styles.resumeItemHeader}>
-                <h4>UX Designer</h4>
-                <span className={styles.resumeDate}>2020 - 2022</span>
-              </div>
-              <p className={styles.resumeCompany}>Company Name</p>
-              <ul className={styles.resumeDetails}>
-                <li>Designed user interfaces for web and mobile applications</li>
-                <li>Performed user interviews and usability testing</li>
-                <li>Created design systems and component libraries</li>
-                <li>Worked closely with developers to ensure design implementation</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Education */}
-          <div className={styles.resumeSection}>
-            <h3>Education</h3>
-            
-            <div className={styles.resumeItem}>
-              <div className={styles.resumeItemHeader}>
-                <h4>Bachelor of Science in Design</h4>
-                <span className={styles.resumeDate}>2016 - 2020</span>
-              </div>
-              <p className={styles.resumeCompany}>University Name</p>
-            </div>
-          </div>
-
-          {/* Skills */}
-          <div className={styles.resumeSection}>
-            <h3>Skills</h3>
-            
-            <div className={styles.skillsGrid}>
-              <div className={styles.skillCategory}>
-                <h4>Design</h4>
-                <ul className={styles.skillList}>
-                  <li>User Research</li>
-                  <li>Wireframing</li>
-                  <li>Prototyping</li>
-                  <li>UI Design</li>
-                  <li>Design Systems</li>
-                </ul>
-              </div>
-
-              <div className={styles.skillCategory}>
-                <h4>Tools</h4>
-                <ul className={styles.skillList}>
-                  <li>Figma</li>
-                  <li>Adobe XD</li>
-                  <li>Sketch</li>
-                  <li>InVision</li>
-                  <li>Miro</li>
-                </ul>
-              </div>
-
-              <div className={styles.skillCategory}>
-                <h4>Research</h4>
-                <ul className={styles.skillList}>
-                  <li>User Interviews</li>
-                  <li>Usability Testing</li>
-                  <li>Surveys</li>
-                  <li>Personas</li>
-                  <li>Journey Mapping</li>
-                </ul>
-              </div>
+          <div className={styles.resumeContent}>
+            <h2>Resume</h2>
+            <p className={styles.resumeDescription}>
+              View my professional experience and connect with me on LinkedIn.
+            </p>
+            <div className={styles.resumeLinks}>
+              <a href="/resume.pdf" className={styles.resumeLink} download>
+                Download Resume (PDF)
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/elizabeth-a-means/" 
+                className={styles.resumeLink}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                View on LinkedIn
+              </a>
             </div>
           </div>
         </div>
