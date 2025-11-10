@@ -56,10 +56,9 @@
 }
 
 .hero {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 36px;
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg) 100%);
   min-height: 70vh;
-  display: flex;
   align-items: center;
   scroll-margin-top: 100px;
 }
@@ -94,7 +93,7 @@
 }
 
 .about {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 36px;
   scroll-margin-top: 100px;
 }
 
@@ -112,7 +111,7 @@
 }
 
 .resume {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 36px;
   background: var(--color-bg-light);
   scroll-margin-top: 100px;
 }
@@ -156,7 +155,7 @@
 }
 
 .contact {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 36px;
   scroll-margin-top: 100px;
 }
 
