@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -9,6 +9,8 @@ export default function Home() {
     email: '',
     message: ''
   })
+  const [skipLinkFocused, setSkipLinkFocused] = useState(false)
+  const skipLinkRef = useRef<HTMLAnchorElement>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -43,16 +45,41 @@ export default function Home() {
     })
   }
 
+  useEffect(() => {
+    const skipLink = skipLinkRef.current
+    if (!skipLink) return
+
+    const handleFocus = () => setSkipLinkFocused(true)
+    const handleBlur = () => setSkipLinkFocused(false)
+
+    skipLink.addEventListener('focus', handleFocus)
+    skipLink.addEventListener('blur', handleBlur)
+
+    return () => {
+      skipLink.removeEventListener('focus', handleFocus)
+      skipLink.removeEventListener('blur', handleBlur)
+    }
+  }, [])
+
   return (
-    <main>
-      {/* Navigation */}
-      <nav className={styles.nav}>
+    <>
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className={styles.skipLink}
+        ref={skipLinkRef}
+      >
+        Skip to main content
+      </a>
+      <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
+        {/* Navigation */}
+        <nav className={styles.nav}>
         <div className={styles.navContainer}>
           <a href="#home" className={styles.logo}>Elizabeth Means</a>
-          <ul className={styles.navLinks}>
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <ul className={styles.navLinks} role="list">
+            <li><a href="#about" aria-label="Navigate to About section">About</a></li>
+            <li><a href="#resume" aria-label="Navigate to Resume section">Resume</a></li>
+            <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -77,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className={styles.about}>
+      <section id="main-content" className={styles.about}>
         <div className={styles.container}>
           <div className={styles.aboutContent}>
             <h2>About Me</h2>
@@ -187,7 +214,7 @@ export default function Home() {
                 ></textarea>
               </div>
 
-              <button type="submit" className={styles.btn}>Send Message</button>
+              <button type="submit" className={styles.btn} aria-label="Send contact form message">Send Message</button>
             </form>
           </div>
         </div>
@@ -205,7 +232,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   )
 }
 
