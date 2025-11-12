@@ -276,17 +276,40 @@
 }
 
 .contactContent {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
 }
 
 .contactInfo {
-  margin-bottom: var(--spacing-xl);
-  text-align: center;
+  text-align: left;
+}
+
+.contactInfo h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.contactInfo p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-light);
+}
+
+.contactDetails {
+  margin-top: var(--spacing-lg);
 }
 
 .contactItem {
   margin-bottom: var(--spacing-md);
+}
+
+.contactItem strong {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .contactItem a {
@@ -309,6 +332,11 @@
   background: var(--color-bg-light);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 .formGroup {
@@ -451,6 +479,15 @@
   }
 
   .resumeLink {
+    text-align: center;
+  }
+
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .contactInfo {
     text-align: center;
   }
 
