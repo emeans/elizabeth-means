@@ -61,12 +61,17 @@ export default function Home() {
       <section id="home" className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.heroContent}>
-            <h1>Hi, I'm Elizabeth Means</h1>
-            <p className={styles.heroSubtitle}>UX Designer & User Experience Researcher</p>
-            <p className={styles.heroDescription}>
-              I create meaningful digital experiences through user-centered design, 
-              research, and thoughtful problem-solving.
-            </p>
+            <div className={styles.heroImage}>
+              <img src="/portrait.png" alt="Elizabeth Means" />
+            </div>
+            <div className={styles.heroText}>
+              <h1>Hi, I'm Elizabeth Means</h1>
+              <p className={styles.heroSubtitle}>UX Designer & User Experience Researcher</p>
+              <p className={styles.heroDescription}>
+                I create meaningful digital experiences through user-centered design, 
+                research, and thoughtful problem-solving.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +134,7 @@ export default function Home() {
               <div className={styles.contactDetails}>
                 <div className={styles.contactItem}>
                   <strong>Email</strong>
-                  <a href="mailto:hello@elizabethmeans.com">hello@elizabethmeans.com</a>
+                  <a href="mailto:hi@elizabethmeans.com">hi@elizabethmeans.com</a>
                 </div>
                 <div className={styles.contactItem}>
                   <strong>LinkedIn</strong>
