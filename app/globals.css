@@ -5,16 +5,16 @@
 }
 
 :root {
-  --color-primary: #2d3748;
-  --color-secondary: #4a5568;
-  --color-accent: #5bbad5;
-  --color-text: #1a202c;
-  --color-text-light: #718096;
-  --color-bg: #ffffff;
-  --color-bg-light: #f7fafc;
-  --color-border: #e2e8f0;
+  --color-bg: #FAF9F6;
+  --color-text: #2C2C2C;
+  --color-accent: #5B8A8A;
+  --color-accent-dark: #4A7C7C;
+  --color-subtle: #D4A574;
+  --color-text-light: #4A4A4A;
+  --color-bg-light: #FAF9F6;
+  --color-border: #D4A574;
   --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-  --font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;  
+  --font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -40,6 +40,16 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,15 +80,6 @@ p {
   margin-bottom: var(--spacing-md);
 }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-a:hover {
-  opacity: 0.8;
-}
 
 img {
   max-width: 100%;
