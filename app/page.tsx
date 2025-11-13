@@ -17,6 +17,7 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
   const [skipLinkFocused, setSkipLinkFocused] = useState(false)
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const skipLinkRef = useRef<HTMLAnchorElement>(null)
   const statusLiveRegionRef = useRef<HTMLDivElement>(null)
 
@@ -166,6 +167,25 @@ export default function Home() {
     }
   }
 
+  // Initialize theme from localStorage or system preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    const initialTheme = savedTheme || systemTheme
+    setTheme(initialTheme)
+    document.documentElement.setAttribute('data-theme', initialTheme)
+  }, [])
+
+  // Update theme when it changes
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+  }
+
   useEffect(() => {
     const skipLink = skipLinkRef.current
     if (!skipLink) return
@@ -197,11 +217,21 @@ export default function Home() {
         <nav className={styles.nav}>
         <div className={styles.navContainer}>
           <a href="#home" className={styles.logo}>Elizabeth Means</a>
-          <ul className={styles.navLinks} role="list">
-            <li><a href="#main-content" aria-label="Navigate to About section">About</a></li>
-            <li><a href="#resume" aria-label="Navigate to Resume section">Resume</a></li>
-            <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
-          </ul>
+          <div className={styles.navRight}>
+            <ul className={styles.navLinks} role="list">
+              <li><a href="#main-content" aria-label="Navigate to About section">About</a></li>
+              <li><a href="#resume" aria-label="Navigate to Resume section">Resume</a></li>
+              <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
+            </ul>
+            <button 
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            >
+              {theme === 'light' ? '🌙' : '☀️'}
+            </button>
+          </div>
         </div>
       </nav>
 
