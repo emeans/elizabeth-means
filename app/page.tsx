@@ -18,8 +18,10 @@ export default function Home() {
   const [statusMessage, setStatusMessage] = useState('')
   const [skipLinkFocused, setSkipLinkFocused] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const skipLinkRef = useRef<HTMLAnchorElement>(null)
   const statusLiveRegionRef = useRef<HTMLDivElement>(null)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   const validateForm = (): boolean => {
     const errors = {
@@ -186,6 +188,44 @@ export default function Home() {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
   }
 
+  // Close mobile menu when clicking outside or on escape key, and manage focus
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+        // Return focus to hamburger button after menu closes
+        setTimeout(() => {
+          const hamburger = document.querySelector(`button[aria-controls="mobile-menu"]`) as HTMLButtonElement
+          if (hamburger) {
+            hamburger.focus()
+          }
+        }, 50)
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape)
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden'
+      
+      // Focus first link in menu when it opens
+      const firstLink = mobileMenuRef.current?.querySelector('a') as HTMLAnchorElement
+      if (firstLink) {
+        // Small delay to ensure menu is visible
+        setTimeout(() => {
+          firstLink.focus()
+        }, 100)
+      }
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   useEffect(() => {
     const skipLink = skipLinkRef.current
     if (!skipLink) return
@@ -214,14 +254,32 @@ export default function Home() {
       </a>
       <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
         {/* Navigation */}
+        {mobileMenuOpen && (
+          <div 
+            className={styles.mobileMenuOverlay}
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
         <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <a href="#home" className={styles.logo}>Elizabeth Means</a>
-          <div className={styles.navRight}>
+          <a href="#home" className={styles.logo} onClick={() => setMobileMenuOpen(false)}>Elizabeth Means</a>
+          <button
+            className={styles.hamburger}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
+          </button>
+          <div className={styles.navRight} id="mobile-menu" ref={mobileMenuRef} aria-hidden={!mobileMenuOpen}>
             <ul className={styles.navLinks} role="list">
-              <li><a href="#main-content" aria-label="Navigate to About section">About</a></li>
-              <li><a href="#resume" aria-label="Navigate to Resume section">Resume</a></li>
-              <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
+              <li><a href="#main-content" aria-label="Navigate to About section" onClick={() => setMobileMenuOpen(false)}>About</a></li>
+              <li><a href="#resume" aria-label="Navigate to Resume section" onClick={() => setMobileMenuOpen(false)}>Resume</a></li>
+              <li><a href="#contact" aria-label="Navigate to Contact section" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
             </ul>
             <button 
               className={styles.themeToggle}
