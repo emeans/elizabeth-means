@@ -7,12 +7,12 @@
 :root {
   --color-bg: #FAF9F6;
   --color-text: #2C2C2C;
-  --color-accent: #5B8A8A;
-  --color-accent-dark: #4A7C7C;
-  --color-subtle: #D4A574;
+  --color-accent: #64785E;
+  --color-accent-dark: #2C3E50;
+  --color-subtle: #1B4242;
   --color-text-light: #4A4A4A;
   --color-bg-light: #FAF9F6;
-  --color-border: #D4A574;
+  --color-border: #1B4242;
   --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --spacing-xs: 0.5rem;
@@ -63,7 +63,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
