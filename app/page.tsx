@@ -169,6 +169,47 @@ export default function Home() {
     }
   }
 
+  // Track window size for responsive menu
+  const [isMobile, setIsMobile] = useState(false)
+  const prevIsMobileRef = useRef(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const mobile = window.innerWidth <= 768
+      const wasMobile = prevIsMobileRef.current
+      
+      if (mobile !== isMobile) {
+        setIsMobile(mobile)
+        prevIsMobileRef.current = mobile
+        
+        // Close menu if resizing from mobile to tablet/desktop
+        if (wasMobile && !mobile && mobileMenuOpen) {
+          setMobileMenuOpen(false)
+        }
+      }
+    }
+
+    // Check on mount
+    if (typeof window !== 'undefined') {
+      const initialMobile = window.innerWidth <= 768
+      setIsMobile(initialMobile)
+      prevIsMobileRef.current = initialMobile
+    }
+
+    // Listen for resize events (throttled)
+    let timeoutId: NodeJS.Timeout
+    const handleResize = () => {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(checkIsMobile, 100)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      clearTimeout(timeoutId)
+    }
+  }, [isMobile, mobileMenuOpen])
+
   // Initialize theme from localStorage or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
@@ -190,6 +231,12 @@ export default function Home() {
 
   // Close mobile menu when clicking outside or on escape key, and manage focus
   useEffect(() => {
+    // Only handle mobile menu on small screens
+    if (!isMobile) {
+      document.body.style.overflow = ''
+      return
+    }
+
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && mobileMenuOpen) {
         setMobileMenuOpen(false)
@@ -203,7 +250,7 @@ export default function Home() {
       }
     }
 
-    if (mobileMenuOpen) {
+    if (mobileMenuOpen && isMobile) {
       document.addEventListener('keydown', handleEscape)
       // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden'
@@ -224,7 +271,7 @@ export default function Home() {
       document.removeEventListener('keydown', handleEscape)
       document.body.style.overflow = ''
     }
-  }, [mobileMenuOpen])
+  }, [mobileMenuOpen, isMobile])
 
   useEffect(() => {
     const skipLink = skipLinkRef.current
@@ -254,7 +301,7 @@ export default function Home() {
       </a>
       <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
         {/* Navigation */}
-        {mobileMenuOpen && (
+        {mobileMenuOpen && isMobile && (
           <div 
             className={styles.mobileMenuOverlay}
             onClick={() => setMobileMenuOpen(false)}
@@ -266,20 +313,42 @@ export default function Home() {
           <a href="#home" className={styles.logo} onClick={() => setMobileMenuOpen(false)}>Elizabeth Means</a>
           <button
             className={styles.hamburger}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              // Only toggle menu on mobile
+              if (isMobile) {
+                setMobileMenuOpen(!mobileMenuOpen)
+              }
+            }}
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
+            aria-expanded={mobileMenuOpen && isMobile}
             aria-controls="mobile-menu"
           >
             <span className={styles.hamburgerLine}></span>
             <span className={styles.hamburgerLine}></span>
             <span className={styles.hamburgerLine}></span>
           </button>
-          <div className={styles.navRight} id="mobile-menu" ref={mobileMenuRef} aria-hidden={!mobileMenuOpen}>
+          <div 
+            className={styles.navRight} 
+            id="mobile-menu" 
+            ref={mobileMenuRef} 
+            aria-hidden={!isMobile ? false : !mobileMenuOpen}
+          >
             <ul className={styles.navLinks} role="list">
-              <li><a href="#main-content" aria-label="Navigate to About section" onClick={() => setMobileMenuOpen(false)}>About</a></li>
-              <li><a href="#resume" aria-label="Navigate to Resume section" onClick={() => setMobileMenuOpen(false)}>Resume</a></li>
-              <li><a href="#contact" aria-label="Navigate to Contact section" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
+              <li><a href="#main-content" aria-label="Navigate to About section" onClick={() => {
+                if (isMobile) {
+                  setMobileMenuOpen(false)
+                }
+              }}>About</a></li>
+              <li><a href="#resume" aria-label="Navigate to Resume section" onClick={() => {
+                if (isMobile) {
+                  setMobileMenuOpen(false)
+                }
+              }}>Resume</a></li>
+              <li><a href="#contact" aria-label="Navigate to Contact section" onClick={() => {
+                if (isMobile) {
+                  setMobileMenuOpen(false)
+                }
+              }}>Contact</a></li>
             </ul>
             <button 
               className={styles.themeToggle}

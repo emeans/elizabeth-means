@@ -692,6 +692,70 @@
 
 /* Tablet breakpoint */
 @media (min-width: 769px) and (max-width: 1024px) {
+  /* Ensure hamburger is hidden on tablet */
+  .hamburger {
+    display: none !important;
+  }
+
+  /* Reset navRight to normal display on tablet */
+  .navRight {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: var(--spacing-lg) !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    z-index: auto !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+  }
+
+  /* Reset navLinks to horizontal on tablet */
+  .navLinks {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: var(--spacing-lg) !important;
+    width: auto !important;
+  }
+
+  .navLinks li {
+    width: auto !important;
+  }
+
+  .navLinks a {
+    display: inline-block !important;
+    width: auto !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    border-radius: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .navLinks a::after {
+    display: block !important;
+  }
+
+  /* Reset theme toggle on tablet */
+  .themeToggle {
+    width: auto !important;
+    min-width: 80px !important;
+    justify-content: center !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    margin-top: 0 !important;
+  }
+
+  .themeToggleText {
+    display: inline !important;
+  }
+
   .hero {
     min-height: 70vh;
     padding: var(--spacing-xl) 0;
@@ -756,6 +820,16 @@
 
   .contactInfo {
     padding: 0;
+  }
+
+  /* Ensure mobile menu overlay doesn't show on tablet */
+  .mobileMenuOverlay {
+    display: none !important;
+  }
+
+  /* Reset any mobile menu transform on tablet */
+  .navRight[aria-hidden="false"] {
+    transform: none !important;
   }
 }
 
