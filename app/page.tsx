@@ -247,19 +247,18 @@ export default function Home() {
           <div className={styles.resumeContent}>
             <h2>Resume</h2>
             <p className={styles.resumeDescription}>
-              Want to know more about my experience? Download my resume or connect with me on LinkedIn.
+              Want to know more about my experience? 
+              Download my resume, view my 
+              <span className={styles.contactItem}>
+                <a href="https://www.linkedin.com/in/elizabeth-a-means/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> LinkedIn</a>
+              </span> or 
+              <span>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"> GitHub</a>
+              </span>.
             </p>
             <div className={styles.resumeLinks}>
-              <a href="/resume.pdf" className={styles.resumeLink} download>
+              <a href="/elizabeth-meansresume.pdf" className={styles.resumeLink} download>
                 Download Resume (PDF)
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/elizabeth-a-means/" 
-                className={styles.resumeLink}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                View on LinkedIn
               </a>
             </div>
           </div>
@@ -273,18 +272,13 @@ export default function Home() {
             <div className={styles.contactInfo}>
               <h2>Get In Touch</h2>
               <p>
-                I'd love to hear from you—whether you want to discuss a potential opportunity, collaborate on a project, or just chat about design and engineering.
+                I'd love to hear from you—whether you want to discuss a potential opportunity, collaborate on a project, or just chat about design and engineering. 
               </p>
-              <div className={styles.contactDetails}>
-                <div className={styles.contactItem}>
-                  <strong>Email</strong>
-                  <a href="mailto:hi@elizabethmeans.com">hi@elizabethmeans.com</a>
-                </div>
-                <div className={styles.contactItem}>
-                  <strong>LinkedIn</strong>
-                  <a href="https://www.linkedin.com/in/elizabeth-a-means/" target="_blank" rel="noopener noreferrer">Connect with me</a>
-                </div>
-              </div>
+              <p>Fill out the form to send me a message or email me directly at 
+                <span className={styles.contactItem}>
+                  <a href="mailto:hi@elizabethmeans.com"> hi@elizabethmeans.com</a>
+                </span>.
+              </p>
             </div>
 
             <form name="contact" method="POST" className={styles.contactForm} data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} noValidate>
