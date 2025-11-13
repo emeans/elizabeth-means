@@ -1,0 +1,105 @@
+.resume {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--color-bg-secondary);
+  scroll-margin-top: 0;
+  transition: background 0.3s ease;
+}
+
+.resumeContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resumeDescription {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+}
+
+.resumeLinks {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resumeLink {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-accent-on-bg);
+  color: var(--color-text-inverse);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.resumeLink:hover,
+.resumeLink:focus {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  color: var(--color-text-inverse);
+  text-decoration: none !important;
+}
+
+.resumeLink:focus {
+  outline: 3px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+}
+
+.contactItem {
+  margin-bottom: var(--spacing-md);
+}
+
+.contactItem a {
+  color: var(--color-accent-on-bg);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contactItem a:hover,
+.contactItem a:focus {
+  color: var(--color-accent-hover);
+}
+
+.contactItem a:focus {
+  outline: 2px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Tablet breakpoint */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resume {
+    padding: var(--spacing-xl) var(--spacing-md);
+    scroll-margin-top: 80px;
+  }
+
+  .resumeContent {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .resume {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .resumeLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resumeLink {
+    text-align: center;
+  }
+}
+
