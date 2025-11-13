@@ -198,7 +198,7 @@ export default function Home() {
         <div className={styles.navContainer}>
           <a href="#home" className={styles.logo}>Elizabeth Means</a>
           <ul className={styles.navLinks} role="list">
-            <li><a href="#about" aria-label="Navigate to About section">About</a></li>
+            <li><a href="#main-content" aria-label="Navigate to About section">About</a></li>
             <li><a href="#resume" aria-label="Navigate to Resume section">Resume</a></li>
             <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
           </ul>

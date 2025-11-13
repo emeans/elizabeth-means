@@ -115,7 +115,7 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 0;
   position: relative;
 }
 
@@ -227,7 +227,7 @@
 .resume {
   padding: var(--spacing-2xl) 36px;
   background: var(--color-bg-light);
-  scroll-margin-top: 100px;
+  scroll-margin-top: 0;
 }
 
 .resumeContent {
@@ -272,7 +272,7 @@
 
 .contact {
   padding: var(--spacing-2xl) 36px;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 0;
 }
 
 .contactContent {
