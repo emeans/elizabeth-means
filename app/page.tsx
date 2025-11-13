@@ -245,7 +245,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.heroContent}>
             <div className={styles.heroImage}>
-              <img src="/portrait.png" alt="Elizabeth Means" />
+              <img src="/portrait.png" alt="Portrait photo of Elizabeth Means, Product Designer & Engineer" />
             </div>
             <div className={styles.heroText}>
               <h1>Hi, I'm Elizabeth Means</h1>
