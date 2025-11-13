@@ -93,10 +93,9 @@ export default function Home() {
             </div>
             <div className={styles.heroText}>
               <h1>Hi, I'm Elizabeth Means</h1>
-              <p className={styles.heroSubtitle}>UX Designer & User Experience Researcher</p>
+              <p className={styles.heroSubtitle}>Product Designer & Engineer</p>
               <p className={styles.heroDescription}>
-                I create meaningful digital experiences through user-centered design, 
-                research, and thoughtful problem-solving.
+                I bridge design and engineering—creating systems that work beautifully for both users and the teams who build them.
               </p>
             </div>
           </div>
@@ -109,14 +108,13 @@ export default function Home() {
           <div className={styles.aboutContent}>
             <h2>About Me</h2>
             <p>
-              I'm a UX designer passionate about creating intuitive, accessible, 
-              and delightful user experiences. With a focus on research-driven design, 
-              I work to understand user needs and translate insights into beautiful, 
-              functional interfaces.
+              My path to design has been unconventional. I started with an art foundation before transitioning to computer science, then spent a decade as a full-stack engineer and engineering leader. Along the way, I discovered what energizes me most: understanding what people need and creating solutions that work for both users and the teams building them.
             </p>
             <p>
-              My approach combines empathy, creativity, and strategic thinking to solve 
-              complex design challenges and deliver products that users love.
+              For the past two years, I've been leading product development for a management information system serving the WIC program. I conduct discovery sessions with stakeholders, create design solutions in Figma, and lead a cross-functional engineering team. I've also championed design systems thinking—co-founding my company's internal Design Group and publishing articles about user-centered design.
+            </p>
+            <p>
+              I'm currently completing a UX Research & Design certification from the University of Michigan to formalize skills I've been developing through practice. I'm drawn to design systems, stakeholder discovery, and the challenge of creating experiences that are both beautiful and buildable.
             </p>
           </div>
         </div>
@@ -128,7 +126,7 @@ export default function Home() {
           <div className={styles.resumeContent}>
             <h2>Resume</h2>
             <p className={styles.resumeDescription}>
-              View my professional experience and connect with me on LinkedIn.
+              Want to know more about my experience? Download my resume or connect with me on LinkedIn.
             </p>
             <div className={styles.resumeLinks}>
               <a href="/resume.pdf" className={styles.resumeLink} download>
@@ -154,9 +152,7 @@ export default function Home() {
             <div className={styles.contactInfo}>
               <h2>Get In Touch</h2>
               <p>
-                Whether you have a project in mind, want to collaborate, or just want to say hello, 
-                I'd love to hear from you. Feel free to reach out through the form or connect with me 
-                on social media.
+                I'd love to hear from you—whether you want to discuss a potential opportunity, collaborate on a project, or just chat about design and engineering.
               </p>
               <div className={styles.contactDetails}>
                 <div className={styles.contactItem}>
