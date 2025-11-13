@@ -23,11 +23,11 @@ export default function Home() {
     const checkIsMobile = () => {
       const mobile = window.innerWidth <= 768
       const wasMobile = prevIsMobileRef.current
-      
+
       if (mobile !== isMobile) {
         setIsMobile(mobile)
         prevIsMobileRef.current = mobile
-        
+
         // Close menu if resizing from mobile to tablet/desktop
         if (wasMobile && !mobile && mobileMenuOpen) {
           setMobileMenuOpen(false)
@@ -72,7 +72,7 @@ export default function Home() {
   }, [theme])
 
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
   }
 
   // Close mobile menu when clicking outside or on escape key, and manage focus
@@ -88,7 +88,9 @@ export default function Home() {
         setMobileMenuOpen(false)
         // Return focus to hamburger button after menu closes
         setTimeout(() => {
-          const hamburger = document.querySelector(`button[aria-controls="mobile-menu"]`) as HTMLButtonElement
+          const hamburger = document.querySelector(
+            `button[aria-controls="mobile-menu"]`,
+          ) as HTMLButtonElement
           if (hamburger) {
             hamburger.focus()
           }
@@ -100,7 +102,7 @@ export default function Home() {
       document.addEventListener('keydown', handleEscape)
       // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden'
-      
+
       // Focus first link in menu when it opens
       const firstLink = mobileMenuRef.current?.querySelector('a') as HTMLAnchorElement
       if (firstLink) {
@@ -138,88 +140,103 @@ export default function Home() {
   return (
     <>
       {/* Skip to main content link for accessibility */}
-      <a 
-        href="#main-content" 
-        className={styles.skipLink}
-        ref={skipLinkRef}
-      >
+      <a href='#main-content' className={styles.skipLink} ref={skipLinkRef}>
         Skip to main content
       </a>
       <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
         {/* Navigation */}
         {mobileMenuOpen && isMobile && (
-          <div 
+          <div
             className={styles.mobileMenuOverlay}
             onClick={() => setMobileMenuOpen(false)}
-            aria-hidden="true"
+            aria-hidden='true'
           />
         )}
         <nav className={styles.nav}>
-        <div className={styles.navContainer}>
-          <a href="#home" className={styles.logo} onClick={() => setMobileMenuOpen(false)}>Elizabeth Means</a>
-          <button
-            className={styles.hamburger}
-            onClick={() => {
-              // Only toggle menu on mobile
-              if (isMobile) {
-                setMobileMenuOpen(!mobileMenuOpen)
-              }
-            }}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen && isMobile}
-            aria-controls="mobile-menu"
-          >
-            <span className={styles.hamburgerLine}></span>
-            <span className={styles.hamburgerLine}></span>
-            <span className={styles.hamburgerLine}></span>
-          </button>
-          <div 
-            className={styles.navRight} 
-            id="mobile-menu" 
-            ref={mobileMenuRef} 
-            aria-hidden={!isMobile ? false : !mobileMenuOpen}
-          >
-            <ul className={styles.navLinks} role="list">
-              <li><a href="#main-content" aria-label="Navigate to About section" onClick={() => {
+          <div className={styles.navContainer}>
+            <a href='#home' className={styles.logo} onClick={() => setMobileMenuOpen(false)}>
+              Elizabeth Means
+            </a>
+            <button
+              className={styles.hamburger}
+              onClick={() => {
+                // Only toggle menu on mobile
                 if (isMobile) {
-                  setMobileMenuOpen(false)
+                  setMobileMenuOpen(!mobileMenuOpen)
                 }
-              }}>About</a></li>
-              <li><a href="#resume" aria-label="Navigate to Resume section" onClick={() => {
-                if (isMobile) {
-                  setMobileMenuOpen(false)
-                }
-              }}>Resume</a></li>
-              <li><a href="#contact" aria-label="Navigate to Contact section" onClick={() => {
-                if (isMobile) {
-                  setMobileMenuOpen(false)
-                }
-              }}>Contact</a></li>
-            </ul>
-            <button 
-              className={styles.themeToggle}
-              onClick={toggleTheme}
-              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-              title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-            >
-              <span className={styles.themeToggleIcon} aria-hidden="true">
-                {theme === 'light' ? '🌙' : '☀️'}
-              </span>
-              <span className={styles.themeToggleText}>
-                {theme === 'light' ? 'Dark' : 'Light'}
-              </span>
+              }}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen && isMobile}
+              aria-controls='mobile-menu'>
+              <span className={styles.hamburgerLine}></span>
+              <span className={styles.hamburgerLine}></span>
+              <span className={styles.hamburgerLine}></span>
             </button>
+            <div
+              className={styles.navRight}
+              id='mobile-menu'
+              ref={mobileMenuRef}
+              aria-hidden={!isMobile ? false : !mobileMenuOpen}>
+              <ul className={styles.navLinks} role='list'>
+                <li>
+                  <a
+                    href='#main-content'
+                    aria-label='Navigate to About section'
+                    onClick={() => {
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#resume'
+                    aria-label='Navigate to Resume section'
+                    onClick={() => {
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
+                    Resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#contact'
+                    aria-label='Navigate to Contact section'
+                    onClick={() => {
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+              <button
+                className={styles.themeToggle}
+                onClick={toggleTheme}
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>
+                <span className={styles.themeToggleIcon} aria-hidden='true'>
+                  {theme === 'light' ? '🌙' : '☀️'}
+                </span>
+                <span className={styles.themeToggleText}>
+                  {theme === 'light' ? 'Dark' : 'Light'}
+                </span>
+              </button>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-      <Hero />
-      <About />
-      <Resume />
-      <Contact />
-      <Footer />
+        <Hero />
+        <About />
+        <Resume />
+        <Contact />
+        <Footer />
       </main>
     </>
   )
 }
-
