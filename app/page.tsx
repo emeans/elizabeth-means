@@ -284,15 +284,15 @@ export default function Home() {
             <p className={styles.resumeDescription}>
               Want to know more about my experience? 
               Download my resume, view my 
-              <span className={styles.contactItem}>
-                <a href="https://www.linkedin.com/in/elizabeth-a-means/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> LinkedIn</a>
+              <span className={styles.contactItem}>&nbsp;
+                <a href="https://www.linkedin.com/in/elizabeth-a-means/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
               </span> or 
-              <span>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"> GitHub</a>
+              <span>&nbsp;
+                <a href="https://github.com/emeans" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
               </span>.
             </p>
             <div className={styles.resumeLinks}>
-              <a href="/elizabeth-meansresume.pdf" className={styles.resumeLink} download>
+              <a href="/elizabeth-means-resume.pdf" className={styles.resumeLink} download>
                 Download Resume (PDF)
               </a>
             </div>
@@ -310,8 +310,8 @@ export default function Home() {
                 I'd love to hear from you—whether you want to discuss a potential opportunity, collaborate on a project, or just chat about design and engineering. 
               </p>
               <p>Fill out the form to send me a message or email me directly at 
-                <span className={styles.contactItem}>
-                  <a href="mailto:hi@elizabethmeans.com"> hi@elizabethmeans.com</a>
+                <span className={styles.contactItem}>&nbsp;
+                  <a href="mailto:hi@elizabethmeans.com">hi@elizabethmeans.com</a>
                 </span>.
               </p>
             </div>
@@ -432,7 +432,7 @@ export default function Home() {
             <p>&copy; {new Date().getFullYear()} Elizabeth Means. All rights reserved.</p>
             <div className={styles.socialLinks}>
               <a href="https://www.linkedin.com/in/elizabeth-a-means/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+              <a href="https://github.com/emeans" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
             </div>
           </div>
         </div>

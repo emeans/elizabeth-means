@@ -12,6 +12,7 @@
   --color-text: #1A1A1A;
   --color-text-secondary: #4B5563;
   --color-text-light: #6B7280;
+  --color-text-inverse: #FFFFFF;
   --color-accent: #4F46E5;
   --color-accent-hover: #4338CA;
   --color-accent-light: #6366F1;
@@ -43,12 +44,13 @@
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --color-bg: #0A0A0A;
+  --color-bg: #0D0D0D;
   --color-bg-secondary: #1A1A1A;
   --color-bg-tertiary: #111111;
   --color-text: #F5F5F5;
   --color-text-secondary: #D1D5DB;
   --color-text-light: #9CA3AF;
+  --color-text-inverse: #0A0A0A;
   --color-accent: #818CF8;
   --color-accent-hover: #A5B4FC;
   --color-accent-light: #6366F1;
