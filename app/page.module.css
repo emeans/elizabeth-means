@@ -3,8 +3,8 @@
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent-on-bg);
+  color: #FFFFFF;
   padding: 12px 24px;
   text-decoration: none;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
@@ -22,7 +22,7 @@
   top: 0;
   opacity: 1;
   pointer-events: auto;
-  outline: 3px solid var(--color-bg);
+  outline: 3px solid #FFFFFF;
   outline-offset: -3px;
   box-shadow: 0 4px 12px var(--color-shadow-strong);
 }
@@ -77,7 +77,7 @@
 }
 
 .logo:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 4px;
   border-radius: 2px;
 }
@@ -98,11 +98,11 @@
 
 .navLinks a:hover,
 .navLinks a:focus {
-  color: var(--color-accent);
+  color: var(--color-accent-on-bg);
 }
 
 .navLinks a:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 4px;
   border-radius: 2px;
 }
@@ -114,7 +114,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--color-accent);
+  background: var(--color-accent-on-bg);
   transition: width 0.3s ease;
 }
 
@@ -127,30 +127,50 @@
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  gap: var(--spacing-xs);
+  min-width: 80px;
   height: 40px;
   line-height: 1;
+  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-body);
 }
 
 .themeToggle:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-accent-on-bg);
+  border-color: var(--color-accent-on-bg);
   transform: scale(1.05);
+  color: #FFFFFF;
 }
 
 .themeToggle:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 2px;
 }
 
 .themeToggle:active {
   transform: scale(0.95);
+}
+
+.themeToggleIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.themeToggleText {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .hero {
@@ -297,8 +317,8 @@
 .resumeLink {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent-on-bg);
+  color: #FFFFFF;
   border-radius: var(--border-radius);
   font-weight: 600;
   transition: var(--transition);
@@ -312,7 +332,7 @@
 }
 
 .resumeLink:focus {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-accent-on-bg);
   outline-offset: 2px;
 }
 
@@ -359,7 +379,7 @@
 }
 
 .contactItem a {
-  color: var(--color-accent);
+  color: var(--color-accent-on-bg);
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -370,7 +390,7 @@
 }
 
 .contactItem a:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -388,7 +408,7 @@
 }
 
 .requiredIndicator {
-  color: var(--color-accent);
+  color: var(--color-accent-on-bg);
   font-weight: 700;
   margin-left: 2px;
 }
@@ -400,22 +420,30 @@
 
 .successMessage {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(5, 150, 105, 0.15);
   color: var(--color-success);
-  border: 1px solid var(--color-success);
+  border: 2px solid var(--color-success);
   border-radius: var(--border-radius);
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+[data-theme="dark"] .successMessage {
+  background-color: rgba(52, 211, 153, 0.15);
+}
+
 .errorMessage {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: rgba(239, 68, 68, 0.1);
+  background-color: rgba(220, 38, 38, 0.15);
   color: var(--color-error);
-  border: 1px solid var(--color-error);
+  border: 2px solid var(--color-error);
   border-radius: var(--border-radius);
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .errorMessage {
+  background-color: rgba(248, 113, 113, 0.15);
 }
 
 .formGroup {
@@ -444,10 +472,15 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 2px;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  border-color: var(--color-accent-on-bg);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+[data-theme="dark"] .formGroup input:focus,
+[data-theme="dark"] .formGroup textarea:focus {
+  box-shadow: 0 0 0 2px rgba(165, 180, 252, 0.3);
 }
 
 .formGroup input.inputError,
@@ -460,7 +493,12 @@
 .formGroup textarea.inputError:focus {
   outline-color: var(--color-error);
   border-color: var(--color-error);
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+[data-theme="dark"] .formGroup input.inputError:focus,
+[data-theme="dark"] .formGroup textarea.inputError:focus {
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.3);
 }
 
 .fieldError {
@@ -486,8 +524,8 @@
 
 .btn {
   padding: var(--spacing-sm) var(--spacing-lg);
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent-on-bg);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
   font-family: var(--font-body);
@@ -506,7 +544,7 @@
 }
 
 .btn:focus {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-accent-on-bg);
   outline-offset: 2px;
 }
 
@@ -549,11 +587,11 @@
 
 .socialLinks a:hover,
 .socialLinks a:focus {
-  color: var(--color-accent);
+  color: var(--color-accent-on-bg);
 }
 
 .socialLinks a:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-on-bg);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -606,6 +644,21 @@
 
   .contactInfo {
     text-align: center;
+  }
+
+  .themeToggle {
+    min-width: 40px;
+    width: 40px;
+    padding: var(--spacing-xs);
+    gap: 0;
+  }
+
+  .themeToggleText {
+    display: none;
+  }
+
+  .themeToggleIcon {
+    font-size: 1.25rem;
   }
 
   .skipLink {

@@ -10,15 +10,16 @@
   --color-bg-secondary: #F5F5F5;
   --color-bg-tertiary: #FAFAFA;
   --color-text: #1A1A1A;
-  --color-text-secondary: #6B7280;
-  --color-text-light: #9CA3AF;
-  --color-accent: #6366F1;
-  --color-accent-hover: #4F46E5;
-  --color-accent-light: #818CF8;
+  --color-text-secondary: #4B5563;
+  --color-text-light: #6B7280;
+  --color-accent: #4F46E5;
+  --color-accent-hover: #4338CA;
+  --color-accent-light: #6366F1;
+  --color-accent-on-bg: #4F46E5;
   --color-border: #E5E7EB;
   --color-border-light: #F3F4F6;
-  --color-success: #10B981;
-  --color-error: #EF4444;
+  --color-success: #059669;
+  --color-error: #DC2626;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-strong: rgba(0, 0, 0, 0.2);
   
@@ -51,6 +52,7 @@
   --color-accent: #818CF8;
   --color-accent-hover: #A5B4FC;
   --color-accent-light: #6366F1;
+  --color-accent-on-bg: #A5B4FC;
   --color-border: #2A2A2A;
   --color-border-light: #1A1A1A;
   --color-success: #34D399;
@@ -91,13 +93,20 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-accent-on-bg);
   text-decoration: none;
   transition: var(--transition);
 }
 
 a:hover {
   color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {

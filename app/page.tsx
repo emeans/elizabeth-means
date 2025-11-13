@@ -229,7 +229,12 @@ export default function Home() {
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
               title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
-              {theme === 'light' ? '🌙' : '☀️'}
+              <span className={styles.themeToggleIcon} aria-hidden="true">
+                {theme === 'light' ? '🌙' : '☀️'}
+              </span>
+              <span className={styles.themeToggleText}>
+                {theme === 'light' ? 'Dark' : 'Light'}
+              </span>
             </button>
           </div>
         </div>
