@@ -220,5 +220,12 @@ img {
     h3 {
         font-size: 1.5rem;
     }
+
+    .btn {
+        font-size: 0.875rem; 
+        padding: var(--spacing-sm) var(--spacing-md); 
+        line-height: 1.4; 
+        text-align: center;
+      }
 }
   
