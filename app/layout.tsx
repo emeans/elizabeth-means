@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Elizabeth Means - UX Designer & Portfolio',
-  description: 'Personal portfolio and resume of Elizabeth Means, UX Designer',
+  title: 'Elizabeth Means',
+  description: 'Product designer with 10 years of engineering experience. I bridge design and development to create user-centered solutions that actually work.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
