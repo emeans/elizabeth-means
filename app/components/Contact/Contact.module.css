@@ -222,7 +222,7 @@
 }
 
 /* Tablet breakpoint */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
   .contact {
     padding: var(--spacing-xl) var(--spacing-md);
     scroll-margin-top: 80px;
@@ -241,7 +241,7 @@
   .contactInfo {
     padding: 0;
   }
-}
+} */
 
 /* Mobile breakpoint */
 @media (max-width: 768px) {

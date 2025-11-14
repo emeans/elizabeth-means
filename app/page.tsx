@@ -16,31 +16,28 @@ export default function Home() {
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   // Track window size for responsive menu
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth <= 768
+    }
+    return false
+  })
   const prevIsMobileRef = useRef(false)
 
-  useEffect(() => {
-    const checkIsMobile = () => {
-      const mobile = window.innerWidth <= 768
-      const wasMobile = prevIsMobileRef.current
-
-      if (mobile !== isMobile) {
-        setIsMobile(mobile)
-        prevIsMobileRef.current = mobile
-
+ useEffect(() => {
+  const checkIsMobile = () => {
+        const mobile = window.innerWidth <= 768
+        setIsMobile((prevIsMobile) => {
         // Close menu if resizing from mobile to tablet/desktop
-        if (wasMobile && !mobile && mobileMenuOpen) {
+        if (prevIsMobile && !mobile && mobileMenuOpen) {
           setMobileMenuOpen(false)
         }
-      }
+        return mobile
+      })
     }
 
     // Check on mount
-    if (typeof window !== 'undefined') {
-      const initialMobile = window.innerWidth <= 768
-      setIsMobile(initialMobile)
-      prevIsMobileRef.current = initialMobile
-    }
+    checkIsMobile()
 
     // Listen for resize events (throttled)
     let timeoutId: NodeJS.Timeout
@@ -54,7 +51,7 @@ export default function Home() {
       window.removeEventListener('resize', handleResize)
       clearTimeout(timeoutId)
     }
-  }, [isMobile, mobileMenuOpen])
+  }, [mobileMenuOpen])
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
@@ -77,9 +74,7 @@ export default function Home() {
 
   // Close mobile menu when clicking outside or on escape key, and manage focus
   useEffect(() => {
-    // Only handle mobile menu on small screens
     if (!isMobile) {
-      document.body.style.overflow = ''
       return
     }
 
@@ -100,24 +95,18 @@ export default function Home() {
 
     if (mobileMenuOpen && isMobile) {
       document.addEventListener('keydown', handleEscape)
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden'
-
+     
       // Focus first link in menu when it opens
       const firstLink = mobileMenuRef.current?.querySelector('a') as HTMLAnchorElement
       if (firstLink) {
-        // Small delay to ensure menu is visible
         setTimeout(() => {
           firstLink.focus()
         }, 100)
       }
-    } else {
-      document.body.style.overflow = ''
-    }
+    } 
 
     return () => {
       document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = ''
     }
   }, [mobileMenuOpen, isMobile])
 
@@ -145,7 +134,7 @@ export default function Home() {
       </a>
       <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
         {/* Navigation */}
-        {mobileMenuOpen && isMobile && (
+        {mobileMenuOpen && (
           <div
             className={styles.mobileMenuOverlay}
             onClick={() => setMobileMenuOpen(false)}
@@ -160,13 +149,12 @@ export default function Home() {
             <button
               className={styles.hamburger}
               onClick={() => {
-                // Only toggle menu on mobile
-                if (isMobile) {
-                  setMobileMenuOpen(!mobileMenuOpen)
-                }
-              }}
+                setMobileMenuOpen(!mobileMenuOpen)
+                console.log('mobileMenuOpen', mobileMenuOpen)
+                console.log('isMobile', isMobile)
+            }}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen && isMobile}
+              aria-expanded={mobileMenuOpen}
               aria-controls='mobile-menu'>
               <span className={styles.hamburgerLine}></span>
               <span className={styles.hamburgerLine}></span>
@@ -176,17 +164,13 @@ export default function Home() {
               className={styles.navRight}
               id='mobile-menu'
               ref={mobileMenuRef}
-              aria-hidden={!isMobile ? false : !mobileMenuOpen}>
+              aria-hidden={!mobileMenuOpen}>
               <ul className={styles.navLinks} role='list'>
                 <li>
                   <a
                     href='#main-content'
                     aria-label='Navigate to About section'
-                    onClick={() => {
-                      if (isMobile) {
-                        setMobileMenuOpen(false)
-                      }
-                    }}>
+                    onClick={() => setMobileMenuOpen(false)}>
                     About
                   </a>
                 </li>
@@ -194,11 +178,7 @@ export default function Home() {
                   <a
                     href='#resume'
                     aria-label='Navigate to Resume section'
-                    onClick={() => {
-                      if (isMobile) {
-                        setMobileMenuOpen(false)
-                      }
-                    }}>
+                    onClick={() => setMobileMenuOpen(false)}>
                     Resume
                   </a>
                 </li>
@@ -206,11 +186,7 @@ export default function Home() {
                   <a
                     href='#contact'
                     aria-label='Navigate to Contact section'
-                    onClick={() => {
-                      if (isMobile) {
-                        setMobileMenuOpen(false)
-                      }
-                    }}>
+                    onClick={() => setMobileMenuOpen(false)}>
                     Contact
                   </a>
                 </li>

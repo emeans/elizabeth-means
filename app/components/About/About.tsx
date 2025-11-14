@@ -4,9 +4,9 @@ import styles from './About.module.css'
 
 export default function About() {
   return (
-    <section id='main-content' className={styles.about}>
-      <div className={styles.container}>
-        <div className={styles.aboutContent}>
+    <section id='main-content' className='section'>
+      <div className='container'>
+        <div className='sectionContent'>
           <h2>About Me</h2>
           <p>
             My path to design has been unconventional. I started with an art foundation before

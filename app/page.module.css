@@ -1,7 +1,7 @@
 .skipLink {
     position: fixed;
     top: -60px;
-    left: 50%;
+    left: 50vw;
     transform: translateX(-50%);
     background: var(--color-accent-on-bg);
     color: var(--color-text-inverse) !important;
@@ -14,8 +14,8 @@
     opacity: 0;
     pointer-events: none;
     transition:
-    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s ease;
+        top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 4px 6px var(--color-shadow);
 }
@@ -52,28 +52,6 @@
         margin-top 0.3s ease,
         background 0.3s ease,
         border-color 0.3s ease;
-}
-
-/* Desktop and tablet - ensure nav stays sticky */
-@media (min-width: 769px) {
-    .nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-}
-
-@media (max-width: 1024px) {
-    .nav {
-        z-index: 102;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav {
-        position: sticky;
-        z-index: 102;
-    }
 }
 
 [data-theme='dark'] .nav {
@@ -283,9 +261,12 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 101;
+    z-index: 102;
     animation: fadeIn 0.3s ease-in-out;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 @keyframes fadeIn {
@@ -297,99 +278,13 @@
     }
 }
 
-/* Tablet breakpoint */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Ensure navigation stays sticky on tablet - override any conflicting styles */
+
+/* Desktop and tablet - ensure nav stays sticky */
+@media (min-width: 769px) {
     .nav {
-        position: -webkit-sticky !important; /* Safari support */
-        position: sticky !important;
-        top: 0 !important;
-        z-index: 102 !important; /* Match the z-index from the media query */
-        width: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-    }
-
-    /* Ensure hamburger is hidden on tablet */
-    .hamburger {
-        display: none !important;
-    }
-
-    /* Reset navRight to normal display on tablet */
-    .navRight {
-        position: static !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        gap: var(--spacing-lg) !important;
-        width: auto !important;
-        height: auto !important;
-        max-width: none !important;
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        transform: none !important;
-        box-shadow: none !important;
-        z-index: auto !important;
-        overflow: visible !important;
-        overscroll-behavior: auto !important;
-    }
-
-    /* Reset navLinks to horizontal on tablet */
-    .navLinks {
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: var(--spacing-lg) !important;
-        width: auto !important;
-    }
-
-    .navLinks li {
-        width: auto !important;
-    }
-
-    .navLinks a {
-        display: inline-block !important;
-        width: auto !important;
-        padding: 0 !important;
-        font-size: 1rem !important;
-        border-radius: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    .navLinks a::after {
-        display: block !important;
-    }
-
-    /* Reset theme toggle on tablet */
-    .themeToggle {
-        width: auto !important;
-        min-width: 80px !important;
-        justify-content: center !important;
-        padding: var(--spacing-xs) var(--spacing-sm) !important;
-        margin-top: 0 !important;
-    }
-
-    .themeToggleText {
-        display: inline !important;
-    }
-
-    .navContainer {
-        padding: var(--spacing-md) var(--spacing-lg);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    /* Ensure mobile menu overlay doesn't show on tablet */
-    .mobileMenuOverlay {
-        display: none !important;
-    }
-
-    /* Reset any mobile menu transform on tablet */
-    .navRight[aria-hidden='false'] {
-        transform: none !important;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 }
 
@@ -401,9 +296,9 @@
         z-index: 103;
     }
 
-    /* Ensure nav container and hamburger stay above menu when open */
     .nav {
         position: sticky;
+        top: 0;
         z-index: 102;
     }
 

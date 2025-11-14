@@ -1,22 +1,22 @@
-.about {
+/* .about {
   padding: var(--spacing-2xl) var(--spacing-lg);
   scroll-margin-top: 0;
-}
+} */
 
-.aboutContent {
+/* .aboutContent {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-}
+} */
 
-.container {
+/* .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-}
+} */
 
 /* Tablet breakpoint */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
   .about {
     padding: var(--spacing-xl) var(--spacing-md);
     scroll-margin-top: 80px;
@@ -28,9 +28,3 @@
   }
 }
 
-/* Mobile breakpoint */
-@media (max-width: 768px) {
-  .about {
-    padding: var(--spacing-xl) var(--spacing-md);
-  }
-}

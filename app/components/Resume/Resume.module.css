@@ -75,7 +75,7 @@
 }
 
 /* Tablet breakpoint */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
   .resume {
     padding: var(--spacing-xl) var(--spacing-md);
     scroll-margin-top: 80px;
@@ -85,7 +85,7 @@
     max-width: 100%;
     padding: 0;
   }
-}
+} */
 
 /* Mobile breakpoint */
 @media (max-width: 768px) {
