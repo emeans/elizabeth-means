@@ -1,78 +1,108 @@
-# Getting Started with React Portfolio App
+# Elizabeth Means - Product Designer & Engineer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then modified to become a multipage portfolio application.
+A modern one-page personal website and resume built with [Next.js](https://nextjs.org), featuring basic info, resume, and contact form.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 📱 Mobile-first approach
+- 🚀 Fast static site generation with Next.js
+- 📄 Single-page layout with resume and contact form
+- 📧 Netlify contact form integration
+- 🎯 SEO optimized
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+This will generate a static site in the `out` folder (configured for static export).
+
+## Project Structure
+
+```
+/
+├── app/                    # Next.js app directory
+│   ├── components/         # React components
+│   │   ├── About.tsx       # About section component
+│   │   ├── Contact/        # Contact section component
+│   │   │   ├── Contact.tsx
+│   │   │   └── Contact.module.css
+│   │   ├── Footer/         # Footer component
+│   │   │   ├── Footer.tsx
+│   │   │   └── Footer.module.css
+│   │   ├── Hero/           # Hero section component
+│   │   │   ├── Hero.tsx
+│   │   │   └── Hero.module.css
+│   │   └── Resume/         # Resume section component
+│   │       ├── Resume.tsx
+│   │       └── Resume.module.css
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Main page (one-page site)
+│   ├── globals.css         # Global styles and CSS variables
+│   └── page.module.css     # Page-specific styles (navigation, skip link)
+├── public/                 # Static assets
+│   ├── favicon files       # Various favicon formats
+│   ├── portrait.png        # Hero section image
+│   ├── Elizabeth-Means-Resume.pdf
+│   └── ...                 # Other static assets
+├── next.config.js          # Next.js configuration
+├── tsconfig.json           # TypeScript configuration
+└── netlify.toml            # Netlify deployment configuration
+```
+
+## Deployment
+
+This site is configured for deployment on Netlify. The `netlify.toml` file contains the build settings.
+
+### Netlify Deployment
+
+1. Push your code to a Git repository
+2. Connect the repository to Netlify
+3. Netlify will automatically detect the build settings from `netlify.toml`
+4. The site will build and deploy automatically on each push
+
+**Note:** The site is configured for static export, so it generates a fully static site that can be hosted on any static hosting service.
 
 ## Customization
 
-**configuration.json**
-This json object contains the majority of the user-specific content.
+- **Hero Section**: Update content in `app/components/Hero/Hero.tsx` and styles in `app/components/Hero/Hero.module.css`
+- **About Section**: Update content in `app/components/About.tsx`
+- **Resume Section**: Update content in `app/components/Resume/Resume.tsx` and styles in `app/components/Resume/Resume.module.css`
+- **Contact Section**: Update form configuration in `app/components/Contact/Contact.tsx` and styles in `app/components/Contact/Contact.module.css`
+- **Footer**: Update content in `app/components/Footer/Footer.tsx` and styles in `app/components/Footer/Footer.module.css`
+- **Navigation**: Update navigation logic in `app/page.tsx` and styles in `app/page.module.css`
+- **Global Styles**: Modify global styles and CSS variables in `app/globals.css`
 
-**\_navigationproperties.scss**
-This file contains customizable images for the navigation menu links, in particular the header logo and any social media links.
+## Technologies
 
-## Available Scripts
+- [Next.js](https://nextjs.org) - React framework with static export
+- React - UI library
+- TypeScript - Type safety
+- CSS Modules - Component-scoped styles
 
-In the project directory, you can run:
+## License
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Private project - All rights reserved

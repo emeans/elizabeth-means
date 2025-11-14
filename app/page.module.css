@@ -1,0 +1,416 @@
+/**
+ Skip Link styles
+*/
+.skipLink {
+    position: fixed;
+    top: -60px;
+    left: 50vw;
+    transform: translateX(-50%);
+    background: var(--color-accent-on-bg);
+    color: var(--color-text-inverse) !important;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    z-index: 1001;
+    font-weight: 600;
+    font-size: 0.875rem;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+.skipLink:focus {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    outline: 3px solid #ffffff;
+    outline-offset: -3px;
+    box-shadow: 0 4px 12px var(--color-shadow-strong);
+}
+
+.skipLink:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.mainContainer {
+    position: relative;
+}
+
+.mainContainer.skipLinkActive .nav {
+    margin-top: 48px;
+}
+
+/**
+ Navigation styles
+*/
+.nav {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(20px) saturate(180%);
+    transition:
+        margin-top 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+[data-theme='dark'] .nav {
+    background: rgba(10, 10, 10, 0.8);
+    border-bottom-color: var(--color-border);
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-md);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/**
+ Mobile menu styles
+*/
+.navRight {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: sticky;
+}
+
+.hamburger {
+    display: none;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 103;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hamburger:focus {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 2px;
+}
+
+.hamburgerLine {
+    width: 24px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    display: block;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+}
+
+.hamburgerLine:nth-child(1) {
+    top: 8px;
+}
+
+.hamburgerLine:nth-child(2) {
+    top: 14.5px;
+}
+
+.hamburgerLine:nth-child(3) {
+    top: 21px;
+}
+
+.hamburger[aria-expanded='true'] .hamburgerLine:nth-child(1) {
+    top: 14.5px;
+    left: 4px;
+    right: 4px;
+    transform: rotate(45deg);
+}
+
+.hamburger[aria-expanded='true'] .hamburgerLine:nth-child(2) {
+    opacity: 0;
+    width: 0;
+    left: 50%;
+    right: 50%;
+}
+
+.hamburger[aria-expanded='true'] .hamburgerLine:nth-child(3) {
+    top: 14.5px;
+    left: 4px;
+    right: 4px;
+    transform: rotate(-45deg);
+}
+
+.mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 102;
+    animation: fadeIn 0.3s ease-in-out;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/**
+Navigation Link styles
+*/
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.logo:focus {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 6px;
+    border-radius: 2px;
+}
+
+.logo:hover {
+    color: var(--color-accent-on-bg);
+    text-decoration: none !important;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.navLinks a {
+    color: var(--color-text);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover,
+.navLinks a:focus {
+    color: var(--color-accent-on-bg);
+    text-decoration: none !important;
+}
+
+.navLinks a:focus {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 6px;
+    border-radius: 2px;
+}
+
+.navLinks a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent-on-bg);
+    transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}
+
+
+/**
+Theme Toggle styles
+*/
+.themeToggle {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    min-width: 80px;
+    height: 40px;
+    line-height: 1;
+    color: var(--color-text);
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.themeToggle:hover {
+    background: var(--color-accent-on-bg);
+    border-color: var(--color-accent-on-bg);
+    transform: scale(1.05);
+    color: var(--color-text-inverse);
+}
+
+.themeToggle:focus {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 2px;
+}
+
+.themeToggle:focus-visible {
+    outline: 2px solid var(--color-accent-on-bg);
+    outline-offset: 2px;
+}
+
+.themeToggle:active {
+    transform: scale(0.95);
+}
+
+.themeToggleIcon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.themeToggleText {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/** 
+Mobile breakpoint styles
+*/
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 103;
+    }
+
+    .nav {
+        position: sticky;
+        top: 0;
+        z-index: 102;
+    }
+
+    .navContainer {
+        position: relative;
+        z-index: 103;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 102;
+    }
+
+    /* Make hamburger lines more visible when menu is open */
+    .hamburger[aria-expanded='true'] .hamburgerLine {
+        background: var(--color-text);
+    }
+
+    .navRight {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 280px;
+        max-width: 85vw;
+        background: var(--color-bg);
+        border-left: 1px solid var(--color-border);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px var(--spacing-lg) var(--spacing-2xl);
+        gap: var(--spacing-xl);
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -4px 0 20px var(--color-shadow-strong);
+        z-index: 102;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .navRight[aria-hidden='false'] {
+        transform: translateX(0);
+    }
+
+    .navLinks {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-lg);
+        width: 100%;
+    }
+
+    .navLinks li {
+        width: 100%;
+    }
+
+    .navLinks a {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-sm);
+        font-size: 1.125rem;
+        border-radius: var(--border-radius);
+        margin-left: calc(-1 * var(--spacing-sm));
+    }
+
+    .navLinks a:focus {
+        outline: 2px solid var(--color-accent-on-bg);
+        outline-offset: 2px;
+        background: var(--color-bg-secondary);
+    }
+
+    .navLinks a::after {
+        display: none;
+    }
+
+    .themeToggle {
+        width: 100%;
+        min-width: unset;
+        justify-content: flex-start;
+        padding: var(--spacing-sm) var(--spacing-md);
+        margin-top: var(--spacing-sm);
+    }
+
+    .themeToggle:focus {
+        outline: 2px solid var(--color-accent-on-bg);
+        outline-offset: 2px;
+    }
+
+    .themeToggleText {
+        display: inline;
+    }
+
+    .themeToggleIcon {
+        font-size: 1.125rem;
+    }
+
+    .skipLink {
+        font-size: 0.75rem;
+        padding: 10px 20px;
+    }
+
+    main.skipLinkActive .nav {
+        margin-top: 44px;
+    }
+}

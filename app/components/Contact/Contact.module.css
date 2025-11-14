@@ -1,0 +1,196 @@
+.contactContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.contactInfo {
+  text-align: left;
+}
+
+.contactInfo h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.contactInfo p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+}
+
+.contactItem {
+  margin-bottom: var(--spacing-md);
+}
+
+.contactItem a {
+  color: var(--color-accent-on-bg);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contactItem a:hover,
+.contactItem a:focus {
+  color: var(--color-accent-hover);
+}
+
+.contactItem a:focus {
+  outline: 2px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.contactForm {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  transition: background 0.3s ease;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.requiredIndicator {
+  color: var(--color-accent-on-bg);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.statusMessage {
+  margin-bottom: var(--spacing-md);
+  min-height: 1.5rem;
+}
+
+.successMessage {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(5, 150, 105, 0.15);
+  color: var(--color-success);
+  border: 2px solid var(--color-success);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+[data-theme='dark'] .successMessage {
+  background-color: rgba(52, 211, 153, 0.15);
+}
+
+.errorMessage {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(220, 38, 38, 0.15);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+[data-theme='dark'] .errorMessage {
+  background-color: rgba(248, 113, 113, 0.15);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-lg);
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: 2px solid var(--color-accent-on-bg);
+  outline-offset: 2px;
+  border-color: var(--color-accent-on-bg);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+[data-theme='dark'] .formGroup input:focus,
+[data-theme='dark'] .formGroup textarea:focus {
+  box-shadow: 0 0 0 2px rgba(165, 180, 252, 0.3);
+}
+
+.formGroup input.inputError,
+.formGroup textarea.inputError {
+  border-color: var(--color-error);
+  border-width: 2px;
+}
+
+.formGroup input.inputError:focus,
+.formGroup textarea.inputError:focus {
+  outline-color: var(--color-error);
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+[data-theme='dark'] .formGroup input.inputError:focus,
+[data-theme='dark'] .formGroup textarea.inputError:focus {
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.3);
+}
+
+.fieldError {
+  margin-top: var(--spacing-xs);
+  color: var(--color-error);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fieldError::before {
+  content: '⚠';
+  font-size: 1rem;
+  margin-right: 0.25rem;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .contact {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0;
+  }
+
+  .contactInfo {
+    text-align: center;
+  }
+
+  .contactForm {
+    padding: var(--spacing-lg);
+  }
+}

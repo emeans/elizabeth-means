@@ -1,0 +1,9 @@
+.resumeSection {
+  background: var(--color-bg-secondary);
+  transition: background 0.3s ease;
+}
+
+.resumeDescription {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+}
