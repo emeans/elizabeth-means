@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './page.module.css'
 import Hero from './components/Hero/Hero'
-import About from './components/About/About'
+import About from './components/About'
 import Resume from './components/Resume/Resume'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'

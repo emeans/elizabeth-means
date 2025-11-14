@@ -4,13 +4,13 @@ import styles from './Resume.module.css'
 
 export default function Resume() {
   return (
-    <section id='resume' className={styles.resume}>
-      <div className={styles.container}>
-        <div className={styles.resumeContent}>
+    <section id='resume' className={`section ${styles.resumeSection}`}>
+      <div className='container'>
+        <div className='sectionContent'>
           <h2>Resume</h2>
           <p className={styles.resumeDescription}>
             Want to know more about my experience? Download my resume, view my
-            <span className={styles.contactItem}>
+            <span>
                 &nbsp;
                 <a
                     href='https://www.linkedin.com/in/elizabeth-a-means/'
@@ -33,8 +33,8 @@ export default function Resume() {
             </span>
             .
           </p>
-          <div className={styles.resumeLinks}>
-            <a href='/Elizabeth-Means-Resume.pdf' className={styles.resumeLink} download>
+          <div>
+            <a href='/Elizabeth-Means-Resume.pdf' className='btn' download>
                 Download Resume (PDF)
             </a>
           </div>

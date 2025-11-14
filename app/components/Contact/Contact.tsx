@@ -167,8 +167,8 @@ export default function Contact() {
   }
 
   return (
-    <section id='contact' className={styles.contact}>
-      <div className={styles.container}>
+    <section id='contact' className='section'>
+      <div className='container'>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
             <h2>Get In Touch</h2>
@@ -176,14 +176,14 @@ export default function Contact() {
               I'd love to hear from you—whether you want to discuss a potential opportunity,
               collaborate on a project, or just chat about design and engineering.
             </p>
-            <p>
+            {/* <p>
               Fill out the form to send me a message or email me directly at
               <span className={styles.contactItem}>
                 &nbsp;
                 <a href='mailto:hi@elizabethmeans.com'>hi@elizabethmeans.com</a>
               </span>
               .
-            </p>
+            </p> */}
           </div>
 
           <form
@@ -300,7 +300,7 @@ export default function Contact() {
 
             <button
               type='submit'
-              className={styles.btn}
+              className='btn'
               disabled={formStatus === 'submitting'}
               aria-disabled={formStatus === 'submitting'}>
               {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}

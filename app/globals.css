@@ -169,6 +169,42 @@ img {
     text-align: center;
 }
 
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-accent-on-bg);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 120px;
+  }
+  
+  .btn:hover:not(:disabled),
+  .btn:focus:not(:disabled) {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--color-shadow);
+  }
+  
+  .btn:focus {
+    outline: 3px solid var(--color-accent-on-bg);
+    outline-offset: 2px;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
 /* Tablet breakpoint */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* html {
