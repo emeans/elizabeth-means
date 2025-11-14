@@ -22,14 +22,15 @@ export default function Home() {
     }
     return false
   })
-  const prevIsMobileRef = useRef(false)
+  const [isMounted, setIsMounted] = useState(false)
 
- useEffect(() => {
-  const checkIsMobile = () => {
-        const mobile = window.innerWidth <= 768
-        setIsMobile((prevIsMobile) => {
+  useEffect(() => {
+    setIsMounted(true)
+    const checkIsMobile = () => {
+      const mobile = window.innerWidth <= 768
+      setIsMobile((prevIsMobile) => {
         // Close menu if resizing from mobile to tablet/desktop
-        if (prevIsMobile && !mobile && mobileMenuOpen) {
+        if (prevIsMobile && !mobile) {
           setMobileMenuOpen(false)
         }
         return mobile
@@ -51,7 +52,7 @@ export default function Home() {
       window.removeEventListener('resize', handleResize)
       clearTimeout(timeoutId)
     }
-  }, [mobileMenuOpen])
+  }, [])
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
@@ -134,7 +135,7 @@ export default function Home() {
       </a>
       <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
         {/* Navigation */}
-        {mobileMenuOpen && (
+        {mobileMenuOpen && isMobile && (
           <div
             className={styles.mobileMenuOverlay}
             onClick={() => setMobileMenuOpen(false)}
@@ -149,10 +150,10 @@ export default function Home() {
             <button
               className={styles.hamburger}
               onClick={() => {
-                setMobileMenuOpen(!mobileMenuOpen)
-                console.log('mobileMenuOpen', mobileMenuOpen)
-                console.log('isMobile', isMobile)
-            }}
+                if (isMobile) {
+                  setMobileMenuOpen((prev) => !prev)
+                }
+              }}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
               aria-controls='mobile-menu'>
@@ -164,13 +165,17 @@ export default function Home() {
               className={styles.navRight}
               id='mobile-menu'
               ref={mobileMenuRef}
-              aria-hidden={!mobileMenuOpen}>
+              aria-hidden={isMounted && isMobile && !mobileMenuOpen ? 'true' : 'false'}>
               <ul className={styles.navLinks} role='list'>
                 <li>
                   <a
                     href='#main-content'
                     aria-label='Navigate to About section'
-                    onClick={() => setMobileMenuOpen(false)}>
+                    onClick={() => {
+                        if (isMobile) {
+                          setMobileMenuOpen(false)
+                        }
+                      }}>
                     About
                   </a>
                 </li>
@@ -178,7 +183,11 @@ export default function Home() {
                   <a
                     href='#resume'
                     aria-label='Navigate to Resume section'
-                    onClick={() => setMobileMenuOpen(false)}>
+                    onClick={() => {
+                        if (isMobile) {
+                          setMobileMenuOpen(false)
+                        }
+                      }}>
                     Resume
                   </a>
                 </li>
@@ -186,7 +195,11 @@ export default function Home() {
                   <a
                     href='#contact'
                     aria-label='Navigate to Contact section'
-                    onClick={() => setMobileMenuOpen(false)}>
+                    onClick={() => {
+                        if (isMobile) {
+                          setMobileMenuOpen(false)
+                        }
+                      }}>
                     Contact
                   </a>
                 </li>
