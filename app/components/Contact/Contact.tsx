@@ -99,10 +99,16 @@ export default function Contact() {
     formDataToSend.append('form-name', 'contact')
 
     try {
+      // Convert FormData to URLSearchParams format
+      const params = new URLSearchParams()
+      for (const [key, value] of formDataToSend.entries()) {
+        params.append(key, value.toString())
+      }
+
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(Array.from(formDataToSend.entries())).toString(),
+        body: params.toString(),
       })
 
       if (response.ok) {
