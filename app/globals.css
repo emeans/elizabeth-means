@@ -38,17 +38,12 @@
 
 /* Dark Mode */
 [data-theme='dark'] {
-    --color-bg: #0d0d0d;
     --color-bg-secondary: #1a1a1a;
-    --color-bg-tertiary: #111111;
     --color-text: #f5f5f5;
     --color-text-secondary: #d1d5db;
-    --color-text-light: #9ca3af;
     --color-text-inverse: #0a0a0a;
     --color-accent: #818cf8;
     --color-accent-hover: #a5b4fc;
-    --color-accent-light: #6366f1;
-    --color-accent-on-bg: #a5b4fc;
     --color-border: #2a2a2a;
     --color-border-light: #1a1a1a;
     --color-success: #34d399;
