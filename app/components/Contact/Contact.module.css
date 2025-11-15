@@ -17,32 +17,11 @@
 
 .contactInfo p {
   margin-bottom: var(--spacing-lg);
-  color: var(--color-text-secondary);
 }
 
-.contactItem {
-  margin-bottom: var(--spacing-md);
-}
-
-.contactItem a {
-  color: var(--color-accent-on-bg);
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.contactItem a:hover,
-.contactItem a:focus {
-  color: var(--color-accent-hover);
-}
-
-.contactItem a:focus {
-  outline: 2px solid var(--color-accent-on-bg);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
 
 .contactForm {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   transition: background 0.3s ease;
@@ -54,7 +33,7 @@
 }
 
 .requiredIndicator {
-  color: var(--color-accent-on-bg);
+  color: var(--color-accent-hover);
   font-weight: 700;
   margin-left: 2px;
 }
@@ -124,9 +103,9 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  outline: 2px solid var(--color-accent-on-bg);
+  outline: 2px solid var(--color-accent-hover);
   outline-offset: 2px;
-  border-color: var(--color-accent-on-bg);
+  border-color: var(--color-accent-hover);
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
@@ -176,10 +155,6 @@
 
 /* Mobile breakpoint */
 @media (max-width: 768px) {
-  .contact {
-    padding: var(--spacing-xl) var(--spacing-md);
-  }
-
   .contactContent {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);

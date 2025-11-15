@@ -6,27 +6,22 @@
 
 :root {
     /* Modern color palette - Light Mode */
-    --color-bg: #ffffff;
-    --color-bg-secondary: #f5f5f5;
-    --color-bg-tertiary: #fafafa;
-    --color-text: #1a1a1a;
-    --color-text-secondary: #4b5563;
-    --color-text-light: #6b7280;
-    --color-text-inverse: #ffffff;
-    --color-accent: #4f46e5;
-    --color-accent-hover: #4338ca;
-    --color-accent-light: #6366f1;
-    --color-accent-on-bg: #4f46e5;
-    --color-border: #e5e7eb;
-    --color-border-light: #f3f4f6;
+    --color-bg: #f5f5f5;
+    --color-bg-secondary: #E8E8E8;
+    --color-text: #2C2A42;
+    --color-text-inverse: #f5f5f5;
+    --color-accent: #2C2A42;
+    --color-accent-secondary: #3A5E4B;
+    --color-accent-hover: #49755D;
+    --color-border: #A47756;
     --color-success: #059669;
     --color-error: #dc2626;
     --color-shadow: rgba(0, 0, 0, 0.1);
     --color-shadow-strong: rgba(0, 0, 0, 0.2);
 
     /* Typography */
-    --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    --font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -44,19 +39,14 @@
 
 /* Dark Mode */
 [data-theme='dark'] {
-    --color-bg: #0d0d0d;
-    --color-bg-secondary: #1a1a1a;
-    --color-bg-tertiary: #111111;
+    --color-bg: #2C2A42;
+    --color-bg-secondary: #222133;
     --color-text: #f5f5f5;
-    --color-text-secondary: #d1d5db;
-    --color-text-light: #9ca3af;
-    --color-text-inverse: #0a0a0a;
-    --color-accent: #818cf8;
-    --color-accent-hover: #a5b4fc;
-    --color-accent-light: #6366f1;
-    --color-accent-on-bg: #a5b4fc;
-    --color-border: #2a2a2a;
-    --color-border-light: #1a1a1a;
+    --color-text-inverse: #2C2A42;
+    --color-accent: #2C2A42;
+    --color-accent-secondary: #A47756;
+    --color-accent-hover: #BD8862;
+    --color-border: #BD8862;
     --color-success: #34d399;
     --color-error: #f87171;
     --color-shadow: rgba(0, 0, 0, 0.5);
@@ -97,7 +87,7 @@ body {
 }
 
 a {
-    color: var(--color-accent-on-bg);
+    color: var(--color-accent-hover);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -108,7 +98,7 @@ a:hover {
 }
 
 a:focus {
-    outline: 2px solid var(--color-accent-on-bg);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -171,7 +161,7 @@ img {
 
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--color-accent-on-bg);
+    background: var(--color-accent-secondary);
     color: var(--color-text-inverse);
     border: none;
     border-radius: var(--border-radius);
@@ -193,7 +183,7 @@ img {
 }
 
 .btn:focus {
-    outline: 3px solid var(--color-accent-on-bg);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
 

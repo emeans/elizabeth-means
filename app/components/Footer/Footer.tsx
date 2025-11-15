@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.footerContent}>
           <p>&copy; {new Date().getFullYear()} Elizabeth Means. All rights reserved.</p>
-          <div className={styles.socialLinks}>
+          <div>
             <a
               href='https://www.linkedin.com/in/elizabeth-a-means/'
               target='_blank'
@@ -16,6 +16,7 @@ export default function Footer() {
               aria-label='LinkedIn'>
               LinkedIn
             </a>
+            &nbsp;&nbsp;
             <a
               href='https://github.com/emeans'
               target='_blank'

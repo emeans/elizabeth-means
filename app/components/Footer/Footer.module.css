@@ -1,5 +1,5 @@
 .footer {
-  background: var(--color-bg-tertiary);
+  background: var(--color-bg);
   color: var(--color-text);
   padding: var(--spacing-xl) 36px;
   text-align: center;
@@ -13,30 +13,6 @@
 .footerContent {
   max-width: var(--max-width);
   margin: 0 auto;
-}
-
-.socialLinks {
-  display: flex;
-  gap: var(--spacing-lg);
-  justify-content: center;
-  margin-top: var(--spacing-md);
-}
-
-.socialLinks a {
-  color: var(--color-text);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.socialLinks a:hover,
-.socialLinks a:focus {
-  color: var(--color-accent-on-bg);
-}
-
-.socialLinks a:focus {
-  outline: 2px solid var(--color-accent-on-bg);
-  outline-offset: 2px;
-  border-radius: 2px;
 }
 
 .container {
