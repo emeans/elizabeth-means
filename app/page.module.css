@@ -160,11 +160,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 102;
     animation: fadeIn 0.3s ease-in-out;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
@@ -411,7 +410,7 @@ Mobile breakpoint styles
         padding: 10px 20px;
     }
 
-    main.skipLinkActive .nav {
+    .mainContainer.skipLinkActive .nav {
         margin-top: 44px;
     }
 }

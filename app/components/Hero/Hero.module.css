@@ -74,11 +74,6 @@
     padding: 0 var(--spacing-md);
   }
 
-  .heroImage {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
   .heroText {
     text-align: center;
   }
