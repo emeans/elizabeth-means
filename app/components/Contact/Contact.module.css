@@ -118,7 +118,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   transition: var(--transition);
-  background: var(--color-bg);
+  background: var(--color-bg-secondary);
   color: var(--color-text);
 }
 

@@ -335,7 +335,7 @@ Mobile breakpoint styles
         height: 100vh;
         width: 280px;
         max-width: 85vw;
-        background: var(--color-bg);
+        background: var(--color-bg-secondary);
         border-left: 1px solid var(--color-border);
         flex-direction: column;
         align-items: flex-start;
