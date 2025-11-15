@@ -6,17 +6,16 @@
 
 :root {
     /* Modern color palette - Light Mode */
-    --color-bg: #ffffff;
     --color-bg-secondary: #f5f5f5;
     --color-bg-tertiary: #fafafa;
-    --color-text: #1a1a1a;
+    --color-text: #2C2A42;
     --color-text-secondary: #A3A4A9;
     --color-text-light: #6b7280;
     --color-text-inverse: #ffffff;
     --color-accent: #2C2A42;
     --color-accent-hover: #335745;
     --color-accent-light: #656096;
-    --color-accent-on-bg: #2C2A42;
+    /* --color-accent-on-bg: #2C2A42; */
     --color-border: #A47756;
     --color-border-light: #f3f4f6;
     --color-success: #059669;
@@ -25,8 +24,8 @@
     --color-shadow-strong: rgba(0, 0, 0, 0.2);
 
     /* Typography */
-    --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    --font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -97,7 +96,7 @@ body {
 }
 
 a {
-    color: var(--color-accent-on-bg);
+    color: var(--color-accent);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -108,7 +107,7 @@ a:hover {
 }
 
 a:focus {
-    outline: 2px solid var(--color-accent-on-bg);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -171,7 +170,7 @@ img {
 
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--color-accent-on-bg);
+    background: var(--color-accent);
     color: var(--color-text-inverse);
     border: none;
     border-radius: var(--border-radius);
@@ -193,7 +192,7 @@ img {
 }
 
 .btn:focus {
-    outline: 3px solid var(--color-accent-on-bg);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
 

@@ -6,7 +6,7 @@
   scroll-margin-top: 0;
   position: relative;
   transition: background 0.5s ease;
-  background-image: url('../../../public/wesley-tingey-XvlbhiTzfWA-unsplash.jpg');
+  background-image: url('/wesley-tingey-XvlbhiTzfWA-unsplash.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
