@@ -41,7 +41,7 @@
 }
 
 .contactForm {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   transition: background 0.3s ease;
@@ -117,7 +117,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   transition: var(--transition);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
   color: var(--color-text);
 }
 

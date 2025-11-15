@@ -6,7 +6,7 @@
     top: -60px;
     left: 50vw;
     transform: translateX(-50%);
-    background: var(--color-accent);
+    background: var(--color-accent-hover);
     color: var(--color-text-inverse) !important;
     padding: 12px 24px;
     text-decoration: none;
@@ -27,7 +27,7 @@
     top: 0;
     opacity: 1;
     pointer-events: auto;
-    outline: 3px solid #ffffff;
+    outline: 3px solid var(--color-text);
     outline-offset: -3px;
     box-shadow: 0 4px 12px var(--color-shadow-strong);
 }
@@ -180,13 +180,14 @@ Navigation Link styles
 }
 
 .logo:focus {
-    outline: 2px solid var(--color-accent);
+    color: var(--color-accent-hover);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 6px;
     border-radius: 2px;
 }
 
 .logo:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-hover);
     text-decoration: none !important;
 }
 
@@ -206,12 +207,12 @@ Navigation Link styles
 
 .navLinks a:hover,
 .navLinks a:focus {
-    color: var(--color-accent);
+    color: var(--color-accent-hover);
     text-decoration: none !important;
 }
 
 .navLinks a:focus {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 6px;
     border-radius: 2px;
 }
@@ -223,7 +224,7 @@ Navigation Link styles
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-accent);
+    background: var(--color-accent-hover);
     transition: width 0.3s ease;
 }
 
@@ -236,7 +237,7 @@ Navigation Link styles
 Theme Toggle styles
 */
 .themeToggle {
-    background: var(--color-bg-secondary);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -256,19 +257,19 @@ Theme Toggle styles
 }
 
 .themeToggle:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
     transform: scale(1.05);
     color: var(--color-text-inverse);
 }
 
 .themeToggle:focus {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 2px;
 }
 
 .themeToggle:focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-hover);
     outline-offset: 2px;
 }
 
@@ -335,7 +336,7 @@ Mobile breakpoint styles
         height: 100vh;
         width: 280px;
         max-width: 85vw;
-        background: var(--color-bg-secondary);
+        background: var(--color-bg);
         border-left: 1px solid var(--color-border);
         flex-direction: column;
         align-items: flex-start;
@@ -375,9 +376,9 @@ Mobile breakpoint styles
     }
 
     .navLinks a:focus {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--color-accent-hover);
         outline-offset: 2px;
-        background: var(--color-bg-secondary);
+        background: var(--color-bg);
     }
 
     .navLinks a::after {
@@ -393,7 +394,7 @@ Mobile breakpoint styles
     }
 
     .themeToggle:focus {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--color-accent-hover);
         outline-offset: 2px;
     }
 
