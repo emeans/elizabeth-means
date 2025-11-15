@@ -24,7 +24,7 @@
 }
 
 .contactItem a {
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -35,7 +35,7 @@
 }
 
 .contactItem a:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-hover);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -53,7 +53,7 @@
 }
 
 .requiredIndicator {
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
   font-weight: 700;
   margin-left: 2px;
 }
@@ -123,9 +123,9 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-hover);
   outline-offset: 2px;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-hover);
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
