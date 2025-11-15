@@ -23,6 +23,7 @@ export default function Home() {
     return false
   })
   const [isMounted, setIsMounted] = useState(false)
+  const hamburgerRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     setIsMounted(true)
@@ -84,11 +85,8 @@ export default function Home() {
         setMobileMenuOpen(false)
         // Return focus to hamburger button after menu closes
         setTimeout(() => {
-          const hamburger = document.querySelector(
-            `button[aria-controls="mobile-menu"]`,
-          ) as HTMLButtonElement
-          if (hamburger) {
-            hamburger.focus()
+          if (hamburgerRef.current) {
+            hamburgerRef.current.focus()
           }
         }, 50)
       }
@@ -148,6 +146,7 @@ export default function Home() {
               Elizabeth Means
             </a>
             <button
+              ref={hamburgerRef}
               className={styles.hamburger}
               onClick={() => {
                 if (isMobile) {

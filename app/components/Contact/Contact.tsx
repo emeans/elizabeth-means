@@ -17,6 +17,7 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
   const statusLiveRegionRef = useRef<HTMLDivElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   const validateForm = (): boolean => {
     const errors = {
@@ -101,7 +102,7 @@ export default function Contact() {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString(),
+        body: new URLSearchParams(Array.from(formDataToSend.entries())).toString(),
       })
 
       if (response.ok) {
@@ -112,9 +113,8 @@ export default function Contact() {
         // ARIA live region will automatically announce to screen readers
         // Scroll to top of form to show success message
         setTimeout(() => {
-          const formElement = document.querySelector(`.${styles.contactForm}`) as HTMLElement
-          if (formElement) {
-            formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          if (formRef.current) {
+            formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         }, 100)
       } else {
@@ -122,7 +122,10 @@ export default function Contact() {
         setStatusMessage('There was an error sending your message. Please try again.')
       }
     } catch (error) {
-      console.error('Form submission error:', error)
+      // Log to error tracking service in production
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Form submission error:', error)
+      }
       setFormStatus('error')
       setStatusMessage('There was an error sending your message. Please try again.')
     }
@@ -187,6 +190,7 @@ export default function Contact() {
           </div>
 
           <form
+            ref={formRef}
             name='contact'
             method='POST'
             className={styles.contactForm}

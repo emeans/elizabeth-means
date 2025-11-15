@@ -1,6 +1,3 @@
-'use client'
-
-
 export default function About() {
   return (
     <section id='main-content' className='section'>
