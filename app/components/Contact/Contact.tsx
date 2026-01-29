@@ -182,7 +182,7 @@ export default function Contact() {
           <div className={styles.contactInfo}>
             <h2>Get In Touch</h2>
             <p>
-              I'd love to hear from you—whether you want to discuss a potential opportunity,
+              I&apos;d love to hear from you—whether you want to discuss a potential opportunity,
               collaborate on a project, or just chat about design and engineering.
             </p>
             {/* <p>
@@ -207,7 +207,7 @@ export default function Contact() {
             <input type='hidden' name='form-name' value='contact' />
             <p className={styles.hidden}>
               <label>
-                Don't fill this out if you're human: <input name='bot-field' />
+                Don&apos;t fill this out if you&apos;re human: <input name='bot-field' />
               </label>
             </p>
 
