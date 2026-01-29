@@ -12,15 +12,15 @@ export default function About() {
             them.
           </p>
           <p>
-            For the past two years, I've been leading product development for a management
+            For the past two years, I&apos;ve been leading product development for a management
             information system serving the WIC program. I conduct discovery sessions with
             stakeholders, create design solutions in Figma, and lead a cross-functional engineering
-            team. I've also championed design systems thinking—co-founding my company's internal
+            team. I&apos;ve also championed design systems thinking—co-founding my company&apos;s internal
             Design Group and publishing articles about user-centered design.
           </p>
           <p>
-            I'm currently completing a UX Research & Design certification from the University of
-            Michigan to formalize skills I've been developing through practice. I'm drawn to design
+            I&apos;m currently completing a UX Research & Design certification from the University of
+            Michigan to formalize skills I&apos;ve been developing through practice. I&apos;m drawn to design
             systems, stakeholder discovery, and the challenge of creating experiences that are both
             beautiful and buildable.
           </p>

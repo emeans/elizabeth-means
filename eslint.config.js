@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 })
 
 module.exports = [
-  { ignores: ['.next/', 'out/', 'node_modules/'] },
+  { ignores: ['.next/', 'out/', 'node_modules/', 'eslint.config.js', 'next.config.js'] },
   ...compat.extends(
     'eslint:recommended',
     'plugin:react/recommended',
