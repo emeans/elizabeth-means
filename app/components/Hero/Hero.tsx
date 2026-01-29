@@ -6,11 +6,10 @@ export default function Hero() {
       <div className='container'>
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
-            <h1><span>Hi, I&apos;m Elizabeth&nbsp;Means</span></h1>
-            <p className={styles.heroSubtitle}><span>Product Designer & Engineer</span></p>
+            <h1><span>Hi, I'm Elizabeth&nbsp;Means</span></h1>
+            <p className={styles.heroSubtitle}><span>Product • Design • Engineering</span></p>
             <p className={styles.heroDescription}>
-              <span>I bridge design and engineering—creating systems that work beautifully for both users
-              and the teams who build them.</span>
+              <span>Creating solutions that are both beautiful and buildable.</span>
             </p>
           </div>
         </div>
