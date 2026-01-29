@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Libre_Baskerville } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -42,8 +43,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' className={libreBaskerville.variable}>
       <body>
         {children}
-        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerPolicy="no-referrer-when-downgrade"/></noscript>
+        <Script
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          strategy="afterInteractive"
+          data-collect-dnt="true"
+        />
+        <noscript>
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </body>
     </html>
   )
