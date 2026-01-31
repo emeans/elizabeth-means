@@ -325,7 +325,7 @@ Mobile breakpoint styles
 
     /* Make hamburger lines more visible when menu is open */
     .hamburger[aria-expanded='true'] .hamburgerLine {
-        background: var(--color-text);
+        background: var(--text-primary);
     }
 
     .navRight {
