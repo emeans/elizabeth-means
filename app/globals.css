@@ -1,47 +1,5 @@
 @import './tokens.css';
 
-/**
- * MIGRATION BRIDGE
- * Maps old globals.css variables to new tokens.css
- * 
- * Import order:
- * 1. tokens.css (new design tokens)
- * 2. bridge.css (this file - temporary mapping)
- * 3. Your component CSS files (using old variable names)
- * 
- * TODO: Once all components are refactored to use new token names,
- * delete this file and update imports.
- */
-
- :root {
-    /* ========================================
-       COLOR MAPPINGS
-       ======================================== */
-    
-    /* Backgrounds/Surfaces */
-    /* --color-bg: var(--surface-primary); */
-    /* --color-bg-secondary: var(--surface-secondary); */
-    
-    /* Text */
-    /* --color-text: var(--text-primary); */
-    /* --color-text-inverse: var(--text-inverse); */
-    
-    /* Actions/Accents */
-    /* --color-accent: var(--action-secondary-default);  neutral-900 */
-    /* --color-accent-secondary: var(--action-primary-default); */
-    /* --color-accent-hover: var(--action-primary-hover); */
-    
-    /* Borders */
-    /* --color-border: var(--border-default); */
-    
-    /* Feedback States */
-    /* --color-success: var(--feedback-success); */
-    /* --color-error: var(--feedback-error); */
-    
-    /* Shadows */
-    /* --color-shadow: var(--shadow-subtle); */
-    /* --color-shadow-strong: var(--shadow-medium); */
-
 * {
     margin: 0;
     padding: 0;
