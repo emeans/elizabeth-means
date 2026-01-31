@@ -1,0 +1,111 @@
+/**
+ * Design Tokens
+ * Generated from Figma Variables export
+ * 
+ * DO NOT EDIT MANUALLY - This file is auto-generated
+ * To update: Export from Figma → Drop JSON files in project root → Run: npm run build-tokens
+ */
+
+/* ========================================
+   PRIMITIVES
+   Base design values (colors, spacing, etc.)
+   These are the foundation - design tokens reference these
+   ======================================== */
+:root {
+  --color-neutral-50: #F5F5F5;
+  --color-neutral-100: #E8E8E8;
+  --color-neutral-900: #2C2A42;
+  --color-neutral-950: #222133;
+  --color-forest-600: #49755D;
+  --color-forest-700: #3A5E4B;
+  --color-earth-400: #BD8862;
+  --color-earth-500: #A47756;
+  --color-success-400: #34D399;
+  --color-success-600: #059669;
+  --color-error-400: #F87171;
+  --color-error-600: #DC2626;
+  --color-shadow-light-10: rgba(0, 0, 0, 0.1);
+  --color-shadow-light-20: rgba(0, 0, 0, 0.2);
+  --color-shadow-dark-50: rgba(0, 0, 0, 0.5);
+  --color-shadow-dark-70: rgba(0, 0, 0, 0.7);
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --typography-line-height-tight: 1.2000000476837158;
+  --typography-line-height-normal: 1.600000023841858;
+  --typography-line-height-relaxed: 1.7999999523162842;
+  --typography-weight-normal: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --typography-size-xs: 14px;
+  --typography-size-sm: 16px;
+  --typography-size-base: 18px;
+  --typography-size-lg: 24px;
+  --typography-size-xl: 32px;
+  --typography-size-2xl: 40px;
+  --typography-size-3xl: 64px;
+  --max-width-container: 1200px;
+  --max-width-content: 800px;
+  --max-width-prose: 700px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+}
+
+/* ========================================
+   LIGHT MODE (Default)
+   Design tokens that reference primitives
+   ======================================== */
+:root {
+  --surface-primary: var(--color-neutral-50);
+  --surface-secondary: var(--color-neutral-100);
+  --surface-inverse: var(--color-neutral-900);
+  --text-primary: var(--color-neutral-900);
+  --text-inverse: var(--color-neutral-50);
+  --action-primary-default: var(--color-forest-700);
+  --action-primary-hover: var(--color-forest-600);
+  --action-secondary-default: var(--color-neutral-900);
+  --border-default: var(--color-earth-500);
+  --border-subtle: var(--color-earth-400);
+  --feedback-success: var(--color-success-600);
+  --feedback-error: var(--color-error-600);
+  --shadow-subtle: var(--color-shadow-light-10);
+  --shadow-medium: var(--color-shadow-light-20);
+  --radius-button: var(--border-radius-lg);
+  --radius-card: var(--border-radius-lg);
+  --radius-input: var(--border-radius-lg);
+  --radius-focus: var(--border-radius-sm);
+  --size-max-width-container: var(--max-width-container);
+  --size-max-width-content: var(--max-width-content);
+}
+
+/* ========================================
+   DARK MODE
+   Same design token names, different primitive references
+   ======================================== */
+[data-theme='dark'] {
+  --surface-primary: var(--color-neutral-900);
+  --surface-secondary: var(--color-neutral-950);
+  --surface-inverse: var(--color-neutral-50);
+  --text-primary: var(--color-neutral-50);
+  --text-inverse: var(--color-neutral-900);
+  --action-primary-default: var(--color-earth-500);
+  --action-primary-hover: var(--color-earth-400);
+  --action-secondary-default: var(--color-neutral-50);
+  --border-default: var(--color-earth-400);
+  --border-subtle: var(--color-earth-500);
+  --feedback-success: var(--color-success-400);
+  --feedback-error: var(--color-error-400);
+  --shadow-subtle: var(--color-shadow-dark-50);
+  --shadow-medium: var(--color-shadow-dark-70);
+  --radius-button: var(--border-radius-lg);
+  --radius-card: var(--border-radius-lg);
+  --radius-input: var(--border-radius-lg);
+  --radius-focus: var(--border-radius-sm);
+  --size-max-width-container: var(--max-width-container);
+  --size-max-width-content: var(--max-width-content);
+}

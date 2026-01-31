@@ -1,3 +1,72 @@
+@import './tokens.css';
+
+/**
+ * MIGRATION BRIDGE
+ * Maps old globals.css variables to new tokens.css
+ * 
+ * Import order:
+ * 1. tokens.css (new design tokens)
+ * 2. bridge.css (this file - temporary mapping)
+ * 3. Your component CSS files (using old variable names)
+ * 
+ * TODO: Once all components are refactored to use new token names,
+ * delete this file and update imports.
+ */
+
+ :root {
+    /* ========================================
+       COLOR MAPPINGS
+       ======================================== */
+    
+    /* Backgrounds/Surfaces */
+    --color-bg: var(--surface-primary);
+    --color-bg-secondary: var(--surface-secondary);
+    
+    /* Text */
+    --color-text: var(--text-primary);
+    --color-text-inverse: var(--text-inverse);
+    
+    /* Actions/Accents */
+    --color-accent: var(--action-secondary-default);  /* neutral-900 */
+    --color-accent-secondary: var(--action-primary-default);
+    --color-accent-hover: var(--action-primary-hover);
+    
+    /* Borders */
+    --color-border: var(--border-default);
+    
+    /* Feedback States */
+    --color-success: var(--feedback-success);
+    --color-error: var(--feedback-error);
+    
+    /* Shadows */
+    --color-shadow: var(--shadow-subtle);
+    --color-shadow-strong: var(--shadow-medium);
+    
+    /* ========================================
+       LAYOUT MAPPINGS
+       ======================================== */
+    
+    --max-width: var(--size-max-width-container);
+    
+    /* ========================================
+       BORDER RADIUS MAPPINGS
+       ======================================== */
+    
+    --border-radius: var(--border-radius-lg);
+    
+    /* ========================================
+       NON-TOKEN VARIABLES
+       Keep these - they're application-specific
+       ======================================== */
+    
+    /* Typography - Not in design tokens */
+    --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    
+    /* Transitions - Not a design token */
+    --transition: all 0.3s ease;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -5,56 +74,18 @@
 }
 
 :root {
-    /* Modern color palette - Light Mode */
-    --color-bg: #f5f5f5;
-    --color-bg-secondary: #E8E8E8;
-    --color-text: #2C2A42;
-    --color-text-inverse: #f5f5f5;
-    --color-accent: #2C2A42;
-    --color-accent-secondary: #3A5E4B;
-    --color-accent-hover: #49755D;
-    --color-border: #A47756;
-    --color-success: #059669;
-    --color-error: #dc2626;
-    --color-shadow: rgba(0, 0, 0, 0.1);
-    --color-shadow-strong: rgba(0, 0, 0, 0.2);
-
     /* Typography */
     --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
     --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-2xl: 4rem;
-
     /* Layout */
-    --max-width: 1200px;
-    --border-radius: 8px;
+    --max-width: var(--max-width-container);
+    --border-radius: var(--border-radius-lg);
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode */
-[data-theme='dark'] {
-    --color-bg: #2C2A42;
-    --color-bg-secondary: #222133;
-    --color-text: #f5f5f5;
-    --color-text-inverse: #2C2A42;
-    --color-accent: #2C2A42;
-    --color-accent-secondary: #A47756;
-    --color-accent-hover: #BD8862;
-    --color-border: #BD8862;
-    --color-success: #34d399;
-    --color-error: #f87171;
-    --color-shadow: rgba(0, 0, 0, 0.5);
-    --color-shadow-strong: rgba(0, 0, 0, 0.7);
-}
-
 html {
-    font-size: 18px;
+    font-size: var(--typography-size-base);
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
@@ -75,7 +106,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-weight: 400;
+    font-weight: var(--typography-weight-normal);
     color: var(--color-text);
     background-color: var(--color-bg);
     line-height: 1.6;
