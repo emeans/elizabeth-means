@@ -1,9 +1,9 @@
 .footer {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--surface-primary);
+  color: var(--text-primary);
   padding: var(--spacing-xl) 36px;
   text-align: center;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--border-default);
   transition:
     background 0.3s ease,
     color 0.3s ease,

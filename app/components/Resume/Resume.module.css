@@ -1,5 +1,5 @@
 .resumeSection {
-  background: var(--color-bg-secondary);
+  background: var(--surface-secondary);
   transition: background 0.3s ease;
 }
 
