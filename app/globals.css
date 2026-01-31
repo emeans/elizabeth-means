@@ -19,53 +19,28 @@
        ======================================== */
     
     /* Backgrounds/Surfaces */
-    --color-bg: var(--surface-primary);
-    --color-bg-secondary: var(--surface-secondary);
+    /* --color-bg: var(--surface-primary); */
+    /* --color-bg-secondary: var(--surface-secondary); */
     
     /* Text */
-    --color-text: var(--text-primary);
-    --color-text-inverse: var(--text-inverse);
+    /* --color-text: var(--text-primary); */
+    /* --color-text-inverse: var(--text-inverse); */
     
     /* Actions/Accents */
-    --color-accent: var(--action-secondary-default);  /* neutral-900 */
-    --color-accent-secondary: var(--action-primary-default);
-    --color-accent-hover: var(--action-primary-hover);
+    /* --color-accent: var(--action-secondary-default);  neutral-900 */
+    /* --color-accent-secondary: var(--action-primary-default); */
+    /* --color-accent-hover: var(--action-primary-hover); */
     
     /* Borders */
-    --color-border: var(--border-default);
+    /* --color-border: var(--border-default); */
     
     /* Feedback States */
-    --color-success: var(--feedback-success);
-    --color-error: var(--feedback-error);
+    /* --color-success: var(--feedback-success); */
+    /* --color-error: var(--feedback-error); */
     
     /* Shadows */
-    --color-shadow: var(--shadow-subtle);
-    --color-shadow-strong: var(--shadow-medium);
-    
-    /* ========================================
-       LAYOUT MAPPINGS
-       ======================================== */
-    
-    --max-width: var(--size-max-width-container);
-    
-    /* ========================================
-       BORDER RADIUS MAPPINGS
-       ======================================== */
-    
-    --border-radius: var(--border-radius-lg);
-    
-    /* ========================================
-       NON-TOKEN VARIABLES
-       Keep these - they're application-specific
-       ======================================== */
-    
-    /* Typography - Not in design tokens */
-    --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    
-    /* Transitions - Not a design token */
-    --transition: all 0.3s ease;
-  }
+    /* --color-shadow: var(--shadow-subtle); */
+    /* --color-shadow-strong: var(--shadow-medium); */
 
 * {
     margin: 0;
@@ -107,8 +82,8 @@ html {
 body {
     font-family: var(--font-body);
     font-weight: var(--typography-weight-normal);
-    color: var(--color-text);
-    background-color: var(--color-bg);
+    color: var(--text-primary);
+    background-color: var(--surface-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -118,18 +93,18 @@ body {
 }
 
 a {
-    color: var(--color-accent-hover);
+    color: var(--action-primary-hover);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--color-accent-hover);
+    color: var(--action-primary-hover);
     text-decoration: underline;
 }
 
 a:focus {
-    outline: 2px solid var(--color-accent-hover);
+    outline: 2px solid var(--action-primary-hover);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -144,7 +119,7 @@ h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
-    color: var(--color-text);
+    color: var(--text-primary);
 }
 
 h1 {
@@ -192,8 +167,8 @@ img {
 
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--color-accent-secondary);
-    color: var(--color-text-inverse);
+    background: var(--action-primary-default);
+    color: var(--text-inverse);
     border: none;
     border-radius: var(--border-radius);
     font-family: var(--font-body);
@@ -206,15 +181,15 @@ img {
   
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
-    background: var(--color-accent-hover);
+    background: var(--action-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--color-shadow);
-    color: var(--color-text-inverse);
+    box-shadow: 0 4px 8px var(--shadow-subtle);
+    color: var(--text-inverse);
     text-decoration: none !important;
 }
 
 .btn:focus {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--action-primary-default);
     outline-offset: 2px;
 }
 
@@ -249,4 +224,3 @@ img {
         text-align: center;
       }
 }
-  
