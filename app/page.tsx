@@ -9,12 +9,11 @@ import About from './components/About'
 import Resume from './components/Resume/Resume'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import SkipLink from './components/design-system/SkipLink/SkipLink'
 
 export default function Home() {
-  const [skipLinkFocused, setSkipLinkFocused] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const skipLinkRef = useRef<HTMLAnchorElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   // Track window size for responsive menu (set in useEffect to avoid hydration mismatch)
@@ -106,30 +105,12 @@ export default function Home() {
     }
   }, [mobileMenuOpen, isMobile])
 
-  useEffect(() => {
-    const skipLink = skipLinkRef.current
-    if (!skipLink) return
-
-    const handleFocus = () => setSkipLinkFocused(true)
-    const handleBlur = () => setSkipLinkFocused(false)
-
-    skipLink.addEventListener('focus', handleFocus)
-    skipLink.addEventListener('blur', handleBlur)
-
-    return () => {
-      skipLink.removeEventListener('focus', handleFocus)
-      skipLink.removeEventListener('blur', handleBlur)
-    }
-  }, [])
-
   return (
-    <>
-      {/* Skip to main content link for accessibility */}
-      <a href='#main-content' className={styles.skipLink} ref={skipLinkRef}>
-        Skip to main content
-      </a>
-      <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
-        {/* Navigation */}
+    <SkipLink
+      href="#main-content"
+      content={
+        <main className={styles.mainContainer}>
+          {/* Mobile menu overlay */}
         {mobileMenuOpen && isMobile && (
           <div
             className={styles.mobileMenuOverlay}
@@ -137,6 +118,8 @@ export default function Home() {
             aria-hidden='true'
           />
         )}
+        
+        {/* Navigation */}
         <nav className={styles.nav}>
           <div className={styles.navContainer}>
             <a href='#home' className={styles.logo} onClick={() => setMobileMenuOpen(false)}>
@@ -220,7 +203,8 @@ export default function Home() {
         <Resume />
         <Contact />
         <Footer />
-      </main>
-    </>
+        </main>
+      }
+    />
   )
 }

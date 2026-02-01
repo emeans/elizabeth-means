@@ -1,0 +1,142 @@
+@import '../../../tokens.css';
+
+/* ========================================
+   CONTENT WRAPPER
+   Wraps page content when using content prop; exposes data-skip-link-focused
+   ======================================== */
+
+.contentWrapper {
+  display: contents;
+}
+
+/* ========================================
+   SKIP LINK WRAPPER
+   Full viewport width, flex-centers the link so it stays centered on mobile
+   ======================================== */
+
+.skipLinkWrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -60px;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 1001;
+  pointer-events: none;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skipLinkWrapper:focus-within {
+  top: 0;
+  pointer-events: auto;
+}
+
+/* ========================================
+   SKIP LINK
+   Accessibility - keyboard navigation
+   ======================================== */
+
+.skipLink {
+  display: inline-block;
+  background: var(--action-primary-hover);
+  color: var(--text-inverse);
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0 0 var(--radius-button) var(--radius-button);
+  box-shadow: 0 4px 6px var(--shadow-subtle);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ========================================
+   FOCUS STATE
+   Visible when keyboard focused
+   ======================================== */
+
+.skipLink:focus {
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  outline: 3px solid var(--action-primary-default);
+  outline-offset: -3px;
+}
+
+.skipLink:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   HOVER STATE
+   When focused and hovered
+   ======================================== */
+
+.skipLink:focus:hover {
+  background: var(--action-primary-default);
+  box-shadow: 0 6px 16px var(--shadow-strong);
+}
+
+/* ========================================
+   RESPONSIVE
+   Adjust for mobile
+   ======================================== */
+
+@media (max-width: 768px) {
+  .skipLinkWrapper {
+    top: -50px;
+  }
+
+  .skipLink {
+    font-size: 0.8125rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   High contrast and reduced motion
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .skipLink {
+    border: 2px solid currentColor;
+  }
+  
+  .skipLink:focus {
+    outline-width: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skipLinkWrapper {
+    transition: none;
+  }
+
+  .skipLinkWrapper:focus-within {
+    top: 0;
+  }
+
+  .skipLink {
+    transition: opacity 0.1s ease;
+  }
+}
+
+/* ========================================
+   DARK MODE
+   Ensure visibility in dark mode
+   ======================================== */
+
+[data-theme='dark'] .skipLink {
+  background: var(--action-primary-hover);
+  color: var(--text-inverse);
+}
+
+[data-theme='dark'] .skipLink:focus {
+  box-shadow: 0 4px 12px var(--shadow-strong);
+}

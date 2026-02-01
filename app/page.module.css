@@ -1,46 +1,9 @@
-/**
- Skip Link styles
-*/
-.skipLink {
-    position: fixed;
-    top: -60px;
-    left: 50vw;
-    transform: translateX(-50%);
-    background: var(--action-primary-hover);
-    color: var(--text-inverse) !important;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    z-index: 1001;
-    font-weight: 600;
-    font-size: 0.875rem;
-    opacity: 0;
-    pointer-events: none;
-    transition:
-        top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 0.3s ease;
-    white-space: nowrap;
-    box-shadow: 0 4px 6px var(--shadow-subtle);
-}
-
-.skipLink:focus {
-    top: 0;
-    opacity: 1;
-    pointer-events: auto;
-    outline: 3px solid var(--text-primary);
-    outline-offset: -3px;
-    box-shadow: 0 4px 12px var(--shadow-medium);
-}
-
-.skipLink:focus:not(:focus-visible) {
-    outline: none;
-}
-
 .mainContainer {
     position: relative;
 }
 
-.mainContainer.skipLinkActive .nav {
+/* Nav slides down when skip link is focused (SkipLink sets data-skip-link-focused on wrapper) */
+[data-skip-link-focused='true'] .nav {
     margin-top: 48px;
 }
 
@@ -270,12 +233,8 @@ Mobile breakpoint styles
         font-size: 1.125rem;
     }
 
-    .skipLink {
-        font-size: 0.75rem;
-        padding: 10px 20px;
-    }
-
-    .mainContainer.skipLinkActive .nav {
+    [data-skip-link-focused='true'] .nav {
         margin-top: 44px;
+        
     }
 }
