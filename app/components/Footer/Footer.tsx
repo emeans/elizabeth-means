@@ -20,7 +20,8 @@ export default function Footer() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label='GitHub'>
-              GitHub
+                <i className="fa-brands fa-github" data-fa-transform="grow-6"></i> GitHub
+              
             </a>
           </div>
         </div>
