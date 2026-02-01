@@ -10,6 +10,8 @@ import Resume from './components/Resume/Resume'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import SkipLink from './components/design-system/SkipLink/SkipLink'
+import LogoLink from './components/design-system/LogoLink/LogoLink'
+import ThemeToggle from './components/design-system/ThemeToggle/ThemeToggle'
 
 export default function Home() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
@@ -122,9 +124,8 @@ export default function Home() {
         {/* Navigation */}
         <nav className={styles.nav}>
           <div className={styles.navContainer}>
-            <a href='#home' className={styles.logo} onClick={() => setMobileMenuOpen(false)}>
-              Elizabeth Means
-            </a>
+          <LogoLink onClick={() => setMobileMenuOpen(false)} href='#home'>Elizabeth Means</LogoLink>
+
             {isMounted && isMobile && (
               <HamburgerButton
                 ref={hamburgerRef}
@@ -182,18 +183,7 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-              <button
-                className={styles.themeToggle}
-                onClick={toggleTheme}
-                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-                title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>
-                <span className={styles.themeToggleIcon} aria-hidden='true'>
-                  {theme === 'light' ? '🌙' : '☀️'}
-                </span>
-                <span className={styles.themeToggleText}>
-                  {theme === 'light' ? 'Dark' : 'Light'}
-                </span>
-              </button>
+              <ThemeToggle theme={theme} onToggle={toggleTheme} />
             </div>
           </div>
         </nav>
