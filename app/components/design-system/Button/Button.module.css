@@ -11,11 +11,11 @@
   gap: var(--spacing-xs);
   position: relative;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: var(--typography-weight-semibold);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  line-height: 1.5;
+  line-height: var(--typography-line-height-normal);
   border: 2px solid transparent;
   border-radius: var(--radius-button);
   cursor: pointer;
@@ -114,19 +114,19 @@
 }
 
 .danger {
-  background: var(--feedback-error-default);
+  background: var(--feedback-error);
   color: var(--text-inverse);
   box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
 }
 
 .danger:hover:not(:disabled) {
-  background: var(--feedback-error-hover);
+  background: var(--feedback-error);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
 }
 
 .danger:focus-visible {
-  outline: 3px solid var(--feedback-error-default);
+  outline: 3px solid var(--feedback-error);
   outline-offset: 2px;
 }
 
@@ -142,14 +142,14 @@
 }
 
 .medium {
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   font-size: 1rem;
   min-height: 40px;
   min-width: 120px;
 }
 
 .large {
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
   font-size: 1.125rem;
   min-height: 48px;
   min-width: 160px;

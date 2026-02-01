@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from './Contact.module.css'
+import Button from '../design-system/Button/Button'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -308,13 +309,9 @@ export default function Contact() {
               )}
             </div>
 
-            <button
-              type='submit'
-              className='btn'
-              disabled={formStatus === 'submitting'}
-              aria-disabled={formStatus === 'submitting'}>
+            <Button type='submit' variant='danger' size='large' disabled={formStatus === 'submitting'}>
               {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-            </button>
+            </Button>
           </form>
         </div>
       </div>

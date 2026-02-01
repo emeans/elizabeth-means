@@ -7,9 +7,9 @@
 }
 
 :root {
-    /* Typography */
-    --font-body: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    --font-heading: var(--font-libre-baskerville), 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    /* Typography: fallback to 'Libre Baskerville' when var not set (e.g. Storybook without Next layout) */
+    --font-body: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
+    --font-heading: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
 
     /* Layout */
     --max-width: var(--max-width-container);
@@ -18,7 +18,6 @@
 }
 
 html {
-    font-size: var(--typography-size-base);
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
@@ -40,6 +39,7 @@ html {
 body {
     font-family: var(--font-body);
     font-weight: var(--typography-weight-normal);
+    font-size: var(--typography-size-base);
     color: var(--text-primary);
     background-color: var(--surface-primary);
     line-height: var(--typography-line-height-normal);

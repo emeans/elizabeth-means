@@ -23,6 +23,11 @@ const path = require('path');
 // ========================================
 // HELPER FUNCTIONS
 // ========================================
+function pxToRem(pxValue, baseSize = 16) {
+    const rem = pxValue / baseSize;
+    // Round to 3 decimal places for cleaner output
+    return Math.round(rem * 1000) / 1000;
+}
 
 function extractValue(token) {
   const { $type, $value, $extensions } = token;
@@ -94,12 +99,11 @@ function tokensToCss(tokens, mode = 'primitives') {
         if (typeof cssValue === 'number') {
           if (variableName.includes('radius') || 
               variableName.includes('radius') || 
-              variableName.includes('max-width') || 
-              variableName.includes('size')) {
+              variableName.includes('max-width')) {
             cssValue = `${cssValue}px`;
           }
-          if (variableName.includes('spacing')) {
-            cssValue = `${cssValue}rem`;
+          if (variableName.includes('spacing') || variableName.includes('size')) {
+            cssValue = `${pxToRem(cssValue, 16)}rem`; // 16px = 1rem
           }
           // Line-height stays unitless
         }
