@@ -145,32 +145,18 @@ export const Danger: Story = {
 };
 
 /**
- * Small button
+ * All sizes for comparison (Controls can change size on any story)
  */
-export const Small: Story = {
-  args: {
-    children: 'Small Button',
-    size: 'small',
-  },
-};
-
-/**
- * Medium button (default)
- */
-export const Medium: Story = {
-  args: {
-    children: 'Medium Button',
-    size: 'medium',
-  },
-};
-
-/**
- * Large button
- */
-export const Large: Story = {
-  args: {
-    children: 'Large Button',
-    size: 'large',
+export const Sizes: RenderOnlyStory = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <Button size="small">Small</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
+    </div>
+  ),
+  parameters: {
+    docs: { description: { story: 'All button sizes.' } },
   },
 };
 
@@ -247,26 +233,6 @@ export const AllVariants: RenderOnlyStory = {
 };
 
 /**
- * All sizes side by side
- */
-export const AllSizes: RenderOnlyStory = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button size="small">Small</Button>
-      <Button size="medium">Medium</Button>
-      <Button size="large">Large</Button>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'All button sizes for comparison',
-      },
-    },
-  },
-};
-
-/**
  * Real-world example: Contact form
  */
 export const ContactFormExample: RenderOnlyStory = {
@@ -280,45 +246,6 @@ export const ContactFormExample: RenderOnlyStory = {
     docs: {
       description: {
         story: 'Typical contact form button group',
-      },
-    },
-  },
-};
-
-/**
- * Real-world example: Confirmation dialog
- */
-export const ConfirmationDialogExample: RenderOnlyStory = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <Button variant="danger">Delete Account</Button>
-      <Button variant="ghost">Cancel</Button>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Destructive action with cancel option',
-      },
-    },
-  },
-};
-
-/**
- * Real-world example: Action group
- */
-export const ActionGroupExample: RenderOnlyStory = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-      <Button>Save Changes</Button>
-      <Button variant="outline">Preview</Button>
-      <Button variant="ghost">Cancel</Button>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Multiple action buttons with visual hierarchy',
       },
     },
   },

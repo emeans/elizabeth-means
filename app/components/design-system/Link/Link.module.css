@@ -110,7 +110,7 @@
 .cta {
   /* Button-like appearance */
   background: var(--action-primary-default);
-  color: var(--text-primary);
+  color: var(--text-inverse);
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-button);
   font-weight: 600;

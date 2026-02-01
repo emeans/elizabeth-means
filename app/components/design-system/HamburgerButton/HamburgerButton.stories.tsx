@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { fn } from 'storybook/test';
 import HamburgerButton from './HamburgerButton';
 
@@ -108,41 +108,6 @@ export const Interactive: RenderOnlyStory = {
 };
 
 /**
- * Animation showcase - rapid toggling
- */
-export const AnimationShowcase: RenderOnlyStory = {
-  render: () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setIsOpen(prev => !prev);
-      }, 2000);
-      return () => clearInterval(interval);
-    }, []);
-
-    return (
-      <div>
-        <HamburgerButton
-          isOpen={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
-        />
-        <p style={{ marginTop: '2rem', fontSize: '0.875rem', color: '#666' }}>
-          Auto-toggling to showcase animation
-        </p>
-      </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Automatically toggles to demonstrate the smooth animation',
-      },
-    },
-  },
-};
-
-/**
  * Real-world example: Mobile navigation header
  */
 export const InNavigationContext: RenderOnlyStory = {
@@ -204,38 +169,3 @@ export const InNavigationContext: RenderOnlyStory = {
   },
 };
 
-/**
- * Accessibility demonstration
- */
-export const AccessibilityDemo: RenderOnlyStory = {
-  render: () => {
-    const [isOpen, setIsOpen] = useState(false);
-    
-    return (
-      <div>
-        <HamburgerButton
-          isOpen={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Main menu"
-        />
-        <div style={{ marginTop: '2rem', fontSize: '0.875rem' }}>
-          <h4 style={{ marginBottom: '0.5rem' }}>Accessibility Features:</h4>
-          <ul style={{ lineHeight: 1.6, color: '#666' }}>
-            <li>✅ aria-label: {isOpen ? '"Close menu"' : '"Main menu"'}</li>
-            <li>✅ aria-expanded: {isOpen ? 'true' : 'false'}</li>
-            <li>✅ aria-controls: "mobile-menu"</li>
-            <li>✅ Keyboard accessible (Space/Enter)</li>
-            <li>✅ Focus visible outline</li>
-          </ul>
-        </div>
-      </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Demonstrates all accessibility features built into the component',
-      },
-    },
-  },
-};
