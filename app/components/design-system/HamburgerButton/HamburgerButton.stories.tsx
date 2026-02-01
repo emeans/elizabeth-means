@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { fn } from 'storybook/test';
 import HamburgerButton from './HamburgerButton';
+import Link from '../Link/Link';
 
 /**
  * HamburgerButton is a mobile menu toggle with animated state transitions.
@@ -146,15 +147,21 @@ export const InNavigationContext: RenderOnlyStory = {
           <div
             style={{
               padding: '1rem',
-              background: '#f9fafb',
+              background: 'var(--surface-primary)',
               display: 'flex',
               flexDirection: 'column',
               gap: '0.75rem',
             }}
           >
-            <a href="#" style={{ padding: '0.5rem', color: '#374151' }}>About</a>
-            <a href="#" style={{ padding: '0.5rem', color: '#374151' }}>Resume</a>
-            <a href="#" style={{ padding: '0.5rem', color: '#374151' }}>Contact</a>
+            <Link variant="nav" href="#about" blockLayout>
+              About
+            </Link>
+            <Link variant="nav" href="#resume" blockLayout>
+              Resume
+            </Link>
+            <Link variant="nav" href="#contact" blockLayout>
+              Contact
+            </Link>
           </div>
         )}
       </div>

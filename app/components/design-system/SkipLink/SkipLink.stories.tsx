@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import Link from '../Link/Link';
 import SkipLink from './SkipLink';
 
 /**
@@ -62,15 +63,15 @@ export const InContext: Story = {
               }}
             >
               <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                <a href="#home" style={{ color: 'inherit' }}>
+                <Link variant="nav" href="#home">
                   Home
-                </a>
-                <a href="#about" style={{ color: 'inherit' }}>
+                </Link>
+                <Link variant="nav" href="#about">
                   About
-                </a>
-                <a href="#contact" style={{ color: 'inherit' }}>
+                </Link>
+                <Link variant="nav" href="#contact">
                   Contact
-                </a>
+                </Link>
               </div>
             </nav>
 
