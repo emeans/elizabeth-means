@@ -158,7 +158,21 @@
     /* Slightly reduce animation on mobile */
     bottom: -2px;
   }
-  
+
+  /* Block layout for nav links in mobile menu (use blockLayout prop) */
+  .navBlock {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    font-size: var(--typography-size-base);
+    border-radius: var(--border-radius);
+  }
+
+  .navBlock:focus {
+    outline-offset: 2px;
+    background: var(--surface-primary);
+  }
+
   .cta {
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: 0.875rem;

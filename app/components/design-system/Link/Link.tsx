@@ -29,9 +29,12 @@ import styles from './Link.module.css';
 
 interface BaseLinkProps {
     variant?: 'nav' | 'inline' | 'standalone' | 'cta';
+    /** When true (e.g. in a mobile nav menu), link uses block layout and full-width styling */
+    blockLayout?: boolean;
     children: React.ReactNode;
     className?: string;
     'aria-label'?: string;
+    onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 interface ExternalLinkProps extends BaseLinkProps {
@@ -50,18 +53,21 @@ type LinkProps = ExternalLinkProps | InternalLinkProps;
 
 export default function Link({
     variant = 'inline',
+    blockLayout = false,
     href,
     external = false,
     download,
     children,
     className,
     'aria-label': ariaLabel,
+    onClick,
     ...props
 }: LinkProps) {
 
     const linkClassName = [
         styles.link,
         styles[variant],
+        blockLayout && styles.navBlock,
         className,
     ]
         .filter(Boolean)
@@ -77,6 +83,7 @@ export default function Link({
             rel={external ? 'noopener noreferrer' : undefined}
             download={download}
             aria-label={ariaLabel || (external ? `${children} (opens in new tab)` : undefined)}
+            onClick={onClick}
             {...props}
         >
             {children}
@@ -97,6 +104,7 @@ export default function Link({
             className={linkClassName}
             href={href}
             aria-label={ariaLabel}
+            onClick={onClick}
             {...props}
         >
             {children}
@@ -110,6 +118,7 @@ export default function Link({
         className={linkClassName}
         href={href}
         aria-label={ariaLabel}
+        onClick={onClick}
         {...props}
         >
         {children}

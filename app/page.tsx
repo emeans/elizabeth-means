@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from './page.module.css'
+import Link from './components/design-system/Link/Link'
 import Hero from './components/Hero/Hero'
 import About from './components/About'
 import Resume from './components/Resume/Resume'
@@ -167,40 +168,46 @@ export default function Home() {
               aria-hidden={isMounted && isMobile && !mobileMenuOpen ? 'true' : 'false'}>
               <ul className={styles.navLinks} role='list'>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#main-content'
                     aria-label='Navigate to About section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#resume'
                     aria-label='Navigate to Resume section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     Resume
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#contact'
                     aria-label='Navigate to Contact section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <button
