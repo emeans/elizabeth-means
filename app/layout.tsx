@@ -48,7 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
           data-collect-dnt="true"
         />
-        <script src="https://kit.fontawesome.com/c0e71dcb85.js" crossOrigin="anonymous"></script>
         <noscript>
           <img
             src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
