@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './page.module.css'
 import Link from './components/design-system/Link/Link'
+import HamburgerButton from './components/design-system/HamburgerButton/HamburgerButton'
 import Hero from './components/Hero/Hero'
 import About from './components/About'
 import Resume from './components/Resume/Resume'
@@ -16,13 +17,8 @@ export default function Home() {
   const skipLinkRef = useRef<HTMLAnchorElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
-  // Track window size for responsive menu
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth <= 768
-    }
-    return false
-  })
+  // Track window size for responsive menu (set in useEffect to avoid hydration mismatch)
+  const [isMobile, setIsMobile] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
 
@@ -146,21 +142,14 @@ export default function Home() {
             <a href='#home' className={styles.logo} onClick={() => setMobileMenuOpen(false)}>
               Elizabeth Means
             </a>
-            <button
-              ref={hamburgerRef}
-              className={styles.hamburger}
-              onClick={() => {
-                if (isMobile) {
-                  setMobileMenuOpen((prev) => !prev)
-                }
-              }}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
-              aria-controls='mobile-menu'>
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-            </button>
+            {isMounted && isMobile && (
+              <HamburgerButton
+                ref={hamburgerRef}
+                isOpen={mobileMenuOpen}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-controls='mobile-menu'
+              />
+            )}
             <div
               className={styles.navRight}
               id='mobile-menu'

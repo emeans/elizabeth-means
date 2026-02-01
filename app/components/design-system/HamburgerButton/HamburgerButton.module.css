@@ -1,0 +1,107 @@
+@import '../../../tokens.css';
+
+/* ========================================
+   HAMBURGER BUTTON
+   Mobile menu toggle
+   ======================================== */
+
+.hamburger {
+  /* Reset button styles */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 103;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--action-primary-default);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   HAMBURGER LINES
+   Three lines that animate to X
+   ======================================== */
+
+.line {
+  width: 24px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  display: block;
+}
+
+/* Closed state - three horizontal lines */
+.line[data-state='closed']:nth-child(1) {
+  transform: translateY(0) rotate(0);
+}
+
+.line[data-state='closed']:nth-child(2) {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.line[data-state='closed']:nth-child(3) {
+  transform: translateY(0) rotate(0);
+}
+
+/* Open state - X shape */
+.line[data-state='open']:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.line[data-state='open']:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.line[data-state='open']:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   High contrast and reduced motion
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .line {
+    height: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger,
+  .line {
+    transition: none;
+  }
+}
+
+/* ========================================
+   DARK MODE
+   Ensure lines are visible
+   ======================================== */
+
+[data-theme='dark'] .line {
+  background: var(--text-primary);
+}
