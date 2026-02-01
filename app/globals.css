@@ -42,7 +42,7 @@ body {
     font-weight: var(--typography-weight-normal);
     color: var(--text-primary);
     background-color: var(--surface-primary);
-    line-height: 1.6;
+    line-height: var(--typography-line-height-normal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition:

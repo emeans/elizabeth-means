@@ -1,4 +1,5 @@
 import styles from './Resume.module.css'
+import Link from '../design-system/Link/Link'
 
 export default function Resume() {
   return (
@@ -31,11 +32,10 @@ export default function Resume() {
             </span>
             .
           </p>
-          <div>
-            <a href='/Elizabeth-Means-Resume.pdf' className='btn' download>
+
+            <Link variant="cta" href="/Elizabeth-Means-Resume.pdf" download>
                 Download Resume (PDF)
-            </a>
-          </div>
+            </Link>
         </div>
       </div>
     </section>

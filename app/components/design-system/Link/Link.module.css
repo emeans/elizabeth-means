@@ -1,0 +1,219 @@
+@import '../../../tokens.css';
+
+/* ========================================
+   BASE STYLES
+   Shared styles for all links
+   ======================================== */
+.link {
+  /* Typography */
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+/* External link icon */
+.externalIcon {
+  display: inline-flex;
+  font-size: 0.875em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover .externalIcon {
+  opacity: 1;
+}
+
+/* ========================================
+   VARIANTS
+   Different link styles for different contexts
+   ======================================== */
+
+/* Nav - Navigation links (top nav, menu) */
+.nav {
+  color: var(--text-primary);
+  position: relative;
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+
+/* Animated underline on hover */
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--action-primary-hover);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav:hover {
+  color: var(--action-primary-hover);
+}
+
+.nav:hover::after {
+  width: 100%;
+}
+
+.nav:focus-visible {
+  color: var(--action-primary-hover);
+  outline: 2px solid var(--action-primary-hover);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+/* Inline - Content links (within paragraphs) */
+.inline {
+  color: var(--action-primary-default);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.inline:hover {
+  color: var(--action-primary-hover);
+  text-decoration-thickness: 2px;
+}
+
+.inline:focus-visible {
+  outline: 2px solid var(--action-primary-hover);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.inline:visited {
+  color: var(--action-primary-default);
+  opacity: 0.8;
+}
+
+/* Standalone - Footer links, isolated links */
+.standalone {
+  color: var(--text-primary);
+  text-decoration: none;
+  position: relative;
+}
+
+.standalone:hover {
+  color: var(--action-primary-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.standalone:focus-visible {
+  outline: 2px solid var(--action-primary-hover);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* CTA - Call-to-action link styled as button */
+.cta {
+  /* Button-like appearance */
+  background: var(--action-primary-default);
+  color: var(--text-inverse);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 4px var(--shadow-subtle);
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  min-width: 120px;
+  min-height: 40px;
+  text-align: center;
+  
+  /* Animation */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta:hover {
+  background: var(--action-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  color: var(--text-inverse);
+  text-decoration: none;
+}
+
+.cta:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px var(--shadow-subtle);
+}
+
+.cta:focus-visible {
+  outline: 3px solid var(--action-primary-default);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   RESPONSIVE
+   Mobile adjustments
+   ======================================== */
+
+@media (max-width: 768px) {
+  .nav::after {
+    /* Slightly reduce animation on mobile */
+    bottom: -2px;
+  }
+  
+  .cta {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    min-height: 36px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   High contrast and reduced motion
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .inline {
+    text-decoration-thickness: 2px;
+  }
+  
+  .nav::after {
+    height: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+  
+  .nav::after {
+    transition: none;
+  }
+  
+  .cta:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   DARK MODE ADJUSTMENTS
+   ======================================== */
+
+[data-theme='dark'] .nav:visited {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .inline:visited {
+  opacity: 0.7;
+}
