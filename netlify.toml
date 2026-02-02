@@ -1,7 +1,16 @@
 [build]
-  command = "npm run build"
+  # Build command switches based on SITE_TYPE environment variable
+  command = """
+    if [ "$SITE_TYPE" = "storybook" ]; then
+      npm run build-storybook && mv storybook-static out
+    else
+      npm run build
+    fi
+  """
+  
   publish = "out"
 
+# Redirect rule for main portfolio site (SPA routing)
 [[redirects]]
   from = "/*"
   to = "/index.html"
