@@ -1,12 +1,17 @@
+# When using SITE_TYPE=storybook for deploy previews, remove the Next.js runtime so
+# the build is treated as static. Go to: Build & deploy > Build settings (or
+# Continuous deployment). In the Runtime (or Framework) field, remove/clear Next.js.
+# The runtime injects @netlify/plugin-nextjs, which expects Next.js output and fails
+# when the publish directory contains Storybook. This repo uses static export and
+# runs its own build command, so the Next.js runtime is not required.
 [build]
   # Build command switches based on SITE_TYPE environment variable
   command = """
     if [ "$SITE_TYPE" = "storybook" ]; then
       npm run build-storybook && mv storybook-static out
     else
-      npm run build
       # SPA routing for main portfolio only (not applied when SITE_TYPE=storybook)
-      echo '/*    /index.html   200' > out/_redirects
+      npm run build && echo '/*    /index.html   200' > out/_redirects
     fi
   """
   
