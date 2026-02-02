@@ -1,0 +1,124 @@
+@import '../../../tokens.css';
+
+/* ========================================
+   LOGO LINK
+   Site branding in navigation
+   ======================================== */
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 102;
+}
+
+.logoLink:hover {
+  color: var(--action-primary-hover);
+  text-decoration: none;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--action-primary-hover);
+  outline-offset: 6px;
+  border-radius: 2px;
+  color: var(--action-primary-hover);
+}
+
+/* ========================================
+   LOGO IMAGE
+   For future logo implementation
+   ======================================== */
+
+.logoImage {
+  /* Size - adjust based on your logo */
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover .logoImage {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   LOGO TEXT
+   Current text-only implementation
+   ======================================== */
+
+.logoText {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ========================================
+   COMBINATIONS
+   Logo + Text layouts
+   ======================================== */
+
+.logoLink:has(.logoImage) .logoText {
+  margin-left: var(--spacing-xs);
+}
+
+.logoLink:not(:has(.logoText)) {
+  justify-content: center;
+}
+
+/* ========================================
+   RESPONSIVE
+   Mobile adjustments
+   ======================================== */
+
+@media (max-width: 768px) {
+  .logoLink {
+    font-size: 1.25rem;
+  }
+  
+  .logoImage {
+    height: 32px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   High contrast and reduced motion
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .logoLink {
+    font-weight: 800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoLink,
+  .logoImage {
+    transition: none;
+  }
+  
+  .logoLink:hover .logoImage {
+    transform: none;
+  }
+}
+
+/* ========================================
+   DARK MODE
+   Ensure visibility
+   ======================================== */
+
+[data-theme='dark'] .logoLink {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .logoLink:hover {
+  color: var(--action-primary-hover);
+}

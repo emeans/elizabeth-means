@@ -2,26 +2,24 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from './page.module.css'
+import Link from './components/design-system/Link/Link'
+import HamburgerButton from './components/design-system/HamburgerButton/HamburgerButton'
 import Hero from './components/Hero/Hero'
 import About from './components/About'
 import Resume from './components/Resume/Resume'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import SkipLink from './components/design-system/SkipLink/SkipLink'
+import LogoLink from './components/design-system/LogoLink/LogoLink'
+import ThemeToggle from './components/design-system/ThemeToggle/ThemeToggle'
 
 export default function Home() {
-  const [skipLinkFocused, setSkipLinkFocused] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const skipLinkRef = useRef<HTMLAnchorElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
-  // Track window size for responsive menu
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth <= 768
-    }
-    return false
-  })
+  // Track window size for responsive menu (set in useEffect to avoid hydration mismatch)
+  const [isMobile, setIsMobile] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
 
@@ -109,30 +107,12 @@ export default function Home() {
     }
   }, [mobileMenuOpen, isMobile])
 
-  useEffect(() => {
-    const skipLink = skipLinkRef.current
-    if (!skipLink) return
-
-    const handleFocus = () => setSkipLinkFocused(true)
-    const handleBlur = () => setSkipLinkFocused(false)
-
-    skipLink.addEventListener('focus', handleFocus)
-    skipLink.addEventListener('blur', handleBlur)
-
-    return () => {
-      skipLink.removeEventListener('focus', handleFocus)
-      skipLink.removeEventListener('blur', handleBlur)
-    }
-  }, [])
-
   return (
-    <>
-      {/* Skip to main content link for accessibility */}
-      <a href='#main-content' className={styles.skipLink} ref={skipLinkRef}>
-        Skip to main content
-      </a>
-      <main className={`${styles.mainContainer} ${skipLinkFocused ? styles.skipLinkActive : ''}`}>
-        {/* Navigation */}
+    <SkipLink
+      href="#main-content"
+      content={
+        <main className={styles.mainContainer}>
+          {/* Mobile menu overlay */}
         {mobileMenuOpen && isMobile && (
           <div
             className={styles.mobileMenuOverlay}
@@ -140,26 +120,20 @@ export default function Home() {
             aria-hidden='true'
           />
         )}
+        
+        {/* Navigation */}
         <nav className={styles.nav}>
           <div className={styles.navContainer}>
-            <a href='#home' className={styles.logo} onClick={() => setMobileMenuOpen(false)}>
-              Elizabeth Means
-            </a>
-            <button
-              ref={hamburgerRef}
-              className={styles.hamburger}
-              onClick={() => {
-                if (isMobile) {
-                  setMobileMenuOpen((prev) => !prev)
-                }
-              }}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
-              aria-controls='mobile-menu'>
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-              <span className={styles.hamburgerLine}></span>
-            </button>
+          <LogoLink onClick={() => setMobileMenuOpen(false)} href='#home'>Elizabeth Means</LogoLink>
+
+            {isMounted && isMobile && (
+              <HamburgerButton
+                ref={hamburgerRef}
+                isOpen={mobileMenuOpen}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-controls='mobile-menu'
+              />
+            )}
             <div
               className={styles.navRight}
               id='mobile-menu'
@@ -167,54 +141,49 @@ export default function Home() {
               aria-hidden={isMounted && isMobile && !mobileMenuOpen ? 'true' : 'false'}>
               <ul className={styles.navLinks} role='list'>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#main-content'
                     aria-label='Navigate to About section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#resume'
                     aria-label='Navigate to Resume section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     Resume
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    variant='nav'
+                    blockLayout={isMobile}
                     href='#contact'
                     aria-label='Navigate to Contact section'
                     onClick={() => {
-                        if (isMobile) {
-                          setMobileMenuOpen(false)
-                        }
-                      }}>
+                      if (isMobile) {
+                        setMobileMenuOpen(false)
+                      }
+                    }}>
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
-              <button
-                className={styles.themeToggle}
-                onClick={toggleTheme}
-                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-                title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>
-                <span className={styles.themeToggleIcon} aria-hidden='true'>
-                  {theme === 'light' ? '🌙' : '☀️'}
-                </span>
-                <span className={styles.themeToggleText}>
-                  {theme === 'light' ? 'Dark' : 'Light'}
-                </span>
-              </button>
+              <ThemeToggle theme={theme} onToggle={toggleTheme} />
             </div>
           </div>
         </nav>
@@ -224,7 +193,8 @@ export default function Home() {
         <Resume />
         <Contact />
         <Footer />
-      </main>
-    </>
+        </main>
+      }
+    />
   )
 }

@@ -597,7 +597,7 @@
   "spacing": {
     "xs": {
       "$type": "number",
-      "$value": 0.5,
+      "$value": 8,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:265",
         "com.figma.scopes": [
@@ -608,7 +608,7 @@
     },
     "sm": {
       "$type": "number",
-      "$value": 1,
+      "$value": 12,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:266",
         "com.figma.scopes": [
@@ -619,7 +619,7 @@
     },
     "md": {
       "$type": "number",
-      "$value": 1.5,
+      "$value": 16,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:267",
         "com.figma.scopes": [
@@ -630,7 +630,7 @@
     },
     "lg": {
       "$type": "number",
-      "$value": 2,
+      "$value": 24,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:268",
         "com.figma.scopes": [
@@ -641,7 +641,7 @@
     },
     "xl": {
       "$type": "number",
-      "$value": 3,
+      "$value": 32,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:281",
         "com.figma.scopes": [
@@ -652,7 +652,7 @@
     },
     "2xl": {
       "$type": "number",
-      "$value": 4,
+      "$value": 48,
       "$extensions": {
         "com.figma.variableId": "VariableID:36:282",
         "com.figma.scopes": [

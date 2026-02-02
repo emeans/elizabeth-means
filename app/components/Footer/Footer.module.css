@@ -15,6 +15,13 @@
   margin: 0 auto;
 }
 
+.links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;

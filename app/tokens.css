@@ -38,22 +38,22 @@
   --typography-weight-medium: 500;
   --typography-weight-semibold: 600;
   --typography-weight-bold: 700;
-  --typography-size-xs: 14px;
-  --typography-size-sm: 16px;
-  --typography-size-base: 18px;
-  --typography-size-lg: 24px;
-  --typography-size-xl: 32px;
-  --typography-size-2xl: 40px;
-  --typography-size-3xl: 64px;
+  --typography-size-xs: 0.875rem;
+  --typography-size-sm: 1rem;
+  --typography-size-base: 1.125rem;
+  --typography-size-lg: 1.5rem;
+  --typography-size-xl: 2rem;
+  --typography-size-2xl: 2.5rem;
+  --typography-size-3xl: 4rem;
   --max-width-container: 1200px;
   --max-width-content: 800px;
   --max-width-prose: 700px;
   --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 }
 
 /* ========================================
