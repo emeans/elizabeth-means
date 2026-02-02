@@ -5,13 +5,9 @@
       npm run build-storybook && mv storybook-static out
     else
       npm run build
+      # SPA routing for main portfolio only (not applied when SITE_TYPE=storybook)
+      echo '/*    /index.html   200' > out/_redirects
     fi
   """
   
   publish = "out"
-
-# Redirect rule for main portfolio site (SPA routing)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
