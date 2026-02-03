@@ -402,8 +402,65 @@
           },
           "com.figma.isOverride": true
         }
+      }
+    },
+    "secondary": {
+      "default": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.21960784494876862,
+            0.24705882370471954,
+            0.3333333432674408
+          ],
+          "alpha": 1,
+          "hex": "#383F55"
+        },
+        "$description": "Secondary action color - CONNECT TO: color/neutral/950",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:7:34",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:31a02dfa56f755d456a9b61e16a792ff57c84b78/-1:-1",
+            "targetVariableName": "color/raven/600",
+            "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
+            "targetVariableSetName": "Core"
+          },
+          "com.figma.isOverride": true
+        }
       },
-      "success-default": {
+      "hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.32156863808631897,
+            0.3686274588108063,
+            0.47058823704719543
+          ],
+          "alpha": 1,
+          "hex": "#525E78"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:83:278",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:6a6dde1488ce07ab9ae9c1eae8dd7bdedf436ed2/-1:-1",
+            "targetVariableName": "color/raven/500",
+            "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
+            "targetVariableSetName": "Core"
+          },
+          "com.figma.isOverride": true
+        }
+      }
+    },
+    "success": {
+      "default": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -429,7 +486,7 @@
           "com.figma.isOverride": true
         }
       },
-      "success-hover": {
+      "hover": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -454,8 +511,10 @@
           },
           "com.figma.isOverride": true
         }
-      },
-      "warning-default": {
+      }
+    },
+    "warning": {
+      "default": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -481,7 +540,7 @@
           "com.figma.isOverride": true
         }
       },
-      "warning-hover": {
+      "hover": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -506,8 +565,10 @@
           },
           "com.figma.isOverride": true
         }
-      },
-      "error-default": {
+      }
+    },
+    "error": {
+      "default": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -533,7 +594,7 @@
           "com.figma.isOverride": true
         }
       },
-      "error-hover": {
+      "hover": {
         "$type": "color",
         "$value": {
           "colorSpace": "srgb",
@@ -558,8 +619,10 @@
           },
           "com.figma.isOverride": true
         }
-      },
-      "focus-outline": {
+      }
+    },
+    "focus": {
+      "outline": {
         "$type": "number",
         "$value": 2,
         "$extensions": {
@@ -576,72 +639,17 @@
           "com.figma.isOverride": true
         }
       },
-      "focus-outline-offset": {
+      "outline-offset": {
         "$type": "number",
-        "$value": 6,
+        "$value": 4,
         "$extensions": {
           "com.figma.variableId": "VariableID:86:286",
           "com.figma.scopes": [
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:af808ab397839b00229310fb8a1d8eb4387729e9/-1:-1",
-            "targetVariableName": "border-width/lg",
-            "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
-            "targetVariableSetName": "Core"
-          },
-          "com.figma.isOverride": true
-        }
-      }
-    },
-    "secondary": {
-      "default": {
-        "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.9803921580314636,
-            0.9803921580314636,
-            0.9764705896377563
-          ],
-          "alpha": 1,
-          "hex": "#FAFAF9"
-        },
-        "$description": "Secondary action color - CONNECT TO: color/neutral/950",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:7:34",
-          "com.figma.scopes": [
-            "ALL_SCOPES"
-          ],
-          "com.figma.aliasData": {
-            "targetVariableId": "VariableID:13f432e152b82aee297ed4caca86465a5fc5b06b/-1:-1",
-            "targetVariableName": "color/neutral/50",
-            "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
-            "targetVariableSetName": "Core"
-          },
-          "com.figma.isOverride": true
-        }
-      },
-      "hover": {
-        "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.9607843160629272,
-            0.9607843160629272,
-            0.9607843160629272
-          ],
-          "alpha": 1,
-          "hex": "#F5F5F5"
-        },
-        "$extensions": {
-          "com.figma.variableId": "VariableID:83:278",
-          "com.figma.scopes": [
-            "ALL_SCOPES"
-          ],
-          "com.figma.aliasData": {
-            "targetVariableId": "VariableID:c52738b41af33cd4c757ebec6a5331f8e9786139/-1:-1",
-            "targetVariableName": "color/neutral/100",
+            "targetVariableId": "VariableID:3324d0d566c86ebb41b4103ef910375ed05b72b1/-1:-1",
+            "targetVariableName": "border-width/md",
             "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
             "targetVariableSetName": "Core"
           },

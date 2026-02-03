@@ -94,8 +94,8 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-hover);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-focus-outline-offset);
   border-color: var(--action-primary-hover);
   box-shadow: 0 0 0 var(--action-primary-focus-outline) var(--action-primary-hover);
 }

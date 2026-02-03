@@ -25,7 +25,7 @@
 
 .button:active:not(:disabled) {
   transform: translateY(0);
-  box-shadow: 0 1px 2px var(--shadow-subtle);
+  box-shadow: 0 2px 4px var(--shadow-subtle);
 }
 
 /* Content wrapper for loading state */
@@ -58,12 +58,12 @@
 }
 
 .primary:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .secondary {
-  background: var(--surface-secondary);
+  background: var(--action-secondary-default);
   color: var(--text-primary);
   box-shadow: 0 2px 4px var(--shadow-subtle);
 }
@@ -75,8 +75,8 @@
 }
 
 .secondary:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-secondary-default);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-secondary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .outline {
@@ -94,8 +94,8 @@
 }
 
 .outline:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .ghost {
@@ -109,25 +109,25 @@
 }
 
 .ghost:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--border-default);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--border-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .danger {
-  background: var(--surface-error);
-  color: var(--text-error);
+  background: var(--action-error-default);
+  color: var(--text-inverse);
   box-shadow: 0 2px 4px var(--shadow-subtle);
 }
 
 .danger:hover:not(:disabled) {
-  background: var(--action-primary-error-hover);
+  background: var(--action-error-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow-subtle);
 }
 
 .danger:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--border-error);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--border-error);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 /* ========================================
@@ -142,14 +142,14 @@
 }
 
 .medium {
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-xs) var(--spacing-sm);
   font-size: var(--typography-size-sm);
   min-height: 40px;
   min-width: 120px;
 }
 
 .large {
-  padding: var(--spacing-lg) var(--spacing-xl);
+  padding: var(--spacing-xs) var(--spacing-sm);
   font-size: var(--typography-size-base);
   min-height: 48px;
   min-width: 160px;

@@ -309,9 +309,13 @@ export default function Contact() {
               )}
             </div>
 
-            <Button type='submit' variant='primary' size='large' disabled={formStatus === 'submitting'}>
-              {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              size="large"
+              disabled={formStatus === 'submitting'}
+              label={formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+            />
           </form>
         </div>
       </div>

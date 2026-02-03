@@ -100,10 +100,11 @@ function tokensToCss(tokens, mode = 'core') {
           if (variableName.includes('radius') || 
               variableName.includes('radius') || 
               variableName.includes('max-width') ||
+              variableName.includes('spacing') ||
               variableName.includes('border-width')) {
             cssValue = `${cssValue}px`;
           }
-          if (variableName.includes('spacing') || variableName.includes('size')) {
+          if ( variableName.includes('size')) {
             cssValue = `${pxToRem(cssValue, 16)}rem`; // 16px = 1rem
           }
           // Line-height stays unitless

@@ -59,8 +59,8 @@
 
 .nav:focus-visible {
   color: var(--action-primary-hover);
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-hover);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-focus-outline-offset);
   border-radius: var(--radius-focus);
 }
 
@@ -78,8 +78,8 @@
 }
 
 .inline:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-hover);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-focus-outline-offset);
   border-radius: var(--radius-focus);
 }
 
@@ -102,8 +102,8 @@
 }
 
 .standalone:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-hover);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-focus-outline-offset);
   border-radius: var(--radius-focus);
 }
 
@@ -111,19 +111,17 @@
   /* Button-like appearance */
   background: var(--action-primary-default);
   color: var(--text-inverse);
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 8px 16px;
   border-radius: var(--radius-button);
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 2px 4px var(--shadow-subtle);
-  
-  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
-  min-width: 120px;
-  min-height: 40px;
+  min-height: 48px;
+  min-width: 160px;
   text-align: center;
   
   /* Animation */
@@ -144,8 +142,8 @@
 }
 
 .cta:focus-visible {
-  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
-  outline-offset: var(--action-primary-focus-outline-offset);
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 /* ========================================
@@ -169,7 +167,7 @@
   }
 
   .navBlock:focus {
-    outline-offset: var(--action-primary-focus-outline-offset);
+    outline-offset: var(--action-focus-outline-offset);
     background: var(--surface-primary);
   }
 
