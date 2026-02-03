@@ -14,7 +14,8 @@
     /* Layout */
     --max-width: var(--max-width-container);
     --border-radius: var(--border-radius-lg);
-    --transition: all 0.3s ease;
+    --transition: all 0.1s ease;
+
 }
 
 html {
