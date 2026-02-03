@@ -9,12 +9,12 @@
  *   node build-tokens.js
  * 
  * Expects:
- *   - Primitives.tokens.json
+ *   - Core.tokens.json
  *   - Light Mode.tokens.json
  *   - Dark Mode.tokens.json
  * 
  * Outputs:
- *   - tokens.css (combined primitives + light + dark modes with var() references)
+ *   - tokens.css (combined core + light + dark modes with var() references)
  */
 
 const fs = require('fs');
@@ -80,7 +80,7 @@ function extractValue(token) {
   return $value;
 }
 
-function tokensToCss(tokens, mode = 'primitives') {
+function tokensToCss(tokens, mode = 'core') {
   let css = '';
   
   function processTokens(obj, path = []) {
@@ -128,13 +128,13 @@ function buildTokens() {
   console.log('🎨 Building design tokens from Figma exports...\n');
   
   // Check for input files
-  const primitivePath = 'Primitives.tokens.json';
-  const lightPath = 'Light Mode.tokens.json';
-  const darkPath = 'Dark Mode.tokens.json';
+  const corePath = './app/tokens/Core.tokens.json';
+  const lightPath = './app/tokens/Light Mode.tokens.json';
+  const darkPath = './app/tokens/Dark Mode.tokens.json';
   
-  if (!fs.existsSync(primitivePath)) {
-    console.error(`❌ Error: ${primitivePath} not found`);
-    console.error('   Please export Primitive tokens from Figma and place in project root');
+  if (!fs.existsSync(corePath)) {
+    console.error(`❌ Error: ${corePath} not found`);
+    console.error('   Please export Core tokens from Figma and place in project root');
     process.exit(1);
   }
 
@@ -152,14 +152,14 @@ function buildTokens() {
   
   // Read and parse tokens
   console.log('📖 Reading token files...');
-  const primitiveTokens = JSON.parse(fs.readFileSync(primitivePath, 'utf8'));
+  const coreTokens = JSON.parse(fs.readFileSync(corePath, 'utf8'));
   const lightTokens = JSON.parse(fs.readFileSync(lightPath, 'utf8'));
   const darkTokens = JSON.parse(fs.readFileSync(darkPath, 'utf8'));
   
   // Convert to CSS
   console.log('🔄 Transforming Figma format to CSS...');
   console.log('   ↳ Detecting aliases and converting to var() references...');
-  const primitiveCss = tokensToCss(primitiveTokens, 'primitives');
+  const coreCss = tokensToCss(coreTokens, 'core');
   const lightCss = tokensToCss(lightTokens, 'light');
   const darkCss = tokensToCss(darkTokens, 'dark');
   
@@ -173,38 +173,38 @@ function buildTokens() {
  */
 
 /* ========================================
-   PRIMITIVES
+   CORE
    Base design values (colors, spacing, etc.)
    These are the foundation - design tokens reference these
    ======================================== */
 :root {
-${primitiveCss}}
+${coreCss}}
 
 /* ========================================
    LIGHT MODE (Default)
-   Design tokens that reference primitives
+   Design tokens that reference core tokens
    ======================================== */
 :root {
 ${lightCss}}
 
 /* ========================================
    DARK MODE
-   Same design token names, different primitive references
+   Same design token names, different core references
    ======================================== */
 [data-theme='dark'] {
 ${darkCss}}
 `;
   
   // Write output file to current directory
-  const outputPath = '../tokens.css';
+  const outputPath = './app/tokens.css';
   fs.writeFileSync(outputPath, output, 'utf8');
   
   console.log(`\n✅ Successfully generated ${outputPath}`);
   console.log('📁 Import in your CSS: @import "./tokens.css";');
-  console.log(`📊 Primitives: ${Object.keys(primitiveTokens).length} token groups`);
+  console.log(`📊 Core: ${Object.keys(coreTokens).length} token groups`);
   console.log(`📊 Light mode: ${Object.keys(lightTokens).length} token groups`);
   console.log(`📊 Dark mode: ${Object.keys(darkTokens).length} token groups`);
-  console.log('\n💡 Semantic tokens now use var() references to primitives!');
+  console.log('\n💡 Semantic tokens now use var() references to core tokens!');
   console.log('   Example: --surface-primary: var(--color-neutral-50)\n');
 }
 
