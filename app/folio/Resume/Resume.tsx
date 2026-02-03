@@ -1,5 +1,5 @@
 import styles from './Resume.module.css'
-import Link from '../design-system/Link/Link'
+import Link from '../../components/design-system/Link/Link'
 
 export default function Resume() {
   return (
