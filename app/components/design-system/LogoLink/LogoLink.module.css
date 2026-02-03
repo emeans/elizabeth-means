@@ -27,9 +27,9 @@
 }
 
 .logoLink:focus-visible {
-  outline: 2px solid var(--action-primary-hover);
-  outline-offset: 6px;
-  border-radius: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-primary-focus-outline-offset);
+  border-radius: var(--radius-focus);
   color: var(--action-primary-hover);
 }
 

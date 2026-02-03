@@ -64,7 +64,7 @@
   opacity: 1;
   pointer-events: auto;
   box-shadow: 0 4px 12px var(--shadow-medium);
-  outline: 3px solid var(--action-primary-default);
+  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
   outline-offset: -3px;
 }
 
@@ -105,11 +105,11 @@
 
 @media (prefers-contrast: high) {
   .skipLink {
-    border: 2px solid currentColor;
+    border: var(--border-width-sm) solid currentColor;
   }
   
   .skipLink:focus {
-    outline-width: 4px;
+    outline-width: var(--border-width-md);
   }
 }
 

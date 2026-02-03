@@ -58,8 +58,8 @@
 }
 
 .primary:focus-visible {
-  outline: 3px solid var(--action-primary-default);
-  outline-offset: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-primary-focus-outline-offset);
 }
 
 .secondary {
@@ -75,8 +75,8 @@
 }
 
 .secondary:focus-visible {
-  outline: 3px solid var(--action-secondary-default);
-  outline-offset: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--action-secondary-default);
+  outline-offset: var(--action-primary-focus-outline-offset);
 }
 
 .outline {
@@ -94,8 +94,8 @@
 }
 
 .outline:focus-visible {
-  outline: 3px solid var(--action-primary-default);
-  outline-offset: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-primary-focus-outline-offset);
 }
 
 .ghost {
@@ -109,8 +109,8 @@
 }
 
 .ghost:focus-visible {
-  outline: 3px solid var(--border-default);
-  outline-offset: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--border-default);
+  outline-offset: var(--action-primary-focus-outline-offset);
 }
 
 .danger {
@@ -126,8 +126,8 @@
 }
 
 .danger:focus-visible {
-  outline: 3px solid var(--border-error);
-  outline-offset: 2px;
+  outline: var(--action-primary-focus-outline) solid var(--border-error);
+  outline-offset: var(--action-primary-focus-outline-offset);
 }
 
 /* ========================================
@@ -188,7 +188,7 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  border: 2px solid currentColor;
+  border: var(--border-width-sm) solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
@@ -230,11 +230,11 @@
    ======================================== */
 @media (prefers-contrast: high) {
   .button {
-    border-width: 2px;
+    border-width: var(--border-width-sm);
   }
   
   .outline {
-    border-width: 3px;
+    border-width: var(--border-width-md);
   }
 }
 
