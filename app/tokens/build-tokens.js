@@ -99,7 +99,8 @@ function tokensToCss(tokens, mode = 'core') {
         if (typeof cssValue === 'number') {
           if (variableName.includes('radius') || 
               variableName.includes('radius') || 
-              variableName.includes('max-width')) {
+              variableName.includes('max-width') ||
+              variableName.includes('border-width')) {
             cssValue = `${cssValue}px`;
           }
           if (variableName.includes('spacing') || variableName.includes('size')) {
