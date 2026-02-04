@@ -107,7 +107,7 @@ Mobile breakpoint styles
         padding: 80px var(--spacing-lg) var(--spacing-2xl);
         gap: var(--spacing-xl);
         transform: translateX(100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.1s ease;
         box-shadow: -4px 0 20px var(--shadow-medium);
         z-index: 102;
         overflow-y: auto;

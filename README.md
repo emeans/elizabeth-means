@@ -90,7 +90,7 @@ This site is configured for deployment on Netlify. The `netlify.toml` file conta
 
 - **Hero Section**: Update content in `app/components/Hero/Hero.tsx` and styles in `app/components/Hero/Hero.module.css`
 - **About Section**: Update content in `app/components/About.tsx`
-- **Resume Section**: Update content in `app/components/Resume/Resume.tsx` and styles in `app/components/Resume/Resume.module.css`
+- **Resume Section**: Update content in `app/folio/Resume/Resume.tsx` and styles in `app/folio/Resume/Resume.module.css`
 - **Contact Section**: Update form configuration in `app/components/Contact/Contact.tsx` and styles in `app/components/Contact/Contact.module.css`
 - **Footer**: Update content in `app/components/Footer/Footer.tsx` and styles in `app/components/Footer/Footer.module.css`
 - **Navigation**: Update navigation logic in `app/page.tsx` and styles in `app/page.module.css`

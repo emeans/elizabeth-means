@@ -1,3 +1,4 @@
+@import '../../globals.css';
 .hero {
   padding: var(--spacing-2xl) 0;
   min-height: 80vh;
@@ -5,7 +6,7 @@
   align-items: center;
   scroll-margin-top: 0;
   position: relative;
-  transition: background 0.5s ease;
+  transition: var(--transition);
   background-image: url('/wesley-tingey-XvlbhiTzfWA-unsplash.jpg');
   background-size: cover;
   background-position: center;
@@ -25,12 +26,9 @@
 
 .heroText {
   text-align: center;
-  background-color: rgba(73, 117, 93, 0.9);
+  background-color: var(--action-primary-default);
+  opacity: 0.9;
   padding: 0.2em 0.4em;
-}
-
-[data-theme='dark'] .heroText {
-  background-color: rgba(189, 136, 98, 0.9);
 }
 
 .hero h1 {

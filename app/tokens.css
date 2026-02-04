@@ -7,30 +7,116 @@
  */
 
 /* ========================================
-   PRIMITIVES
+   CORE
    Base design values (colors, spacing, etc.)
    These are the foundation - design tokens reference these
    ======================================== */
 :root {
-  --color-neutral-50: #F5F5F5;
-  --color-neutral-100: #E8E8E8;
-  --color-neutral-900: #2C2A42;
-  --color-neutral-950: #222133;
-  --color-forest-600: #49755D;
-  --color-forest-700: #3A5E4B;
-  --color-earth-400: #BD8862;
-  --color-earth-500: #A47756;
-  --color-success-400: #34D399;
-  --color-success-600: #059669;
-  --color-error-400: #F87171;
-  --color-error-600: #DC2626;
-  --color-shadow-light-10: rgba(0, 0, 0, 0.1);
-  --color-shadow-light-20: rgba(0, 0, 0, 0.2);
-  --color-shadow-dark-50: rgba(0, 0, 0, 0.5);
-  --color-shadow-dark-70: rgba(0, 0, 0, 0.7);
+  --color-neutral-50: #FAFAF9;
+  --color-neutral-100: #F5F5F5;
+  --color-neutral-200: #E8E8E8;
+  --color-neutral-300: #D6D6D4;
+  --color-neutral-400: #B3B5B3;
+  --color-neutral-500: #8D8F8F;
+  --color-neutral-600: #6C6E6E;
+  --color-neutral-700: #505252;
+  --color-neutral-800: #373939;
+  --color-neutral-900: #242626;
+  --color-neutral-950: #161717;
+  --color-forest-50: #F2F5F0;
+  --color-forest-100: #DCE6D8;
+  --color-forest-200: #B8CCB5;
+  --color-forest-300: #8DB098;
+  --color-forest-400: #5F8F7C;
+  --color-forest-500: #3A7268;
+  --color-forest-600: #2D5856;
+  --color-forest-700: #234145;
+  --color-forest-800: #1A2D35;
+  --color-forest-900: #111D26;
+  --color-forest-950: #0A1119;
+  --color-raven-50: #F3F0F8;
+  --color-raven-100: #DDD8EE;
+  --color-raven-200: #C2BAD8;
+  --color-raven-300: #A0A0C0;
+  --color-raven-400: #7580A0;
+  --color-raven-500: #525E78;
+  --color-raven-600: #383F55;
+  --color-raven-700: #252B3E;
+  --color-raven-800: #181D2C;
+  --color-raven-900: #111520;
+  --color-raven-950: #0C0E18;
+  --color-patina-50: #FAF6F2;
+  --color-patina-100: #F3EBE2;
+  --color-patina-200: #E7D6C5;
+  --color-patina-300: #D4B89D;
+  --color-patina-400: #C59A7B;
+  --color-patina-500: #BD8862;
+  --color-patina-600: #A47756;
+  --color-patina-700: #836049;
+  --color-patina-800: #5E4435;
+  --color-patina-900: #3D2D23;
+  --color-patina-950: #1F1812;
+  --color-forge-50: #FFF9F5;
+  --color-forge-100: #FFEEE0;
+  --color-forge-200: #FFDBC4;
+  --color-forge-300: #FFBA8A;
+  --color-forge-400: #FF8F52;
+  --color-forge-500: #FF5722;
+  --color-forge-600: #E63C14;
+  --color-forge-700: #B8260D;
+  --color-forge-800: #8A1A0A;
+  --color-forge-900: #5C1008;
+  --color-forge-950: #2E0804;
+  --color-success-50: #F3FCFB;
+  --color-success-100: #D6F5F3;
+  --color-success-200: #A5EEE8;
+  --color-success-300: #5DE9DD;
+  --color-success-400: #20E9D8;
+  --color-success-500: #0FC7B8;
+  --color-success-600: #0A9E92;
+  --color-success-700: #06746B;
+  --color-success-800: #084F49;
+  --color-success-900: #083531;
+  --color-success-950: #061E1C;
+  --color-warning-50: #FEFCF0;
+  --color-warning-100: #FDF5C9;
+  --color-warning-200: #FAE88E;
+  --color-warning-300: #F9DC48;
+  --color-warning-400: #FAD519;
+  --color-warning-500: #D5B207;
+  --color-warning-600: #A38A0A;
+  --color-warning-700: #75630A;
+  --color-warning-800: #52460A;
+  --color-warning-900: #342D09;
+  --color-warning-950: #1D1907;
+  --color-error-50: #FDECF0;
+  --color-error-100: #FCCAD4;
+  --color-error-200: #F797AA;
+  --color-error-300: #F67992;
+  --color-error-400: #F5476A;
+  --color-error-500: #F00F3C;
+  --color-error-600: #B21030;
+  --color-error-700: #810E25;
+  --color-error-800: #530E1C;
+  --color-error-900: #330A12;
+  --color-error-950: #1C070C;
+  --color-alpha-light-10: rgba(0, 0, 0, 0.1);
+  --color-alpha-light-20: rgba(0, 0, 0, 0.2);
+  --color-alpha-light-30: rgba(0, 0, 0, 0.3);
+  --color-alpha-light-40: rgba(0, 0, 0, 0.4);
+  --color-alpha-dark-50: rgba(0, 0, 0, 0.5);
+  --color-alpha-dark-60: rgba(0, 0, 0, 0.6);
+  --color-alpha-dark-70: rgba(0, 0, 0, 0.7);
+  --color-alpha-dark-80: rgba(0, 0, 0, 0.8);
   --border-radius-sm: 2px;
   --border-radius-md: 4px;
   --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+  --border-width-xs: 1px;
+  --border-width-sm: 2px;
+  --border-width-md: 4px;
+  --border-width-lg: 6px;
+  --border-width-xl: 8px;
   --typography-line-height-tight: 1.2000000476837158;
   --typography-line-height-normal: 1.600000023841858;
   --typography-line-height-relaxed: 1.7999999523162842;
@@ -48,33 +134,58 @@
   --max-width-container: 1200px;
   --max-width-content: 800px;
   --max-width-prose: 700px;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
 }
 
 /* ========================================
    LIGHT MODE (Default)
-   Design tokens that reference primitives
+   Design tokens that reference core tokens
    ======================================== */
 :root {
   --surface-primary: var(--color-neutral-50);
   --surface-secondary: var(--color-neutral-100);
-  --surface-inverse: var(--color-neutral-900);
+  --surface-elevated: #FFFFFF;
+  --surface-success: var(--color-success-100);
+  --surface-warning: var(--color-warning-100);
+  --surface-error: var(--color-error-100);
   --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-500);
   --text-inverse: var(--color-neutral-50);
-  --action-primary-default: var(--color-forest-700);
-  --action-primary-hover: var(--color-forest-600);
-  --action-secondary-default: var(--color-neutral-900);
-  --border-default: var(--color-earth-500);
-  --border-subtle: var(--color-earth-400);
-  --feedback-success: var(--color-success-600);
-  --feedback-error: var(--color-error-600);
-  --shadow-subtle: var(--color-shadow-light-10);
-  --shadow-medium: var(--color-shadow-light-20);
+  --text-success: var(--color-success-600);
+  --text-warning: var(--color-warning-600);
+  --text-error: var(--color-error-600);
+  --text-disabled: rgba(36, 38, 38, 0.6);
+  --action-primary-default: var(--color-forest-500);
+  --action-primary-hover: var(--color-forest-400);
+  --action-primary-disabled: rgba(58, 114, 104, 0.6);
+  --action-secondary-default: var(--color-neutral-300);
+  --action-secondary-hover: var(--color-neutral-200);
+  --action-secondary-disabled: rgba(214, 214, 212, 0.6);
+  --action-success-default: var(--color-success-600);
+  --action-success-hover: var(--color-success-500);
+  --action-warning-default: var(--color-warning-500);
+  --action-warning-hover: var(--color-warning-400);
+  --action-error-default: var(--color-error-600);
+  --action-error-hover: var(--color-error-500);
+  --action-focus-outline: var(--border-width-sm);
+  --action-focus-outline-offset: var(--border-width-md);
+  --border-default: var(--color-neutral-300);
+  --border-subtle: var(--color-neutral-200);
+  --border-success: var(--color-success-600);
+  --border-warning: var(--color-warning-600);
+  --border-error: var(--color-error-600);
+  --icon-success: var(--color-success-600);
+  --icon-warning: var(--color-warning-600);
+  --icon-error: var(--color-error-600);
+  --shadow-subtle: var(--color-alpha-light-10);
+  --shadow-medium: var(--color-alpha-light-20);
+  --shadow-strong: var(--color-alpha-light-30);
   --radius-button: var(--border-radius-lg);
   --radius-card: var(--border-radius-lg);
   --radius-input: var(--border-radius-lg);
@@ -85,23 +196,48 @@
 
 /* ========================================
    DARK MODE
-   Same design token names, different primitive references
+   Same design token names, different core references
    ======================================== */
 [data-theme='dark'] {
-  --surface-primary: var(--color-neutral-900);
-  --surface-secondary: var(--color-neutral-950);
-  --surface-inverse: var(--color-neutral-50);
+  --surface-primary: var(--color-raven-800);
+  --surface-secondary: var(--color-raven-700);
+  --surface-elevated: var(--color-raven-500);
+  --surface-success: var(--color-success-900);
+  --surface-warning: var(--color-warning-900);
+  --surface-error: var(--color-error-900);
   --text-primary: var(--color-neutral-50);
+  --text-secondary: var(--color-raven-300);
+  --text-muted: var(--color-raven-400);
   --text-inverse: var(--color-neutral-900);
-  --action-primary-default: var(--color-earth-500);
-  --action-primary-hover: var(--color-earth-400);
-  --action-secondary-default: var(--color-neutral-50);
-  --border-default: var(--color-earth-400);
-  --border-subtle: var(--color-earth-500);
-  --feedback-success: var(--color-success-400);
-  --feedback-error: var(--color-error-400);
-  --shadow-subtle: var(--color-shadow-dark-50);
-  --shadow-medium: var(--color-shadow-dark-70);
+  --text-success: var(--color-success-200);
+  --text-warning: var(--color-warning-200);
+  --text-error: var(--color-error-200);
+  --text-disabled: rgba(250, 250, 249, 0.6);
+  --action-primary-default: var(--color-patina-500);
+  --action-primary-hover: var(--color-patina-400);
+  --action-primary-disabled: rgba(189, 136, 98, 0.6);
+  --action-secondary-default: var(--color-raven-600);
+  --action-secondary-hover: var(--color-raven-500);
+  --action-secondary-disabled: rgba(56, 63, 85, 0.6);
+  --action-success-default: var(--color-success-500);
+  --action-success-hover: var(--color-success-400);
+  --action-warning-default: var(--color-warning-400);
+  --action-warning-hover: var(--color-warning-300);
+  --action-error-default: var(--color-error-500);
+  --action-error-hover: var(--color-error-400);
+  --action-focus-outline: var(--border-width-sm);
+  --action-focus-outline-offset: var(--border-width-md);
+  --border-default: var(--color-raven-600);
+  --border-subtle: var(--color-raven-500);
+  --border-success: var(--color-success-200);
+  --border-warning: var(--color-warning-200);
+  --border-error: var(--color-error-200);
+  --icon-success: var(--color-success-400);
+  --icon-warning: var(--color-warning-400);
+  --icon-error: var(--color-error-400);
+  --shadow-subtle: var(--color-alpha-dark-50);
+  --shadow-medium: var(--color-alpha-dark-60);
+  --shadow-strong: var(--color-alpha-dark-70);
   --radius-button: var(--border-radius-lg);
   --radius-card: var(--border-radius-lg);
   --radius-input: var(--border-radius-lg);

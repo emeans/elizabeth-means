@@ -32,8 +32,8 @@
 }
 
 .hamburger:focus-visible {
-  outline: 2px solid var(--action-primary-default);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 /* ========================================

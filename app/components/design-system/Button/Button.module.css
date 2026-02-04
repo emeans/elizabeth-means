@@ -16,16 +16,16 @@
   text-decoration: none;
   white-space: nowrap;
   line-height: var(--typography-line-height-normal);
-  border: 2px solid transparent;
+  border: var(--border-width-sm) solid transparent;
   border-radius: var(--radius-button);
   cursor: pointer;
   user-select: none;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
 }
 
 .button:active:not(:disabled) {
   transform: translateY(0);
-  box-shadow: 0 1px 2px var(--shadow-subtle);
+  box-shadow: 0 2px 4px var(--shadow-subtle);
 }
 
 /* Content wrapper for loading state */
@@ -58,12 +58,12 @@
 }
 
 .primary:focus-visible {
-  outline: 3px solid var(--action-primary-default);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .secondary {
-  background: var(--surface-secondary);
+  background: var(--action-secondary-default);
   color: var(--text-primary);
   box-shadow: 0 2px 4px var(--shadow-subtle);
 }
@@ -75,8 +75,8 @@
 }
 
 .secondary:focus-visible {
-  outline: 3px solid var(--action-secondary-default);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--action-secondary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .outline {
@@ -94,8 +94,8 @@
 }
 
 .outline:focus-visible {
-  outline: 3px solid var(--action-primary-default);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .ghost {
@@ -109,25 +109,25 @@
 }
 
 .ghost:focus-visible {
-  outline: 3px solid var(--border-interactive);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--border-default);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 .danger {
-  background: var(--feedback-error);
+  background: var(--action-error-default);
   color: var(--text-inverse);
-  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 2px 4px var(--shadow-subtle);
 }
 
 .danger:hover:not(:disabled) {
-  background: var(--feedback-error);
+  background: var(--action-error-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 4px 12px var(--shadow-subtle);
 }
 
 .danger:focus-visible {
-  outline: 3px solid var(--feedback-error);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--border-error);
+  outline-offset: var(--action-focus-outline-offset);
 }
 
 /* ========================================
@@ -136,21 +136,21 @@
    ======================================== */
 .small {
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: 0.875rem;
+  font-size: var(--typography-size-xs);
   min-height: 32px;
   min-width: 80px;
 }
 
 .medium {
-  padding: var(--spacing-md) var(--spacing-lg);
-  font-size: 1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--typography-size-sm);
   min-height: 40px;
   min-width: 120px;
 }
 
 .large {
-  padding: var(--spacing-lg) var(--spacing-xl);
-  font-size: 1.125rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--typography-size-base);
   min-height: 48px;
   min-width: 160px;
 }
@@ -188,7 +188,7 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  border: 2px solid currentColor;
+  border: var(--border-width-sm) solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
@@ -207,19 +207,19 @@
 @media (max-width: 768px) {
   .small {
     padding: calc(var(--spacing-xs) * 0.875) var(--spacing-sm);
-    font-size: 0.8125rem;
+    font-size: calc(var(--typography-size-xs) * 0.9286); /* 0.8125rem, no token */
     min-height: 28px;
   }
   
   .medium {
     padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.875rem;
+    font-size: var(--typography-size-sm);
     min-height: 36px;
   }
   
   .large {
     padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 1rem;
+    font-size: var(--typography-size-base);
     min-height: 40px;
   }
 }
@@ -230,11 +230,11 @@
    ======================================== */
 @media (prefers-contrast: high) {
   .button {
-    border-width: 2px;
+    border-width: var(--border-width-sm);
   }
   
   .outline {
-    border-width: 3px;
+    border-width: var(--border-width-md);
   }
 }
 

@@ -18,8 +18,23 @@ import Button from './Button';
 const meta = {
   title: 'Components/Button',
   component: Button,
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          width: '100%',
+          minHeight: '60vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
     docs: {
       description: {
         component: 'Button component for actions. Use Link component for navigation.',
@@ -28,6 +43,13 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    label: {
+      control: 'text',
+      description: 'Button label (visible text)',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'outline', 'ghost', 'danger'],
@@ -99,7 +121,7 @@ type RenderOnlyStory = Partial<Story> & {
  */
 export const Primary: Story = {
   args: {
-    children: 'Primary Button',
+    label: 'Primary Button',
     variant: 'primary',
   },
 };
@@ -109,7 +131,7 @@ export const Primary: Story = {
  */
 export const Secondary: Story = {
   args: {
-    children: 'Secondary Button',
+    label: 'Secondary Button',
     variant: 'secondary',
   },
 };
@@ -119,7 +141,7 @@ export const Secondary: Story = {
  */
 export const Outline: Story = {
   args: {
-    children: 'Outline Button',
+    label: 'Outline Button',
     variant: 'outline',
   },
 };
@@ -129,7 +151,7 @@ export const Outline: Story = {
  */
 export const Ghost: Story = {
   args: {
-    children: 'Ghost Button',
+    label: 'Ghost Button',
     variant: 'ghost',
   },
 };
@@ -139,24 +161,32 @@ export const Ghost: Story = {
  */
 export const Danger: Story = {
   args: {
-    children: 'Delete Account',
+    label: 'Delete Account',
     variant: 'danger',
   },
 };
 
 /**
- * All sizes for comparison (Controls can change size on any story)
+ * All sizes for comparison. Controls (e.g. variant) apply to all three;
+ * each button keeps its size for side-by-side comparison.
  */
-export const Sizes: RenderOnlyStory = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button size="small">Small</Button>
-      <Button size="medium">Medium</Button>
-      <Button size="large">Large</Button>
-    </div>
-  ),
+export const Sizes: Story = {
+  args: {
+    label: 'Button',
+    variant: 'secondary',
+  },
+  render: (args) => {
+    const { size: _size, ...rest } = args;
+    return (
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <Button {...rest} size="small" label="Small" />
+        <Button {...rest} size="medium" label="Medium" />
+        <Button {...rest} size="large" label="Large" />
+      </div>
+    );
+  },
   parameters: {
-    docs: { description: { story: 'All button sizes.' } },
+    docs: { description: { story: 'All button sizes. Use Controls to change variant (and other props) for all three.' } },
   },
 };
 
@@ -165,7 +195,7 @@ export const Sizes: RenderOnlyStory = {
  */
 export const Loading: Story = {
   args: {
-    children: 'Send Message',
+    label: 'Send Message',
     loading: true,
   },
 };
@@ -175,7 +205,7 @@ export const Loading: Story = {
  */
 export const Disabled: Story = {
   args: {
-    children: 'Disabled Button',
+    label: 'Disabled Button',
     disabled: true,
   },
 };
@@ -185,28 +215,8 @@ export const Disabled: Story = {
  */
 export const FullWidth: Story = {
   args: {
-    children: 'Full Width Button',
+    label: 'Full Width Button',
     fullWidth: true,
-  },
-  parameters: {
-    layout: 'padded',
-  },
-};
-
-/**
- * Submit button for forms
- */
-export const SubmitButton: Story = {
-  args: {
-    children: 'Submit Form',
-    type: 'submit',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Use type="submit" for form submission buttons',
-      },
-    },
   },
 };
 
@@ -216,11 +226,11 @@ export const SubmitButton: Story = {
 export const AllVariants: RenderOnlyStory = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="danger">Danger</Button>
+      <Button variant="primary" label="Primary" />
+      <Button variant="secondary" label="Secondary" />
+      <Button variant="outline" label="Outline" />
+      <Button variant="ghost" label="Ghost" />
+      <Button variant="danger" label="Danger" />
     </div>
   ),
   parameters: {
@@ -238,8 +248,8 @@ export const AllVariants: RenderOnlyStory = {
 export const ContactFormExample: RenderOnlyStory = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <Button type="submit">Send Message</Button>
-      <Button variant="secondary">Cancel</Button>
+      <Button type="submit" label="Send Message" />
+      <Button variant="secondary" label="Cancel" />
     </div>
   ),
   parameters: {

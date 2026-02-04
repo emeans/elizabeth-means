@@ -14,7 +14,8 @@
     /* Layout */
     --max-width: var(--max-width-container);
     --border-radius: var(--border-radius-lg);
-    --transition: all 0.3s ease;
+    --transition: all 0.1s ease;
+
 }
 
 html {
@@ -62,9 +63,9 @@ a:hover {
 }
 
 a:focus {
-    outline: 2px solid var(--action-primary-hover);
-    outline-offset: 2px;
-    border-radius: 2px;
+    outline: var(--action-focus-outline) solid var(--action-primary-hover);
+    outline-offset: var(--action-focus-outline-offset);
+    border-radius: var(--radius-focus);
 }
 
 h1,

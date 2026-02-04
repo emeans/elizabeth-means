@@ -24,7 +24,7 @@
   background: var(--surface-primary);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
-  transition: background 0.3s ease;
+  transition: var(--transition);
 }
 
 .hidden {
@@ -40,37 +40,28 @@
 
 .statusMessage {
   margin-bottom: var(--spacing-md);
-  min-height: 1.5rem;
 }
 
 .successMessage {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: color-mix(in srgb, var(--feedback-success) 15%, transparent);
-  color: var(--feedback-success);
-  border: 2px solid var(--feedback-success);
+  background-color: var(--surface-success);
+  color: var(--text-success);
+  border: var(--border-width-sm) solid var(--border-success);
   border-radius: var(--border-radius);
   font-weight: 500;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
 }
 
 .errorMessage {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: rgba(220, 38, 38, 0.15);
-  color: var(--feedback-error);
-  border: 2px solid var(--feedback-error);
+  background-color: var(--surface-error);
+  color: var(--text-error);
+  border: var(--border-width-sm) solid var(--border-error);
   border-radius: var(--border-radius);
   font-weight: 500;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-[data-theme='dark'] .errorMessage {
-  background-color: rgba(248, 113, 113, 0.15);
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 }
 
 .formGroup {
@@ -88,7 +79,7 @@
 .formGroup textarea {
   width: 100%;
   padding: var(--spacing-sm);
-  border: 1px solid var(--border-default);
+  border: var(--border-width-xs) solid var(--border-default);
   border-radius: var(--border-radius);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -99,38 +90,29 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  outline: 2px solid var(--action-primary-hover);
-  outline-offset: 2px;
+  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline-offset: var(--action-focus-outline-offset);
   border-color: var(--action-primary-hover);
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-}
-
-[data-theme='dark'] .formGroup input:focus,
-[data-theme='dark'] .formGroup textarea:focus {
-  box-shadow: 0 0 0 2px rgba(165, 180, 252, 0.3);
+  box-shadow: 0 0 0 var(--action-focus-outline) var(--action-primary-hover);
 }
 
 .formGroup input.inputError,
 .formGroup textarea.inputError {
-  border-color: var(--feedback-error);
-  border-width: 2px;
+  border-color: var(--border-error);
+  border-width: var(--border-width-sm);
 }
 
 .formGroup input.inputError:focus,
 .formGroup textarea.inputError:focus {
-  outline-color: var(--feedback-error);
-  border-color: var(--feedback-error);
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+  outline-color: var(--border-error);
+  border-color: var(--border-error);
+  box-shadow: 0 0 0 var(--action-focus-outline) var(--border-error);
 }
 
-[data-theme='dark'] .formGroup input.inputError:focus,
-[data-theme='dark'] .formGroup textarea.inputError:focus {
-  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.3);
-}
 
 .fieldError {
   margin-top: var(--spacing-xs);
-  color: var(--feedback-error);
+    color: var(--text-error);
   font-size: 0.875rem;
   font-weight: 500;
   display: flex;
