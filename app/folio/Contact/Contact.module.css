@@ -49,10 +49,6 @@
   border: var(--border-width-sm) solid var(--border-success);
   border-radius: var(--border-radius);
   font-weight: 500;
-  transition:
-    background-color var(--transition),
-    color var(--transition),
-    border-color var(--transition);
 }
 
 .errorMessage {
