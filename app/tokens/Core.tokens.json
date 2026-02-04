@@ -1993,6 +1993,17 @@
         ],
         "com.figma.isOverride": true
       }
+    },
+    "xl": {
+      "$type": "number",
+      "$value": 12,
+      "$extensions": {
+        "com.figma.variableId": "VariableID:122:4",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.isOverride": true
+      }
     }
   },
   "border-width": {

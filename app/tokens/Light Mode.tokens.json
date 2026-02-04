@@ -339,6 +339,26 @@
         },
         "com.figma.isOverride": true
       }
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1411764770746231,
+          0.14901961386203766,
+          0.14901961386203766
+        ],
+        "alpha": 0.6000000238418579,
+        "hex": "#242626"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:130:366",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.isOverride": true
+      }
     }
   },
   "action": {
@@ -396,6 +416,26 @@
           },
           "com.figma.isOverride": true
         }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.22745098173618317,
+            0.4470588266849518,
+            0.40784314274787903
+          ],
+          "alpha": 0.6000000238418579,
+          "hex": "#3A7268"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:127:660",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.isOverride": true
+        }
       }
     },
     "secondary": {
@@ -449,6 +489,26 @@
             "targetVariableSetId": "VariableCollectionId:1aa73a676fc96d961db6df99d9ac16a03972a558/-1:-1",
             "targetVariableSetName": "Core"
           },
+          "com.figma.isOverride": true
+        }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8392156958580017,
+            0.8392156958580017,
+            0.8313725590705872
+          ],
+          "alpha": 0.6000000238418579,
+          "hex": "#D6D6D4"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:130:368",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.isOverride": true
         }
       }
