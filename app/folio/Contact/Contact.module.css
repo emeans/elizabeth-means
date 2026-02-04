@@ -97,7 +97,7 @@
   outline: var(--action-focus-outline) solid var(--action-primary-hover);
   outline-offset: var(--action-focus-outline-offset);
   border-color: var(--action-primary-hover);
-  box-shadow: 0 0 0 var(--action-primary-focus-outline) var(--action-primary-hover);
+  box-shadow: 0 0 0 var(--action-focus-outline) var(--action-primary-hover);
 }
 
 .formGroup input.inputError,
@@ -110,7 +110,7 @@
 .formGroup textarea.inputError:focus {
   outline-color: var(--border-error);
   border-color: var(--border-error);
-  box-shadow: 0 0 0 var(--action-primary-focus-outline) var(--border-error);
+  box-shadow: 0 0 0 var(--action-focus-outline) var(--border-error);
 }
 
 
