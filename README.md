@@ -1,4 +1,5 @@
-# Elizabeth Means - Product Designer & Engineer
+# Elizabeth Means - Product • Design • Engineering
+
 
 A modern one-page personal website and resume built with [Next.js](https://nextjs.org), featuring basic info, resume, and contact form.
 

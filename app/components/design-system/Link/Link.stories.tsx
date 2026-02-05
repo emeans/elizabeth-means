@@ -229,7 +229,7 @@ export const NavigationExample: RenderOnlyStory = {
 export const InlineLinksExample: RenderOnlyStory = {
   render: () => (
     <p style={{ maxWidth: '600px', lineHeight: '1.6' }}>
-      I'm a product designer with 10 years of engineering experience.
+      I work at the intersection of product strategy, design, and engineering.
       You can find my work on{' '}
       <Link variant="inline" href="https://github.com/emeans" external>
         GitHub
