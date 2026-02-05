@@ -20,7 +20,7 @@ const libreBaskerville = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: 'Elizabeth Means',
-  description: 'Product designer with 10 years of engineering experience. I bridge design and development to create user-centered solutions that actually work.',
+  description: 'I work at the intersection of product strategy, design, and engineering—bridging what users need with what\'s technically possible.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
