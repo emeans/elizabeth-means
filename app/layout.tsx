@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Libre_Baskerville } from 'next/font/google'
 import Script from 'next/script'
-import AppLayout from './features/shared/AppLayout/AppLayout'
+import AppLayout from '@layouts/AppLayout'
 import './globals.css'
 
 export const viewport: Viewport = {

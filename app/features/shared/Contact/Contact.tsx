@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from './Contact.module.css'
-import Button from '../../../components/design-system/Button/Button'
+import Button from '@components/Button'
 
 export default function Contact() {
   const [formData, setFormData] = useState({

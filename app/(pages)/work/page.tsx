@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Resume from '../../features/about/Resume/Resume'
+import Resume from '@features/about/Resume'
 
 export const metadata: Metadata = {
   title: 'Work | Elizabeth Means',

@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from './AppLayout.module.css'
-import Link from '../../../components/design-system/Link/Link'
-import HamburgerButton from '../../../components/design-system/HamburgerButton/HamburgerButton'
-import SkipLink from '../../../components/design-system/SkipLink/SkipLink'
-import LogoLink from '../../../components/design-system/LogoLink/LogoLink'
-import ThemeToggle from '../../../components/design-system/ThemeToggle/ThemeToggle'
-import Footer from '../Footer/Footer'
+import Link from '@components/Link'
+import HamburgerButton from '@components//HamburgerButton'
+import SkipLink from '@components/SkipLink'
+import LogoLink from '@components/LogoLink'
+import ThemeToggle from '@components/ThemeToggle'
+import Footer from '@features/shared/Footer'
 
 const navItems = [
   { href: '/work', label: 'Work', ariaLabel: 'Go to Work page' },
