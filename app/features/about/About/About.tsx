@@ -38,11 +38,11 @@ export default function About() {
             Download Resume (PDF)
           </Link>
           &nbsp;&nbsp;&nbsp;
-          <Link variant='inline' href='https://www.linkedin.com/in/elizabeth-a-means/'>
+          <Link variant='inline' href='https://www.linkedin.com/in/elizabeth-a-means/' external>
             LinkedIn
           </Link>
           &nbsp;&nbsp;&nbsp;
-          <Link variant='inline' href='https://github.com/emeans'>
+          <Link variant='inline' href='https://github.com/emeans' external>
             Github
           </Link>
         </div>

@@ -87,11 +87,11 @@ export default function Link({
             {...props}
         >
             {children}
-            {external && variant !== 'cta' && (
+            {/* {external && variant !== 'cta' && (
             <span className={styles.externalIcon} aria-hidden="true">
                 ↗
             </span>
-            )}
+            )} */}
         </a>
         );
     }
