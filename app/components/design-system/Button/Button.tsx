@@ -55,6 +55,14 @@ export default function Button({
     .filter(Boolean)
     .join(' ');
 
+  const effectiveAriaLabel = loading
+    ? ariaLabel
+      ? `${ariaLabel}, loading`
+      : typeof label === 'string'
+        ? `${label}, loading`
+        : 'Loading'
+    : ariaLabel;
+
   return (
     <button
       className={buttonClassName}
@@ -63,7 +71,7 @@ export default function Button({
       disabled={disabled || loading}
       aria-disabled={disabled || loading}
       aria-busy={loading}
-      aria-label={ariaLabel}
+      aria-label={effectiveAriaLabel}
       {...props}
     >
       {loading && (
