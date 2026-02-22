@@ -90,7 +90,7 @@ h2 {
 }
 
 h3 {
-font-size: 1.75rem;
+    font-size: 1.75rem;
 }
 
 h4 {
@@ -99,6 +99,10 @@ h4 {
 
 p {
     margin-bottom: var(--spacing-md);
+}
+
+.text-bold { 
+    font-weight: var(--typography-weight-bold); 
 }
 
 img {
@@ -118,10 +122,16 @@ img {
     scroll-margin-top: 0;
 }
 
-.sectionContent {
-    max-width: 800px;
+.section-content {
+    max-width: 650px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    text-wrap: balance
+}
+
+.section-divider {
+    border-top: 1px solid var(--border-color);
+    margin: var(--spacing-2xl) 0;
 }
 
 /* Mobile breakpoint */

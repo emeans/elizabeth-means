@@ -25,17 +25,13 @@
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   transition: var(--transition);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-default);
 }
 
 .hidden {
   display: none;
   visibility: hidden;
-}
-
-.requiredIndicator {
-  color: var(--action-primary-hover);
-  font-weight: 700;
-  margin-left: 2px;
 }
 
 .statusMessage {

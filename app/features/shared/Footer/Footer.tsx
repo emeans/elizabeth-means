@@ -1,4 +1,5 @@
 import styles from './Footer.module.css'
+import Contact from '@features/shared/Contact'
 
 function GitHubIcon({ 'aria-hidden': ariaHidden = true }: { 'aria-hidden'?: boolean }) {
   return (
@@ -37,6 +38,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerContent}>
+          <Contact />
           <p>&copy; {new Date().getFullYear()} Elizabeth Means. All rights reserved.</p>
           <div className={styles.links}>
             <a

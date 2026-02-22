@@ -183,8 +183,7 @@ export default function Contact() {
           <div className={styles.contactInfo}>
             <h2>Get In Touch</h2>
             <p>
-              I&apos;d love to hear from you—whether you want to discuss a potential opportunity,
-              collaborate on a project, or just chat about design and engineering.
+            I'm currently open to new opportunities. Whether you have a role in mind or just want to connect, I'd love to hear from you.
             </p>
             {/* <p>
               Fill out the form to send me a message or email me directly at
@@ -212,6 +211,10 @@ export default function Contact() {
               </label>
             </p>
 
+            <p>
+              I'm currently open to new opportunities. Whether you have a role in mind or just want to connect, I'd love to hear from you.
+            </p>
+
             {/* ARIA Live Region for form status */}
             <div
               ref={statusLiveRegionRef}
@@ -230,12 +233,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor='name'>
-                Name{' '}
-                <span className={styles.requiredIndicator} aria-label='required'>
-                  *
-                </span>
-              </label>
+              <label htmlFor='name'>Name </label>
               <input
                 type='text'
                 id='name'
@@ -257,12 +255,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor='email'>
-                Email{' '}
-                <span className={styles.requiredIndicator} aria-label='required'>
-                  *
-                </span>
-              </label>
+              <label htmlFor='email'>Email </label>
               <input
                 type='email'
                 id='email'
@@ -284,12 +277,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor='message'>
-                Message{' '}
-                <span className={styles.requiredIndicator} aria-label='required'>
-                  *
-                </span>
-              </label>
+              <label htmlFor='message'>Message </label>
               <textarea
                 id='message'
                 name='message'
@@ -310,9 +298,9 @@ export default function Contact() {
             </div>
 
             <Button
-              type="submit"
-              variant="primary"
-              size="large"
+              type='submit'
+              variant='primary'
+              size='medium'
               disabled={formStatus === 'submitting'}
               label={formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
             />

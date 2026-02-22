@@ -1,8 +1,0 @@
-.resumeSection {
-  background: var(--surface-secondary);
-  transition: background 0.3s ease;
-}
-
-.resumeDescription {
-  margin-bottom: var(--spacing-lg);
-}

@@ -9,7 +9,7 @@ export default function LabPage() {
   return (
     <section className="section">
       <div className="container">
-        <div className="sectionContent">
+        <div className="section-content">
           <h2>Lab</h2>
           <p>
             Experiments, side projects, and explorations. More coming soon.
