@@ -1,4 +1,4 @@
-@import '../../globals.css';
+@import '../../../globals.css';
 .hero {
   padding: var(--spacing-2xl) 0;
   min-height: 80vh;

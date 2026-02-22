@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Libre_Baskerville } from 'next/font/google'
 import Script from 'next/script'
+import AppLayout from './features/shared/AppLayout/AppLayout'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={libreBaskerville.variable}>
       <body>
-        {children}
+        <AppLayout>{children}</AppLayout>
         <Script
           src="https://scripts.simpleanalyticscdn.com/latest.js"
           strategy="afterInteractive"
