@@ -195,7 +195,7 @@ img {
     font-size: var(--typography-size-xs);
     line-height: var(--typography-line-height-tight);
     font-weight: var(--typography-weight-normal);
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 /* Weight modifier — applies bold to any text element */
@@ -262,7 +262,7 @@ img {
     font-size: var(--typography-size-xs);
     line-height: var(--typography-line-height-tight);
     font-weight: var(--typography-weight-bold);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
