@@ -6,7 +6,7 @@
    ======================================== */
 .link {
   font-family: var(--font-body);
-  font-weight: var(--typography-weight-medium);
+  font-weight: var(--typography-weight-bold);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   display: inline-flex;
@@ -33,7 +33,7 @@
 .nav {
   color: var(--text-primary);
   position: relative;
-  font-weight: var(--typography-weight-medium);
+  font-weight: var(--typography-weight-normal);
   padding-bottom: 2px;
   text-decoration: none !important;
 }
@@ -69,7 +69,7 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  font-weight: 500;
+  font-weight: var(--typography-weight-bold);
 }
 
 .inline:hover {
@@ -113,7 +113,7 @@
   color: var(--text-inverse);
   padding: 8px 16px;
   border-radius: var(--radius-button);
-  font-weight: 600;
+  font-weight: var(--typography-weight-bold);
   text-decoration: none;
   box-shadow: 0 2px 4px var(--shadow-subtle);
   display: inline-flex;

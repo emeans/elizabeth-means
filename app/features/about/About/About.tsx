@@ -34,7 +34,7 @@ export default function About() {
             <span className='text-bold'>Want the full picture?</span> Download my resume or connect
             with me on LinkedIn and GitHub.
           </p>
-          <Link variant='inline' href='/Elizabeth-Means-Resume.pdf' download>
+          <Link variant='inline' href='/downloads/Elizabeth-Means-Resume.pdf' download>
             Download Resume (PDF)
           </Link>
           &nbsp;&nbsp;&nbsp;

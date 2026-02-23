@@ -1,0 +1,72 @@
+@import '../../../tokens.css';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-primary);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: var(--border-width-xs) solid var(--border-default);
+  box-shadow: 0 2px 8px var(--shadow-subtle);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px var(--shadow-medium);
+}
+
+/* When card is a link, remove default link styling from the container */
+a.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Full-bleed image to card edges */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content below image */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--typography-size-base);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--typography-size-xs);
+  color: var(--text-secondary);
+  line-height: var(--typography-line-height-normal);
+}
+
+/* Button/link in bottom right */
+.action {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action > * {
+  margin-left: auto;
+}

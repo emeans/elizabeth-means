@@ -1,28 +1,44 @@
 @import './tokens.css';
 
+/* ========================================
+   RESET
+   ======================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ========================================
+   GLOBAL CUSTOM PROPERTIES
+   Local aliases and values not in tokens
+   ======================================== */
 :root {
-    /* Typography: fallback to 'Libre Baskerville' when var not set (e.g. Storybook without Next layout) */
+    /* Font stacks
+       Libre Baskerville only ships Regular (400) and Bold (700).
+       --font-libre-baskerville is injected by Next.js next/font.
+       The fallback handles Storybook and environments without Next layout. */
     --font-body: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
     --font-heading: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
+    /* TODO: Add --font-mono when monospace typeface is chosen (needed for code/tech stack tags) */
 
-    /* Layout */
+    /* Layout alias */
     --max-width: var(--max-width-container);
     --border-radius: var(--border-radius-lg);
-    --transition: all 0.1s ease;
-
 }
 
+/* ========================================
+   SCROLL BEHAVIOR
+   ======================================== */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
 
+/* ========================================
+   REDUCED MOTION
+   Respects user system preference (WCAG 2.3.3)
+   ======================================== */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -37,13 +53,16 @@ html {
     }
 }
 
+/* ========================================
+   BASE ELEMENT STYLES
+   ======================================== */
 body {
     font-family: var(--font-body);
     font-weight: var(--typography-weight-normal);
     font-size: var(--typography-size-base);
+    line-height: var(--typography-line-height-normal);
     color: var(--text-primary);
     background-color: var(--surface-primary);
-    line-height: var(--typography-line-height-normal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition:
@@ -51,66 +70,142 @@ body {
         color 0.3s ease;
 }
 
-a {
-    color: var(--action-primary-hover);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--action-primary-hover);
-    text-decoration: underline;
-}
-
-a:focus {
-    outline: var(--action-focus-outline) solid var(--action-primary-hover);
-    outline-offset: var(--action-focus-outline-offset);
-    border-radius: var(--radius-focus);
-}
-
+/* ========================================
+   HEADINGS
+   Sizes map to type scale tokens.
+   h5 and h6 use base/sm sizes with bold weight
+   to maintain hierarchy without a new scale step.
+   ======================================== */
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-primary);
-}
-
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2.25rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
 h4 {
-    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: var(--typography-weight-bold);
+    line-height: var(--typography-line-height-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--typography-size-3xl); }
+h2 { font-size: var(--typography-size-2xl); }
+h3 { font-size: var(--typography-size-xl); }
+
+/* h4 transitions to normal line height — 
+   at 24px, tight (1.2) is too compressed for multi-line headings */
+h4 {
+    font-size: var(--typography-size-lg);
+    line-height: var(--typography-line-height-normal);
 }
 
 p {
     margin-bottom: var(--spacing-md);
 }
 
-.text-bold { 
-    font-weight: var(--typography-weight-bold); 
+/* ========================================
+   LINKS
+   Uses :focus-visible so focus ring only appears
+   during keyboard navigation, not on mouse click.
+   (WCAG 2.4.7, 2.4.11)
+   ======================================== */
+a {
+    color: var(--action-primary-default);
+    /* Underline at rest for inline links (WCAG 1.4.1 — 
+       color alone is not sufficient to distinguish links from body text) */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition:
+        color 0.1s ease,
+        text-decoration-color 0.1s ease;
 }
 
+a:hover {
+    color: var(--action-primary-hover); 
+}
+
+a:focus-visible {
+    outline: var(--action-focus-outline) solid var(--action-primary-default);
+    outline-offset: var(--action-focus-outline-offset);
+    border-radius: var(--radius-focus);
+    /* Remove underline on focus — the outline is the indicator */
+    text-decoration: none;
+}
+
+/* ========================================
+   IMAGES
+   ======================================== */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
+/* ========================================
+   TYPOGRAPHY UTILITY CLASSES
+   These classes represent the documented type scale.
+   Use them when you need to apply a type style to 
+   an element whose semantic tag doesn't match the 
+   desired visual size (e.g. an h2 styled as h3).
+   ======================================== */
+
+/* Display / heading sizes */
+.text-3xl {
+    font-size: var(--typography-size-3xl);
+    line-height: var(--typography-line-height-tight);
+    font-weight: var(--typography-weight-bold);
+}
+
+.text-2xl {
+    font-size: var(--typography-size-2xl);
+    line-height: var(--typography-line-height-tight);
+    font-weight: var(--typography-weight-bold);
+}
+
+.text-xl {
+    font-size: var(--typography-size-xl);
+    line-height: var(--typography-line-height-tight);
+    font-weight: var(--typography-weight-bold);
+}
+
+.text-lg {
+    font-size: var(--typography-size-lg);
+    line-height: var(--typography-line-height-normal);
+    font-weight: var(--typography-weight-bold);
+}
+
+/* Body sizes */
+.text-body {
+    font-size: var(--typography-size-base);
+    line-height: var(--typography-line-height-normal);
+    font-weight: var(--typography-weight-normal);
+}
+
+.text-sm {
+    font-size: var(--typography-size-sm);
+    line-height: var(--typography-line-height-normal);
+    font-weight: var(--typography-weight-normal);
+    color: var(--text-secondary);
+}
+
+/* Metadata / caption
+   Only use at --typography-size-xs (14px) with --text-muted 
+   on surfaces where the background contrast is sufficient.
+   Do not use --text-muted below this size. (WCAG 1.4.3) */
+.text-xs {
+    font-size: var(--typography-size-xs);
+    line-height: var(--typography-line-height-tight);
+    font-weight: var(--typography-weight-normal);
+    color: var(--text-muted);
+}
+
+/* Weight modifier — applies bold to any text element */
+.text-bold {
+    font-weight: var(--typography-weight-bold);
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+   ======================================== */
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -122,29 +217,79 @@ img {
     scroll-margin-top: 0;
 }
 
+/* Prose content width — optimized for ~70 characters per line at 18px.
+   Use for long-form reading content. */
 .section-content {
-    max-width: 650px;
+    max-width: var(--max-width-prose);
     margin: 0 auto;
     text-align: left;
-    text-wrap: balance
+    text-wrap: balance;
 }
 
 .section-divider {
-    border-top: 1px solid var(--border-color);
+    border-top: var(--border-width-xs) solid var(--border-subtle);
     margin: var(--spacing-2xl) 0;
 }
 
-/* Mobile breakpoint */
+/* ========================================
+   CARD GRID
+   ======================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+}
+
+/* ========================================
+   METADATA LAYOUT UTILITIES
+   Used for project metadata rows (role, year, tools)
+   ======================================== */
+.metadata-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+}
+
+.metadata-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* .metadata applies xs text styling to metadata content.
+   Composes with .metadata-row / .metadata-column for layout. */
+   .metadata-label {
+    font-size: var(--typography-size-xs);
+    line-height: var(--typography-line-height-tight);
+    font-weight: var(--typography-weight-bold);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.metadata-value {
+    font-size: var(--typography-size-sm);
+    line-height: var(--typography-line-height-normal);
+    font-weight: var(--typography-weight-normal);
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   RESPONSIVE — MOBILE
+   ======================================== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+    /* Scale headings down at mobile.
+       These values fall back to the next token step down. */
+    h1 { font-size: var(--typography-size-2xl); }
+    h2 { font-size: var(--typography-size-xl); }
+    h3 { font-size: var(--typography-size-lg); }
 
-    h2 {
-        font-size: 1.75rem;
-    }
+    /* Matching utility class overrides */
+    .text-3xl { font-size: var(--typography-size-2xl); }
+    .text-2xl { font-size: var(--typography-size-xl); }
+    .text-xl  { font-size: var(--typography-size-lg); }
 
-    h3 {
-        font-size: 1.5rem;
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

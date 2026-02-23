@@ -11,7 +11,7 @@
   gap: var(--spacing-xs);
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--typography-weight-bold);
   line-height: 1;
   text-decoration: none;
   color: var(--text-primary);
@@ -95,7 +95,7 @@
 
 @media (prefers-contrast: high) {
   .logoLink {
-    font-weight: 800;
+    font-weight: var(--typography-weight-bold);
   }
 }
 

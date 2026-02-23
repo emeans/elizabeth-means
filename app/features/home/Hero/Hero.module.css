@@ -45,7 +45,7 @@
   font-size: 1.5rem;
   color: var(--surface-primary);
   margin-bottom: var(--spacing-md);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
 }
 
 .heroDescription {

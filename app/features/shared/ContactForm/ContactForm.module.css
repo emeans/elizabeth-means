@@ -13,7 +13,7 @@
   color: var(--text-success);
   border: var(--border-width-sm) solid var(--border-success);
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
 }
 
 .errorMessage {
@@ -22,7 +22,7 @@
   color: var(--text-error);
   border: var(--border-width-sm) solid var(--border-error);
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   transition:
     background-color var(--transition),
     color var(--transition),
@@ -36,7 +36,7 @@
 .formGroup label {
   display: block;
   margin-bottom: var(--spacing-xs);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   color: var(--text-primary);
 }
 
@@ -78,7 +78,7 @@
   margin-top: var(--spacing-xs);
   color: var(--text-error);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   display: flex;
   align-items: center;
   gap: 0.25rem;
