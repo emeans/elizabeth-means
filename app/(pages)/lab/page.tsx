@@ -17,5 +17,5 @@ export default function LabPage() {
         </div>
       </div>
     </section>
-  )
+  ) 
 }

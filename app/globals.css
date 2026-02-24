@@ -224,6 +224,7 @@ img {
     margin: 0 auto;
     text-align: left;
     text-wrap: balance;
+    line-height: var(--typography-line-height-relaxed);
 }
 
 .section-divider {
@@ -272,6 +273,21 @@ img {
     line-height: var(--typography-line-height-normal);
     font-weight: var(--typography-weight-normal);
     color: var(--text-secondary);
+}
+
+.citation-ref {
+    font-size: 0.75em;
+    vertical-align: super;
+    line-height: 0;
+    text-decoration: none;
+}
+  
+.citation-ref a {
+    text-decoration: none;
+}
+
+.citation-ref:hover {
+    text-decoration: underline;
 }
 
 /* ========================================
