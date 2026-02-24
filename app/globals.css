@@ -229,8 +229,10 @@ img {
 }
 
 .section-divider {
-    border-top: var(--border-width-xs) solid var(--border-subtle);
+    /* border-top: var(--border-width-xs) solid var(--border-subtle); */
     margin: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-subtle);
+    border-color: var(--border-subtle);
 }
 
 /* ========================================
