@@ -203,7 +203,7 @@
   --surface-success: var(--color-success-900);
   --surface-warning: var(--color-warning-900);
   --surface-error: var(--color-error-900);
-  --text-primary: var(--color-neutral-50);
+  --text-primary: var(--color-neutral-300);
   --text-secondary: var(--color-raven-300);
   --text-muted: var(--color-raven-400);
   --text-inverse: var(--color-neutral-900);

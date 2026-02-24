@@ -20,6 +20,7 @@
        The fallback handles Storybook and environments without Next layout. */
     --font-body: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
     --font-heading: var(--font-libre-baskerville, 'Libre Baskerville'), Georgia, 'Times New Roman', serif;
+    --font-metadata: var(--font-public-sans, 'Public Sans'), system-ui, sans-serif;
     /* TODO: Add --font-mono when monospace typeface is chosen (needed for code/tech stack tags) */
 
     /* Layout alias */
@@ -229,7 +230,7 @@ img {
 
 .section-divider {
     border-top: var(--border-width-xs) solid var(--border-subtle);
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-lg) 0;
 }
 
 /* ========================================
@@ -248,31 +249,42 @@ img {
 .metadata-row {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .metadata-column {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    line-height: var(--typography-line-height-tight);
 }
 
 /* .metadata applies xs text styling to metadata content.
    Composes with .metadata-row / .metadata-column for layout. */
    .metadata-label {
+    font-family: var(--font-metadata);
     font-size: var(--typography-size-xs);
     line-height: var(--typography-line-height-tight);
-    font-weight: var(--typography-weight-bold);
+    font-weight: 400;
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    vertical-align: middle;
+    margin: 0;
+}
+.metadata-label::after {
+    content: "|";
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .metadata-value {
+    font-family: var(--font-metadata);
     font-size: var(--typography-size-sm);
     line-height: var(--typography-line-height-normal);
-    font-weight: var(--typography-weight-normal);
+    font-weight: 600;
     color: var(--text-secondary);
+    vertical-align: middle;
+    margin: 0;
 }
 
 .citation-ref {

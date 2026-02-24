@@ -14,23 +14,42 @@ export default function WicProductCaseStudyPage() {
           {/* <Link href='/work' variant='standalone'>
             ← Back to Work
           </Link> */}
-          <h4>Building the Playbook While Running the Play</h4>
+          <h3>Building the Playbook While Running the Play</h3>
           <p className='text-bold'>0-to-1 Product Management at KL&A</p>
           <hr className='section-divider' />
           <div className='metadata-row'>
             <div className='metadata-column'>
               <p className='metadata-label'>Role</p>
-              <p className='metadata-label'>Timeline</p>
-              <p className='metadata-label'>Team</p>
-              <p className='metadata-label'>Tools</p>
             </div>
             <div className='metadata-column'>
               <p className='metadata-value'>WIC Product Manager</p>
+            </div>
+          </div>
+          <div className='metadata-row'>
+            <div className='metadata-column'>
+              <p className='metadata-label'>Timeline</p>
+            </div>
+            <div className='metadata-column'>
               <p className='metadata-value'>2023–2025</p>
-              <p className='metadata-value'>3–10 engineers</p>
+            </div>
+          </div>
+          <div className='metadata-row'>
+            <div className='metadata-column'>
+              <p className='metadata-label'>Team</p>
+            </div>
+            <div className='metadata-column'>
+              <p className='metadata-value'>4–10 engineers</p>
+            </div>
+          </div>
+          <div className='metadata-row'>
+            <div className='metadata-column'>
+              <p className='metadata-label'>Tools</p>
+            </div>
+            <div className='metadata-column'>
               <p className='metadata-value'>Figma, Angular, .NET</p>
             </div>
           </div>
+
           <hr className='section-divider' />
           <section className='section-content'>
             <section>
@@ -94,13 +113,18 @@ export default function WicProductCaseStudyPage() {
               </p>
               <p>
                 A few months later, a $14.9 million federal grant was awarded{' '}
-                <Link href='#ref-1' className='citation-ref'>[1]</Link> to research modernization pathways for WIC systems
-                nationally. We hadn't known it was coming. When the initial findings were published{' '}
-                <Link href='#ref-2' className='citation-ref'>[2]</Link>, they described the ideal modern WIC platform as
-                participant-first, human-centered, modular, and licensable. Those were the exact
-                principles we had already been building around. We hadn't found product-market fit
-                by chasing a funding signal. We had found it by listening carefully to the people
-                closest to the problem.
+                <Link href='#ref-1' className='citation-ref'>
+                  [1]
+                </Link>{' '}
+                to research modernization pathways for WIC systems nationally. We hadn't known it
+                was coming. When the initial findings were published{' '}
+                <Link href='#ref-2' className='citation-ref'>
+                  [2]
+                </Link>
+                , they described the ideal modern WIC platform as participant-first, human-centered,
+                modular, and licensable. Those were the exact principles we had already been
+                building around. We hadn't found product-market fit by chasing a funding signal. We
+                had found it by listening carefully to the people closest to the problem.
               </p>
             </section>
             <section>
@@ -173,8 +197,11 @@ export default function WicProductCaseStudyPage() {
               </p>
               <p>
                 This problem-solving approach proved itself in April 2024 when the USDA announced
-                the WIC Final Food Rule at the Chicago conference <Link href='#ref-3' className='citation-ref'>[3]</Link>.
-                States had 24 months to implement. Because we designed food packages to be
+                the WIC Final Food Rule at the Chicago conference{' '}
+                <Link href='#ref-3' className='citation-ref'>
+                  [3]
+                </Link>
+                . States had 24 months to implement. Because we designed food packages to be
                 user-configurable from the start, we validated the Final Food Rule updates against
                 our system at the conference itself, demonstrating that our approach eliminated the
                 lengthy release cycles that plagued legacy systems. This design thinking became one
@@ -192,9 +219,12 @@ export default function WicProductCaseStudyPage() {
                 case management to genuine supportive engagement.
               </p>
               <p>
-                I applied Jakob's usability heuristics <Link href='#ref-4' className='citation-ref'>[4]</Link> throughout.
-                Information architecture was a particular focus: I wanted the system to follow
-                users' mental models rather than the underlying data structure, exposing
+                I applied Jakob's usability heuristics{' '}
+                <Link href='#ref-4' className='citation-ref'>
+                  [4]
+                </Link>{' '}
+                throughout. Information architecture was a particular focus: I wanted the system to
+                follow users' mental models rather than the underlying data structure, exposing
                 functionality in a logical hierarchy with the most frequently used features within
                 easy reach. I leaned into recognition over recall to reduce cognitive overload,
                 maintained consistency across the design language, and built in both personalization
@@ -234,7 +264,7 @@ export default function WicProductCaseStudyPage() {
                 concept of a participant-first program was strongly held but not reflected in the
                 software that supported it. I advocated pivoting to an external-facing participant
                 portal next. It was a strategic detour, and not an obvious one in a company built
-                around delivering what clients specified.
+                around delivering only what clients specified.
               </p>
               <p>
                 My aim was to balance risk and speed. We built full-stack infrastructure for
@@ -267,9 +297,12 @@ export default function WicProductCaseStudyPage() {
                 Several states expressed strong commercial interest, though translating that
                 interest into contracts required navigating the realities of government procurement
                 cycles. The $14.9 million federal grant research findings{' '}
-                <Link href='#ref-2' className='citation-ref'>[2]</Link> directly validated our product approach:
-                participant-first, human-centered, modular, and licensable architecture aligned
-                precisely with their recommendations for the modern WIC program.
+                <Link href='#ref-2' className='citation-ref'>
+                  [2]
+                </Link>{' '}
+                directly validated our product approach: participant-first, human-centered, modular,
+                and licensable architecture aligned precisely with their recommendations for the
+                modern WIC program.
               </p>
               <p>
                 We delivered working demonstrations of vendor management, food management, and
@@ -319,25 +352,28 @@ export default function WicProductCaseStudyPage() {
             <section>
               <h4>References</h4>
               <p id='ref-1'>
-              <sup className="citation-ref">[1]</sup> National WIC Association, "NWA Receives USDA Funding to Modernize WIC MIS,"
-                September 2024.{' '}
+                <sup className='citation-ref'>[1]</sup> National WIC Association, "NWA Receives USDA
+                Funding to Modernize WIC MIS," September 2024.{' '}
                 <Link href='https://www.nwica.org/press-releases/national-wic-association-receives-usda-funding-to-modernize-wic-management-information-systems'>
                   nwica.org
                 </Link>
               </p>
               <p id='ref-2'>
-              <sup className="citation-ref">[2]</sup> National WIC Association and Nava PBC, "Modernizing WIC's MIS: Findings from Year
-                One of Research," 2025.{' '}
-                <Link href='https://www.nwica.org/events/info/2025-nwa-technology-innovation-and-vendor-management-conference'>nwica.org</Link>
+                <sup className='citation-ref'>[2]</sup> National WIC Association and Nava PBC,
+                "Modernizing WIC's MIS: Findings from Year One of Research," 2025.{' '}
+                <Link href='https://www.nwica.org/events/info/2025-nwa-technology-innovation-and-vendor-management-conference'>
+                  nwica.org
+                </Link>
               </p>
               <p id='ref-3'>
-              <sup className="citation-ref">[3]</sup> USDA Food and Nutrition Service, "Biden-Harris Administration Announces Finalized
-                Science-Driven Updates to Foods Provided Through WIC," April 9, 2024.{' '}
+                <sup className='citation-ref'>[3]</sup> USDA Food and Nutrition Service,
+                "Biden-Harris Administration Announces Finalized Science-Driven Updates to Foods
+                Provided Through WIC," April 9, 2024.{' '}
                 <Link href='https://www.fns.usda.gov/wic/fr-041824'>usda.gov</Link>
               </p>
               <p id='ref-4'>
-              <sup className="citation-ref">[4]</sup> Jakob Nielsen, "10 Usability Heuristics for User Interface Design," Nielsen Norman
-                Group, 1994, updated 2020.{' '}
+                <sup className='citation-ref'>[4]</sup> Jakob Nielsen, "10 Usability Heuristics for
+                User Interface Design," Nielsen Norman Group, 1994, updated 2020.{' '}
                 <Link href='https://www.nngroup.com/articles/ten-usability-heuristics/'>
                   nngroup.com
                 </Link>
