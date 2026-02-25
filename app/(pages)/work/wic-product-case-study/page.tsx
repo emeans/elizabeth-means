@@ -267,11 +267,10 @@ export default function WicProductCaseStudyPage() {
                 around delivering only what clients specified.
               </p>
               <p>
-                My aim was to balance risk and speed. We built full-stack infrastructure for
-                features we knew clinic would need (participant records, households, certification
-                periods) while prototyping new participant-facing concepts (health journey,
-                achievements, breastfeeding support) for rapid customer validation at minimal
-                engineering cost.
+                My aim was to balance risk and speed. We sequenced our engineering investment
+                deliberately, building full infrastructure where requirements were well understood
+                and validating new concepts quickly before committing to full implementation. This
+                let us move fast without overbuilding in the wrong direction.
               </p>
               <p>
                 The participant portal was a success. The response in Baltimore confirmed we had
