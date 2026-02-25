@@ -60,7 +60,7 @@
   text-align: left;
   font-size: var(--typography-size-sm);
   color: var(--text-secondary);
-  line-height: 0;
+  margin-top: -8px;
   display: block;
 }
 

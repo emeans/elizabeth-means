@@ -20,6 +20,7 @@ export default function Footer() {
                   href='https://www.linkedin.com/in/elizabeth-a-means/'
                   external
                   variant='standalone'
+                  hideExternalIcon
                   aria-label='LinkedIn profile'>
                   <LinkedInIcon aria-hidden />
                 </Link>
@@ -28,6 +29,7 @@ export default function Footer() {
                   href='https://github.com/emeans'
                   external
                   variant='standalone'
+                  hideExternalIcon
                   aria-label='GitHub profile'>
                   <GitHubIcon aria-hidden />
                 </Link>

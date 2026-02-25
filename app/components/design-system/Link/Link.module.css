@@ -11,18 +11,18 @@
   transition: all 0.2s ease-in-out;
   display: inline-flex;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.05em;
 }
 
 .externalIcon {
-  display: inline-flex;
+  display: inline-block;
   font-size: var(--typography-size-xs);
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
 }
 
-.link:hover .externalIcon {
-  opacity: 1;
+.linkText {
+  text-decoration: inherit;
+  text-decoration-thickness: inherit;
+  text-underline-offset: inherit;
 }
 
 /* ========================================
@@ -66,14 +66,21 @@
 
 .inline {
   color: var(--action-primary-default);
+  text-decoration: none;
+  font-weight: var(--typography-weight-bold);
+}
+
+.inline .linkText {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  font-weight: var(--typography-weight-bold);
 }
 
 .inline:hover {
   color: var(--action-primary-hover);
+}
+
+.inline:hover .linkText {
   text-decoration-thickness: 2px;
 }
 
@@ -96,6 +103,9 @@
 
 .standalone:hover {
   color: var(--action-primary-hover);
+}
+
+.standalone:hover .linkText {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
