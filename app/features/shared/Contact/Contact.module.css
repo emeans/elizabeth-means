@@ -1,0 +1,13 @@
+.contactInfo {
+  text-align: left;
+}
+
+.contactInfo h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .contactInfo {
+    text-align: center;
+  }
+}

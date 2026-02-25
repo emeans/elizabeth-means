@@ -6,23 +6,23 @@
    ======================================== */
 .link {
   font-family: var(--font-body);
-  font-weight: var(--typography-weight-medium);
+  font-weight: var(--typography-weight-bold);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   display: inline-flex;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.05em;
 }
 
 .externalIcon {
-  display: inline-flex;
+  display: inline-block;
   font-size: var(--typography-size-xs);
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
 }
 
-.link:hover .externalIcon {
-  opacity: 1;
+.linkText {
+  text-decoration: inherit;
+  text-decoration-thickness: inherit;
+  text-underline-offset: inherit;
 }
 
 /* ========================================
@@ -33,7 +33,7 @@
 .nav {
   color: var(--text-primary);
   position: relative;
-  font-weight: var(--typography-weight-medium);
+  font-weight: var(--typography-weight-normal);
   padding-bottom: 2px;
   text-decoration: none !important;
 }
@@ -66,14 +66,21 @@
 
 .inline {
   color: var(--action-primary-default);
+  text-decoration: none;
+  font-weight: var(--typography-weight-bold);
+}
+
+.inline .linkText {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  font-weight: 500;
 }
 
 .inline:hover {
   color: var(--action-primary-hover);
+}
+
+.inline:hover .linkText {
   text-decoration-thickness: 2px;
 }
 
@@ -96,6 +103,9 @@
 
 .standalone:hover {
   color: var(--action-primary-hover);
+}
+
+.standalone:hover .linkText {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -113,7 +123,7 @@
   color: var(--text-inverse);
   padding: 8px 16px;
   border-radius: var(--radius-button);
-  font-weight: 600;
+  font-weight: var(--typography-weight-bold);
   text-decoration: none;
   box-shadow: 0 2px 4px var(--shadow-subtle);
   display: inline-flex;
@@ -213,6 +223,12 @@
 
 [data-theme='dark'] .nav:visited {
   color: var(--text-primary);
+}
+
+/* Hover/focus must win over :visited (higher specificity so it wins in all themes) */
+.link.nav:visited:hover,
+.link.nav:visited:focus-visible {
+  color: var(--action-primary-hover);
 }
 
 [data-theme='dark'] .inline:visited {

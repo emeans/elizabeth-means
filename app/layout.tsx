@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
-import { Libre_Baskerville } from 'next/font/google'
+import { Libre_Baskerville, Public_Sans } from 'next/font/google'
 import Script from 'next/script'
+import AppLayout from '@layouts/AppLayout'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -16,6 +17,13 @@ const libreBaskerville = Libre_Baskerville({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-libre-baskerville',
+})
+
+const publicSans = Public_Sans({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-public-sans',
 })
 
 export const metadata: Metadata = {
@@ -40,9 +48,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className={libreBaskerville.variable}>
+    <html lang='en' className={`${libreBaskerville.variable} ${publicSans.variable}`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+      </head>
       <body>
-        {children}
+        <AppLayout>{children}</AppLayout>
         <Script
           src="https://scripts.simpleanalyticscdn.com/latest.js"
           strategy="afterInteractive"

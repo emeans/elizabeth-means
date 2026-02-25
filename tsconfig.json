@@ -22,10 +22,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./app/*"],
+      "@components/*": ["./app/components/design-system/*"],
+      "@features/*": ["./app/features/*"],
+      "@layouts/*": ["./app/features/shared/AppLayout/*"]
     }
   },
   "include": [

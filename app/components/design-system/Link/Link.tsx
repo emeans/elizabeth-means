@@ -31,6 +31,8 @@ interface BaseLinkProps {
     variant?: 'nav' | 'inline' | 'standalone' | 'cta';
     /** When true (e.g. in a mobile nav menu), link uses block layout and full-width styling */
     blockLayout?: boolean;
+    /** When true, do not show the open-in-new icon on external links (e.g. icon-only footer links) */
+    hideExternalIcon?: boolean;
     children: React.ReactNode;
     className?: string;
     'aria-label'?: string;
@@ -54,6 +56,7 @@ type LinkProps = ExternalLinkProps | InternalLinkProps;
 export default function Link({
     variant = 'inline',
     blockLayout = false,
+    hideExternalIcon = false,
     href,
     external = false,
     download,
@@ -73,6 +76,13 @@ export default function Link({
         .filter(Boolean)
         .join(' ');
 
+    const wrapInLinkText = variant === 'inline' || variant === 'standalone';
+    const linkContent = wrapInLinkText ? (
+        <span className={styles.linkText}>{children}</span>
+    ) : (
+        children
+    );
+
   // External links or downloads use standard anchor tag
     if (external || download) {
         return (
@@ -86,11 +96,11 @@ export default function Link({
             onClick={onClick}
             {...props}
         >
-            {children}
-            {external && variant !== 'cta' && (
-            <span className={styles.externalIcon} aria-hidden="true">
-                ↗
-            </span>
+            {linkContent}
+            {external && variant !== 'cta' && !hideExternalIcon && (
+                <span className={`${styles.externalIcon} material-symbols-outlined`} aria-hidden="true">
+                    open_in_new
+                </span>
             )}
         </a>
         );
@@ -107,7 +117,7 @@ export default function Link({
             onClick={onClick}
             {...props}
         >
-            {children}
+            {linkContent}
         </a>
         );
     }
@@ -121,7 +131,7 @@ export default function Link({
         onClick={onClick}
         {...props}
         >
-        {children}
+        {linkContent}
         </NextLink>
     );
 }

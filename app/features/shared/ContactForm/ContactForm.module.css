@@ -1,41 +1,6 @@
-.contactContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-2xl);
-  align-items: start;
-}
-
-.contactInfo {
-  text-align: left;
-}
-
-.contactInfo h2 {
-  margin-bottom: var(--spacing-md);
-}
-
-.contactInfo p {
-  margin-bottom: var(--spacing-lg);
-}
-
-
-.contactForm {
-  background: var(--surface-primary);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
 .hidden {
   display: none;
   visibility: hidden;
-}
-
-.requiredIndicator {
-  color: var(--action-primary-hover);
-  font-weight: 700;
-  margin-left: 2px;
 }
 
 .statusMessage {
@@ -48,7 +13,7 @@
   color: var(--text-success);
   border: var(--border-width-sm) solid var(--border-success);
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
 }
 
 .errorMessage {
@@ -57,7 +22,7 @@
   color: var(--text-error);
   border: var(--border-width-sm) solid var(--border-error);
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   transition:
     background-color var(--transition),
     color var(--transition),
@@ -71,7 +36,7 @@
 .formGroup label {
   display: block;
   margin-bottom: var(--spacing-xs);
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   color: var(--text-primary);
 }
 
@@ -109,12 +74,11 @@
   box-shadow: 0 0 0 var(--action-focus-outline) var(--border-error);
 }
 
-
 .fieldError {
   margin-top: var(--spacing-xs);
-    color: var(--text-error);
+  color: var(--text-error);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: var(--typography-weight-normal);
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -131,18 +95,7 @@
   min-height: 120px;
 }
 
-/* Mobile breakpoint */
 @media (max-width: 768px) {
-  .contactContent {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    padding: 0;
-  }
-
-  .contactInfo {
-    text-align: center;
-  }
-
   .contactForm {
     padding: var(--spacing-lg);
   }
