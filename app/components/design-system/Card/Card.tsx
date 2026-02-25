@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from '@components/Link'
 import styles from './Card.module.css'
 
 /**
@@ -72,10 +73,12 @@ export default function Card({
   const cardClassName = [styles.card, className].filter(Boolean).join(' ')
 
   if (href) {
+    const isExternal =
+      href.startsWith('http://') || href.startsWith('https://')
     return (
-      <a href={href} className={cardClassName}>
+      <Link href={href} className={cardClassName} external={isExternal}>
         {content}
-      </a>
+      </Link>
     )
   }
 

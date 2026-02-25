@@ -58,7 +58,7 @@
 
 .heroWorkSecondary {
   text-align: left;
-  font-size: var(--text-sm);
+  font-size: var(--typography-size-sm);
   color: var(--text-secondary);
   line-height: 0;
   display: block;

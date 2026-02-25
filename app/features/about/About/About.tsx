@@ -2,7 +2,7 @@ import Link from '@components/Link'
 
 export default function About() {
   return (
-    <section id='main-content' className='section'>
+    <section className='section'>
       <div className='container'>
         <div className='section-content'>
           <h2>About Me</h2>

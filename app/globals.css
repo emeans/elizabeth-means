@@ -26,6 +26,7 @@
     /* Layout alias */
     --max-width: var(--max-width-container);
     --border-radius: var(--border-radius-lg);
+    --transition: all 0.1s ease;
 }
 
 /* ========================================

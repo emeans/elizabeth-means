@@ -82,7 +82,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <SkipLink
       href="#main-content"
       content={
-        <main id="main-content" className={styles.mainContainer}>
+        <main className={styles.mainContainer}>
           {mobileMenuOpen && isMobile && (
             <div
               className={styles.mobileMenuOverlay}
@@ -128,8 +128,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </nav>
-          {children}
-          <Footer />
+          <div id="main-content">
+            {children}
+            <Footer />
+          </div>
         </main>
       }
     />
