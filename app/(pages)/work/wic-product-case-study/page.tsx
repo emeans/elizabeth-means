@@ -1,5 +1,6 @@
 import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
 import Link from '@components/Link'
+import PageHeader from '@/components/design-system/PageHeader'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,54 +8,25 @@ export const metadata: Metadata = {
   description: 'Case study: WIC product work by Elizabeth Means.',
 }
 
+const wicCaseStudyMetadata = [
+  { label: 'Role', value: 'WIC Product Manager' },
+  { label: 'Timeline', value: '2023–2025' },
+  { label: 'Team', value: '4–10 engineers' },
+  { label: 'Tools', value: 'Figma, Angular, .NET' },
+]
+
 export default function WicProductCaseStudyPage() {
   return (
-    <section className='section'>
+    <section className="section">
       <NoiseTexture opacity={0.4} />
-      <div className='container'>
-        <div className='section-content'>
-          {/* <Link href='/work' variant='standalone'>
-            ← Back to Work
-          </Link> */}
-          <h3>Building the Playbook While Running the Play</h3>
-          <p className='text-bold'>0-to-1 Product Management at KL&A</p>
-          <hr className='section-divider' />
-          <div className='metadata-row'>
-            <div className='metadata-column'>
-              <p className='metadata-label'>Role</p>
-            </div>
-            <div className='metadata-column'>
-              <p className='metadata-value'>WIC Product Manager</p>
-            </div>
-          </div>
-          <div className='metadata-row'>
-            <div className='metadata-column'>
-              <p className='metadata-label'>Timeline</p>
-            </div>
-            <div className='metadata-column'>
-              <p className='metadata-value'>2023–2025</p>
-            </div>
-          </div>
-          <div className='metadata-row'>
-            <div className='metadata-column'>
-              <p className='metadata-label'>Team</p>
-            </div>
-            <div className='metadata-column'>
-              <p className='metadata-value'>4–10 engineers</p>
-            </div>
-          </div>
-          <div className='metadata-row'>
-            <div className='metadata-column'>
-              <p className='metadata-label'>Tools</p>
-            </div>
-            <div className='metadata-column'>
-              <p className='metadata-value'>Figma, Angular, .NET</p>
-            </div>
-          </div>
-
-          <hr className='section-divider' />
-          <section className='section-content'>
-            <section>
+      <div className="container">
+        <PageHeader
+          variant="caseStudy"
+          title="Building the Playbook While Running the Play"
+          subtitle="0-to-1 Product Management at KL&A"
+          metadata={wicCaseStudyMetadata}
+          executiveSummary={
+            <>
               <p>
                 KL&A had spent 30 years delivering custom government software, building exactly what
                 each client specified. When they decided to build their first commercial product, a
@@ -76,9 +48,12 @@ export default function WicProductCaseStudyPage() {
                 a clearer picture of what product management can look like inside a custom
                 development company.
               </p>
-            </section>
-            <section>
-              <h4>Why This Moment, Why This Product</h4>
+            </>
+          }
+        />
+        <section className="section-content">
+          <section>
+            <h4>Why This Moment, Why This Product</h4>
               <p>
                 The Women, Infants, and Children program is deceptively complex. Most people think
                 of it as a client benefit program, but it operates across three interconnected
@@ -380,8 +355,7 @@ export default function WicProductCaseStudyPage() {
                 </Link>
               </p>
             </section>
-          </section>
-        </div>
+        </section>
       </div>
     </section>
   )
