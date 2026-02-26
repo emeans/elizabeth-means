@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
+import Button from '../Button'
 import styles from './ContentImage.module.css'
 
 export interface ContentImageProps {
@@ -118,6 +119,22 @@ export default function ContentImage({
           aria-label="View image full size"
         >
           <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
+            <Button
+              type="button"
+              variant="secondary"
+              size="small"
+              label={
+                <span className="material-symbols-outlined" aria-hidden>
+                  close
+                </span>
+              }
+              aria-label="Close"
+              className={styles.closeButton}
+              onClick={(e) => {
+                e.stopPropagation()
+                closeModal()
+              }}
+            />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={src} alt={alt} className={styles.modalImage} />
             <div className={styles.modalFooter}>
