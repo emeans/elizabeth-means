@@ -1,0 +1,28 @@
+@import '../../../tokens.css';
+
+.root {
+  margin: var(--spacing-2xl) 0;
+  max-width: var(--max-width-prose);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.caption {
+  margin-top: var(--spacing-sm);
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  color: var(--text-secondary);
+  line-height: var(--typography-line-height-normal);
+}

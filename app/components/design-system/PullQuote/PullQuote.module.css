@@ -1,0 +1,30 @@
+@import '../../../tokens.css';
+
+.root {
+  margin: var(--spacing-2xl) 0;
+  padding: 0;
+  max-width: var(--max-width-prose);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--typography-size-lg);
+  line-height: var(--typography-line-height-relaxed);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  border-left: 3px solid var(--border-default);
+  padding-left: var(--spacing-lg);
+}
+
+.attribution {
+  margin-top: var(--spacing-sm);
+  padding-left: var(--spacing-lg);
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-sm);
+  color: var(--text-secondary);
+  font-style: normal;
+}
