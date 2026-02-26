@@ -1,3 +1,4 @@
+import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
 import Link from '@components/Link'
 import type { Metadata } from 'next'
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function WicProductCaseStudyPage() {
   return (
     <section className='section'>
+      <NoiseTexture opacity={0.4} />
       <div className='container'>
         <div className='section-content'>
           {/* <Link href='/work' variant='standalone'>

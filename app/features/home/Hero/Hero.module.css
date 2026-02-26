@@ -10,9 +10,9 @@
 
 .heroContent {
   max-width: var(--max-width-prose);
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-md);
   border: var(--border-width-xs) solid var(--border-subtle);
-  background: var(--surface-primary);
+  background: var(--surface-elevated);
 }
 
 .heroText {
