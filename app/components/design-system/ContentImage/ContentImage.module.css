@@ -96,14 +96,31 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 }
 
-.closeHint {
-  position: absolute;
-  bottom: -3rem;
-  left: 50%;
-  transform: translateX(-50%);
+.modalFooter {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+  text-align: center;
+}
+
+.modalCaption {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  color: var(--text-primary);
+  line-height: var(--typography-line-height-normal);
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modalFooter .closeHint {
+  margin: 0;
   font-family: var(--font-metadata);
   font-size: var(--typography-size-xs);
   color: var(--text-secondary);

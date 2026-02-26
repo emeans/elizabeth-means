@@ -120,7 +120,12 @@ export default function ContentImage({
           <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={src} alt={alt} className={styles.modalImage} />
-            <p className={styles.closeHint}>Click outside or press Escape to close</p>
+            <div className={styles.modalFooter}>
+              {caption != null && caption.trim() !== '' && (
+                <p className={styles.modalCaption}>{caption}</p>
+              )}
+              <p className={styles.closeHint}>Click outside or press Escape to close</p>
+            </div>
           </div>
         </div>
       )}
