@@ -6,13 +6,13 @@
   align-items: center;
   scroll-margin-top: 0;
   transition: var(--transition);
-  background: linear-gradient(45deg, var(--surface-secondary), var(--surface-primary));
 }
 
 .heroContent {
   max-width: var(--max-width-prose);
   border-radius: var(--border-radius-lg);
   border: var(--border-width-xs) solid var(--border-subtle);
+  background: var(--surface-primary);
 }
 
 .heroText {
