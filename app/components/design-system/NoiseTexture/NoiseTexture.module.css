@@ -8,6 +8,10 @@
   filter: invert(1);
 }
 
+[data-theme='dark'] .dot {
+  opacity: 0.3;
+}
+
 /* Dot paper: pale dots that work in both themes (--text-muted adapts to light/dark) */
 .dot {
   fill: var(--text-muted);
