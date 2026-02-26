@@ -1,0 +1,21 @@
+.root {
+  display: block;
+  pointer-events: none;
+}
+
+/* Dark mode: invert only the noise layer so it becomes dark; dots stay theme-aware via .dot */
+[data-theme='dark'] .noiseLayer {
+  filter: invert(1);
+}
+
+/* Dot paper: pale dots that work in both themes (--text-muted adapts to light/dark) */
+.dot {
+  fill: var(--text-muted);
+  opacity: 0.5;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
