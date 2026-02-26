@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './ContentImage.module.css'
 
@@ -10,12 +13,18 @@ export interface ContentImageProps {
   priority?: boolean
   /** Optional: aspect ratio (default 16/10). Use e.g. "4/3" or "1" for square. */
   aspectRatio?: string
+  /** When true, image spans full container width (breaks out of prose). */
+  fullWidth?: boolean
+  /** When true, clicking the image opens a full-size modal. */
+  expandable?: boolean
+  /** When true, omits block margin (e.g. when used inside ContentImageRow). */
+  compact?: boolean
   className?: string
 }
 
 /**
  * Block component for images in long-form content (case studies, Lab, articles).
- * Constrained to prose width with optional caption.
+ * Supports prose width or full-width breakout, optional caption, and click-to-expand modal.
  */
 export default function ContentImage({
   src,
@@ -23,22 +32,98 @@ export default function ContentImage({
   caption,
   priority = false,
   aspectRatio = '16 / 10',
+  fullWidth = false,
+  expandable = false,
+  compact = false,
   className,
 }: ContentImageProps) {
-  const rootClassName = [styles.root, className].filter(Boolean).join(' ')
-  return (
-    <figure className={rootClassName}>
-      <div className={styles.imageWrapper} style={{ aspectRatio } as React.CSSProperties}>
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = useCallback(() => {
+    if (expandable) setModalOpen(true)
+  }, [expandable])
+
+  const closeModal = useCallback(() => setModalOpen(false), [])
+
+  useEffect(() => {
+    if (!modalOpen) return
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal()
+    }
+    document.addEventListener('keydown', handleEscape)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = ''
+    }
+  }, [modalOpen, closeModal])
+
+  const rootClassName = [
+    styles.root,
+    fullWidth && styles.rootFullWidth,
+    expandable && styles.expandable,
+    compact && styles.compact,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
+
+  const content = (
+    <>
+      <div
+        className={styles.imageWrapper}
+        style={{ aspectRatio } as React.CSSProperties}
+        {...(expandable && {
+          role: 'button',
+          tabIndex: 0,
+          onClick: openModal,
+          onKeyDown: (e: React.KeyboardEvent) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              openModal()
+            }
+          },
+          'aria-label': `View full size: ${alt}`,
+        })}
+      >
         <Image
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 768px) 100vw, var(--max-width-prose)"
+          sizes={
+            fullWidth
+              ? '(max-width: 768px) 100vw, var(--max-width-container)'
+              : '(max-width: 768px) 100vw, var(--max-width-prose)'
+          }
           className={styles.image}
           priority={priority}
         />
       </div>
       {caption != null && <figcaption className={styles.caption}>{caption}</figcaption>}
-    </figure>
+    </>
+  )
+
+  return (
+    <>
+      <figure className={rootClassName}>
+        {fullWidth ? <div className={styles.inner}>{content}</div> : content}
+      </figure>
+
+      {expandable && modalOpen && (
+        <div
+          className={styles.backdrop}
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="View image full size"
+        >
+          <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} className={styles.modalImage} />
+            <p className={styles.closeHint}>Click outside or press Escape to close</p>
+          </div>
+        </div>
+      )}
+    </>
   )
 }

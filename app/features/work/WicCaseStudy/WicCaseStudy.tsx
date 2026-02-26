@@ -8,6 +8,7 @@ import WhereWeChoseToBet from './sections/WhereWeChoseToBet'
 import ValidationAndOutcomes from './sections/ValidationAndOutcomes'
 import References from './sections/References'
 import ContentImage from '@/components/design-system/ContentImage'
+import ContentImageRow from '@/components/design-system/ContentImageRow'
 
 const metadata: CaseStudyMetadataItem[] = [
   { label: 'Role', value: 'WIC Product Manager' },
@@ -55,8 +56,14 @@ export default function WicCaseStudy() {
         <DefiningTheRole />
         <LearningToListen />
         <DesigningForPeople />
-        <ContentImage src="/images/wic-case-study/wic-design-system-tokens.png" alt="WIC Product Design System Color Tokens" caption="WIC Product Design System Color Tokens" />
-        <ContentImage src="/images/wic-case-study/wic-design-system-button-wcag.png" alt="WIC Product Design System Button WCAG Guidance" caption="WIC Product Design System Button WCAG Guidance" />
+        <ContentImageRow
+  fullWidth
+  columns={2}
+  items={[
+    { src:'/images/wic-case-study/wic-design-system-tokens.png', alt:'WIC Product Design System Color Tokens', caption:'WIC Product Design System Color Tokens', expandable: true },
+    { src: '/images/wic-case-study/wic-design-system-button-wcag.png', alt: 'WIC Product Design System Button WCAG Guidance', caption: 'WIC Product Design System Button WCAG Guidance', expandable: true },
+  ]}
+/>
         <WhereWeChoseToBet />
         <ValidationAndOutcomes />
         <hr className="section-divider" />

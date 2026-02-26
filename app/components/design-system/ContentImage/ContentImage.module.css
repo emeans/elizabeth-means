@@ -7,11 +7,50 @@
   margin-right: auto;
 }
 
+.compact {
+  margin: 0;
+}
+
+/* Break out of prose to span full container width */
+.rootFullWidth {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.rootFullWidth .inner {
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
 .imageWrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: var(--border-radius-md);
+}
+
+/* When expandable, image wrapper is clickable */
+.expandable .imageWrapper {
+  cursor: pointer;
+}
+
+.expandable .imageWrapper:hover {
+  opacity: 0.97;
+}
+
+.expandable .imageWrapper:focus-visible {
+  outline: 2px solid var(--color-forge-500);
+  outline-offset: 2px;
 }
 
 .image {
@@ -25,4 +64,45 @@
   font-size: var(--typography-size-xs);
   color: var(--text-secondary);
   line-height: var(--typography-line-height-normal);
+}
+
+/* Modal / lightbox */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  cursor: pointer;
+}
+
+.dialog {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  cursor: default;
+}
+
+.modalImage {
+  display: block;
+  max-width: 95vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--border-radius-md);
+}
+
+.closeHint {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
 }

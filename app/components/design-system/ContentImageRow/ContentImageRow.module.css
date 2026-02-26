@@ -1,0 +1,48 @@
+@import '../../../tokens.css';
+
+.root {
+  margin: var(--spacing-2xl) 0;
+  max-width: var(--max-width-prose);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rootFullWidth {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.rootFullWidth .inner {
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .gridTwo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gridThree {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid > * {
+  min-width: 0;
+}
