@@ -11,7 +11,7 @@ import Footer from '@features/shared/Footer'
 
 const navItems = [
   { href: '/work/wic-product-case-study', label: 'WIC Case Study', ariaLabel: 'Go to Case Study page' },
-  // { href: '/lab', label: 'Lab', ariaLabel: 'Go to Lab page' },
+  { href: '/lab', label: 'Lab', ariaLabel: 'Go to Lab page' },
   { href: '/about', label: 'About', ariaLabel: 'Go to About page' },
 ] as const
 
