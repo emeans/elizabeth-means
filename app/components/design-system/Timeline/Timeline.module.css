@@ -1,0 +1,117 @@
+@import '../../../tokens.css';
+
+/* Same card base as MetricsCard */
+.timeline {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-inline-start: var(--spacing-xl);
+  background: var(--surface-primary);
+  border: var(--border-width-xs) solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+}
+
+@media (min-width: 600px) {
+  .timeline {
+    padding: var(--spacing-lg);
+    padding-inline-start: var(--spacing-2xl);
+  }
+}
+
+/* Vertical line (track) */
+.track {
+  position: absolute;
+  left: var(--spacing-lg);
+  top: var(--spacing-md);
+  bottom: var(--spacing-md);
+  width: 2px;
+  background: var(--border-default);
+  border-radius: 1px;
+}
+
+@media (min-width: 600px) {
+  .track {
+    left: var(--spacing-xl);
+    top: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  padding-bottom: var(--spacing-lg);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* Tick mark on the track (centered on vertical line) */
+.tick {
+  position: absolute;
+  left: calc(var(--spacing-lg) - var(--spacing-xl) - 4px);
+  top: 0.35em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  border: 2px solid var(--surface-primary);
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .tick {
+    left: calc(var(--spacing-xl) - var(--spacing-2xl) - 4px);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Small value (date/label) — smaller than MetricsCard value to allow longer titles */
+.value {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--typography-size-base);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+@media (min-width: 600px) {
+  /* .title {
+    font-size: var(--typography-size-lg);
+  } */
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--typography-size-sm);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}

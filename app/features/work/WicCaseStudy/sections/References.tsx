@@ -3,7 +3,7 @@ import Link from '@components/Link'
 export default function References() {
   return (
     <section>
-      <h4>References</h4>
+      <h2>References</h2>
       <p id="ref-1">
         <sup className="citation-ref">[1]</sup> National WIC Association, "NWA Receives USDA Funding
         to Modernize WIC MIS," September 2024.{' '}

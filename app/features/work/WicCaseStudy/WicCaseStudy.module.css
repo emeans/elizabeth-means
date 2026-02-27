@@ -1,14 +1,50 @@
+@import '../../../tokens.css';
+
+/* Section headings in case study: full-width background, text aligned with prose */
+.caseStudyContent h2 {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  margin-top: 128px;
+  margin-bottom: var(--spacing-lg);
+  box-sizing: border-box;
+  padding-inline: max(var(--spacing-lg), calc((100vw - var(--max-width-prose)) / 2));
+  padding-block: var(--spacing-sm) var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-size: var(--typography-size-lg);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+  background: var(--surface-secondary);
+  border-inline-start: var(--border-width-sm) solid var(--border-default);
+}
+
+@media (min-width: 600px) {
+  .caseStudyContent h2 {
+    font-size: var(--typography-size-xl);
+    padding-block: var(--spacing-md) var(--spacing-md);
+    padding-inline: max(var(--spacing-lg), calc((100vw - var(--max-width-prose)) / 2));
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
 /* Break out of .section-content prose width and center contents */
 .aside {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
+  padding-inline: 200px;
+  box-sizing: border-box;
+}
+
+/* Cap content width (not counting aside padding) and center */
+.asideInner {
+  max-width: 1200px;
+  margin-inline: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-lg);
-  padding-inline: 200px;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 .aside.inline {
@@ -25,7 +61,10 @@
 
 @media (max-width: 768px) {
   .aside {
-    flex-direction: column;
     padding-inline: var(--spacing-lg);
+  }
+
+  .asideInner {
+    flex-direction: column;
   }
 }

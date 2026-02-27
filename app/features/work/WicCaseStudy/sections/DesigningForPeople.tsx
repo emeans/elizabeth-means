@@ -3,7 +3,7 @@ import Link from '@components/Link'
 export default function DesigningForPeople() {
   return (
     <section>
-      <h4>Designing for People, Not Just Compliance</h4>
+      <h2>Designing for People, Not Just Compliance</h2>
       <p>
         WIC software had long been built around administrative compliance. We set out to build
         around people instead, and that distinction shaped every design decision we made. The most

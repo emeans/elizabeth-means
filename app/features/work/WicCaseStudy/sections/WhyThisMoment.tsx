@@ -1,10 +1,12 @@
+import MetricsCard from '@/components/design-system/MetricsCard'
+import PullQuote from '@/components/design-system/PullQuote'
 import Link from '@components/Link'
-
+import styles from '../WicCaseStudy.module.css'
 export default function WhyThisMoment() {
   return (
     <>
       <section>
-        <h4>Why This Moment, Why This Product</h4>
+        <h2>Why This Moment, Why This Product</h2>
         <p>
           The Women, Infants, and Children program is deceptively complex. Most people think of it
           as a client benefit program, but it operates across three interconnected domains:
@@ -52,6 +54,15 @@ export default function WhyThisMoment() {
           listening carefully to the people closest to the problem.
         </p>
       </section>
+      <aside className={`${styles.aside} ${styles.inline}`}>
+          <div className={styles.asideInner}>
+            <MetricsCard
+              value='$14.9'
+              description='million federal grant was awarded to research modernization pathways for WIC systems nationally'
+            />
+            <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." />
+          </div>
+        </aside>
     </>
   )
 }

@@ -54,7 +54,7 @@ export default function PageHeader(props: PageHeaderProps) {
           {overline != null && overline.trim() !== '' && (
             <Overline variant={overlineVariant}>{overline}</Overline>
           )}
-          <h3>{title}</h3>
+          <h1 className='text-2xl'>{title}</h1>
           {subtitle != null && <p className="text-bold">{subtitle}</p>}
         </div>
         <div className={styles.metadataStrip}>

@@ -1,7 +1,7 @@
 export default function WhereWeChoseToBet() {
   return (
     <section>
-      <h4>Where We Chose to Bet</h4>
+      <h2>Where We Chose to Bet</h2>
       <p>
         The original plan was to build vendor management, then food management, and then the clinic.
         Discovery at the Portland and Chicago conferences revealed a gap. The concept of a

@@ -58,15 +58,8 @@ export default function WicCaseStudy() {
           </>
         }
       />
-      <section className='section-content'>
+      <section className={`section-content ${styles.caseStudyContent}`}>
         <WhyThisMoment />
-        <aside className={styles.aside}>
-          <MetricsCard
-            value='$14.9'
-            description='million federal grant was awarded to research modernization pathways for WIC systems nationally'
-          />
-          <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." />
-        </aside>
         <DefiningTheRole />
         <LearningToListen />
         <DesigningForPeople />

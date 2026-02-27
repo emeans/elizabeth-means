@@ -4,7 +4,7 @@ import styles from '../WicCaseStudy.module.css'
 export default function ValidationAndOutcomes() {
   return (
     <section>
-      <h4>Validation & Outcomes</h4>
+      <h2>Validation & Outcomes</h2>
       <p>
         Over two years, we validated our product direction through five national conference
         demonstrations, direct stakeholder engagement, and alignment with external research.
@@ -38,18 +38,20 @@ export default function ValidationAndOutcomes() {
         from the start proved essential to maintaining both compliance and usability.
       </p>
       <aside className={`${styles.aside} ${styles.inline}`}>
-        <MetricsCard
-          metrics={[
-            {
-              value: '4 to 10',
-              description:
-                'team members',
-            },
-            { value: '100%', description: 'retention over two years' },
-            { value: '2', description: 'promotions' },
-            { value: '2', description: 'new engineering leads' },
-          ]}
-        />
+        <div className={styles.asideInner}>
+          <MetricsCard
+            metrics={[
+              {
+                value: '4 to 10',
+                description:
+                  'team members',
+              },
+              { value: '100%', description: 'retention over two years' },
+              { value: '2', description: 'promotions' },
+              { value: '2', description: 'new engineering leads' },
+            ]}
+          />
+        </div>
       </aside>
       <p>
         There is a third lesson that took longer to name. I stayed in the doing far longer than I
