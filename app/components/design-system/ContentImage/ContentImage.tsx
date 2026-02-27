@@ -39,6 +39,16 @@ export default function ContentImage({
   className,
 }: ContentImageProps) {
   const [modalOpen, setModalOpen] = useState(false)
+  const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null)
+
+  const handleImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget
+    setNaturalSize({ width: img.naturalWidth, height: img.naturalHeight })
+  }, [])
+
+  useEffect(() => {
+    setNaturalSize(null)
+  }, [src])
 
   const openModal = useCallback(() => {
     if (expandable) setModalOpen(true)
@@ -73,7 +83,13 @@ export default function ContentImage({
     <>
       <div
         className={styles.imageWrapper}
-        style={{ aspectRatio } as React.CSSProperties}
+        style={{
+          aspectRatio,
+          ...(naturalSize && {
+            maxWidth: naturalSize.width,
+            maxHeight: naturalSize.height,
+          }),
+        } as React.CSSProperties}
         {...(expandable && {
           role: 'button',
           tabIndex: 0,
@@ -98,6 +114,7 @@ export default function ContentImage({
           }
           className={styles.image}
           priority={priority}
+          onLoad={handleImageLoad}
         />
       </div>
       {caption != null && <figcaption className={styles.caption}>{caption}</figcaption>}
@@ -136,7 +153,20 @@ export default function ContentImage({
               }}
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={alt} className={styles.modalImage} />
+            <img
+              src={src}
+              alt={alt}
+              className={styles.modalImage}
+              style={
+                naturalSize
+                  ? {
+                      maxWidth: `min(95vw, ${naturalSize.width}px)`,
+                      maxHeight: `min(85vh, ${naturalSize.height}px)`,
+                    }
+                  : undefined
+              }
+              onLoad={!naturalSize ? handleImageLoad : undefined}
+            />
             <div className={styles.modalFooter}>
               {caption != null && caption.trim() !== '' && (
                 <p className={styles.modalCaption}>{caption}</p>
