@@ -1,4 +1,8 @@
 import type { ReactNode } from 'react'
+import Tag from '@/components/design-system/Tag'
+import Overline from '@/components/design-system/Overline'
+import type { OverlineVariant } from '@/components/design-system/Overline'
+import styles from './PageHeader.module.css'
 
 export type PageHeaderStandardProps = {
   variant: 'standard'
@@ -13,6 +17,10 @@ export type CaseStudyMetadataItem = {
 
 export type PageHeaderCaseStudyProps = {
   variant: 'caseStudy'
+  /** Optional label above the title (e.g. section name like "work") */
+  overline?: string
+  /** Overline background color: forge (work), patina (lab). Default forge. */
+  overlineVariant?: OverlineVariant
   title: string
   subtitle?: string
   metadata: CaseStudyMetadataItem[]
@@ -31,26 +39,30 @@ export default function PageHeader(props: PageHeaderProps) {
     )
   }
 
-  const { title, subtitle, metadata, executiveSummary } = props
+  const { overline, overlineVariant = 'forge', title, subtitle, metadata, executiveSummary } = props
   return (
-    <div className="section-content">
-      <h3>{title}</h3>
-      {subtitle != null && <p className="text-bold">{subtitle}</p>}
-      <hr className="section-divider" />
-      {metadata.map(({ label, value }) => (
-        <div key={label} className="metadata-row">
-          <div className="metadata-column">
-            <p className="metadata-label">{label}</p>
-          </div>
-          <div className="metadata-column">
-            <p className="metadata-value">{value}</p>
+    <>
+      <header className={styles.banner}>
+        <div className={styles.heading}>
+          {overline != null && overline.trim() !== '' && (
+            <Overline variant={overlineVariant}>{overline}</Overline>
+          )}
+          <h3>{title}</h3>
+          {subtitle != null && <p className="text-bold">{subtitle}</p>}
+        </div>
+        <div className={styles.metadataStrip}>
+          <div className={`${styles.metadataStripInner} ${styles.metadataTags}`}>
+            {metadata.map(({ label, value }) => (
+              <Tag key={label} variant="secondary" label={label}>
+                {value}
+              </Tag>
+            ))}
           </div>
         </div>
-      ))}
-      <hr className="section-divider" />
+      </header>
       <section className="section-content">
         <section>{executiveSummary}</section>
       </section>
-    </div>
+    </>
   )
 }

@@ -1,0 +1,16 @@
+@import '../../../tokens.css';
+
+.overline {
+  display: inline-block;
+  padding: 4px 8px;
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: 400;
+  line-height: var(--typography-line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-inverse);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--action-primary-default);
+}

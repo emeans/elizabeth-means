@@ -22,6 +22,7 @@ export default function WicCaseStudy() {
     <>
       <PageHeader
         variant='caseStudy'
+        overline='work'
         title='Building the Playbook While Running the Play'
         subtitle='0-to-1 Product Management at KL&A'
         metadata={metadata}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import styles from './AppLayout.module.css'
 import Link from '@components/Link'
 import HamburgerButton from '@components//HamburgerButton'
@@ -77,6 +78,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }, [mobileMenuOpen, isMobile])
 
   const closeMobileMenu = () => setMobileMenuOpen(false)
+  const pathname = usePathname()
 
   return (
     <SkipLink
@@ -93,7 +95,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <nav className={styles.nav}>
             <div className={styles.navContainer}>
               <LogoLink onClick={closeMobileMenu} href="/">
-                Elizabeth Means
+                <span className={styles.firstName}>elizabeth</span><span className={styles.lastName}>means</span><span className={styles.period}>.</span>
               </LogoLink>
               {isMounted && isMobile && (
                 <HamburgerButton
@@ -117,6 +119,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                         blockLayout={isMobile}
                         href={href}
                         aria-label={ariaLabel}
+                        active={pathname != null && (pathname.replace(/\/$/, '') || '/') === (href.replace(/\/$/, '') || '/')}
                         onClick={closeMobileMenu}
                       >
                         {label}

@@ -36,7 +36,7 @@ const LogoLink = forwardRef<HTMLAnchorElement, LogoLinkProps>(
     {
       logo,
       logoAlt = 'Site logo',
-      children = 'Elizabeth Means',
+      children = 'elizabeth means',
       hideText = false,
       href = '#home',
       onClick,

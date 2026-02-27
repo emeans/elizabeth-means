@@ -1,0 +1,55 @@
+@import '../../../tokens.css';
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* De-emphasized label so the value is read first */
+.label {
+  opacity: 0.85;
+  margin-right: var(--spacing-xs);
+}
+
+/* Value (main content) when label is present */
+.value {
+  font-weight: var(--typography-weight-bold);
+}
+
+.primary {
+  background: var(--action-primary-default);
+  color: var(--text-inverse);
+}
+
+.secondary {
+  background: var( --surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.success {
+  background: var(--surface-success);
+  color: var(--text-success);
+}
+
+.warning {
+  background: var(--surface-warning);
+  color: var(--text-warning);
+}
+
+.error {
+  background: var(--surface-error);
+  color: var(--text-error);
+}
+
+.muted {
+  background: var(--surface-secondary);
+  color: var(--text-muted);
+}

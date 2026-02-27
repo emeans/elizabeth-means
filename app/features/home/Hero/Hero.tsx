@@ -7,7 +7,7 @@ export default function Hero() {
       <div className='container'>
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
-            <h1>Hi, I'm Elizabeth&nbsp;Means
+            <h1>Hi, I'm Elizabeth.
             </h1>
             <p className={styles.heroSubtitle}>
               I build the systems that help teams do their best work.

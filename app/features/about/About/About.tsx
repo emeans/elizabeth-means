@@ -1,9 +1,20 @@
+import Polaroid from '@/components/design-system/Polaroid/Polaroid'
 import Link from '@components/Link'
 
 export default function About() {
   return (
     <section className='section'>
       <div className='container'>
+      <div className='polaroid-wrapper'>
+        <Polaroid
+          image={{ src: '/images/Elizabeth_Means.png', alt: 'Me' }}
+          angle={3}
+          width={350}
+          caption='Hi!'
+          overlay
+          style={{ top: 200, right: 100 }}
+        />
+      </div>
         <div className='section-content'>
           <h2>About Me</h2>
           <p>

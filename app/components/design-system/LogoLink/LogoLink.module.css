@@ -10,7 +10,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   font-family: var(--font-heading);
-  font-size: var(--typography-size-lg);
+  font-size: var(--typography-size-xl);
   font-weight: var(--typography-weight-bold);
   line-height: 1;
   text-decoration: none;

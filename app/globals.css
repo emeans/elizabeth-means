@@ -224,9 +224,15 @@ img {
 .section-content {
     max-width: var(--max-width-prose);
     margin: 0 auto;
+    margin-top: var(--spacing-2xl);
     text-align: left;
     text-wrap: balance;
     line-height: var(--typography-line-height-relaxed);
+}
+
+/* Breathing room between direct children */
+.section-content > * + * {
+    margin-top: var(--spacing-2xl);
 }
 
 .section-divider {
