@@ -4,4 +4,5 @@ export type {
   PageHeaderStandardProps,
   PageHeaderCaseStudyProps,
   CaseStudyMetadataItem,
+  PageHeaderImage,
 } from './PageHeader'

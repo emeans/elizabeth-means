@@ -15,8 +15,15 @@ export type CaseStudyMetadataItem = {
   value: string
 }
 
+export type PageHeaderImage = {
+  src: string
+  alt: string
+}
+
 export type PageHeaderCaseStudyProps = {
   variant: 'caseStudy'
+  /** Optional image shown at the top of the header (e.g. hero or key visual) */
+  image?: PageHeaderImage
   /** Optional label above the title (e.g. section name like "work") */
   overline?: string
   /** Overline background color: forge (work), patina (lab). Default forge. */
@@ -39,7 +46,7 @@ export default function PageHeader(props: PageHeaderProps) {
     )
   }
 
-  const { overline, overlineVariant = 'forge', title, subtitle, metadata, executiveSummary } = props
+  const { image, overline, overlineVariant = 'forge', title, subtitle, metadata, executiveSummary } = props
   return (
     <>
       <header className={styles.banner}>
@@ -59,6 +66,16 @@ export default function PageHeader(props: PageHeaderProps) {
             ))}
           </div>
         </div>
+        {image != null && (
+          <div className={styles.imageWrapper}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={image.src}
+              alt={image.alt}
+              className={styles.image}
+            />
+          </div>
+        )}
       </header>
       <section className="section-content">
         <section>{executiveSummary}</section>
