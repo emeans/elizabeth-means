@@ -1,5 +1,6 @@
+import MetricsCard from '@/components/design-system/MetricsCard'
 import Link from '@components/Link'
-
+import styles from '../WicCaseStudy.module.css'
 export default function ValidationAndOutcomes() {
   return (
     <section>
@@ -36,6 +37,20 @@ export default function ValidationAndOutcomes() {
         discovery. Building continuous validation loops with SMEs and designing for configurability
         from the start proved essential to maintaining both compliance and usability.
       </p>
+      <aside className={`${styles.aside} ${styles.inline}`}>
+        <MetricsCard
+          metrics={[
+            {
+              value: '4 to 10',
+              description:
+                'team members',
+            },
+            { value: '100%', description: 'retention over two years' },
+            { value: '2', description: 'promotions' },
+            { value: '2', description: 'new engineering leads' },
+          ]}
+        />
+      </aside>
       <p>
         There is a third lesson that took longer to name. I stayed in the doing far longer than I
         should have. I was conducting discovery, leading design work, managing the team, and

@@ -1,5 +1,6 @@
 import MetricsCard from '@/components/design-system/MetricsCard'
 import styles from '../WicCaseStudy.module.css'
+import PullQuote from '@/components/design-system/PullQuote'
 export default function DefiningTheRole() {
   return (
     <section>
@@ -23,28 +24,14 @@ export default function DefiningTheRole() {
         understood how each person thought, where their strengths naturally pulled them, and what
         they needed from one another. By mid-2024, my tech lead had grown into full ownership of the
         engineering side, consulting me on complex problems but driving the direction himself. I had
-        become more of a subject-matter expert than an engineering leader. That felt like the right
+        become more of a subject-matter expert than an engineering leader and that felt like the right
         outcome. Over two years of building through ambiguity and shifting priorities, we had zero
         attrition. In my experience, that doesn't happen without psychological safety as a genuine
-        foundation.
+        foundation. We had become human-centered internally, too.
       </p>
       <aside className={`${styles.aside} ${styles.inline}`}>
-        <MetricsCard
-          metrics={[
-            {
-              value: '4 to 10',
-              description:
-                'team members',
-            },
-            { value: '100%', description: 'retention over two years' },
-            { value: '2', description: 'promotions' },
-            { value: '2', description: 'new engineering leads' },
-          ]}
-        />
-        {/* <MetricsCard value='4→10' description='team members' />
-        <MetricsCard value='100%' description='retention over two years' />
-        <MetricsCard value='2' description='promotions' />
-        <MetricsCard value='2' description='new engineering leads' /> */}
+        <MetricsCard value="100%" description="retention over two years" />
+        <PullQuote quote="We had become human-centered internally, too." />
       </aside>
       <p>
         But the role also presented a tension I didn't fully anticipate. To build a great product, I

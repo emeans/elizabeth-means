@@ -16,6 +16,13 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Pull quote in aside: remove large horizontal margins so it sits next to the card */
+.aside.inline figure {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
 @media (max-width: 768px) {
   .aside {
     flex-direction: column;
