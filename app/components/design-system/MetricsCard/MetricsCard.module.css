@@ -1,0 +1,128 @@
+@import '../../../tokens.css';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--surface-primary);
+  border: var(--border-width-xs) solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .card {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Multi-metric card: row on desktop, column on small screens */
+.cardMulti {
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  padding: var(--spacing-md);
+}
+
+@media (min-width: 600px) {
+  .cardMulti {
+    padding: var(--spacing-lg);
+  }
+}
+
+.metricsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .metricsList {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .metricItem {
+    flex: none;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.metricItem:not(:first-child) {
+  padding-inline-start: var(--spacing-md);
+  border-inline-start: var(--border-width-xs) solid var(--border-subtle);
+}
+
+@media (min-width: 600px) {
+  .metricItem:not(:first-child) {
+    padding-inline-start: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .metricItem:not(:first-child) {
+    padding-inline-start: 0;
+    border-inline-start: none;
+    padding-block-start: var(--spacing-md);
+    border-block-start: var(--border-width-xs) solid var(--border-subtle);
+  }
+}
+
+@media (max-width: 480px) {
+  .metricItem:not(:first-child) {
+    padding-block-start: var(--spacing-lg);
+  }
+}
+
+.value {
+  font-family: var(--font-heading);
+  font-size: var(--typography-size-2xl);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+@media (min-width: 600px) {
+  .value {
+    font-size: var(--typography-size-3xl);
+  }
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+  word-wrap: break-word;
+}
+
+@media (min-width: 600px) {
+  .description {
+    font-size: var(--typography-size-sm);
+  }
+}

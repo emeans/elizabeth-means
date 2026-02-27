@@ -1,3 +1,5 @@
+import MetricsCard from '@/components/design-system/MetricsCard'
+import styles from '../WicCaseStudy.module.css'
 export default function DefiningTheRole() {
   return (
     <section>
@@ -26,12 +28,30 @@ export default function DefiningTheRole() {
         attrition. In my experience, that doesn't happen without psychological safety as a genuine
         foundation.
       </p>
+      <aside className={`${styles.aside} ${styles.inline}`}>
+        <MetricsCard
+          metrics={[
+            {
+              value: '4 to 10',
+              description:
+                'team members',
+            },
+            { value: '100%', description: 'retention over two years' },
+            { value: '2', description: 'promotions' },
+            { value: '2', description: 'new engineering leads' },
+          ]}
+        />
+        {/* <MetricsCard value='4→10' description='team members' />
+        <MetricsCard value='100%' description='retention over two years' />
+        <MetricsCard value='2' description='promotions' />
+        <MetricsCard value='2' description='new engineering leads' /> */}
+      </aside>
       <p>
         But the role also presented a tension I didn't fully anticipate. To build a great product, I
         needed to stay close to the work: conducting discovery, designing solutions, and validating
         with users. To build a product organization, I needed to step back: create infrastructure,
-        enable the team, and shift a custom development culture toward product thinking. I stayed
-        in the doing far longer than I should have. That tension was never fully resolved. It just
+        enable the team, and shift a custom development culture toward product thinking. I stayed in
+        the doing far longer than I should have. That tension was never fully resolved. It just
         changed shape as the team grew, and it shaped almost every decision I made.
       </p>
     </section>

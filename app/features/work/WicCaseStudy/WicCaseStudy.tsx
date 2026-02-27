@@ -10,6 +10,8 @@ import References from './sections/References'
 import ContentImage from '@/components/design-system/ContentImage'
 import ContentImageRow from '@/components/design-system/ContentImageRow'
 import PullQuote from '@/components/design-system/PullQuote'
+import MetricsCard from '@/components/design-system/MetricsCard'
+import styles from './WicCaseStudy.module.css'
 
 const metadata: CaseStudyMetadataItem[] = [
   { label: 'Role', value: 'WIC Product Manager' },
@@ -58,6 +60,13 @@ export default function WicCaseStudy() {
       />
       <section className='section-content'>
         <WhyThisMoment />
+        <aside className={styles.aside}>
+          <MetricsCard
+            value='$14.9'
+            description='million federal grant was awarded to research modernization pathways for WIC systems nationally'
+          />
+          <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." />
+        </aside>
         <DefiningTheRole />
         <LearningToListen />
         <DesigningForPeople />

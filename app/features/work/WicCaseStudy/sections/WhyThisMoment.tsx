@@ -1,4 +1,3 @@
-import PullQuote from '@/components/design-system/PullQuote'
 import Link from '@components/Link'
 
 export default function WhyThisMoment() {
@@ -53,9 +52,6 @@ export default function WhyThisMoment() {
           listening carefully to the people closest to the problem.
         </p>
       </section>
-      <aside>
-        <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." />
-      </aside>
     </>
   )
 }
