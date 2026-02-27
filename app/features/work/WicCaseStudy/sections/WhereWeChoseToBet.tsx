@@ -20,6 +20,7 @@ export default function WhereWeChoseToBet() {
         The participant portal was a success. The response in Baltimore confirmed we had identified
         the right direction. The participant-first philosophy became our North Star.
       </p>
+      
       <p>
         We invested in configurability as a strategic choice. Rather than custom-coding per state,
         we selectively focused on where states clearly had divergent approaches, such as workflow

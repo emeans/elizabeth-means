@@ -9,6 +9,7 @@ import ValidationAndOutcomes from './sections/ValidationAndOutcomes'
 import References from './sections/References'
 import ContentImage from '@/components/design-system/ContentImage'
 import ContentImageRow from '@/components/design-system/ContentImageRow'
+import PullQuote from '@/components/design-system/PullQuote'
 
 const metadata: CaseStudyMetadataItem[] = [
   { label: 'Role', value: 'WIC Product Manager' },
@@ -53,9 +54,8 @@ export default function WicCaseStudy() {
         }
       />
       <section className='section-content'>
-        <ContentImage src='/images/wic-case-study/2025-nwa-minneapolis.png' alt='WIC Case Study Hero' fullWidth/>
         <WhyThisMoment />
-        {/* e.g. <PullQuote quote="..." attribution="..." /> or <ContentImage src="..." alt="..." caption="..." /> */}
+      <ContentImage src='/images/wic-case-study/wic-admin-participant-summary.png' alt='WIC Admin Participant Summary'/>
         <DefiningTheRole />
         <LearningToListen />
         <DesigningForPeople />
