@@ -27,7 +27,10 @@ export default function WicCaseStudy() {
         title='Building the Playbook While Running the Play'
         subtitle='0-to-1 Product Management at KL&A'
         metadata={metadata}
-        image={{src: '/images/wic-case-study/nwa-conferences.png', alt: 'Attended 5 National WIC Association Conferences'}}
+        image={{
+          src: '/images/wic-case-study/nwa-conferences.png',
+          alt: 'Attended 5 National WIC Association Conferences',
+        }}
         executiveSummary={
           <>
             <p>
@@ -55,7 +58,6 @@ export default function WicCaseStudy() {
       />
       <section className='section-content'>
         <WhyThisMoment />
-      <ContentImage src='/images/wic-case-study/wic-admin-participant-summary.png' alt='WIC Admin Participant Summary'/>
         <DefiningTheRole />
         <LearningToListen />
         <DesigningForPeople />
@@ -76,6 +78,10 @@ export default function WicCaseStudy() {
               expandable: true,
             },
           ]}
+        />
+        <ContentImage
+          src='/images/wic-case-study/wic-admin-participant-summary.png'
+          alt='WIC Admin Participant Summary'
         />
         <WhereWeChoseToBet />
         <ValidationAndOutcomes />

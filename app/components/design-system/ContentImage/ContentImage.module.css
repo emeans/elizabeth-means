@@ -39,6 +39,10 @@
   width: 100%;
   overflow: hidden;
   border-radius: var(--border-radius-md);
+}
+
+/* Border only in full-width mode (has background); single images with transparent PNGs have no border */
+.rootFullWidth .imageWrapper {
   border: 1px solid var(--border-subtle);
 }
 
