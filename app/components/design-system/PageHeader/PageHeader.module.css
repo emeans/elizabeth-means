@@ -57,6 +57,19 @@
 }
 
 @media (max-width: 768px) {
+  .imageWrapper {
+    max-height: 50vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image {
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    max-width: none;
+  }
 
   .heading {
     padding-left: var(--spacing-lg);
