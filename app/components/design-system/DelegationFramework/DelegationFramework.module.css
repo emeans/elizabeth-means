@@ -1,0 +1,403 @@
+@import '../../../tokens.css';
+
+.framework {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  background: var(--surface-secondary);
+  border: var(--border-width-xs) solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .framework {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Header: title + intro (match FlowDiagram horizontal title/intro styling)
+   Override .content-entry h2 from globals so our spacing applies. */
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-sm) var(--spacing-md);
+  text-align: center;
+  background: var(--surface-secondary);
+  border-bottom: var(--border-width-xs) solid var(--border-subtle);
+}
+
+.title {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-family: var(--font-heading);
+  font-size: var(--typography-size-lg);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+.header .title:last-child {
+  margin-bottom: 0;
+}
+
+.intro {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--typography-size-sm);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding-inline: var(--spacing-md);
+    padding-block: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .title {
+    font-size: var(--typography-size-base);
+  }
+}
+
+/* Level headers row */
+.levelsRow {
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-md) var(--spacing-lg);
+  gap: 0;
+  border-bottom: var(--border-width-xs) solid var(--border-subtle);
+  background: var(--surface-primary);
+  min-width: 0;
+}
+
+.levelsSpacer {
+  flex: 0 0 180px;
+  min-width: 180px;
+}
+
+.levelCell {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  text-align: center;
+}
+
+.levelLabel {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.levelName {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+/* Role rows (cards) */
+.roles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: var(--border-width-xs) solid var(--border-subtle);
+  background: var(--surface-primary);
+  min-width: 0;
+}
+
+.roleRow:last-of-type {
+  border-bottom: none;
+}
+
+.roleInfo {
+  flex: 0 0 180px;
+  min-width: 180px;
+}
+
+.roleTitle {
+  font-family: var(--font-heading);
+  font-size: var(--typography-size-sm);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+.roleDescription {
+  margin-top: var(--spacing-2xs);
+  font-family: var(--font-body);
+  font-size: var(--typography-size-xs);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}
+
+/* Progression track with line + indicators */
+.track {
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  padding: var(--spacing-sm) 0;
+}
+
+.trackLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: var(--border-default);
+  transform: translateY(-50%);
+}
+
+/* Emphasized segment between typical starting point and full ownership (matches indicator palette) */
+.trackLineHighlight {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  background: var(--action-primary-hover);
+  transform: translateY(-50%);
+  border-radius: 2px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.indicators {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+.indicatorSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Circle variants */
+.indicator {
+  flex-shrink: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* Outlined: typical starting point or outside typical scope */
+.indicator_start,
+.indicator_outside {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--border-default);
+  background: transparent;
+}
+
+.indicator_start {
+  border: 2px solid var(--action-primary-hover);
+}
+
+/* Small filled: growth range */
+.indicator_growth {
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: var(--action-primary-hover);
+}
+
+/* Large filled: full ownership potential */
+.indicator_ownership {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: var(--action-primary-default);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--surface-secondary);
+  border-top: var(--border-width-xs) solid var(--border-subtle);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.legendLabel {
+  font-family: var(--font-body);
+  font-size: var(--typography-size-xs);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}
+
+/* Responsive: tablet and below */
+@media (max-width: 768px) {
+  .levelsRow {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .levelsSpacer,
+  .roleInfo {
+    flex: 0 0 140px;
+    min-width: 140px;
+  }
+
+  .levelName {
+    font-size: 0.75rem;
+  }
+
+  .roleRow {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .legend {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm) var(--spacing-lg);
+  }
+}
+
+/* Responsive: small screens */
+@media (max-width: 600px) {
+  .levelsSpacer,
+  .roleInfo {
+    flex: 0 0 100px;
+    min-width: 100px;
+  }
+
+  .levelLabel {
+    font-size: 0.7rem;
+  }
+
+  .levelName {
+    font-size: 0.65rem;
+  }
+
+  .roleTitle {
+    font-size: var(--typography-size-xs);
+  }
+
+  .roleDescription {
+    font-size: 0.7rem;
+  }
+
+  .track {
+    min-width: 100px;
+    padding: var(--spacing-xs) 0;
+  }
+
+  .trackLine {
+    height: 1.5px;
+  }
+
+  .trackLineHighlight {
+    height: 3px;
+  }
+
+  .legend {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .legendLabel {
+    font-size: 0.7rem;
+  }
+}
+
+/* Responsive: extra small – stack role row so track gets full width */
+@media (max-width: 480px) {
+  .roleRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+
+  .roleInfo {
+    flex: none;
+    min-width: 0;
+  }
+
+  .levelsRow {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .levelsSpacer {
+    flex: 0 0 0;
+    min-width: 0;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .levelCell {
+    min-width: 52px;
+  }
+
+  .levelLabel {
+    font-size: 0.65rem;
+  }
+
+  .levelName {
+    font-size: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .track {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Slightly smaller indicators on very small screens */
+  .indicator_start,
+  .indicator_outside {
+    width: 10px;
+    height: 10px;
+    border-width: 1.5px;
+  }
+
+  .indicator_growth {
+    width: 8px;
+    height: 8px;
+  }
+
+  .indicator_ownership {
+    width: 14px;
+    height: 14px;
+  }
+}

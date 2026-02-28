@@ -1,3 +1,4 @@
+import DelegationFramework from '@/components/design-system/DelegationFramework'
 import FlowDiagram from '@/components/design-system/FlowDiagram'
 import PageHeader from '@/components/design-system/PageHeader'
 import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
@@ -82,13 +83,83 @@ export default function DesignOperationsFramework() {
           <p className='text-body text-bold'>What Is Discovery?</p>
           <p>
             Before I could bring anyone else into the process, I needed to document not just the
-            steps, but the reasoning behind them. This document defines why we design the way we do
-            — the difference between requirements-driven development and human-centered design, why
+            steps, but the reasoning behind them. This document defines why we design the way we do:
+            the difference between requirements-driven development and human-centered design, why
             information architecture has to come before visual design, and what goes wrong when you
             let your data model drive your UI. I used it two ways: as an onboarding reference for
             new team members, and as a tool for pushback when stakeholders wanted to skip discovery
             and jump straight to wireframes.
           </p>
+          <aside className='aside inline'>
+            <div className='asideInner'>
+              <FlowDiagram
+                title='Design Philosophy'
+                intro={
+                  <>
+                    Poor information architecture can&apos;t be fixed with good visual design. The
+                    phases are sequential for a reason.
+                  </>
+                }
+                layout='horizontal'
+                items={[
+                  {
+                    value: 'Phase 01',
+                    title: 'Discovery',
+                    description:
+                      'Research and requirements gathering. Understand user needs, pain points, and design implications before defining scope or opening Figma.',
+                    sections: [
+                      {
+                        title: 'Key output(s)',
+                        values: ['User Research Insights'],
+                        displayAs: 'tags',
+                      },
+                      {
+                        title: 'Led by',
+                        values: ['Product Designer', 'UX Designer'],
+                        displayAs: 'text',
+                      },
+                    ],
+                  },
+                  {
+                    value: 'Phase 02',
+                    title: 'Information Architecture',
+                    description:
+                      'Transform discovery insights into structure. Determine how information is grouped, what the navigation model is, and how the system maps to how users actually think rather than how the database is organized.',
+                    sections: [
+                      {
+                        title: 'Key output(s)',
+                        values: ['Design Brief'],
+                        displayAs: 'tags',
+                      },
+                      {
+                        title: 'Led by',
+                        values: ['UX Designer', 'Product Designer'],
+                        displayAs: 'text',
+                      },
+                    ],
+                  },
+                  {
+                    value: 'Phase 03',
+                    title: 'Design Development',
+                    description:
+                      'Create the concrete interfaces users interact with: flows, screens, interactions, and visual design. Validate against requirements and accessibility standards, then prepare for handoff.',
+                    sections: [
+                      {
+                        title: 'Key output(s)',
+                        values: ['Design Review Checklist', 'Design Handoff Summary'],
+                        displayAs: 'tags',
+                      },
+                      {
+                        title: 'Led by',
+                        values: ['UI Production Designer', 'Product Designer'],
+                        displayAs: 'text',
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </div>
+          </aside>
         </section>
 
         <section>
@@ -174,6 +245,49 @@ export default function DesignOperationsFramework() {
             strategic ownership, so growth conversations have a shared language and I could be
             specific about what I was asking someone to do at each stage of their development.
           </p>
+          <aside className='aside inline'>
+            <div className='asideInner'>
+              <DelegationFramework
+                title='Delegation Framework'
+                intro='Growth conversations need a shared language. This is how I think about where someone is and where they can go.'
+                levels={[
+                  { label: 'Level 1', name: 'Directed Execution' },
+                  { label: 'Level 2', name: 'Guided Execution' },
+                  { label: 'Level 3', name: 'Patterned Independence' },
+                  { label: 'Level 4', name: 'Strategic Collaboration' },
+                  { label: 'Level 5', name: 'Strategic Ownership' },
+                ]}
+                roles={[
+                  {
+                    title: 'Product Designer',
+                    description: 'Owns design vision and strategy',
+                    indicators: ['outside', 'outside', 'start', 'growth', 'ownership'],
+                  },
+                  {
+                    title: 'UX Designer',
+                    description: 'Owns research, IA, and design development',
+                    indicators: ['outside', 'start', 'growth', 'growth', 'ownership'],
+                  },
+                  {
+                    title: 'Production Designer',
+                    description: 'Owns visual execution and handoff',
+                    indicators: ['start', 'growth', 'growth', 'ownership', 'outside'],
+                  },
+                  {
+                    title: 'Business Analyst',
+                    description: 'Owns requirements and acceptance criteria',
+                    indicators: ['start', 'growth', 'growth', 'growth', 'ownership'],
+                  },
+                ]}
+                legend={[
+                  { variant: 'start', label: 'Typical starting point' },
+                  { variant: 'growth', label: 'Growth range' },
+                  { variant: 'ownership', label: 'Full ownership potential' },
+                  { variant: 'outside', label: 'Outside typical scope' },
+                ]}
+              />
+            </div>
+          </aside>
         </section>
 
         <section>
