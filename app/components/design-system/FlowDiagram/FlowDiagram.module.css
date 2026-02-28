@@ -1,10 +1,9 @@
 @import '../../../tokens.css';
 
-/* Same card base as MetricsCard */
-.timeline {
+/* Same card base as Timeline */
+.flowDiagram {
   position: relative;
   padding: var(--spacing-md) var(--spacing-lg);
-  padding-inline-start: var(--spacing-xl);
   background: var(--surface-primary);
   border: var(--border-width-xs) solid var(--border-subtle);
   border-radius: var(--radius-card);
@@ -15,29 +14,16 @@
 }
 
 @media (min-width: 600px) {
-  .timeline {
+  .flowDiagram {
     padding: var(--spacing-lg);
-    padding-inline-start: var(--spacing-2xl);
   }
 }
 
-/* Vertical line (track) */
-.track {
-  position: absolute;
-  left: var(--spacing-lg);
-  top: var(--spacing-md);
-  bottom: var(--spacing-md);
-  width: 2px;
-  background: var(--border-default);
-  border-radius: 1px;
-}
-
-@media (min-width: 600px) {
-  .track {
-    left: var(--spacing-xl);
-    top: var(--spacing-lg);
-    bottom: var(--spacing-lg);
-  }
+.flowTitle {
+  margin: 0 0 var(--spacing-lg) 0;
+  font-family: var(--font-heading);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
 }
 
 .list {
@@ -47,40 +33,56 @@
 }
 
 .item {
-  position: relative;
-  padding-bottom: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
 }
 
 .item:last-child {
   padding-bottom: 0;
 }
 
-/* Tick mark on the track (centered on vertical line) */
-.tick {
-  position: absolute;
-  left: calc(var(--spacing-lg) - var(--spacing-xl) - 4px);
-  top: 0.35em;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--text-primary);
-  border: 2px solid var(--surface-primary);
-  box-sizing: border-box;
+/* Arrow between steps — points to next entry */
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  color: var(--border-default);
+  gap: var(--spacing-xs);
 }
 
-@media (min-width: 600px) {
-  .tick {
-    left: calc(var(--spacing-xl) - var(--spacing-2xl) - 4px);
-  }
+.arrowGraphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowGraphic svg {
+  width: 24px;
+  height: 28px;
+}
+
+.arrowLabel {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 20em;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+  width: 100%;
+  text-align: left;
 }
 
-/* Small value (date/label) — smaller than MetricsCard value to allow longer titles */
+/* Small value (step label) — same treatment as Timeline */
 .value {
   font-family: var(--font-metadata);
   font-size: var(--typography-size-xs);

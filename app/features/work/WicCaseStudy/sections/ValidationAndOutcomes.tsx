@@ -1,17 +1,18 @@
 import MetricsCard from '@/components/design-system/MetricsCard'
 import Link from '@components/Link'
-import styles from '../WicCaseStudy.module.css'
+import PullQuote from '@/components/design-system/PullQuote'
+
 export default function ValidationAndOutcomes() {
   return (
     <section>
       <h2>Validation & Outcomes</h2>
       <p>
         Over two years, we validated our product direction through five national conference
-        demonstrations, direct stakeholder engagement, and alignment with external research.
-        Several states expressed strong commercial interest, though translating that interest into
-        contracts required navigating the realities of government procurement cycles. The $14.9
-        million federal grant research findings{' '}
-        <Link href="#ref-2" className="citation-ref">
+        demonstrations, direct stakeholder engagement, and alignment with external research. Several
+        states expressed strong commercial interest, though translating that interest into contracts
+        required navigating the realities of government procurement cycles. The $14.9 million
+        federal grant research findings{' '}
+        <Link href='#ref-2' className='citation-ref'>
           [2]
         </Link>{' '}
         directly validated our product approach: participant-first, human-centered, modular, and
@@ -37,14 +38,15 @@ export default function ValidationAndOutcomes() {
         discovery. Building continuous validation loops with SMEs and designing for configurability
         from the start proved essential to maintaining both compliance and usability.
       </p>
-      <aside className={`${styles.aside} ${styles.inline}`}>
-        <div className={styles.asideInner}>
+
+      <PullQuote quote="Regulatory complexity reveals itself iteratively. You can't front-load all compliance discovery." />
+      <aside className='aside inline'>
+        <div className='asideInner'>
           <MetricsCard
             metrics={[
               {
                 value: '4 to 10',
-                description:
-                  'team members',
+                description: 'team members',
               },
               { value: '100%', description: 'retention over two years' },
               { value: '2', description: 'promotions' },
@@ -63,6 +65,7 @@ export default function ValidationAndOutcomes() {
         resolved. That is what I would most want to do differently, and what I now understand most
         clearly.
       </p>
+      <PullQuote quote="The biggest challenge wasn't technical. It was shifting the mindset from 'build what this client needs' to 'build what enables all clients to succeed." />
       <p>
         These lessons shaped my understanding of what product management fundamentally is. In
         hindsight, I would have invested in operational infrastructure, design system, process
@@ -71,8 +74,12 @@ export default function ValidationAndOutcomes() {
         verbally throughout the project lifecycle. By the end, I understood that the PM role in a
         0-to-1 environment is about holding the vision while building the right structure: the
         systems, documentation, and frameworks that empower the team to take ownership and execute
-        independently. That understanding doesn't belong to this product or this company. It's the
-        thing I'd carry into any 0-to-1 environment and build from, earlier.
+        independently.
+      </p>
+      <PullQuote quote='The PM role in a 0-to-1 environment is about holding the vision while building the right structure: the systems, documentation, and frameworks that empower the team to take ownership and execute independently.' />
+      <p>
+        That understanding doesn't belong to this product or this company. It's the thing I'd carry
+        into any 0-to-1 environment and build from, earlier.
       </p>
     </section>
   )

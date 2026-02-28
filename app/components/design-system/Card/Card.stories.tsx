@@ -87,3 +87,10 @@ export const ClickableCard: Story = {
     href: '/work/wic-product-case-study',
   },
 }
+
+export const TextOnly: Story = {
+  args: {
+    heading: 'Design System',
+    href: '/lab/design-system',
+  },
+}

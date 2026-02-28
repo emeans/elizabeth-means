@@ -71,6 +71,7 @@
   font-size: var(--typography-size-xs);
   color: var(--text-secondary);
   line-height: var(--typography-line-height-normal);
+  justify-self: center;
 }
 
 /* Modal / lightbox */

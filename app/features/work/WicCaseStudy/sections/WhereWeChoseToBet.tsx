@@ -1,3 +1,5 @@
+import ContentImage from "@/components/design-system/ContentImage";
+
 export default function WhereWeChoseToBet() {
   return (
     <section>
@@ -10,6 +12,12 @@ export default function WhereWeChoseToBet() {
         detour, and not an obvious one in a company built around delivering only what clients
         specified.
       </p>
+      <ContentImage
+        src='/images/wic-case-study/participant-intake-workflow.png'
+        alt='Mobile-First Participant Portal Intake Workflow'
+        caption='Mobile-First Participant Portal Intake Workflow'
+        expandable
+      />
       <p>
         My aim was to balance risk and speed. We sequenced our engineering investment deliberately,
         building full infrastructure where requirements were well understood and validating new

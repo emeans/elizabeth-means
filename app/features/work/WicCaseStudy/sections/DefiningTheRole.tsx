@@ -1,12 +1,11 @@
 import MetricsCard from '@/components/design-system/MetricsCard'
-import styles from '../WicCaseStudy.module.css'
 import PullQuote from '@/components/design-system/PullQuote'
 export default function DefiningTheRole() {
   return (
     <section>
       <h2 className='text-lg'>Defining the Role by Doing the Work</h2>
       <p>
-        I joined the WIC product team in November 2022 as an engineering lead, a year before I
+        I joined the WIC product team in November 2022 as a staff engineer, a year before I
         stepped into the Product Manager role. From the start, I was answering questions KL&A had
         never needed to answer before. What does product management look like when you're building
         for multiple states instead of a single client? How do you balance discovery with delivery
@@ -29,8 +28,8 @@ export default function DefiningTheRole() {
         attrition. In my experience, that doesn't happen without psychological safety as a genuine
         foundation and by becoming human-centered internally, too.
       </p>
-      <aside className={`${styles.aside} ${styles.inline}`}>
-        <div className={styles.asideInner}>
+      <aside className='aside inline'>
+        <div className='asideInner'>
           <MetricsCard value="100%" description="retention over two years" />
           <PullQuote quote="We had become human-centered internally, too." />
         </div>

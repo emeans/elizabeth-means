@@ -3,16 +3,15 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--surface-primary);
+  background: var(--surface-elevated);
   border-radius: var(--radius-card);
   overflow: hidden;
   border: var(--border-width-xs) solid var(--border-default);
-  box-shadow: 0 2px 8px var(--shadow-subtle);
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px var(--shadow-medium);
+  box-shadow: 0 4px 16px var(--shadow-subtle);
 }
 
 /* When card is a link, remove default link styling from the container */

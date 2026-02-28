@@ -84,7 +84,9 @@ export default function ContentImage({
       <div
         className={styles.imageWrapper}
         style={{
-          aspectRatio,
+          aspectRatio: naturalSize
+            ? `${naturalSize.width} / ${naturalSize.height}`
+            : aspectRatio,
           ...(naturalSize && {
             maxWidth: naturalSize.width,
             maxHeight: naturalSize.height,

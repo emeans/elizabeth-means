@@ -10,7 +10,7 @@ export type PageHeaderStandardProps = {
   description: string
 }
 
-export type CaseStudyMetadataItem = {
+export type MetadataItem = {
   label: string
   value: string
 }
@@ -21,7 +21,7 @@ export type PageHeaderImage = {
 }
 
 export type PageHeaderCaseStudyProps = {
-  variant: 'caseStudy'
+  variant: 'entry'
   /** Optional image shown at the top of the header (e.g. hero or key visual) */
   image?: PageHeaderImage
   /** Optional label above the title (e.g. section name like "work") */
@@ -30,7 +30,7 @@ export type PageHeaderCaseStudyProps = {
   overlineVariant?: OverlineVariant
   title: string
   subtitle?: string
-  metadata: CaseStudyMetadataItem[]
+  metadata: MetadataItem[]
   executiveSummary: ReactNode
 }
 

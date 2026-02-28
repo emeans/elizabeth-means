@@ -1,7 +1,7 @@
 import MetricsCard from '@/components/design-system/MetricsCard'
 import PullQuote from '@/components/design-system/PullQuote'
 import Link from '@components/Link'
-import styles from '../WicCaseStudy.module.css'
+
 export default function WhyThisMoment() {
   return (
     <section>
@@ -51,8 +51,8 @@ export default function WhyThisMoment() {
         around. We hadn't found product-market fit by chasing a funding signal. We had found it by
         listening carefully to the people closest to the problem.
       </p>
-      <aside className={`${styles.aside} ${styles.inline}`}>
-        <div className={styles.asideInner}>
+      <aside className='aside inline'>
+        <div className='asideInner'>
           <MetricsCard
             value='$14.9'
             description='million federal grant was awarded to research modernization pathways for WIC systems nationally'

@@ -1,5 +1,5 @@
 import PageHeader from '@/components/design-system/PageHeader'
-import type { CaseStudyMetadataItem } from '@/components/design-system/PageHeader'
+import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
 import WhyThisMoment from './sections/WhyThisMoment'
 import DefiningTheRole from './sections/DefiningTheRole'
 import LearningToListen from './sections/LearningToListen'
@@ -7,13 +7,8 @@ import DesigningForPeople from './sections/DesigningForPeople'
 import WhereWeChoseToBet from './sections/WhereWeChoseToBet'
 import ValidationAndOutcomes from './sections/ValidationAndOutcomes'
 import References from './sections/References'
-import ContentImage from '@/components/design-system/ContentImage'
-import ContentImageRow from '@/components/design-system/ContentImageRow'
-import PullQuote from '@/components/design-system/PullQuote'
-import MetricsCard from '@/components/design-system/MetricsCard'
-import styles from './WicCaseStudy.module.css'
 
-const metadata: CaseStudyMetadataItem[] = [
+const metadata: MetadataItem[] = [
   { label: 'Role', value: 'WIC Product Manager' },
   { label: 'Timeline', value: '2023–2025' },
   { label: 'Team', value: '4–10 engineers' },
@@ -24,7 +19,7 @@ export default function WicCaseStudy() {
   return (
     <>
       <PageHeader
-        variant='caseStudy'
+        variant='entry'
         overline='work'
         title='Building the Playbook While Running the Play'
         subtitle='0-to-1 Product Management at KL&A'
@@ -58,36 +53,13 @@ export default function WicCaseStudy() {
           </>
         }
       />
-      <section className={`section-content ${styles.caseStudyContent}`}>
+      <section className='section-content content-entry'>
         <WhyThisMoment />
         <DefiningTheRole />
         <LearningToListen />
-        <DesigningForPeople />
-        <ContentImageRow
-          fullWidth
-          columns={2}
-          items={[
-            {
-              src: '/images/wic-case-study/wic-design-system-tokens.png',
-              alt: 'WIC Product Design System - Color Tokens',
-              caption: 'WIC Product Design System - Color Tokens',
-              expandable: true,
-            },
-            {
-              src: '/images/wic-case-study/wic-design-system-button-wcag.png',
-              alt: 'WIC Product Design System - Button WCAG Guidance',
-              caption: 'WIC Product Design System - Button WCAG Guidance',
-              expandable: true,
-            },
-          ]}
-        />
-        <ContentImage
-          src='/images/wic-case-study/wic-admin-participant-summary.png'
-          alt='WIC Admin Participant Summary'
-        />
+        <DesigningForPeople />        
         <WhereWeChoseToBet />
         <ValidationAndOutcomes />
-        <hr className='section-divider' />
         <References />
       </section>
     </>

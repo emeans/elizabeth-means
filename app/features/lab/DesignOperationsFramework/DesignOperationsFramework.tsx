@@ -1,0 +1,201 @@
+import FlowDiagram from '@/components/design-system/FlowDiagram'
+import PageHeader from '@/components/design-system/PageHeader'
+import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
+
+const metadata: MetadataItem[] = [
+  { label: 'Type', value: 'Design Operations' },
+  { label: 'Intended for', value: 'Design teams scaling from solo to collaborative' },
+  { label: 'Last Updated', value: '2025' },
+]
+
+export default function DesignOperationsFramework() {
+  return (
+    <>
+      <PageHeader
+        variant='entry'
+        overline='lab'
+        title='Design Operations Framework'
+        subtitle='Building the infrastructure for a scalable, handoff-ready design practice'
+        metadata={metadata}
+        executiveSummary={
+          <>
+            <p>
+              When I was building the WIC product, I was the only designer. I was also the product
+              manager, lead researcher, and de facto UX writer. The process lived entirely in my
+              head, and that was fine, until I started preparing to bring another designer onto the
+              team.
+            </p>
+            <p>
+              I realized I was about to hand someone work that I couldn't fully explain. Not because
+              it was complicated, but because I'd never had to externalize it. The decisions, the
+              handoff expectations, the file conventions, the reason we wrote microcopy at a
+              7th-grade reading level: all of it existed as instinct, not documentation. In a
+              regulated product serving vulnerable families, that's a real risk.
+            </p>
+            <p>
+              So I built the infrastructure I wished I'd had from the start: a system that chains
+              together from the first research session through developer handoff, where the output
+              of each stage becomes the input of the next. Together the templates form a living PRD,
+              designed to replace our story-writing process entirely and give the engineering team a
+              single source of truth to build from.
+            </p>
+          </>
+        }
+      />
+      <section className='section-content content-entry'>
+        <FlowDiagram
+          title='How the Templates Connect'
+          items={[
+            {
+              value: 'Template 1',
+              title: 'User Research Insights',
+              description:
+                'Documents pain points, user needs, and design implications from discovery sessions. Translated into actionable opportunities, not just raw observations.',
+              arrowLabel: 'needs become requirements',
+            },
+            {
+              value: 'Template 2',
+              title: 'Design Brief',
+              description:
+                'Scopes the design problem: what to solve, what success looks like, what is fixed versus flexible, and every reference a designer needs before opening Figma.',
+              arrowLabel: 'requirements shape the design',
+            },
+            {
+              value: 'Template 3',
+              title: 'Design Review Checklist',
+              description:
+                'Evaluates completed design work across six areas before anything moves to handoff: brief alignment, information architecture, visual quality, Figma hygiene, accessibility, and edge cases.',
+              arrowLabel: 'approval unlocks handoff',
+            },
+            {
+              value: 'Template 4',
+              title: 'Design Handoff Summary',
+              description:
+                'Captures everything engineering needs to build accurately, from user flows and conditional logic to validation rules, edge cases, accessibility requirements, and QA sign-offs.',
+            },
+          ]}
+        />
+      </section>
+      <section className='section-content content-entry'>
+        <h2 className='text-lg'>The Framework</h2>
+        <section>
+          <p className='text-body text-bold'>What Is Discovery?</p>
+          <p>
+            Before I could bring anyone else into the process, I needed to document not just the
+            steps, but the reasoning behind them. This document defines why we design the way we do
+            — the difference between requirements-driven development and human-centered design, why
+            information architecture has to come before visual design, and what goes wrong when you
+            let your data model drive your UI. I used it two ways: as an onboarding reference for
+            new team members, and as a tool for pushback when stakeholders wanted to skip discovery
+            and jump straight to wireframes.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>User Research Insights Template</p>
+          <p>
+            Discovery sessions are only as useful as what you do with them afterward. This template
+            captures research in a format that's actually usable downstream — each entry documents
+            the topic area, core problems observed, what users need and why, and the design
+            implications translated into specific actionable opportunities. It links directly to the
+            design brief so the connection between what we heard and what we decided to build is
+            traceable, not assumed.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>Design Brief Template</p>
+          <p>
+            This exists so a designer never has to reverse-engineer a decision or spend a week going
+            in the wrong direction. It gives them everything upfront: the problem they're solving,
+            what success looks like, what's fixed versus open for exploration, all reference
+            materials, and a clear timeline with review checkpoints. The "Boundaries" section
+            matters most on a regulated product. There are things that genuinely can't change
+            without compliance review, and a new designer has no way of knowing that unless it's
+            written down.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>Design Review Checklist</p>
+          <p>
+            Before this existed, design reviews were inconsistent. Things got caught in QA or after
+            a developer had already built something, because reviews had been more of a vibe check
+            than a structured evaluation. This checklist makes reviews predictable. It covers six
+            areas: brief alignment, information architecture and logic, visual and UI quality, Figma
+            file hygiene, accessibility, and edge cases. Accessibility gets its own section because
+            WCAG compliance on a Section 508-regulated product can't be treated as a separate audit.
+            It has to be part of every review.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>Design Handoff Summary</p>
+          <p>
+            This is the artifact that replaced our story-writing process. Before it existed,
+            engineers got a Figma link, a Jira ticket, and usually a conversation. The details that
+            got lost in translation surfaced during QA as rework. The handoff summary captures
+            everything needed to build accurately: the user flow and conditional logic, data and
+            validation rules, interaction details, edge cases, accessibility requirements, and a QA
+            checklist with sign-offs. The goal was that an engineer could read it without asking a
+            clarifying question and still build the right thing.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            Beyond the template chain, three additional systems support how the team operates,
+            communicates, and scales.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>Design File Standards</p>
+          <p>
+            Figma files are a form of communication. A well-organized file tells the next person
+            where things are, what's been approved, what's in progress, and how everything connects
+            to Jira and the development team. These standards define how files are named,
+            structured, and versioned across three file types: the design system library,
+            exploration files, and final designs. The frame naming convention had the biggest
+            downstream impact: when every frame follows [Feature]_[Screen#]_[ScreenName]_[State], a
+            developer or QA engineer can find exactly what they need without asking. Across a
+            product with dozens of flows and hundreds of screens, that adds up.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>Design Delegation Playbook</p>
+          <p>
+            Scaling a design practice means eventually asking someone else to make decisions you
+            used to make yourself. That only works if they understand not just what to do, but how
+            much latitude they have to do it. This playbook defines the full design process across
+            four roles with clear ownership at every phase from discovery through delivery. The
+            delegation framework maps five autonomy levels per role, from directed execution to full
+            strategic ownership, so growth conversations have a shared language and I could be
+            specific about what I was asking someone to do at each stage of their development.
+          </p>
+        </section>
+
+        <section>
+          <p className='text-body text-bold'>UX Writing & Microcopy Guidelines</p>
+          <p>
+            WIC serves families at some of the most vulnerable points in their lives, and how the
+            software talks to them is a design requirement, not a nice-to-have. These guidelines
+            define voice, tone, and writing standards for every component type in the product — form
+            labels, error messages, success states, button labels, empty states — with specific
+            examples of what to do and what to avoid. Writing at a 7th-grade reading level and using
+            judgment-free language isn't dumbing things down: approximately 54% of American adults
+            read below a 6th grade level, and plain language removes friction and cognitive overload
+            that never needed to be there in the first place.
+          </p>
+        </section>
+        <section>
+          <p>
+            This framework was built for one product. The thinking behind it applies to any team
+            moving from solo design to collaborative delivery.
+          </p>
+        </section>
+      </section>
+    </>
+  )
+}

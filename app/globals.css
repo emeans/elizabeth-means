@@ -331,33 +331,86 @@ img {
     }
 }
 
-
-/* Wrapper is a positioning context only; individual polaroids control placement via their style prop. */
-.polaroid-wrapper {
-    position: absolute;
-    inset: 0;
-    z-index: 20;
-    pointer-events: none; /* allow clicking through to hero */
-  }
-
-  .polaroid-wrapper > * {
-    pointer-events: auto; /* polaroids themselves remain clickable */
-  }
-
-  @media (max-width: 768px) {
-    .polaroid-wrapper {
-      /* On small screens: single centered stack; override with relative positioning */
-      position: relative;
-      inset: unset;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) scale(0.88);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .polaroid-wrapper {
-      bottom: -80px;
-      transform: translateX(-50%) scale(0.85);
-    }
-  }
+/* ========================================
+   CONTENT ENTRIES
+   ======================================== */
+   /* Section headings in case study or lab entry: full-width background, text aligned with prose */
+   .content-entry h2 {
+     width: 100vw;
+     margin-inline: calc(50% - 50vw);
+     margin-top: 0;
+     margin-bottom: var(--spacing-lg);
+     box-sizing: border-box;
+     padding-inline: max(var(--spacing-lg), calc((100vw - var(--max-width-prose)) / 2));
+     padding-block: var(--spacing-lg);
+     font-family: var(--font-heading);
+     font-size: var(--typography-size-lg);
+     font-weight: var(--typography-weight-bold);
+     line-height: var(--typography-line-height-tight);
+     color: var(--text-primary);
+     background: var(--surface-secondary);
+     border-inline-start: var(--border-width-sm) solid var(--border-default);
+   }
+   
+   /* Only the first section heading needs extra top margin (after executive summary) */
+   .content-entry > section h2 {
+     margin-top: 128px;
+     margin-bottom: var(--spacing-lg);
+   }
+   
+   @media (min-width: 600px) {
+     .content-entry h2 {
+       font-size: var(--typography-size-xl);
+       padding-block: var(--spacing-lg);
+       padding-inline: max(var(--spacing-lg), calc((100vw - var(--max-width-prose)) / 2));
+       margin-bottom: var(--spacing-sm);
+     }
+   }
+   
+   /* Break out of .section-content prose width and center contents */
+   .aside {
+     width: 100vw;
+     margin-inline: calc(50% - 50vw);
+     padding-inline: 200px;
+     box-sizing: border-box;
+   }
+   
+   /* Cap content width (not counting aside padding) and center */
+   .asideInner {
+     max-width: 1200px;
+     margin-inline: auto;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: var(--spacing-lg);
+     width: 100%;
+   }
+   
+   .aside.inline {
+     margin-top: var(--spacing-2xl);
+     margin-bottom: var(--spacing-2xl);
+   }
+   
+   /* When aside is the last thing in a section (e.g. WhyThisMoment), use less top margin
+      so the gap between text and aside matches sections where the aside is between paragraphs */
+   .content-entry section > aside:last-child {
+     margin-top: var(--spacing-lg);
+   }
+   
+   /* Pull quote in aside: remove large horizontal margins so it sits next to the card */
+   .aside.inline figure {
+     margin-left: 0;
+     margin-right: 0;
+     max-width: none;
+   }
+   
+   @media (max-width: 768px) {
+     .aside {
+       padding-inline: var(--spacing-lg);
+     }
+   
+     .asideInner {
+       flex-direction: column;
+     }
+   }

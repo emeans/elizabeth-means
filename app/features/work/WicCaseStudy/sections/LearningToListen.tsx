@@ -1,7 +1,5 @@
 import Link from '@components/Link'
 import MetricsCard from '@/components/design-system/MetricsCard'
-import styles from '../WicCaseStudy.module.css'
-import PullQuote from '@/components/design-system/PullQuote'
 import ContentImage from '@/components/design-system/ContentImage'
 import Timeline from '@/components/design-system/Timeline'
 export default function LearningToListen() {
@@ -64,8 +62,8 @@ export default function LearningToListen() {
         more than 30 distinct feature sets.
       </p>
 
-      <aside className={`${styles.aside} ${styles.inline}`}>
-        <div className={styles.asideInner}>
+      <aside className='aside inline'>
+        <div className='asideInner'>
           <MetricsCard
             metrics={[
               { value: '40+', description: 'discovery sessions' },
@@ -100,6 +98,8 @@ export default function LearningToListen() {
       <ContentImage
         src='/images/wic-case-study/wic-admin-food-package-configuration.png'
         alt='WIC Admin Food Package Configuration'
+        caption='WIC Admin Food Package Configuration'
+        expandable
       />
     </section>
   )

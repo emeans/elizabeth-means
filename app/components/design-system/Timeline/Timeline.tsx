@@ -36,7 +36,7 @@ export default function Timeline({ items, className }: TimelineProps) {
             <span className={styles.tick} aria-hidden />
             <div className={styles.content}>
               <div className={styles.value}>{item.value}</div>
-              <h3 className={styles.title}>{item.title}</h3>
+              <div className={`${styles.title} text-body text-bold`}>{item.title}</div>
               {item.description != null && (
                 <p className={styles.description}>{item.description}</p>
               )}
