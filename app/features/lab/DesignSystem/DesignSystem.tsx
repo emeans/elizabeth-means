@@ -94,7 +94,7 @@ export default function DesignSystem() {
               fontSize: '0.875rem',
               color: 'var(--color-text-secondary, #666)',
             }}>
-            Embedded preview. If it doesn’t load (some hosts block embedding), use the button above
+            Embedded preview. If it doesn’t load, use the link above
             to open Storybook in a new tab.
           </figcaption>
         </figure>
