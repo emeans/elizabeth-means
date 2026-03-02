@@ -3,7 +3,6 @@ import PageHeader from '@/components/design-system/PageHeader'
 import Card from '@/components/design-system/Card'
 import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
 import { labEntries } from '@/features/lab/labEntries'
-import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'Lab | Elizabeth Means',
@@ -20,7 +19,7 @@ export default function LabPage() {
           title="Lab"
           description="The lab is living work — my workshop, not my gallery. Some things here are formed, some half-formed, all of it built in public and actively growing."
         />
-        <ul className={styles.cardList} aria-label="Lab projects">
+        <ul className="cardList" aria-label="Lab projects">
           {labEntries.map((entry) => (
             <li key={entry.href}>
               <Card
