@@ -67,6 +67,11 @@
   }
 }
 
+/* Grid: level headers row + role rows */
+.matrix {
+  display: block;
+}
+
 /* Level headers row */
 .levelsRow {
   display: flex;
@@ -79,8 +84,22 @@
 }
 
 .levelsSpacer {
+  position: relative;
   flex: 0 0 180px;
   min-width: 180px;
+}
+
+/* Screen-reader-only text so columnheader has visible (to a11y) content */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .levelCell {

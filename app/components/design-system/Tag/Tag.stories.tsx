@@ -73,7 +73,8 @@ export const Muted: Story = {
 }
 
 export const AllVariants: Story = {
-  render: () => (
+  args: { children: 'Tag' },
+  render: (args) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
       <Tag variant="primary">Primary</Tag>
       <Tag variant="secondary">Secondary</Tag>

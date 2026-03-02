@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 import Tag from '@/components/design-system/Tag'
 import Overline from '@/components/design-system/Overline'
-import type { OverlineVariant } from '@/components/design-system/Overline'
 import styles from './PageHeader.module.css'
 
 export type PageHeaderStandardProps = {
@@ -26,8 +25,6 @@ export type PageHeaderCaseStudyProps = {
   image?: PageHeaderImage
   /** Optional label above the title (e.g. section name like "work") */
   overline?: string
-  /** Overline background color: forge (work), patina (lab). Default forge. */
-  overlineVariant?: OverlineVariant
   title: string
   subtitle?: string
   metadata: MetadataItem[]
@@ -46,13 +43,13 @@ export default function PageHeader(props: PageHeaderProps) {
     )
   }
 
-  const { image, overline, overlineVariant = 'forge', title, subtitle, metadata, executiveSummary } = props
+  const { image, overline, title, subtitle, metadata, executiveSummary } = props
   return (
     <>
       <header className={styles.banner}>
         <div className={styles.heading}>
           {overline != null && overline.trim() !== '' && (
-            <Overline variant={overlineVariant}>{overline}</Overline>
+            <Overline>{overline}</Overline>
           )}
           <h1 className='text-2xl'>{title}</h1>
           {subtitle != null && <p className="text-bold">{subtitle}</p>}

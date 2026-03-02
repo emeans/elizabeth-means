@@ -34,14 +34,15 @@
   border: 1px solid var(--border-subtle);
 }
 
+/* Success/warning/muted use darker text on light backgrounds for 4.5:1 contrast */
 .success {
   background: var(--surface-success);
-  color: var(--text-success);
+  color: var(--color-success-800);
 }
 
 .warning {
   background: var(--surface-warning);
-  color: var(--text-warning);
+  color: var(--color-warning-800);
 }
 
 .error {
@@ -51,5 +52,18 @@
 
 .muted {
   background: var(--surface-secondary);
+  color: var(--color-neutral-700);
+}
+
+/* Dark theme: use semantic text colors on dark backgrounds */
+[data-theme='dark'] .success {
+  color: var(--text-success);
+}
+
+[data-theme='dark'] .warning {
+  color: var(--text-warning);
+}
+
+[data-theme='dark'] .muted {
   color: var(--text-muted);
 }

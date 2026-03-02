@@ -74,57 +74,64 @@ export default function DelegationFramework({
   return (
     <section
       className={[styles.framework, className].filter(Boolean).join(' ')}
-      aria-label={title}
     >
       <header className={styles.header}>
         <div className={styles.title}>{title}</div>
         <div className={styles.intro}>{intro}</div>
       </header>
 
-      <div className={styles.levelsRow} role="row">
-        <div className={styles.levelsSpacer} aria-hidden />
-        {levels.map((level, i) => (
-          <div key={i} className={styles.levelCell} role="columnheader">
-            <span className={styles.levelLabel}>{level.label}</span>
-            <span className={styles.levelName}>{level.name}</span>
+      <div
+        className={styles.matrix}
+        role="grid"
+        aria-label={title}
+      >
+        <div className={styles.levelsRow} role="row">
+          <div className={styles.levelsSpacer} role="columnheader">
+            <span className={styles.visuallyHidden}>Role</span>
           </div>
-        ))}
-      </div>
-
-      <div className={styles.roles}>
-        {roles.map((role, ri) => (
-          <div
-            key={ri}
-            className={styles.roleRow}
-            role="row"
-            aria-label={`${role.title}: ${role.description}`}
-          >
-            <div className={styles.roleInfo}>
-              <div className={styles.roleTitle}>{role.title}</div>
-              <div className={styles.roleDescription}>{role.description}</div>
+          {levels.map((level, i) => (
+            <div key={i} className={styles.levelCell} role="columnheader">
+              <span className={styles.levelLabel}>{level.label}</span>
+              <span className={styles.levelName}>{level.name}</span>
             </div>
-            <div className={styles.track} role="presentation">
-              <div className={styles.trackLine} aria-hidden />
-              {(() => {
-                const segment = getTrackSegment(role.indicators)
-                return segment != null ? (
-                  <div
-                    className={styles.trackLineHighlight}
-                    style={{ left: `${segment.left}%`, width: `${segment.width}%` }}
-                    aria-hidden
-                  />
-                ) : null
-              })()}
-              <div className={styles.indicators}>
-                {role.indicators.map((variant, vi) => (
-                  <div key={vi} className={styles.indicatorSlot}>
-                    <LevelIndicator variant={variant} />
-                  </div>
-                ))}
+          ))}
+        </div>
+
+        <div className={styles.roles}>
+          {roles.map((role, ri) => (
+            <div
+              key={ri}
+              className={styles.roleRow}
+              role="row"
+              aria-label={`${role.title}: ${role.description}`}
+            >
+              <div className={styles.roleInfo} role="gridcell">
+                <div className={styles.roleTitle}>{role.title}</div>
+                <div className={styles.roleDescription}>{role.description}</div>
+              </div>
+              <div className={styles.track} role="presentation">
+                <div className={styles.trackLine} aria-hidden />
+                {(() => {
+                  const segment = getTrackSegment(role.indicators)
+                  return segment != null ? (
+                    <div
+                      className={styles.trackLineHighlight}
+                      style={{ left: `${segment.left}%`, width: `${segment.width}%` }}
+                      aria-hidden
+                    />
+                  ) : null
+                })()}
+                <div className={styles.indicators}>
+                  {role.indicators.map((variant, vi) => (
+                    <div key={vi} className={styles.indicatorSlot} role="gridcell">
+                      <LevelIndicator variant={variant} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <footer className={styles.legend}>
