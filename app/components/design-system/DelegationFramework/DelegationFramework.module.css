@@ -170,8 +170,8 @@
   left: 0;
   right: 0;
   top: 50%;
-  height: 2px;
-  background: var(--border-default);
+  height: 1px;
+  background: var(--border-subtle);
   transform: translateY(-50%);
 }
 
@@ -322,7 +322,7 @@
   }
 
   .trackLine {
-    height: 1.5px;
+    height: 1px;
   }
 
   .trackLineHighlight {

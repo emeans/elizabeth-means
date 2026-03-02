@@ -81,7 +81,12 @@ export default function Card({
     const isExternal =
       href.startsWith('http://') || href.startsWith('https://')
     return (
-      <Link href={href} className={cardClassName} external={isExternal}>
+      <Link
+        href={href}
+        className={cardClassName}
+        variant="nav"
+        external={isExternal}
+      >
         {content}
       </Link>
     )

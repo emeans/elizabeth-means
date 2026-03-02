@@ -166,7 +166,7 @@ export default function DesignOperationsFramework() {
           <p className='text-body text-bold'>User Research Insights Template</p>
           <p>
             Discovery sessions are only as useful as what you do with them afterward. This template
-            captures research in a format that's actually usable downstream — each entry documents
+            captures research in a format that's actually usable downstream. Each entry documents
             the topic area, core problems observed, what users need and why, and the design
             implications translated into specific actionable opportunities. It links directly to the
             design brief so the connection between what we heard and what we decided to build is
@@ -215,41 +215,27 @@ export default function DesignOperationsFramework() {
 
         <section>
           <p>
-            Beyond the template chain, three additional systems support how the team operates,
-            communicates, and scales.
-          </p>
-        </section>
-
-        <section>
-          <p className='text-body text-bold'>Design File Standards</p>
-          <p>
-            Figma files are a form of communication. A well-organized file tells the next person
-            where things are, what's been approved, what's in progress, and how everything connects
-            to Jira and the development team. These standards define how files are named,
-            structured, and versioned across three file types: the design system library,
-            exploration files, and final designs. The frame naming convention had the biggest
-            downstream impact: when every frame follows [Feature]_[Screen#]_[ScreenName]_[State], a
-            developer or QA engineer can find exactly what they need without asking. Across a
-            product with dozens of flows and hundreds of screens, that adds up.
+            The templates don't work alone. Three additional systems support how the team operates,
+            communicates, and scales
           </p>
         </section>
 
         <section>
           <p className='text-body text-bold'>Design Delegation Playbook</p>
           <p>
-            Scaling a design practice means eventually asking someone else to make decisions you
-            used to make yourself. That only works if they understand not just what to do, but how
-            much latitude they have to do it. This playbook defines the full design process across
-            four roles with clear ownership at every phase from discovery through delivery. The
-            delegation framework maps five autonomy levels per role, from directed execution to full
-            strategic ownership, so growth conversations have a shared language and I could be
-            specific about what I was asking someone to do at each stage of their development.
+            When you're building a team from scratch, you don't always get to choose the experience
+            level you hire. This playbook gave me a way to show up correctly regardless. By mapping
+            five autonomy levels across four roles, from directed execution to full strategic
+            ownership, I could look at where someone was when they arrived and immediately
+            understand what I needed to provide: how much direction, how much review, how much I
+            could hand off and trust. It made my involvement predictable and intentional rather than
+            reactive.
           </p>
           <aside className='aside inline'>
             <div className='asideInner'>
               <DelegationFramework
-                title='Delegation Framework'
-                intro='Growth conversations need a shared language. This is how I think about where someone is and where they can go.'
+                title='Autonomy by Role'
+                intro='Built so I could calibrate my involvement to whoever joined the team, at whatever level they arrived.'
                 levels={[
                   { label: 'Level 1', name: 'Directed Execution' },
                   { label: 'Level 2', name: 'Guided Execution' },
@@ -269,7 +255,7 @@ export default function DesignOperationsFramework() {
                     indicators: ['outside', 'start', 'growth', 'growth', 'ownership'],
                   },
                   {
-                    title: 'Production Designer',
+                    title: 'UI Designer',
                     description: 'Owns visual execution and handoff',
                     indicators: ['start', 'growth', 'growth', 'ownership', 'outside'],
                   },
@@ -291,15 +277,29 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
+          <p className='text-body text-bold'>Design File Standards</p>
+          <p>
+            Figma files are a form of communication. A well-organized file tells the next person
+            where things are, what's been approved, what's in progress, and how everything connects
+            to Jira and the development team. These standards define how files are named,
+            structured, and versioned across three file types: the design system library,
+            exploration files, and final designs. The frame naming convention had the biggest
+            downstream impact: when every frame follows [Feature]_[Screen#]_[ScreenName]_[State], a
+            developer or QA engineer can find exactly what they need without asking. Across a
+            product with dozens of flows and hundreds of screens, that adds up.
+          </p>
+        </section>
+
+        <section>
           <p className='text-body text-bold'>UX Writing & Microcopy Guidelines</p>
           <p>
             WIC serves families at some of the most vulnerable points in their lives, and how the
             software talks to them is a design requirement, not a nice-to-have. These guidelines
-            define voice, tone, and writing standards for every component type in the product — form
-            labels, error messages, success states, button labels, empty states — with specific
+            define voice, tone, and writing standards for every component type in the product: form
+            labels, error messages, success states, button labels, and empty states, with specific
             examples of what to do and what to avoid. Writing at a 7th-grade reading level and using
-            judgment-free language isn't dumbing things down: approximately 54% of American adults
-            read below a 6th grade level, and plain language removes friction and cognitive overload
+            judgment-free language isn't dumbing things down. Approximately 54% of American adults
+            read below a 6th-grade level, and plain language removes friction and cognitive overload
             that never needed to be there in the first place.
           </p>
         </section>

@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 }
 
 const labItems = [
-  { href: '/lab/design-system', title: 'Design System' },
-  { href: '/lab/design-operations-framework', title: 'Design Operations Framework' },
+  { href: '/lab/design-system', title: 'Design System', subtitle: 'Built to practice what I preach. Figma tokens, CSS pipelines, and component architecture, actively evolving as I try new tools and techniques.' },
+  { href: '/lab/design-operations-framework', title: 'Design Operations Framework', subtitle: 'The process infrastructure I built to take a design practice from solo to collaborative: templates, standards, and a delegation framework.' },
 ]
 
 export default function LabPage() {
@@ -25,9 +25,9 @@ export default function LabPage() {
           description="The lab is living work — my workshop, not my gallery. Some things here are formed, some half-formed, all of it built in public and actively growing."
         />
         <ul className={styles.cardList} aria-label="Lab projects">
-          {labItems.map(({ href, title }) => (
+          {labItems.map(({ href, title, subtitle }) => (
             <li key={href}>
-              <Card heading={title} href={href} />
+              <Card heading={title} subtitle={subtitle} href={href} />
             </li>
           ))}
         </ul>
