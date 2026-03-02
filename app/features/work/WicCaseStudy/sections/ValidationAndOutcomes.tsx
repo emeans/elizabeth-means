@@ -65,7 +65,7 @@ export default function ValidationAndOutcomes() {
         resolved. That is what I would most want to do differently, and what I now understand most
         clearly.
       </p>
-      <PullQuote quote="The biggest challenge wasn't technical. It was shifting the mindset from 'build what this client needs' to 'build what enables all clients to succeed." />
+      <PullQuote quote="The biggest challenge wasn't technical. It was shifting the mindset from 'build what this client needs' to 'build what enables all clients to succeed.'" />
       <p>
         These lessons shaped my understanding of what product management fundamentally is. In
         hindsight, I would have invested in operational infrastructure, design system, process

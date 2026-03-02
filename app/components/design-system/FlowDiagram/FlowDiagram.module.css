@@ -200,9 +200,6 @@
   color: var(--text-secondary);
 }
 
-.sectionText div + div {
-  margin-top: var(--spacing-2xs);
-}
 
 /* Horizontal (carded) layout — stacks vertically on small screens */
 .listHorizontal {
