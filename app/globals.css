@@ -35,8 +35,6 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-    /* Prevent horizontal drag/scroll so the mobile nav drawer stays off-screen until opened */
-    overflow-x: hidden;
 }
 
 /* ========================================
@@ -72,8 +70,6 @@ body {
     transition:
         background-color 0.3s ease,
         color 0.3s ease;
-    /* Prevent horizontal scroll so mobile hamburger menu cannot be revealed by dragging */
-    overflow-x: hidden;
 }
 
 /* ========================================

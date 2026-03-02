@@ -2,11 +2,18 @@
 
 /* ========================================
    CONTENT WRAPPER
-   Wraps page content when using content prop; exposes data-skip-link-focused
+   Wraps page content when using content prop; exposes data-skip-link-focused.
+   This wrapper is the scroll container (overflow-y: auto) so that position: sticky
+   on the nav works, while overflow-x: hidden prevents horizontal drag from
+   exposing the off-screen mobile menu. Using overflow on html/body would break sticky.
    ======================================== */
 
 .contentWrapper {
-  display: contents;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* ========================================
