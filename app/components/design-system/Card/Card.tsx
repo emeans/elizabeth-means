@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from '@components/Link'
+import Tag from '@/components/design-system/Tag'
 import styles from './Card.module.css'
 
 /**
@@ -36,6 +37,8 @@ export interface CardProps {
   image?: CardImageProps
   /** Text shown under the image or as secondary text */
   subtitle?: React.ReactNode
+  /** Optional metadata shown as tags (same as lab entry headers: Type, Last Updated, etc.) */
+  metaItems?: { label: string; value: string }[]
   /** Optional heading */
   heading?: React.ReactNode
   /** Optional button or link in the bottom right (e.g. <Button> or <Link variant="cta">) */
@@ -48,6 +51,7 @@ export interface CardProps {
 export default function Card({
   image,
   subtitle,
+  metaItems,
   heading,
   action,
   className,
@@ -69,6 +73,15 @@ export default function Card({
       )}
       <div className={styles.content}>
         {heading != null && <h3 className={styles.heading}>{heading}</h3>}
+        {metaItems != null && metaItems.length > 0 && (
+          <div className={styles.metaTags}>
+            {metaItems.map(({ label, value }) => (
+              <Tag key={label} variant="secondary" label={label}>
+                {value}
+              </Tag>
+            ))}
+          </div>
+        )}
         {subtitle != null && <p className={styles.subtitle}>{subtitle}</p>}
         {action != null && <div className={styles.action}>{action}</div>}
       </div>

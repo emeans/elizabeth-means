@@ -20,7 +20,7 @@ a.card {
   color: inherit;
 }
 
-/* Full-bleed image to card edges */
+/* Full-bleed image to card edges (stacked on mobile) */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -34,7 +34,7 @@ a.card {
   object-position: center;
 }
 
-/* Content below image */
+/* Content below image (or beside image on large screens) */
 .content {
   display: flex;
   flex-direction: column;
@@ -43,12 +43,39 @@ a.card {
   flex: 1;
 }
 
+/* Large screens: image on the left (~one third), content on the right, centered when card is tall */
+@media (min-width: 768px) {
+  .card:has(.imageWrapper) {
+    flex-direction: row;
+  }
+
+  .card:has(.imageWrapper) .imageWrapper {
+    width: 33.33%;
+    aspect-ratio: unset;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  .card:has(.imageWrapper) .content {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+}
+
 .heading {
   margin: 0;
   font-size: var(--typography-size-lg);
   font-weight: var(--typography-weight-bold);
   line-height: var(--typography-line-height-tight);
   color: var(--text-primary);
+}
+
+.metaTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
 }
 
 .subtitle {

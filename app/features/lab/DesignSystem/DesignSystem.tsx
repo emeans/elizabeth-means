@@ -1,13 +1,6 @@
 import Link from '@/components/design-system/Link'
 import PageHeader from '@/components/design-system/PageHeader'
-import { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
-
-const metadata: MetadataItem[] = [
-  { label: 'Type', value: 'Design System' },
-  { label: 'Tools', value: 'Figma, Custom Token Pipeline, Storybook, ZeroHeight' },
-  { label: 'Last Updated', value: 'March 2026' },
-  { label: 'Status', value: 'Active' },
-]
+import { designSystemEntry, getEntryMetadata } from '@/features/lab/labEntries'
 
 export default function DesignSystem() {
   return (
@@ -15,9 +8,9 @@ export default function DesignSystem() {
       <PageHeader
         variant='entry'
         overline='lab'
-        title='Design System'
+        title={designSystemEntry.title}
         subtitle='Building and documenting a professional design pipeline, end to end'
-        metadata={metadata}
+        metadata={getEntryMetadata(designSystemEntry)}
         executiveSummary={
           <>
             <p>

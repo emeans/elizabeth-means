@@ -1,14 +1,8 @@
 import DelegationFramework from '@/components/design-system/DelegationFramework'
 import FlowDiagram from '@/components/design-system/FlowDiagram'
 import PageHeader from '@/components/design-system/PageHeader'
-import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
 import Link from '@/components/design-system/Link'
-
-const metadata: MetadataItem[] = [
-  { label: 'Type', value: 'Design Operations' },
-  { label: 'Intended for', value: 'Design teams scaling from solo to collaborative' },
-  { label: 'Last Updated', value: ' November 2025' },
-]
+import { designOperationsFrameworkEntry, getEntryMetadata } from '@/features/lab/labEntries'
 
 export default function DesignOperationsFramework() {
   return (
@@ -16,9 +10,9 @@ export default function DesignOperationsFramework() {
       <PageHeader
         variant='entry'
         overline='lab'
-        title='Design Operations Framework'
+        title={designOperationsFrameworkEntry.title}
         subtitle='Building the infrastructure for a scalable, handoff-ready design practice'
-        metadata={metadata}
+        metadata={getEntryMetadata(designOperationsFrameworkEntry)}
         executiveSummary={
           <>
             <p>
