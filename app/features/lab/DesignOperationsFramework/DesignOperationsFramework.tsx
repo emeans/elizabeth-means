@@ -2,11 +2,12 @@ import DelegationFramework from '@/components/design-system/DelegationFramework'
 import FlowDiagram from '@/components/design-system/FlowDiagram'
 import PageHeader from '@/components/design-system/PageHeader'
 import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
+import Link from '@/components/design-system/Link'
 
 const metadata: MetadataItem[] = [
   { label: 'Type', value: 'Design Operations' },
   { label: 'Intended for', value: 'Design teams scaling from solo to collaborative' },
-  { label: 'Last Updated', value: '2025' },
+  { label: 'Last Updated', value: ' November 2025' },
 ]
 
 export default function DesignOperationsFramework() {
@@ -80,7 +81,7 @@ export default function DesignOperationsFramework() {
       <section className='section-content content-entry'>
         <h2 className='text-lg'>The Framework</h2>
         <section>
-          <p className='text-body text-bold'>What Is Discovery?</p>
+          <Link variant='inline' external href='https://www.notion.so/What-Is-Discovery-31738d07693480c09e7df7aed0265f6a'>What Is Discovery?</Link>
           <p>
             Before I could bring anyone else into the process, I needed to document not just the
             steps, but the reasoning behind them. This document defines why we design the way we do:
@@ -163,7 +164,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>User Research Insights Template</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-Process-Template-User-Research-Insights-Template-31738d076934806186c4d3801583e080'>User Research Insights Template</Link>
           <p>
             Discovery sessions are only as useful as what you do with them afterward. This template
             captures research in a format that's actually usable downstream. Each entry documents
@@ -175,7 +176,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>Design Brief Template</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-Process-Template-Design-Brief-Template-31738d07693480038cdacd3d7828454a'>Design Brief Template</Link>
           <p>
             This exists so a designer never has to reverse-engineer a decision or spend a week going
             in the wrong direction. It gives them everything upfront: the problem they're solving,
@@ -188,7 +189,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>Design Review Checklist</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-Process-Template-Design-Review-Checklist-31738d07693480948ceef3900cfdb66c?source=copy_link'>Design Review Checklist Template</Link>
           <p>
             Before this existed, design reviews were inconsistent. Things got caught in QA or after
             a developer had already built something, because reviews had been more of a vibe check
@@ -201,7 +202,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>Design Handoff Summary</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-Process-Template-Design-Handoff-Summary-31738d0769348062a098dbb02c2676bb'>Design Handoff Summary Template</Link>
           <p>
             This is the artifact that replaced our story-writing process. Before it existed,
             engineers got a Figma link, a Jira ticket, and usually a conversation. The details that
@@ -221,7 +222,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>Design Delegation Playbook</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-Delegation-Playbook-31738d076934802888d7c9636ab9b18e?source'>Design Delegation Playbook</Link>
           <p>
             When you're building a team from scratch, you don't always get to choose the experience
             level you hire. This playbook gave me a way to show up correctly regardless. By mapping
@@ -277,7 +278,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>Design File Standards</p>
+          <Link variant='inline' external href='https://www.notion.so/Design-File-Standards-31738d0769348099a95ed079e0212a5a'>Design File Standards</Link>
           <p>
             Figma files are a form of communication. A well-organized file tells the next person
             where things are, what's been approved, what's in progress, and how everything connects
@@ -291,7 +292,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
-          <p className='text-body text-bold'>UX Writing & Microcopy Guidelines</p>
+          <Link variant='inline' external href='https://www.notion.so/UX-Writing-Microcopy-Guidelines-31738d076934804880a9f3b31811929c'>UX Writing & Microcopy Guidelines</Link>
           <p>
             WIC serves families at some of the most vulnerable points in their lives, and how the
             software talks to them is a design requirement, not a nice-to-have. These guidelines

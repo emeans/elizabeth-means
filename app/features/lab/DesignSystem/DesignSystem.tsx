@@ -4,7 +4,7 @@ import { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
 
 const metadata: MetadataItem[] = [
   { label: 'Type', value: 'Design System' },
-  { label: 'Tools', value: 'Figma, Custom Token Pipeline,Storybook, ZeroHeight' },
+  { label: 'Tools', value: 'Figma, Custom Token Pipeline, Storybook, ZeroHeight' },
   { label: 'Last Updated', value: 'March 2026' },
   { label: 'Status', value: 'Active' },
 ]
@@ -68,26 +68,54 @@ export default function DesignSystem() {
       <section className='section-content content-entry'>
         <h2 className='text-lg'>Components in Storybook</h2>
         <p>
-          Components are built in isolation in Storybook, <Link variant='inline' external href='https://storybook.elizabethmeans.com'>deployed to a subdomain of this site</Link>.
-          Building in isolation enforces a discipline that's easy to skip in a real product
-          codebase: components have to work without assuming any surrounding context, which surfaces
-          edge cases and accessibility issues earlier than they would otherwise.
+          Components are built in isolation in{' '}
+          <Link variant='inline' external href='https://storybook.elizabethmeans.com'>
+            Storybook
+          </Link>
+          , deployed to a subdomain of this site. Building in isolation enforces a discipline that's
+          easy to skip in a real product codebase: components have to work without assuming any
+          surrounding context, which surfaces edge cases and accessibility issues earlier than they
+          would otherwise.
         </p>
+        <figure style={{ marginTop: '1.5rem', marginBottom: 0 }}>
+          <iframe
+            src='https://storybook.elizabethmeans.com'
+            title='Storybook component library preview'
+            style={{
+              width: '100%',
+              height: 'min(600px, 70vh)',
+              border: '1px solid var(--color-border, #e5e5e5)',
+              borderRadius: '8px',
+            }}
+          />
+          <figcaption
+            style={{
+              marginTop: '0.5rem',
+              fontSize: '0.875rem',
+              color: 'var(--color-text-secondary, #666)',
+            }}>
+            Embedded preview. If it doesn’t load (some hosts block embedding), use the button above
+            to open Storybook in a new tab.
+          </figcaption>
+        </figure>
       </section>
       <section className='section-content content-entry'>
         <h2 className='text-lg'>Documentation in ZeroHeight</h2>
         <p>
-          The system is documented in ZeroHeight, pulling in Figma frames and Storybook components
-          directly. WCAG compliance documentation and usage patterns live here alongside the
-          components themselves, not as a separate audit, but as part of the component
-          documentation.
+          The system is documented in{' '}
+          <Link variant='inline' external href='https://zeroheight.com/47087f9a6'>
+            ZeroHeight
+          </Link>
+          , pulling in Figma frames and Storybook components directly. WCAG compliance documentation
+          and usage patterns live here alongside the components themselves, not as a separate audit,
+          but as part of the component documentation.
         </p>
         <p>
           Keeping accessibility documentation in ZeroHeight rather than a separate doc means it
           stays current with the components. When a component changes, the documentation is right
           there to update.
         </p>
-
+        
         <p>
           This system is incomplete and that is the point. The pipeline is real, the architecture is
           sound, and the decisions are documented. Style Dictionary is next. After that, motion
