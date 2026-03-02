@@ -44,31 +44,6 @@
   text-wrap: balance;
 }
 
-.heroWork {
-  text-align: left;
-  font-size: var(--typography-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--typography-line-height-tight);
-  font-weight: var(--typography-weight-bold);
-  margin-top: var(--spacing-2xl);
-  display: block;
-}
-
-.heroWorkSecondary {
-  text-align: left;
-  font-size: var(--typography-size-sm);
-  color: var(--text-secondary);
-  margin-top: -8px;
-  display: block;
-}
-
-.heroText p:has(.heroWork) a {
-  display: block;
-  text-align: left;
-  margin-top: var(--spacing-md);
-}
-
 /* Mobile breakpoint */
 @media (max-width: 768px) {
   .hero {

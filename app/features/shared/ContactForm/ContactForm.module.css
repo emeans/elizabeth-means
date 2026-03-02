@@ -94,9 +94,3 @@
   resize: vertical;
   min-height: 120px;
 }
-
-@media (max-width: 768px) {
-  .contactForm {
-    padding: var(--spacing-lg);
-  }
-}
