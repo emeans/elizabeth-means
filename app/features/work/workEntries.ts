@@ -1,0 +1,26 @@
+/**
+ * Work entries for the work index page. Card list uses title, subtitle, image, and metaItems.
+ */
+export interface WorkEntry {
+  href: string
+  image?: string
+  alt?: string
+  title: string
+  subtitle: string
+  /** Metadata shown on the preview card (e.g. Role, Timeline) */
+  metaItems: { label: string; value: string }[]
+}
+
+export const wicCaseStudyEntry: WorkEntry = {
+  href: '/work/wic-product-case-study',
+  image: '/images/wic-case-study/nwa-conferences.png',
+  alt: 'Attended 5 National WIC Association Conferences',
+  title: 'Building the Playbook While Running the Play',
+  subtitle: '0-to-1 Product Management at KL&A',
+  metaItems: [
+    { label: 'Role', value: 'WIC Product Manager' },
+    { label: 'Timeline', value: '2023–2025' },
+  ],
+}
+
+export const workEntries: WorkEntry[] = [wicCaseStudyEntry]
