@@ -80,6 +80,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const closeMobileMenu = () => setMobileMenuOpen(false)
   const pathname = usePathname()
 
+  const isNavActive = (href: string) => {
+    if (pathname == null) return false
+    const path = pathname.replace(/\/$/, '') || '/'
+    const base = href.replace(/\/$/, '') || '/'
+    return path === base || path.startsWith(base + '/')
+  }
+
   return (
     <SkipLink
       href="#main-content"
@@ -119,7 +126,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                         blockLayout={isMobile}
                         href={href}
                         aria-label={ariaLabel}
-                        active={pathname != null && (pathname.replace(/\/$/, '') || '/') === (href.replace(/\/$/, '') || '/')}
+                        active={isNavActive(href)}
                         onClick={closeMobileMenu}
                       >
                         {label}

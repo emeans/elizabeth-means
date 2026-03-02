@@ -242,7 +242,7 @@ img {
     border-color: var(--border-subtle);
 }
 
-/* Vertical list of cards (e.g. lab index, home page) */
+/* Vertical list of cards (e.g. lab index, home page). Cards share a minimum height. */
 .cardList {
     list-style: none;
     margin: var(--spacing-xl) 0 0;
@@ -250,6 +250,18 @@ img {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+}
+
+.cardList > li {
+    display: flex;
+}
+
+.cardList > li > * {
+    flex: 1;
+    min-width: 0;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ========================================

@@ -1,3 +1,4 @@
+import ContentImage from '@/components/design-system/ContentImage'
 import Link from '@/components/design-system/Link'
 import PageHeader from '@/components/design-system/PageHeader'
 import { designSystemEntry, getEntryMetadata } from '@/features/lab/labEntries'
@@ -51,6 +52,10 @@ export default function DesignSystem() {
           through a custom script in the codebase that converts them to CSS custom properties. The
           output is a structured variables file that the component library consumes directly.
         </p>
+        <ContentImage
+          src='/images/design-system/figma-variables.png'
+          alt='Figma Variables'
+        />
         <p>
           The script sits between the export and the codebase rather than using Style Dictionary,
           which was a deliberate choice for now. The overhead of Style Dictionary is worth it at
@@ -87,8 +92,7 @@ export default function DesignSystem() {
               fontSize: '0.875rem',
               color: 'var(--color-text-secondary, #666)',
             }}>
-            Embedded preview. If it doesn’t load, use the link above
-            to open Storybook in a new tab.
+            Embedded preview. If it doesn’t load, use the link above to open Storybook in a new tab.
           </figcaption>
         </figure>
       </section>
@@ -108,7 +112,10 @@ export default function DesignSystem() {
           stays current with the components. When a component changes, the documentation is right
           there to update.
         </p>
-        
+        <ContentImage
+          src='/images/design-system/zeroheight.png'
+          alt='ZeroHeight Design System Documentation'
+        />
         <p>
           This system is incomplete and that is the point. The pipeline is real, the architecture is
           sound, and the decisions are documented. Style Dictionary is next. After that, motion
