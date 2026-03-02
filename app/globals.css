@@ -30,22 +30,10 @@
 }
 
 /* ========================================
-   SCROLL BEHAVIOR
-   ======================================== */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-/* ========================================
    REDUCED MOTION
    Respects user system preference (WCAG 2.3.3)
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
     *,
     *::before,
     *::after {

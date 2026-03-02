@@ -10,8 +10,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <NoiseTexture opacity={0.4} />
-      <About />
+      <section className='section'>
+        <NoiseTexture opacity={0.4} />
+        <div className='container'>
+          <About />
+        </div>
+      </section>
     </>
   )
 }

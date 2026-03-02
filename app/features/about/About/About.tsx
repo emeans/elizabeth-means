@@ -2,8 +2,6 @@ import Link from '@components/Link'
 
 export default function About() {
   return (
-    <section className='section'>
-      <div className='container'></div>
       <div className='section-content'>
         <h2>About Me</h2>
         <p>
@@ -46,6 +44,5 @@ export default function About() {
           Github
         </Link>
       </div>
-    </section>
   )
 }

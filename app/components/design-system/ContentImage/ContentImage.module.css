@@ -137,9 +137,10 @@
   }
 }
 
-.closeButton {
+.dialog .closeButton {
   position: absolute;
   top: var(--spacing-sm);
+  left: auto;
   right: var(--spacing-sm);
   z-index: 1;
   width: 2.5rem;
