@@ -3,7 +3,7 @@
   background: var(--surface-secondary);
   color: var(--text-primary);
 
-  border-top: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .contactInfo {

@@ -17,7 +17,7 @@ export default function WorkPage() {
         <PageHeader
           variant="standard"
           title="Work"
-          description="Case studies, projects, and experiences."
+          description="The work is real: government software, regulated industries, and teams that needed to ship. Some projects are fully documented, some still being written up, all of it built in the field."
         />
         <ul className="cardList" aria-label="Work projects">
           {workEntries.map((entry) => (

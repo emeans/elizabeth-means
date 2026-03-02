@@ -8,7 +8,7 @@ import Link from '@components/Link'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <section id='contact' className='section'>
+      <section id='contact'>
         <div className='container'>
           <div className='section-content'>
             <Contact />

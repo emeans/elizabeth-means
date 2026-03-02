@@ -6,6 +6,8 @@
   align-items: center;
   scroll-margin-top: 0;
   transition: var(--transition);
+  background: var(--surface-primary);
+  border-bottom: var(--border-width-xs) solid var(--border-subtle);
 }
 
 .heroContent {
