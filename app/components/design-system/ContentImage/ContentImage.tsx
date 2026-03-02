@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Button from '../Button'
 import styles from './ContentImage.module.css'
@@ -129,55 +130,54 @@ export default function ContentImage({
         {fullWidth ? <div className={styles.inner}>{content}</div> : content}
       </figure>
 
-      {expandable && modalOpen && (
-        <div
-          className={styles.backdrop}
-          onClick={closeModal}
-          role="dialog"
-          aria-modal="true"
-          aria-label="View image full size"
-        >
-          <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
-            <Button
-              type="button"
-              variant="secondary"
-              size="small"
-              label={
-                <span className="material-symbols-outlined" aria-hidden>
-                  close
-                </span>
-              }
-              aria-label="Close"
-              className={styles.closeButton}
-              onClick={(e) => {
-                e.stopPropagation()
-                closeModal()
-              }}
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={alt}
-              className={styles.modalImage}
-              style={
-                naturalSize
-                  ? {
-                      maxWidth: `min(95vw, ${naturalSize.width}px)`,
-                      maxHeight: `min(85vh, ${naturalSize.height}px)`,
-                    }
-                  : undefined
-              }
-              onLoad={!naturalSize ? handleImageLoad : undefined}
-            />
-            <div className={styles.modalFooter}>
-              {caption != null && caption.trim() !== '' && (
-                <p className={styles.modalCaption}>{caption}</p>
-              )}
-              <p className={styles.closeHint}>Click outside or press Escape to close</p>
+      {expandable &&
+        modalOpen &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            className={styles.backdrop}
+            onClick={closeModal}
+            role="dialog"
+            aria-modal="true"
+            aria-label="View image full size"
+          >
+            <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
+              <Button
+                type="button"
+                variant="ghost"
+                size="small"
+                label={
+                  <span className="material-symbols-outlined" aria-hidden>
+                    close
+                  </span>
+                }
+                aria-label="Close"
+                className={styles.closeButton}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  closeModal()
+                }}
+              />
+              <div className={styles.modalContent}>
+                <div className={styles.modalImageWrapper}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={alt}
+                    className={styles.modalImage}
+                    onLoad={!naturalSize ? handleImageLoad : undefined}
+                  />
+                </div>
+                <div className={styles.modalFooter}>
+                  {caption != null && caption.trim() !== '' && (
+                    <p className={styles.modalCaption}>{caption}</p>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   )
 }

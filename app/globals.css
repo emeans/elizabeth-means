@@ -349,7 +349,6 @@ img {
      line-height: var(--typography-line-height-tight);
      color: var(--text-primary);
      background: var(--surface-secondary);
-     border-inline-start: var(--border-width-sm) solid var(--border-default);
    }
    
    /* Only the first section heading needs extra top margin (after executive summary) */

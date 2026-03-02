@@ -76,6 +76,9 @@
 
 /* Modal / lightbox */
 .backdrop {
+  /* Keep padding in sync with dialog sizing math */
+  --modal-pad: var(--spacing-md);
+
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -83,15 +86,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl);
+  padding: var(--modal-pad);
   cursor: pointer;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100vw;
+    max-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .backdrop {
+    --modal-pad: var(--spacing-xl);
+  }
 }
 
 .dialog {
   position: relative;
-  max-width: 95vw;
-  max-height: 95vh;
+  /* Never allow dialog to be wider/taller than the padded viewport */
+  max-width: min(95vw, calc(100vw - 2 * var(--modal-pad)));
+  max-height: min(95vh, calc(100vh - 2 * var(--modal-pad)));
+  /* Prefer dynamic viewport height when supported (mobile browser chrome) */
+  max-height: min(95vh, calc(100dvh - 2 * var(--modal-pad)));
   cursor: default;
+  box-sizing: border-box;
+}
+
+/* Wraps image + footer so caption background extends behind the image (transparent PNGs don't float). */
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-secondary);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.modalImageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add breathing room around the image; extra top room so the close button isn't on the image */
+  padding: var(--spacing-md);
+  padding-top: calc(var(--spacing-md) + 3rem);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .modalImageWrapper {
+    padding: var(--spacing-lg);
+    padding-top: calc(var(--spacing-lg) + 3rem);
+  }
 }
 
 .closeButton {
@@ -117,25 +160,28 @@
 
 .modalImage {
   display: block;
-  max-width: 95vw;
-  max-height: 85vh;
+  max-width: 100%;
+  max-height: 60vh;
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+@media (min-width: 768px) {
+  .modalImage {
+    max-height: 80vh;
+  }
 }
 
 .modalFooter {
   width: 100%;
   padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--surface-secondary);
   color: var(--text-primary);
-  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
   text-align: center;
 }
 
 .modalCaption {
-  margin: 0 0 var(--spacing-xs) 0;
+  margin: 0;
   font-family: var(--font-metadata);
   font-size: var(--typography-size-xs);
   color: var(--text-primary);
@@ -143,12 +189,4 @@
   max-width: 60ch;
   margin-left: auto;
   margin-right: auto;
-}
-
-.modalFooter .closeHint {
-  margin: 0;
-  font-family: var(--font-metadata);
-  font-size: var(--typography-size-xs);
-  color: var(--text-secondary);
-  white-space: nowrap;
 }
