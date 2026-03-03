@@ -1,8 +1,8 @@
 export { default } from './RangeChart'
 export type {
   RangeChartProps,
-  DelegationLevel,
-  DelegationRole,
+  RangeChartLevel,
+  RangeChartRole,
   LegendItem,
   IndicatorVariant,
 } from './RangeChart'
