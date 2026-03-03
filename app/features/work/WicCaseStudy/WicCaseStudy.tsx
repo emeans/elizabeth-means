@@ -1,5 +1,5 @@
-import PageHeader from '@/components/design-system/PageHeader'
-import type { MetadataItem } from '@/components/design-system/PageHeader/PageHeader'
+import PageHeader from '@components/layout-structure/PageHeader'
+import type { MetadataItem } from '@components/layout-structure/PageHeader/PageHeader'
 import WhyThisMoment from './sections/WhyThisMoment'
 import DefiningTheRole from './sections/DefiningTheRole'
 import LearningToListen from './sections/LearningToListen'

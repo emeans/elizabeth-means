@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import PageHeader from '@/components/design-system/PageHeader'
-import Card from '@/components/design-system/Card'
-import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
-import { workEntries } from '@/features/work/workEntries'
+import PageHeader from '@components/layout-structure/PageHeader'
+import Card from '@components/content-media/Card'
+import NoiseTexture from '@components/primitives/NoiseTexture'
+import { workEntries } from '@features/work/workEntries'
 
 export const metadata: Metadata = {
   title: 'Work | Elizabeth Means',

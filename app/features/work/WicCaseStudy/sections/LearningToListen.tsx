@@ -1,7 +1,7 @@
-import Link from '@components/Link'
-import MetricsCard from '@/components/design-system/MetricsCard'
-import ContentImage from '@/components/design-system/ContentImage'
-import Timeline from '@/components/design-system/Timeline'
+import Link from '@components/navigation/Link'
+import MetricsCard from '@components/content-media/MetricsCard'
+import ContentImage from '@components/content-media/ContentImage'
+import Timeline from '@components/patterns/Timeline'
 export default function LearningToListen() {
   return (
     <section>

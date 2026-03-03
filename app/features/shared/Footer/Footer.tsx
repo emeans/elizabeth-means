@@ -1,9 +1,9 @@
 import styles from './Footer.module.css'
 import Contact from '@features/shared/Contact'
 import ContactForm from '@features/shared/ContactForm'
-import GitHubIcon from '@/features/shared/GitHubIcon'
-import LinkedInIcon from '@/features/shared/LinkedInIcon'
-import Link from '@components/Link'
+import GitHubIcon from '@features/shared/GitHubIcon'
+import LinkedInIcon from '@features/shared/LinkedInIcon'
+import Link from '@components/navigation/Link'
 
 export default function Footer() {
   return (

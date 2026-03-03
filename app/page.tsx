@@ -1,8 +1,8 @@
-import Hero from '@/features/home/Hero'
-import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
-import Card from '@/components/design-system/Card'
-import { workEntries } from '@/features/work/workEntries'
-import { labEntries } from '@/features/lab/labEntries'
+import Hero from '@features/home/Hero'
+import NoiseTexture from '@components/primitives/NoiseTexture'
+import Card from '@components/content-media/Card'
+import { workEntries } from '@features/work/workEntries'
+import { labEntries } from '@features/lab/labEntries'
 
 export default function Home() {
   return (

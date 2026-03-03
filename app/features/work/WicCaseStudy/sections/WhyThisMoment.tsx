@@ -1,6 +1,6 @@
-import MetricsCard from '@/components/design-system/MetricsCard'
-import PullQuote from '@/components/design-system/PullQuote'
-import Link from '@components/Link'
+import MetricsCard from '@components/content-media/MetricsCard'
+import PullQuote from '@components/content-media/PullQuote'
+import Link from '@components/navigation/Link'
 
 export default function WhyThisMoment() {
   return (

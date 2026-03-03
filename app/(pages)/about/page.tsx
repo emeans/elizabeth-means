@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import About from '@features/about/About'
-import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
+import NoiseTexture from '@components/primitives/NoiseTexture'
 
 export const metadata: Metadata = {
   title: 'About | Elizabeth Means',

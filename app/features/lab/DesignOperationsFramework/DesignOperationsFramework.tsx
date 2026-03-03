@@ -1,8 +1,8 @@
-import DelegationFramework from '@/components/design-system/DelegationFramework'
-import FlowDiagram from '@/components/design-system/FlowDiagram'
-import PageHeader from '@/components/design-system/PageHeader'
-import Link from '@/components/design-system/Link'
-import { designOperationsFrameworkEntry, getEntryMetadata } from '@/features/lab/labEntries'
+import DelegationFramework from '@components/patterns/DelegationFramework'
+import FlowDiagram from '@components/patterns/FlowDiagram'
+import PageHeader from '@components/layout-structure/PageHeader'
+import Link from '@components/navigation/Link'
+import { designOperationsFrameworkEntry, getEntryMetadata } from '@features/lab/labEntries'
 
 export default function DesignOperationsFramework() {
   return (

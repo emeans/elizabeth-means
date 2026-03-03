@@ -1,5 +1,5 @@
-import MetricsCard from '@/components/design-system/MetricsCard'
-import PullQuote from '@/components/design-system/PullQuote'
+import MetricsCard from '@components/content-media/MetricsCard'
+import PullQuote from '@components/content-media/PullQuote'
 export default function DefiningTheRole() {
   return (
     <section>
