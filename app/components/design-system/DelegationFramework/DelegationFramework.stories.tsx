@@ -21,16 +21,17 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const defaultLevels: DelegationLevel[] = [
-  { label: 'LEVEL 1', name: 'Directed Execution' },
-  { label: 'LEVEL 2', name: 'Approval' },
-  { label: 'LEVEL 3', name: 'Consult' },
-  { label: 'LEVEL 4', name: 'Inform' },
-  { label: 'LEVEL 5', name: 'Delegate' },
+  { label: 'LEVEL 1', name: 'Supervised Zoomies' },
+  { label: 'LEVEL 2', name: 'Requires Approval' },
+  { label: 'LEVEL 3', name: 'Consult the Senior Cat' },
+  { label: 'LEVEL 4', name: 'Inform (I\'ll Judge Silently)' },
+  { label: 'LEVEL 5', name: 'Full Autonomy (I\'m Napping)' },
 ]
 
 const defaultRoles: DelegationRole[] = [
-  { title: 'Product Designer', description: 'Design execution', indicators: ['start', 'growth', 'ownership', 'outside', 'outside'] },
-  { title: 'Design Lead', description: 'Reviews and standards', indicators: ['outside', 'start', 'growth', 'ownership', 'outside'] },
+  { title: 'Junior Human', description: 'Food & logistics', indicators: ['start', 'growth', 'ownership', 'outside', 'outside'] },
+  { title: 'Senior Human', description: 'Strategic lap provision', indicators: ['outside', 'start', 'growth', 'ownership', 'outside'] },
+  { title: 'The Cat', description: 'Executive oversight & ambient judgment', indicators: ['outside', 'outside', 'outside', 'outside', 'ownership'] },
 ]
 
 const defaultLegend: LegendItem[] = [
@@ -42,8 +43,8 @@ const defaultLegend: LegendItem[] = [
 
 export const Default: Story = {
   args: {
-    title: 'Delegation framework',
-    intro: <p>How responsibility moves from manager to team member across levels.</p>,
+    title: 'The Houselhold Delegation framework',
+    intro: <p>How responsibility is (non-negotiably) assigned across the household hierarchy. The cat has final say.</p>,
     levels: defaultLevels,
     roles: defaultRoles,
     legend: defaultLegend,

@@ -33,27 +33,31 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    title: 'Design process',
+    title: 'The Cat Morning Routine',
     items: [
       {
         value: 'Step 1',
-        title: 'Discovery',
-        description: 'Research and requirements gathering.',
-        arrowLabel: 'Requirements approved',
+        title: 'Wake human',
+        description: 'Sit directly on face. Maintain until acknowledgment.',
+        arrowLabel: 'Human is conscious',
       },
       {
         value: 'Step 2',
-        title: 'Design',
-        description: 'Wireframes, prototypes, and validation.',
-        arrowLabel: 'Design sign-off',
+        title: 'Demand breakfast',
+        description: 'Vocalize grievances. Knock one item off the counter for emphasis.',
+        arrowLabel: 'Food bowl filled',
       },
       {
         value: 'Step 3',
-        title: 'Develop',
-        description: 'Build and iterate with engineering.',
-        arrowLabel: 'Ready for release',
+        title: 'Reject breakfast',
+        description: 'Sniff bowl. Walk away. The point has been made.',
+        arrowLabel: 'Superiority established',
       },
-      { value: 'Step 4', title: 'Ship', description: 'Release and monitor outcomes.' },
+      {
+        value: 'Step 4',
+        title: 'Nap',
+        description: 'Select the most inconvenient location. Sleep for 14 hours.',
+      },
     ],
   },
 }
@@ -63,11 +67,15 @@ export const TwoSteps: Story = {
     items: [
       {
         value: 'Input',
-        title: 'User request',
-        description: 'Stakeholder submits a request.',
-        arrowLabel: 'Review and approval',
+        title: 'Empty lap detected',
+        description: 'Human sits down with laptop, coffee, or full plate.',
+        arrowLabel: 'Lap assessed as optimal',
       },
-      { value: 'Output', title: 'Approved workflow', description: 'Configurable workflow is live.' },
+      {
+        value: 'Output',
+        title: 'Lap claimed',
+        description: 'Cat deployed. Human cannot leave. This is fine.',
+      },
     ],
   },
 }

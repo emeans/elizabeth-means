@@ -13,9 +13,9 @@ export default function About() {
         </p>
         <p>
           Most recently, I led product development for a management information system serving the
-          WIC program. I conducted 40+ discovery sessions with stakeholders across three states,
+          WIC program. I conducted 40+ discovery sessions with stakeholders,
           translated insights into product strategy and Figma design solutions, and led a
-          cross-functional engineering team of 8. I presented at five national conferences,
+          cross-functional engineering team of 10. I demonstrated the product at five national conferences,
           gathering user feedback to inform roadmap and prioritization decisions.
         </p>
         <p>

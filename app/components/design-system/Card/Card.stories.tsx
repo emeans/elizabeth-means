@@ -26,7 +26,7 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 400 }}>
+      <div style={{ maxWidth: 600 }}>
         <Story />
       </div>
     ),
@@ -35,36 +35,31 @@ const meta = {
 
 export default meta
 
-const placeholderImage = {
-  src: 'https://placehold.co/800x500/f5f5f5/6c6e6e?text=Card+image',
-  alt: 'Placeholder card image',
-}
-
 type Story = StoryObj<typeof meta>
 
 export const Minimal: Story = {
   args: {
-    image: placeholderImage,
-    subtitle: '2024 · Product design',
+    image: { src: '/images/placeholder/yael-playing-at-night.jpg', alt: 'Yael - The Consultant' },
+    subtitle: '2026 · The Consultant',
   },
 }
 
 export const WithHeading: Story = {
   args: {
-    image: placeholderImage,
-    heading: 'WIC Product Case Study',
-    subtitle: '2024 · Product design & strategy',
+    image: { src: '/images/placeholder/cedar-the-performance-reviewer.jpg', alt: 'Cedar The Stakeholder - Senior Cat, Product Strategy · Awaiting deliverables' },
+    heading: 'The Stakeholder',
+    subtitle: 'Senior Cat, Product Strategy · Awaiting deliverables',
   },
 }
 
 export const WithAction: Story = {
   args: {
-    image: placeholderImage,
-    heading: 'WIC Product Case Study',
-    subtitle: '2024 · Product design & strategy',
+    image: { src: '/images/placeholder/yael-upside-down.jpg', alt: 'The Discovery Phase - User research gone rogue · Report available' },
+    heading: 'The Discovery Phase',
+    subtitle: '2026 · User research gone rogue',
     action: (
-      <Link href="/work/wic-product-case-study" variant="cta">
-        View case study
+      <Link href='/lab/design-system' variant='cta'>
+        View the report
       </Link>
     ),
   },
@@ -72,25 +67,25 @@ export const WithAction: Story = {
 
 export const WithButton: Story = {
   args: {
-    image: placeholderImage,
-    heading: 'Project Alpha',
-    subtitle: 'Research & prototyping',
-    action: <Button label="Learn more" variant="outline" onClick={() => {}} />,
+    image: { src: '/images/placeholder/cedar-the-loaf.jpg', alt: 'Cedar Available for Loaf - Currently accepting pets · Do not disturb' },
+    heading: 'Available for Loaf',
+    subtitle: 'Currently accepting pets · Do not disturb',
+    action: <Button label='Learn more' variant='outline' onClick={() => {}} />,
   },
 }
 
 export const ClickableCard: Story = {
   args: {
-    image: placeholderImage,
-    heading: 'Entire card is a link',
-    subtitle: '2024 · Example',
-    href: '/work/wic-product-case-study',
+    image: { src: '/images/placeholder/yael-belly.jpg', alt: 'Fully Deployed - Cat bed utilization: 147% · Open to feedback' },
+    heading: 'Fully Deployed',
+    subtitle: 'Cat bed utilization: 147% · Open to feedback',
+    href: '/lab/design-system',
   },
 }
 
 export const TextOnly: Story = {
   args: {
-    heading: 'Design System',
+    heading: 'Paw Tokens',
     href: '/lab/design-system',
   },
 }

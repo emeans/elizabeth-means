@@ -15,8 +15,6 @@ export interface ContentImageProps {
   priority?: boolean
   /** Optional: aspect ratio (default 16/10). Use e.g. "4/3" or "1" for square. */
   aspectRatio?: string
-  /** When true, image spans full container width (breaks out of prose). */
-  fullWidth?: boolean
   /** When true, clicking the image opens a full-size modal. */
   expandable?: boolean
   /** When true, omits block margin (e.g. when used inside ContentImageRow). */
@@ -26,7 +24,7 @@ export interface ContentImageProps {
 
 /**
  * Block component for images in long-form content (case studies, Lab, articles).
- * Supports prose width or full-width breakout, optional caption, and click-to-expand modal.
+ * Supports prose width, optional caption, and click-to-expand modal.
  */
 export default function ContentImage({
   src,
@@ -34,7 +32,6 @@ export default function ContentImage({
   caption,
   priority = false,
   aspectRatio = '16 / 10',
-  fullWidth = false,
   expandable = false,
   compact = false,
   className,
@@ -72,7 +69,6 @@ export default function ContentImage({
 
   const rootClassName = [
     styles.root,
-    fullWidth && styles.rootFullWidth,
     expandable && styles.expandable,
     compact && styles.compact,
     className,
@@ -110,11 +106,7 @@ export default function ContentImage({
           src={src}
           alt={alt}
           fill
-          sizes={
-            fullWidth
-              ? '(max-width: 768px) 100vw, var(--max-width-container)'
-              : '(max-width: 768px) 100vw, var(--max-width-prose)'
-          }
+          sizes="(max-width: 768px) 100vw, var(--max-width-prose)"
           className={styles.image}
           priority={priority}
           onLoad={handleImageLoad}
@@ -127,7 +119,7 @@ export default function ContentImage({
   return (
     <>
       <figure className={rootClassName}>
-        {fullWidth ? <div className={styles.inner}>{content}</div> : content}
+        {content}
       </figure>
 
       {expandable &&

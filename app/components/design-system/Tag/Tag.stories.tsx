@@ -32,42 +32,42 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    children: 'Case study',
+    children: 'Good cat',
     variant: 'primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
-    children: '2024',
+    children: 'Tortoiseshell',
     variant: 'secondary',
   },
 }
 
 export const Success: Story = {
   args: {
-    children: 'Published',
+    children: 'Napping',
     variant: 'success',
   },
 }
 
 export const Warning: Story = {
   args: {
-    children: 'Draft',
+    children: 'Zoomies imminent',
     variant: 'warning',
   },
 }
 
 export const Error: Story = {
   args: {
-    children: 'Archived',
+    children: 'Knocked off counter',
     variant: 'error',
   },
 }
 
 export const Muted: Story = {
   args: {
-    children: 'Metadata',
+    children: 'Judging silently',
     variant: 'muted',
   },
 }
@@ -76,12 +76,12 @@ export const AllVariants: Story = {
   args: { children: 'Tag' },
   render: (args) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-      <Tag variant="primary">Primary</Tag>
-      <Tag variant="secondary">Secondary</Tag>
-      <Tag variant="success">Success</Tag>
-      <Tag variant="warning">Warning</Tag>
-      <Tag variant="error">Error</Tag>
-      <Tag variant="muted">Muted</Tag>
+      <Tag variant="primary">Good cat</Tag>
+      <Tag variant="secondary">Tortoiseshell</Tag>
+      <Tag variant="success">Napping</Tag>
+      <Tag variant="warning">Zoomies imminent</Tag>
+      <Tag variant="error">Knocked off counter</Tag>
+      <Tag variant="muted">Judging silently</Tag>
     </div>
   ),
 }

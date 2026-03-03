@@ -25,24 +25,24 @@ type Story = StoryObj<typeof meta>
 
 export const Single: Story = {
   args: {
-    value: '5',
-    description: 'national conferences',
+    value: '14',
+    description: 'hours slept today (personal best)',
   },
 }
 
 export const SingleWithNode: Story = {
   args: {
-    value: '$14.9M',
-    description: 'federal grant funding over two years',
+    value: '0',
+    description: 'regrets about knocking that off the counter',
   },
 }
 
 export const Multiple: Story = {
   args: {
     metrics: [
-      { value: '$14.9', description: 'million federal grant' },
-      { value: '0', description: 'team attrition over two years' },
-      { value: '12', description: 'states in pilot' },
+      { value: '3', description: 'cats in household' },
+      { value: '0', description: 'boundaries respected' },
+      { value: '∞', description: 'perceived injustices' },
     ],
   },
 }

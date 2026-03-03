@@ -8,7 +8,7 @@ const meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'Image block for long-form content. Optional caption, full-width breakout, and click-to-expand modal.',
+        component: 'Image block for long-form content. Optional caption and click-to-expand modal.',
       },
     },
   },
@@ -17,7 +17,6 @@ const meta = {
     src: { control: 'text' },
     alt: { control: 'text' },
     caption: { control: 'text' },
-    fullWidth: { control: 'boolean' },
     expandable: { control: 'boolean' },
   },
   decorators: [
@@ -33,44 +32,27 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const placeholderSrc = 'https://placehold.co/800x500/f5f5f5/6c6e6e?text=Content+image'
 
 export const Default: Story = {
   args: {
-    src: placeholderSrc,
-    alt: 'Example content image',
-    caption: 'Optional caption below the image.',
+    src: '/images/placeholder/yael-belly.jpg',
+    alt: 'Fully Deployed - Cat bed utilization: 147% · Open to feedback',
+    caption: 'Cat bed utilization: 147% · Open to feedback',
   },
-}
-
-export const FullWidth: Story = {
-  args: {
-    src: placeholderSrc,
-    alt: 'Full width image',
-    caption: 'Spans container width.',
-    fullWidth: true,
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 900 }}>
-        <Story />
-      </div>
-    ),
-  ],
 }
 
 export const Expandable: Story = {
   args: {
-    src: placeholderSrc,
-    alt: 'Click to expand',
-    caption: 'Click the image to open full size.',
+    src: '/images/placeholder/cedar-the-performance-reviewer.jpg',
+    alt: 'Cedar The Stakeholder - Senior Cat, Product Strategy · Awaiting deliverables',
+    caption: 'Senior Cat, Product Strategy · Awaiting deliverables',
     expandable: true,
   },
 }
 
 export const NoCaption: Story = {
   args: {
-    src: placeholderSrc,
-    alt: 'Image without caption',
+    src: '/images/placeholder/yael-upside-down.jpg',
+    alt: 'The Discovery Phase - User research gone rogue · Report available',
   },
 }

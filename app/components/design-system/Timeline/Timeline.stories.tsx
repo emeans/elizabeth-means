@@ -25,9 +25,9 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     items: [
-      { value: 'Apr 2024', title: 'USDA announced WIC Final Food Rule', description: 'Chicago conference.' },
-      { value: 'Q2 2024', title: 'Pilot with first state' },
-      { value: 'Q4 2024', title: 'Design system v2 released', description: 'Inclusive of new food categories.' },
+      { value: 'Year 1', title: 'Adopted from shelter', description: 'Immediately claimed the couch. Has not moved.' },
+      { value: 'Year 2', title: 'First zoomies incident', description: 'Cause unknown. Investigation ongoing.' },
+      { value: 'Year 3', title: 'Knocked over first full glass of water', description: 'Made direct eye contact throughout.' },
     ],
   },
 }
@@ -35,9 +35,9 @@ export const Default: Story = {
 export const Minimal: Story = {
   args: {
     items: [
-      { value: 'Phase 1', title: 'Discovery' },
-      { value: 'Phase 2', title: 'Design' },
-      { value: 'Phase 3', title: 'Build' },
+      { value: '6am', title: 'Demand breakfast' },
+      { value: '6:02am', title: 'Reject breakfast' },
+      { value: '6:03am', title: 'Demand second breakfast' },
     ],
   },
 }

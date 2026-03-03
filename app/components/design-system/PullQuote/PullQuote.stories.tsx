@@ -25,13 +25,13 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    quote: 'We needed a design system that could scale across vendors and states without losing clarity.',
-    attribution: '— State agency lead',
+    quote: 'The food bowl was empty for four whole minutes. I want this on record.',
+    attribution: '— Senior Cat, Household Operations',
   },
 }
 
 export const NoAttribution: Story = {
   args: {
-    quote: 'Research showed that consistency in enrollment flows reduced support tickets by 40%.',
+    quote: 'Research indicates that sitting on the laptop significantly increases the likelihood of receiving attention.',
   },
 }

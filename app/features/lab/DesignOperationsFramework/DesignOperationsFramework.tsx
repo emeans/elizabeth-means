@@ -300,7 +300,7 @@ export default function DesignOperationsFramework() {
         </section>
         <section>
           <p>
-            This framework was built for one product. The thinking behind it applies to any team
+            This framework was built for one product, but the thinking behind it applies to any team
             moving from solo design to collaborative delivery.
           </p>
         </section>

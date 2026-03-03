@@ -11,39 +11,11 @@
   margin: 0;
 }
 
-/* Break out of prose to span full container width */
-.rootFullWidth {
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: var(--surface-primary);
-  padding: var(--spacing-3xl);
-}
-
-.rootFullWidth .inner {
-  max-width: var(--max-width-container);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
-}
-
 .imageWrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: var(--border-radius-md);
-}
-
-/* Border only in full-width mode (has background); single images with transparent PNGs have no border */
-.rootFullWidth .imageWrapper {
-  border: 1px solid var(--border-subtle);
 }
 
 /* When expandable, image wrapper is clickable */

@@ -27,41 +27,19 @@ export const Standard: Story = {
   args: {
     variant: 'standard',
     title: 'About',
-    description: 'Design leadership and product strategy.',
+    description: 'Product strategy and design leadership.',
   },
 }
 
 export const Entry: Story = {
   args: {
     variant: 'entry',
-    overline: 'Work',
-    title: 'WIC Product Case Study',
-    subtitle: 'USDA WIC Modernization',
-    metadata: [
-      { label: 'Role', value: 'Lead designer' },
-      { label: 'Timeline', value: '2023–2024' },
-    ],
-    executiveSummary: (
-      <p>
-        Supporting state agencies and vendors through the WIC transition with research, design system updates, and implementation guidance.
-      </p>
-    ),
-  },
-}
-
-export const EntryWithImage: Story = {
-  args: {
-    variant: 'entry',
     overline: 'Lab',
     title: 'Design Operations Framework',
-    subtitle: 'Scaling design quality',
-    image: {
-      src: 'https://placehold.co/1200x400/f5f5f5/6c6e6e?text=Header+image',
-      alt: 'Header placeholder',
-    },
+    subtitle: 'Building the infrastructure for a scalable, handoff-ready design practice',
     metadata: [
-      { label: 'Type', value: 'Framework' },
-      { label: 'Last updated', value: 'Jan 2025' },
+      { label: 'Type', value: 'Design Operations' },
+      { label: 'Last updated', value: 'November 2025' },
     ],
     executiveSummary: (
       <p>
@@ -70,3 +48,26 @@ export const EntryWithImage: Story = {
     ),
   },
 }
+export const EntryWithImage: Story = {
+  args: {
+    variant: 'entry',
+    overline: 'Work',
+    title: 'Building the Playbook While Running the Play',
+    subtitle: '0-to-1 Product Management',
+    image: {
+      src: '/images/wic-case-study/nwa-conferences.png',
+      alt: 'Attended 5 National WIC Association Conferences',
+    },
+    metadata: [
+      { label: 'Role', value: 'Product Manager' },
+      { label: 'Timeline', value: '2023–2025' },
+    ],
+    executiveSummary: (
+      <p>
+        A 0-to-1 product built for a regulated industry: two years of discovery, design, and delivery on a WIC management information system, from research to national conference demonstrations.
+      </p>
+    ),
+  },
+}
+
+
