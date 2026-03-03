@@ -8,6 +8,7 @@ import HamburgerButton from '@components//HamburgerButton'
 import SkipLink from '@components/SkipLink'
 import LogoLink from '@components/LogoLink'
 import ThemeToggle from '@components/ThemeToggle'
+import Favicon from '@features/shared/Favicon/Favicon'
 import Footer from '@features/shared/Footer'
 
 const navItems = [
@@ -88,10 +89,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <SkipLink
-      href="#main-content"
-      content={
-        <main className={styles.mainContainer}>
+    <>
+      <Favicon theme={theme} />
+      <SkipLink
+        href="#main-content"
+        content={
+          <main className={styles.mainContainer}>
           {mobileMenuOpen && isMobile && (
             <div
               className={styles.mobileMenuOverlay}
@@ -145,5 +148,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </main>
       }
     />
+    </>
   )
 }
