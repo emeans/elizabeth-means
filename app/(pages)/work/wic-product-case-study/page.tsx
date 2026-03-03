@@ -1,4 +1,4 @@
-import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
+import NoiseTexture from '@/components/primitives/NoiseTexture'
 import WicCaseStudy from '@features/work/WicCaseStudy'
 import type { Metadata } from 'next'
 

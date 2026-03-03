@@ -1,6 +1,6 @@
-import ContentImage from '@/components/design-system/ContentImage'
-import Link from '@/components/design-system/Link'
-import PageHeader from '@/components/design-system/PageHeader'
+import ContentImage from '@/components/content-media/ContentImage'
+import Link from '@/components/navigation/Link'
+import PageHeader from '@/components/layout-structure/PageHeader'
 import { designSystemEntry, getEntryMetadata } from '@/features/lab/labEntries'
 
 export default function DesignSystem() {
