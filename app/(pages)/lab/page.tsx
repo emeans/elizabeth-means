@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import PageHeader from '@components/layout-structure/PageHeader'
 import Card from '@components/content-media/Card'
 import NoiseTexture from '@components/primitives/NoiseTexture'
-import { labEntries } from '@/features/lab/labEntries'
+import { labEntries } from '@features/lab/labEntries'
 
 export const metadata: Metadata = {
   title: 'Lab | Elizabeth Means',

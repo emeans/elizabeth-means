@@ -1,8 +1,8 @@
-import Hero from '@/features/home/Hero'
+import Hero from '@features/home/Hero'
 import NoiseTexture from '@components/primitives/NoiseTexture'
 import Card from '@components/content-media/Card'
-import { workEntries } from '@/features/work/workEntries'
-import { labEntries } from '@/features/lab/labEntries'
+import { workEntries } from '@features/work/workEntries'
+import { labEntries } from '@features/lab/labEntries'
 
 export default function Home() {
   return (
