@@ -1,6 +1,6 @@
-import MetricsCard from '@/components/content-media/MetricsCard'
-import Link from '@/components/navigation/Link'
-import PullQuote from '@/components/content-media/PullQuote'
+import MetricsCard from '@components/content-media/MetricsCard'
+import Link from '@components/navigation/Link'
+import PullQuote from '@components/content-media/PullQuote'
 
 export default function ValidationAndOutcomes() {
   return (

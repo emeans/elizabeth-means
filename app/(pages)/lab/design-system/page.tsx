@@ -1,4 +1,4 @@
-import NoiseTexture from '@/components/primitives/NoiseTexture'
+import NoiseTexture from '@components/primitives/NoiseTexture'
 import DesignSystem from '@features/lab/DesignSystem/DesignSystem'
 import type { Metadata } from 'next'
 

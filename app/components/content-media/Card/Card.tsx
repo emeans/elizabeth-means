@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Link from '@/components/navigation/Link'
-import Tag from '@/components/primitives/Tag'
+import Link from '@components/navigation/Link'
+import Tag from '@components/primitives/Tag'
 import styles from './Card.module.css'
 
 /**

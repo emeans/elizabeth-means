@@ -1,4 +1,4 @@
-import type { MetadataItem } from '@/components/layout-structure/PageHeader/PageHeader'
+import type { MetadataItem } from '@components/layout-structure/PageHeader/PageHeader'
 
 /**
  * Single source of truth for lab entries. Used for:

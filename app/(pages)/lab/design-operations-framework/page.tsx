@@ -1,4 +1,4 @@
-import NoiseTexture from '@/components/primitives/NoiseTexture'
+import NoiseTexture from '@components/primitives/NoiseTexture'
 import DesignOperationsFramework from '@/features/lab/DesignOperationsFramework/DesignOperationsFramework'
 import type { Metadata } from 'next'
 

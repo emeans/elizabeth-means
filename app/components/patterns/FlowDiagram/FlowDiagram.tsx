@@ -1,4 +1,4 @@
-import Tag from '@/components/primitives/Tag'
+import Tag from '@components/primitives/Tag'
 import styles from './FlowDiagram.module.css'
 
 /** Section below the hairline: a title plus values shown as tags or plain text */

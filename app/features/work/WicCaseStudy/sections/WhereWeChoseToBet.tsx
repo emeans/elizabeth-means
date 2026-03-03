@@ -1,4 +1,4 @@
-import ContentImage from "@/components/content-media/ContentImage";
+import ContentImage from "@components/content-media/ContentImage";
 
 export default function WhereWeChoseToBet() {
   return (

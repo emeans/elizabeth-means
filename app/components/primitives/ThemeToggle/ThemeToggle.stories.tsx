@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { fn } from 'storybook/test';
-import Link from '@/components/navigation/Link';
+import Link from '@components/navigation/Link';
 import ThemeToggle from './ThemeToggle';
 
 /**

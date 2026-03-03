@@ -24,7 +24,6 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"],
       "@components/*": ["./app/components/*"],
       "@features/*": ["./app/features/*"],
       "@layouts/*": ["./app/features/shared/AppLayout/*"]

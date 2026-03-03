@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
-import Button from '@/components/primitives/Button'
+import Button from '@components/primitives/Button'
 import styles from './ContentImage.module.css'
 
 export interface ContentImageProps {

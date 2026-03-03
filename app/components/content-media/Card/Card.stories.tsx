@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Card from './Card'
-import Button from '@/components/primitives/Button'
-import Link from '@/components/navigation/Link'
+import Button from '@components/primitives/Button'
+import Link from '@components/navigation/Link'
 
 /**
  * Card component for case studies, project previews, and content blocks.

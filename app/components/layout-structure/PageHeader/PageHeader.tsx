@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
-import Tag from '@/components/primitives/Tag'
-import Overline from '@/components/primitives/Overline'
+import Tag from '@components/primitives/Tag'
+import Overline from '@components/primitives/Overline'
 import styles from './PageHeader.module.css'
 
 export type PageHeaderStandardProps = {

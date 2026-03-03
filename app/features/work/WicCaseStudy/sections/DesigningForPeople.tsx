@@ -1,5 +1,5 @@
-import ContentImage from '@/components/content-media/ContentImage'
-import Link from '@/components/navigation/Link'
+import ContentImage from '@components/content-media/ContentImage'
+import Link from '@components/navigation/Link'
 export default function DesigningForPeople() {
   return (
     <section>

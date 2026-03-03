@@ -1,4 +1,4 @@
-import Link from '@/components/navigation/Link'
+import Link from '@components/navigation/Link'
 
 export default function References() {
   return (
