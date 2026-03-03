@@ -17,14 +17,6 @@ export interface LabEntry {
   extraMetadata?: MetadataItem[]
 }
 
-function entryMetadata(entry: LabEntry): MetadataItem[] {
-  const base: MetadataItem[] = [
-    { label: 'Type', value: entry.type },
-    { label: 'Last Updated', value: entry.lastUpdated },
-  ]
-  return entry.extraMetadata ? [...base, ...entry.extraMetadata] : base
-}
-
 export const designSystemEntry: LabEntry = {
   href: '/lab/design-system',
   image: '/images/design-system/design-system.png',
@@ -58,5 +50,9 @@ export const labEntries: LabEntry[] = [designSystemEntry, designOperationsFramew
 
 /** Build PageHeader metadata array from a lab entry (Type, Last Updated, then extraMetadata). */
 export function getEntryMetadata(entry: LabEntry): MetadataItem[] {
-  return entryMetadata(entry)
+  const base: MetadataItem[] = [
+    { label: 'Type', value: entry.type },
+    { label: 'Last Updated', value: entry.lastUpdated },
+  ]
+  return entry.extraMetadata ? [...base, ...entry.extraMetadata] : base
 }

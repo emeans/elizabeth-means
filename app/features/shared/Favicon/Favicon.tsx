@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
 
 /**
  * Sets the document favicon to match the current app theme.
@@ -10,7 +9,6 @@ import { usePathname } from 'next/navigation'
  * We own the single icon link (no default in layout metadata) so nothing overwrites it.
  */
 export default function Favicon({ theme }: { theme: 'light' | 'dark' }) {
-  const pathname = usePathname()
   const linkRef = useRef<HTMLLinkElement | null>(null)
 
   useEffect(() => {
@@ -26,7 +24,7 @@ export default function Favicon({ theme }: { theme: 'light' | 'dark' }) {
     }
     linkRef.current = link
     link.setAttribute('href', url)
-  }, [theme, pathname])
+  }, [theme])
 
   return null
 }
