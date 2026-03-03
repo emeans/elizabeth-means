@@ -1,6 +1,6 @@
 @import '../../../tokens.css';
 
-.framework {
+.chart {
   width: 100%;
   max-width: 100%;
   padding: 0;
@@ -14,13 +14,13 @@
 }
 
 @media (max-width: 600px) {
-  .framework {
+  .chart {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
   }
 }
 
-/* Header: title + intro (match FlowDiagram horizontal title/intro styling)
+/* Header: title + intro (match Flow horizontal title/intro styling)
    Override .content-entry h2 from globals so our spacing applies. */
 .header {
   width: 100%;

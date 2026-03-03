@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import FlowDiagram from './FlowDiagram'
+import Flow from './Flow'
 
 /**
- * Flow diagram: vertical sequence of steps with an arrow from each entry
+ * Flow: vertical sequence of steps with an arrow from each entry
  * pointing to the next. Same card and content shape as Timeline, but no time ticks.
  */
 const meta = {
-  title: 'Patterns/FlowDiagram',
-  component: FlowDiagram,
+  title: 'Patterns/Flow',
+  component: Flow,
   parameters: {
     layout: 'padded',
     docs: {
@@ -25,7 +25,7 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta<typeof FlowDiagram>
+} satisfies Meta<typeof Flow>
 
 export default meta
 

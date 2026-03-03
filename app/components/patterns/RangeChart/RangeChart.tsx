@@ -1,16 +1,16 @@
-import styles from './DelegationFramework.module.css'
+import styles from './RangeChart.module.css'
 
 /** Meaning of each circle on the progression track */
 export type IndicatorVariant = 'start' | 'growth' | 'ownership' | 'outside'
 
-export interface DelegationLevel {
+export interface RangeChartLevel {
   /** e.g. "LEVEL 1" */
   label: string
   /** e.g. "Directed Execution" */
   name: string
 }
 
-export interface DelegationRole {
+export interface RangeChartRole {
   /** Role title, e.g. "Product Designer" */
   title: string
   /** Short description under the title */
@@ -24,15 +24,15 @@ export interface LegendItem {
   label: string
 }
 
-export interface DelegationFrameworkProps {
-  /** Overline/title, e.g. "DELEGATION FRAMEWORK" */
+export interface RangeChartProps {
+  /** Overline/title, e.g. "Autonomy by Role" */
   title: string
   /** Intro paragraph below the title */
   intro: React.ReactNode
   /** Level column headers (e.g. LEVEL 1–5 and names) */
-  levels: DelegationLevel[]
+  levels: RangeChartLevel[]
   /** Role rows (title, description, track indicators) */
-  roles: DelegationRole[]
+  roles: RangeChartRole[]
   /** Legend items explaining circle variants */
   legend: LegendItem[]
   className?: string
@@ -60,20 +60,20 @@ function getTrackSegment(indicators: IndicatorVariant[]) {
 }
 
 /**
- * Delegation framework matrix: title + intro on an anchored band, level headers,
+ * Range chart matrix: title + intro on an anchored band, level headers,
  * role rows with progression tracks (circle indicators), and a legend.
  */
-export default function DelegationFramework({
+export default function RangeChart({
   title,
   intro,
   levels,
   roles,
   legend,
   className,
-}: DelegationFrameworkProps) {
+}: RangeChartProps) {
   return (
     <section
-      className={[styles.framework, className].filter(Boolean).join(' ')}
+      className={[styles.chart, className].filter(Boolean).join(' ')}
     >
       <header className={styles.header}>
         <div className={styles.title}>{title}</div>

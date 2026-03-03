@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import DelegationFramework from './DelegationFramework'
-import type { DelegationLevel, DelegationRole, LegendItem } from './DelegationFramework'
+import RangeChart from './RangeChart'
+import type { RangeChartLevel, RangeChartRole, LegendItem } from './RangeChart'
 
 const meta = {
-  title: 'Patterns/DelegationFramework',
-  component: DelegationFramework,
+  title: 'Patterns/RangeChart',
+  component: RangeChart,
   parameters: {
     layout: 'padded',
     docs: {
@@ -14,13 +14,13 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DelegationFramework>
+} satisfies Meta<typeof RangeChart>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
-const defaultLevels: DelegationLevel[] = [
+const defaultLevels: RangeChartLevel[] = [
   { label: 'LEVEL 1', name: 'Supervised Zoomies' },
   { label: 'LEVEL 2', name: 'Requires Approval' },
   { label: 'LEVEL 3', name: 'Consult the Senior Cat' },
@@ -28,7 +28,7 @@ const defaultLevels: DelegationLevel[] = [
   { label: 'LEVEL 5', name: 'Full Autonomy (I\'m Napping)' },
 ]
 
-const defaultRoles: DelegationRole[] = [
+const defaultRoles: RangeChartRole[] = [
   { title: 'Junior Human', description: 'Food & logistics', indicators: ['start', 'growth', 'ownership', 'outside', 'outside'] },
   { title: 'Senior Human', description: 'Strategic lap provision', indicators: ['outside', 'start', 'growth', 'ownership', 'outside'] },
   { title: 'The Cat', description: 'Executive oversight & ambient judgment', indicators: ['outside', 'outside', 'outside', 'outside', 'ownership'] },
