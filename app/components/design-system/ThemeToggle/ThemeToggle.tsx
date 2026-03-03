@@ -1,52 +1,26 @@
-import { forwardRef } from 'react';
-import styles from './ThemeToggle.module.css';
+import { forwardRef } from 'react'
+import styles from './ThemeToggle.module.css'
 
 /**
  * ThemeToggle Component
- * 
- * Toggle button for switching between light and dark themes.
- * Displays appropriate icon and label based on current theme.
- * 
+ *
+ * Slide switch for light/dark theme. Thumb shows sun (light mode) or moon (dark mode) via Material Symbols.
+ * WCAG: keyboard (Enter/Space), focus-visible outline, role="switch" with aria-checked and aria-label,
+ * minimum 44×44px touch target, prefers-reduced-motion for animation.
+ *
  * @example
- * // Basic usage
- * <ThemeToggle 
- *   theme={theme}
- *   onToggle={toggleTheme}
- * />
- * 
- * @example
- * // Icon only (hide text)
- * <ThemeToggle 
- *   theme={theme}
- *   onToggle={toggleTheme}
- *   showLabel={false}
- * />
+ * <ThemeToggle theme={theme} onToggle={toggleTheme} />
  */
 
 interface ThemeToggleProps {
   /** Current theme ('light' or 'dark') */
-  theme: 'light' | 'dark';
-  
+  theme: 'light' | 'dark'
   /** Callback when theme is toggled */
-  onToggle: () => void;
-  
-  /** Icon to show in light mode (defaults to moon emoji) */
-  lightIcon?: React.ReactNode;
-  
-  /** Icon to show in dark mode (defaults to sun emoji) */
-  darkIcon?: React.ReactNode;
-  
-  /** Show text label alongside icon */
-  showLabel?: boolean;
-  
-  /** Custom light mode label */
-  lightLabel?: string;
-  
-  /** Custom dark mode label */
-  darkLabel?: string;
-  
+  onToggle: () => void
+  /** Show text label alongside switch (e.g. in mobile menu) */
+  showLabel?: boolean
   /** Additional CSS classes */
-  className?: string;
+  className?: string
 }
 
 const ThemeToggle = forwardRef<HTMLButtonElement, ThemeToggleProps>(
@@ -54,42 +28,46 @@ const ThemeToggle = forwardRef<HTMLButtonElement, ThemeToggleProps>(
     {
       theme,
       onToggle,
-      lightIcon = '🌙',
-      darkIcon = '☀️',
-      showLabel = true,
-      lightLabel = 'Dark',
-      darkLabel = 'Light',
+      showLabel = false,
       className,
     },
     ref
   ) {
-    const isLight = theme === 'light';
-    const icon = isLight ? lightIcon : darkIcon;
-    const label = isLight ? lightLabel : darkLabel;
-    const ariaLabel = isLight 
-      ? 'Switch to dark mode' 
-      : 'Switch to light mode';
-    
+    const isLight = theme === 'light'
+    const ariaLabel = isLight
+      ? 'Switch to dark mode'
+      : 'Switch to light mode'
+
     return (
       <button
         ref={ref}
-        className={`${styles.themeToggle} ${className || ''}`}
-        onClick={onToggle}
+        type="button"
+        role="switch"
+        aria-checked={!isLight}
         aria-label={ariaLabel}
         title={ariaLabel}
-        type="button"
+        className={`${styles.themeToggle} ${className ?? ''}`.trim()}
+        onClick={onToggle}
+        data-theme={theme}
       >
-        <span className={styles.icon} aria-hidden="true">
-          {icon}
+        <span className={styles.track}>
+          <span className={styles.thumb}>
+            <span
+              className={`material-symbols-outlined ${styles.icon}`}
+              aria-hidden
+            >
+              {isLight ? 'light_mode' : 'dark_mode'}
+            </span>
+          </span>
         </span>
         {showLabel && (
           <span className={styles.label}>
-            {label}
+            {isLight ? 'Dark' : 'Light'}
           </span>
         )}
       </button>
-    );
+    )
   }
-);
+)
 
-export default ThemeToggle;
+export default ThemeToggle

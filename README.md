@@ -1,109 +1,115 @@
 # Elizabeth Means - Product • Design • Engineering
 
-
-A modern one-page personal website and resume built with [Next.js](https://nextjs.org), featuring basic info, resume, and contact form.
+A personal site built with [Next.js](https://nextjs.org), featuring a home page, about, work (case studies), lab (frameworks and design system), and contact.
 
 ## Features
 
-- 🎨 Modern, responsive design
-- 📱 Mobile-first approach
-- 🚀 Fast static site generation with Next.js
-- 📄 Single-page layout with resume and contact form
-- 📧 Netlify contact form integration
-- 🎯 SEO optimized
+- Modern, responsive design with light/dark theme
+- Mobile-first layout with hamburger navigation
+- Static export for fast hosting (e.g. Netlify)
+- Design system with reusable components and Storybook
+- Design tokens generated from Figma (`npm run build-tokens`)
+- Contact form integration
+- SEO-friendly structure
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:3000`
+The site will be available at `http://localhost:3000`.
 
-### Build for Production
+### Other scripts
+
+- **`npm run build`** — Production build (static export to `out/`)
+- **`npm run preview`** — Serve the built site from `out/` (e.g. `npx serve out`)
+- **`npm run storybook`** — Run Storybook on port 6006
+- **`npm run build-storybook`** — Build Storybook for deployment
+- **`npm run build-tokens`** — Regenerate `app/tokens.css` from Figma token JSON (see `app/tokens/README.md`)
+
+### Build for production
 
 ```bash
 npm run build
 ```
 
-This will generate a static site in the `out` folder (configured for static export).
+This generates a static site in the `out` folder (Next.js `output: 'export'`).
 
-## Project Structure
+## Project structure
 
 ```
 /
-├── app/                    # Next.js app directory
-│   ├── components/         # React components
-│   │   ├── About.tsx       # About section component
-│   │   ├── Contact/        # Contact section component
-│   │   │   ├── Contact.tsx
-│   │   │   └── Contact.module.css
-│   │   ├── Footer/         # Footer component
-│   │   │   ├── Footer.tsx
-│   │   │   └── Footer.module.css
-│   │   ├── Hero/           # Hero section component
-│   │   │   ├── Hero.tsx
-│   │   │   └── Hero.module.css
-│   │   └── Resume/         # Resume section component
-│   │       ├── Resume.tsx
-│   │       └── Resume.module.css
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Main page (one-page site)
-│   ├── globals.css         # Global styles and CSS variables
-│   └── page.module.css     # Page-specific styles (navigation, skip link)
-├── public/                 # Static assets
-│   ├── favicon files       # Various favicon formats
-│   ├── portrait.png        # Hero section image
-│   ├── Elizabeth-Means-Resume.pdf
-│   └── ...                 # Other static assets
-├── next.config.js          # Next.js configuration
-├── tsconfig.json           # TypeScript configuration
-└── netlify.toml            # Netlify deployment configuration
+├── app/
+│   ├── (pages)/              # Route segments (about, work, lab, etc.)
+│   │   ├── about/
+│   │   ├── work/
+│   │   └── lab/
+│   ├── components/
+│   │   └── design-system/    # Reusable UI components (Button, Card, etc.)
+│   ├── features/             # Feature-specific modules
+│   │   ├── about/            # About page content
+│   │   ├── home/              # Hero and home content
+│   │   ├── lab/               # Lab entries and frameworks
+│   │   ├── shared/            # AppLayout, Footer, Contact, ContactForm
+│   │   └── work/              # Work case studies (e.g. WIC)
+│   ├── layout.tsx            # Root layout
+│   ├── page.tsx              # Home page
+│   ├── globals.css           # Global styles (imports tokens.css)
+│   └── tokens.css            # Generated from Figma (do not edit)
+├── app/tokens/               # Figma token export + build script
+│   ├── build-tokens.js
+│   ├── Core.tokens.json
+│   ├── Light Mode.tokens.json
+│   └── Dark Mode.tokens.json
+├── public/                   # Static assets (favicons, PDFs, images)
+├── next.config.js            # Next.js config (static export, images)
+├── tsconfig.json
+└── netlify.toml              # Netlify build/deploy config
 ```
 
 ## Deployment
 
-This site is configured for deployment on Netlify. The `netlify.toml` file contains the build settings.
+The site is configured for static export and can be deployed to Netlify (or any static host).
 
-### Netlify Deployment
-
-1. Push your code to a Git repository
-2. Connect the repository to Netlify
-3. Netlify will automatically detect the build settings from `netlify.toml`
-4. The site will build and deploy automatically on each push
-
-**Note:** The site is configured for static export, so it generates a fully static site that can be hosted on any static hosting service.
+1. Push to your Git repository
+2. Connect the repo to Netlify
+3. Netlify uses `netlify.toml` for build settings; build runs `npm run build` and publishes `out/`.
 
 ## Customization
 
-- **Hero Section**: Update content in `app/components/Hero/Hero.tsx` and styles in `app/components/Hero/Hero.module.css`
-- **About Section**: Update content in `app/components/About.tsx`
-- **Resume Section**: Update content in `app/folio/Resume/Resume.tsx` and styles in `app/folio/Resume/Resume.module.css`
-- **Contact Section**: Update form configuration in `app/components/Contact/Contact.tsx` and styles in `app/components/Contact/Contact.module.css`
-- **Footer**: Update content in `app/components/Footer/Footer.tsx` and styles in `app/components/Footer/Footer.module.css`
-- **Navigation**: Update navigation logic in `app/page.tsx` and styles in `app/page.module.css`
-- **Global Styles**: Modify global styles and CSS variables in `app/globals.css`
+- **Hero:** `app/features/home/Hero/`
+- **About:** `app/features/about/About/`
+- **Footer:** `app/features/shared/Footer/`
+- **Contact / form:** `app/features/shared/Contact/`, `app/features/shared/ContactForm/`
+- **Navigation / layout:** `app/features/shared/AppLayout/`
+- **Design system components:** `app/components/design-system/`
+- **Global styles and tokens:** `app/globals.css`; design values in Figma → `app/tokens/` → `npm run build-tokens`
 
-## Technologies
+Resume is offered as a PDF download link (e.g. in About); place the file in `public/` and link to it.
 
-- [Next.js](https://nextjs.org) - React framework with static export
-- React - UI library
-- TypeScript - Type safety
-- CSS Modules - Component-scoped styles
+## Tech stack
+
+- [Next.js](https://nextjs.org) — React framework with static export
+- React 18, TypeScript
+- CSS Modules + design tokens (`app/tokens.css`, `app/globals.css`)
+- Storybook — component development and a11y checks
 
 ## License
 
-Private project - All rights reserved
+Private project — All rights reserved.

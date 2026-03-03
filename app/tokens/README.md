@@ -1,185 +1,128 @@
-# Automated Figma → CSS Workflow Setup
+# Automated Figma → CSS Workflow
 
-## 🎯 The Complete Workflow
+## The workflow
 
-```
-1. Design in Figma → Update your design tokens
-2. Export from Figma → Light Mode.tokens.json + Dark Mode.tokens.json
-3. Drop in /tokens → Replace old exports
-4. Run: npm run build-tokens → Automated transformation
-5. Done! → Updated CSS ready to use
-```
+1. Design in Figma and update your design tokens.
+2. Export from Figma: **Core**, **Light Mode**, and **Dark Mode** (see below).
+3. Place the JSON files in **`app/tokens/`** (this folder).
+4. From the **project root**, run: `npm run build-tokens`
+5. Generated CSS is written to **`app/tokens.css`**.
 
-**One command. Every time. Forever.** ✨
+**One command from project root. Every time.** ✨
 
-## 📦 Initial Setup (5 minutes)
+## Initial setup
 
-### Step 1: Install Dependencies
+### 1. Install dependencies
 
-In your project root:
+From the **project root**:
 
 ```bash
-# Install npm packages if you haven't already
 npm install
 ```
 
-### Step 2: Add Files to Your Project
+(The root `package.json` has the `build-tokens` script; this folder has an optional `package.json` for the watcher.)
 
-Copy these files from what I created:
+### 2. Token files in this folder
 
-```
-your-project/
-└── tokens/                      ← Create this folder
-    ├── build-tokens.js          ← The transformation script
-    ├── package.json             ← Add the packages
-    ├── Light_Mode_tokens.json   ← Your Figma exports go here
-    └── Dark_Mode_tokens.json
-```
+The build script expects these files in **`app/tokens/`**:
 
+| File | Description |
+|------|-------------|
+| `Core.tokens.json` | Core/primitives (colors, spacing, etc.) |
+| `Light Mode.tokens.json` | Light mode semantic tokens |
+| `Dark Mode.tokens.json` | Dark mode semantic tokens |
 
-### Step 3: Test It!
+Figma export filenames must match exactly (including spaces). Place your Figma exports here.
+
+### 3. Run the build
+
+From the **project root**:
 
 ```bash
-# Export from Figma first (see below)
-# Then run:
 npm run build-tokens
 ```
 
-You should see:
+You should see something like:
+
 ```
 🎨 Building design tokens from Figma exports...
 📖 Reading token files...
 🔄 Transforming Figma format to CSS...
-✅ Successfully generated ../tokens.css
+✅ Successfully generated ./app/tokens.css
 ```
 
-## 📤 Exporting from Figma
+## Exporting from Figma
 
-### Every Time You Make Changes:
+1. Open the **Variables** panel in Figma (⌥⌘K / Ctrl+Alt+K).
+2. Right‑click your **Design Tokens** (or equivalent) collection.
+3. Export **modes** so you get Core (if used) plus Light and Dark mode JSON.
+4. Save/name the files to match: `Core.tokens.json`, `Light Mode.tokens.json`, `Dark Mode.tokens.json`.
+5. Put them in `app/tokens/` and run `npm run build-tokens` from the project root.
 
-1. **Open Variables panel** in Figma (⌥⌘K / Ctrl+Alt+K)
-2. **Right click** on your **Design Tokens** collection
-3. **Select "Export modes"**
+## Using the generated CSS
 
-## 🔄 Using the Generated CSS
-
-### Import in Your Main/Global CSS
+The app already imports tokens in **`app/globals.css`**:
 
 ```css
-/* src/styles/main.css */
 @import './tokens.css';
+```
 
-/* Now use the variables */
+Use the variables anywhere:
+
+```css
 body {
   background: var(--surface-primary);
   color: var(--text-primary);
 }
-
-.button {
-  background: var(--action-primary-default);
-  border-radius: var(--radius-button);
-}
-
-.button:hover {
-  background: var(--action-primary-hover);
-}
 ```
 
-### Dark Mode Just Works!
+### Dark mode
 
-The same variables automatically switch in dark mode:
+Tokens switch by theme. The app sets:
 
-```javascript
-// Toggle dark mode
-document.documentElement.setAttribute('data-theme', 'dark');
-
-// Toggle back to light
-document.documentElement.setAttribute('data-theme', 'light');
+```html
+<html data-theme="dark">
 ```
 
-## 🚀 Advanced: Auto-Rebuild on Export
+Same variable names; `app/tokens.css` defines both `:root` and `[data-theme='dark']`.
 
-### Run the watcher:
+## Optional: auto-rebuild on file change
+
+From **`app/tokens/`**, you can run:
 
 ```bash
 npm run watch-tokens
 ```
 
-Now leave this running in a terminal. Whenever you:
-1. Export new tokens from Figma
-2. Save to the `tokens/` folder
-3. CSS auto-regenerates!
+(Requires `npm install` in `app/tokens/` for nodemon.) This watches JSON files in this folder and runs the build from the project root when they change. If you prefer, just run `npm run build-tokens` from the project root after each Figma export.
 
-You'll see:
-```
-[nodemon] restarting due to changes...
-🎨 Building design tokens from Figma exports...
-✅ Successfully generated ../tokens.css
-```
+## Generated output
 
-## 🎨 The Generated Output
+**`app/tokens.css`** contains:
 
-### tokens.css looks like:
+- **Core** — base values (e.g. `--color-neutral-500`).
+- **`:root`** — light mode semantic tokens (e.g. `--surface-primary`, `--text-primary`).
+- **`[data-theme='dark']`** — dark mode overrides.
 
-```css
-/**
- * Design Tokens
- * Generated from Figma Variables export
- * 
- * DO NOT EDIT MANUALLY
- */
+The script resolves Figma aliases to `var(--...)` so semantic tokens stay linked to core tokens.
 
-/* LIGHT MODE (Default) */
-:root {
-  /* Surface colors (backgrounds) */
-  --surface-primary: #F5F5F5;
-  --surface-secondary: #E8E8E8;
-  
-  /* Text colors */
-  --text-primary: #2C2A42;
-  --text-inverse: #F5F5F5;
-  
-  /* Interactive elements */
-  --action-primary-default: #3A5E4B;
-  --action-primary-hover: #49755D;
-  
-  /* ... all your tokens organized by category ... */
-}
+## Troubleshooting
 
-/* DARK MODE */
-[data-theme='dark'] {
-  /* Colors automatically adjust */
-  --surface-primary: #2C2A42;
-  --text-primary: #F5F5F5;
-  --action-primary-default: #A47756;
-  /* ... */
-}
-```
+### "Core.tokens.json not found" (or Light/Dark)
 
-
-
-## 🐛 Troubleshooting
-
-### "Cannot find module"
-Make sure `build-tokens.js` is in your project root where you run the command.
-
-### "tokens/Light_Mode_tokens.json not found"
-- Create a `tokens/` folder in your project
-- Export from Figma and save there
+- Run **`npm run build-tokens` from the project root**, not from `app/tokens/`.
+- Ensure the JSON files are in **`app/tokens/`** with exact names: `Core.tokens.json`, `Light Mode.tokens.json`, `Dark Mode.tokens.json`.
 
 ### Generated CSS is empty
-- Make sure you exported from the **Design Token** collection, not only Primitives
-- Check that the JSON files aren't empty
+
+- Export the full token collection from Figma (not only primitives).
+- Check that the JSON files are valid and not empty.
 
 ### Colors look wrong
-- Verify you selected the correct mode (Light vs Dark)
-- Check that your Figma tokens are connected to primitives
+
+- Confirm you exported the correct mode (Light vs Dark) into the right file.
+- In Figma, check that semantic tokens are linked to the intended primitives.
 
 ### Dimensions missing units
-The script automatically adds `px` to:
-- Any variable with "radius" in the name
-- Any variable with "max-width" in the name
-- Any variable with "size" in the name
 
-If you need different units, edit the script's `addUnits` logic.
-
+The script adds `px` for variables whose names contain "radius", "max-width", or "size". For other units, adjust the script’s unit logic.

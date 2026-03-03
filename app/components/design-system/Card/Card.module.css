@@ -3,16 +3,15 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--surface-primary);
+  background: var(--surface-elevated);
   border-radius: var(--radius-card);
   overflow: hidden;
-  border: var(--border-width-xs) solid var(--border-default);
-  box-shadow: 0 2px 8px var(--shadow-subtle);
+  border: var(--border-width-xs) solid var(--border-subtle);
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px var(--shadow-medium);
+  box-shadow: 0 4px 16px var(--shadow-subtle);
 }
 
 /* When card is a link, remove default link styling from the container */
@@ -21,7 +20,7 @@ a.card {
   color: inherit;
 }
 
-/* Full-bleed image to card edges */
+/* Full-bleed image to card edges (stacked on mobile) */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -35,7 +34,7 @@ a.card {
   object-position: center;
 }
 
-/* Content below image */
+/* Content below image (or beside image on large screens) */
 .content {
   display: flex;
   flex-direction: column;
@@ -44,17 +43,44 @@ a.card {
   flex: 1;
 }
 
+/* Large screens: image on the left (~one third), content on the right, centered when card is tall */
+@media (min-width: 768px) {
+  .card:has(.imageWrapper) {
+    flex-direction: row;
+  }
+
+  .card:has(.imageWrapper) .imageWrapper {
+    width: 33.33%;
+    aspect-ratio: unset;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  .card:has(.imageWrapper) .content {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+}
+
 .heading {
   margin: 0;
-  font-size: var(--typography-size-base);
+  font-size: var(--typography-size-lg);
   font-weight: var(--typography-weight-bold);
   line-height: var(--typography-line-height-tight);
   color: var(--text-primary);
 }
 
+.metaTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
 .subtitle {
   margin: 0;
-  font-size: var(--typography-size-xs);
+  font-size: var(--typography-size-sm);
   color: var(--text-secondary);
   line-height: var(--typography-line-height-normal);
 }

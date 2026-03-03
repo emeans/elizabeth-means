@@ -30,7 +30,7 @@
 }
 
 .formGroup {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 .formGroup label {
@@ -93,10 +93,4 @@
 .formGroup textarea {
   resize: vertical;
   min-height: 120px;
-}
-
-@media (max-width: 768px) {
-  .contactForm {
-    padding: var(--spacing-lg);
-  }
 }

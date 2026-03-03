@@ -1,0 +1,80 @@
+@import '../../../tokens.css';
+
+/* Full-width band from nav down through heading + metadata; pull up to cover section top padding */
+.banner {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: calc(-1 * var(--spacing-2xl));
+  background-color: var(--surface-primary);
+  padding-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+
+}
+
+.imageWrapper {
+  margin-bottom: var(--spacing-lg);
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  max-width: var(--max-width-prose);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.metadataStrip {
+  margin-top: 0;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background-color: var(--surface-secondary);
+}
+
+.metadataStripInner {
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.metadataTags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    max-height: 50vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image {
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    max-width: none;
+  }
+
+  .heading {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+}

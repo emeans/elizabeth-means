@@ -4,9 +4,9 @@ This directory uses a three-layer styling approach: design tokens, application g
 
 ## 1. Design tokens — `tokens.css`
 
-**`tokens.css`** is **directly exported from Figma**. Do not edit it by hand.
+**`tokens.css`** (in this directory) is **generated from Figma exports**. Do not edit it by hand.
 
-- **Source:** Figma Variables → export JSON → `app/tokens/` → run `npm run build-tokens` (see `app/tokens/README.md`).
+- **Source:** Figma Variables → export JSON into `app/tokens/` → run `npm run build-tokens` from project root (see `app/tokens/README.md`).
 - **Contents:** CSS custom properties for colors, spacing, typography, borders, shadows, and semantic tokens (e.g. `--surface-primary`, `--text-primary`, `--action-primary-default`) for light and dark themes.
 - **Usage:** Other stylesheets reference these via `var(--token-name)` (e.g. `color: var(--text-primary)`).
 

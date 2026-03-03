@@ -1,16 +1,20 @@
 import Image from 'next/image'
 import Link from '@components/Link'
+import Tag from '@/components/design-system/Tag'
 import styles from './Card.module.css'
 
 /**
  * Card Component
  *
- * Displays an image (full bleed to edges), subtitle, and optional heading and action.
- * Use for case studies, project previews, and content cards.
+ * Displays an optional image (full bleed to edges), optional subtitle, and optional heading and action.
+ * Use for case studies, project previews, and content cards. When image is omitted, renders a text-only card.
  *
  * @example
  * // Minimal: image + subtitle
  * <Card image={{ src: '/work.jpg', alt: 'Project' }} subtitle="2024 · Product" />
+ *
+ * // Text-only (e.g. lab index)
+ * <Card heading="Design System" href="/lab/design-system" />
  *
  * // With heading and button
  * <Card
@@ -29,11 +33,13 @@ export interface CardImageProps {
 }
 
 export interface CardProps {
-  /** Image shown full bleed at the top of the card */
-  image: CardImageProps
-  /** Text shown under the image (required) */
-  subtitle: React.ReactNode
-  /** Optional heading above or with the subtitle */
+  /** Image shown full bleed at the top of the card (optional; omit for text-only cards) */
+  image?: CardImageProps
+  /** Text shown under the image or as secondary text */
+  subtitle?: React.ReactNode
+  /** Optional metadata shown as tags (same as lab entry headers: Type, Last Updated, etc.) */
+  metaItems?: { label: string; value: string }[]
+  /** Optional heading */
   heading?: React.ReactNode
   /** Optional button or link in the bottom right (e.g. <Button> or <Link variant="cta">) */
   action?: React.ReactNode
@@ -45,6 +51,7 @@ export interface CardProps {
 export default function Card({
   image,
   subtitle,
+  metaItems,
   heading,
   action,
   className,
@@ -52,19 +59,30 @@ export default function Card({
 }: CardProps) {
   const content = (
     <>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-          className={styles.image}
-          priority={image.priority}
-        />
-      </div>
+      {image != null && (
+        <div className={styles.imageWrapper}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            className={styles.image}
+            priority={image.priority}
+          />
+        </div>
+      )}
       <div className={styles.content}>
         {heading != null && <h3 className={styles.heading}>{heading}</h3>}
-        <p className={styles.subtitle}>{subtitle}</p>
+        {metaItems != null && metaItems.length > 0 && (
+          <div className={styles.metaTags}>
+            {metaItems.map(({ label, value }) => (
+              <Tag key={label} variant="secondary" label={label}>
+                {value}
+              </Tag>
+            ))}
+          </div>
+        )}
+        {subtitle != null && <p className={styles.subtitle}>{subtitle}</p>}
         {action != null && <div className={styles.action}>{action}</div>}
       </div>
     </>
@@ -76,7 +94,12 @@ export default function Card({
     const isExternal =
       href.startsWith('http://') || href.startsWith('https://')
     return (
-      <Link href={href} className={cardClassName} external={isExternal}>
+      <Link
+        href={href}
+        className={cardClassName}
+        variant="nav"
+        external={isExternal}
+      >
         {content}
       </Link>
     )

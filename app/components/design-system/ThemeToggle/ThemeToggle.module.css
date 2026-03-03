@@ -1,154 +1,107 @@
 @import '../../../tokens.css';
 
 /* ========================================
-   THEME TOGGLE
-   Button for switching themes
+   THEME TOGGLE – SLIDE SWITCH
+   Track with sliding thumb; thumb shows sun (light) or moon (dark)
    ======================================== */
 
 .themeToggle {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  min-width: 80px;
-  height: 40px;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: var(--surface-primary);
-  border: var(--border-width-xs) solid var(--border-default);
-  border-radius: var(--radius-button);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: var(--typography-weight-normal);
-  color: var(--text-primary);
-  line-height: 1;
+  gap: var(--spacing-sm);
+  padding: 8px 0;
+  min-height: 44px;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: var(--transition);
+  color: var(--text-primary);
+  transition: color 0.2s ease;
 }
 
 .themeToggle:hover {
-  background: var(--action-primary-hover);
-  border-color: var(--action-primary-hover);
-  color: var(--text-inverse);
-  transform: scale(1.05);
+  color: var(--action-primary-hover);
 }
 
 .themeToggle:focus-visible {
-  outline: var(--action-focus-outline) solid var(--action-primary-hover);
+  outline: var(--action-focus-outline) solid var(--action-primary-default);
   outline-offset: var(--action-focus-outline-offset);
+  border-radius: var(--radius-focus);
 }
 
-.themeToggle:active {
-  transform: scale(0.95);
+.themeToggle:active .thumb {
+  transform: translateX(0) scale(0.96);
 }
 
-/* ========================================
-   ICON
-   Theme indicator icon
-   ======================================== */
+.themeToggle[data-theme='dark']:active .thumb {
+  transform: translateX(26px) scale(0.96);
+}
 
-.icon {
-  display: inline-flex;
+/* Track (pill background) */
+.track {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+  background: var(--surface-secondary);
+  border: var(--border-width-xs) solid var(--border-default);
+  border-radius: 9999px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.themeToggle:hover .track {
+  background: var(--surface-elevated);
+  border-color: var(--border-default);
+}
+
+/* Thumb (sliding circle with icon) */
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  line-height: 1;
-  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0);
 }
 
-/* ========================================
-   LABEL
-   Text label (e.g., "Dark" or "Light")
-   ======================================== */
+.themeToggle[data-theme='dark'] .thumb {
+  transform: translateX(26px);
+}
 
+/* Material icon inside thumb */
+.icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Optional label (e.g. mobile menu) */
 .label {
-  font-size: 0.875rem;
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
   font-weight: var(--typography-weight-normal);
   white-space: nowrap;
 }
 
 /* ========================================
-   ICON-ONLY MODE
-   When showLabel is false
+   DARK MODE – track/thumb visibility
    ======================================== */
 
-.themeToggle:not(:has(.label)) {
-  min-width: 40px;
-  padding: var(--spacing-xs);
+[data-theme='dark'] .thumb {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================================
-   RESPONSIVE
-   Mobile adjustments
+   REDUCED MOTION
    ======================================== */
-
-@media (max-width: 768px) {
-  .themeToggle {
-    width: 100%;
-    min-width: unset;
-    justify-content: flex-start;
-    padding: var(--spacing-sm) var(--spacing-md);
-    margin-top: var(--spacing-sm);
-  }
-  
-  .icon {
-    font-size: 1.125rem;
-  }
-  
-  .label {
-    display: inline;
-  }
-}
-
-@media (min-width: 769px) {
-  /* Optional: hide label on desktop, show icon only */
-  /* Uncomment if you prefer icon-only on desktop */
-  /* 
-  .label {
-    display: none;
-  }
-  
-  .themeToggle {
-    min-width: 40px;
-    padding: var(--spacing-xs);
-  }
-  */
-}
-
-/* ========================================
-   ACCESSIBILITY
-   High contrast and reduced motion
-   ======================================== */
-
-@media (prefers-contrast: high) {
-  .themeToggle {
-    border-width: var(--border-width-sm);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
-  .themeToggle {
+  .thumb {
     transition: none;
   }
-  
-  .themeToggle:hover,
-  .themeToggle:active {
-    transform: none;
-  }
-}
-
-/* ========================================
-   DARK MODE
-   Ensure visibility in dark theme
-   ======================================== */
-
-[data-theme='dark'] .themeToggle {
-  background: var(--surface-primary);
-  border-color: var(--border-default);
-  color: var(--text-primary);
-}
-
-[data-theme='dark'] .themeToggle:hover {
-  background: var(--action-primary-hover);
-  border-color: var(--action-primary-hover);
-  color: var(--text-inverse);
 }

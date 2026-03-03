@@ -5,10 +5,9 @@ import Link from '../Link/Link';
 import ThemeToggle from './ThemeToggle';
 
 /**
- * ThemeToggle switches between light and dark themes.
- *
- * - Icon and label reflect current theme
- * - Use in nav or mobile menu; parent controls theme state
+ * ThemeToggle is a slide switch for light/dark themes.
+ * Thumb shows Material icon: sun (light mode), moon (dark mode).
+ * Parent provides theme and onToggle.
  */
 const meta = {
   title: 'Components/ThemeToggle',

@@ -138,6 +138,7 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
 }
 
 /* ========================================
@@ -199,7 +200,7 @@
 [data-theme='dark'] {
   --surface-primary: var(--color-raven-800);
   --surface-secondary: var(--color-raven-700);
-  --surface-elevated: var(--color-raven-500);
+  --surface-elevated: var(--color-raven-600);
   --surface-success: var(--color-success-900);
   --surface-warning: var(--color-warning-900);
   --surface-error: var(--color-error-900);

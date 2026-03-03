@@ -1,4 +1,8 @@
 import type { Metadata } from 'next'
+import PageHeader from '@/components/design-system/PageHeader'
+import Card from '@/components/design-system/Card'
+import NoiseTexture from '@/components/design-system/NoiseTexture/NoiseTexture'
+import { labEntries } from '@/features/lab/labEntries'
 
 export const metadata: Metadata = {
   title: 'Lab | Elizabeth Means',
@@ -7,15 +11,34 @@ export const metadata: Metadata = {
 
 export default function LabPage() {
   return (
-    <section className='section'>
-      <div className='container'>
-        <div className='section-content'>
-          <h2>Lab</h2>
-          <p>
-            The lab is living work — my workshop, not my gallery. Some things here are formed, some
-            half-formed, all of it built in public and actively growing.
-          </p>
-        </div>
+    <section className="section">
+      <NoiseTexture opacity={0.4} />
+      <div className="container">
+        <PageHeader
+          variant="standard"
+          title="Lab"
+          description="The lab is living work — my workshop, not my gallery. Some things here are formed, some half-formed, all of it built in public and actively growing."
+        />
+        <ul className="cardList" aria-label="Lab projects">
+          {labEntries.map((entry) => (
+            <li key={entry.href}>
+              <Card
+                image={
+                  entry.image != null && entry.image !== ''
+                    ? { src: entry.image, alt: entry.alt ?? entry.title }
+                    : undefined
+                }
+                heading={entry.title}
+                subtitle={entry.subtitle}
+                metaItems={[
+                  { label: 'Type', value: entry.type },
+                  { label: 'Last Updated', value: entry.lastUpdated },
+                ]}
+                href={entry.href}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

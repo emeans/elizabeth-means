@@ -57,6 +57,16 @@
   width: 100%;
 }
 
+/* Active nav link (current page). Specificity must beat .nav:visited */
+.link.nav.navActive,
+.link.nav.navActive:visited {
+  color: var(--action-primary-default);
+}
+
+.link.nav.navActive::after {
+  width: 100%;
+}
+
 .nav:focus-visible {
   color: var(--action-primary-hover);
   outline: var(--action-focus-outline) solid var(--action-primary-hover);
@@ -223,6 +233,12 @@
 
 [data-theme='dark'] .nav:visited {
   color: var(--text-primary);
+}
+
+/* Active nav link stays active in dark mode (beat :visited) */
+[data-theme='dark'] .link.nav.navActive,
+[data-theme='dark'] .link.nav.navActive:visited {
+  color: var(--action-primary-default);
 }
 
 /* Hover/focus must win over :visited (higher specificity so it wins in all themes) */

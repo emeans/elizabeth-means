@@ -1,0 +1,280 @@
+@import '../../../tokens.css';
+
+/* Same card base as Timeline (vertical flow) */
+.flowDiagram {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--surface-primary);
+  border: var(--border-width-xs) solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+}
+
+@media (min-width: 600px) {
+  .flowDiagram {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Horizontal layout: no outer card, breakout-friendly */
+.flowDiagramHorizontal {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.flowTitleWrapper {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Anchored band for title + intro (width of flow diagram only) */
+.flowDiagramHorizontal .flowTitleWrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  background: var(--surface-secondary);
+  border-radius: var(--radius-card);
+  border: var(--border-width-xs) solid var(--border-subtle);
+}
+
+.flowTitle {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-family: var(--font-heading);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+.flowDiagramHorizontal .flowIntro {
+  text-align: center;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flowTitleWrapper .flowTitle:last-child {
+  margin-bottom: 0;
+}
+
+.flowIntro {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--typography-size-sm);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* Arrow between steps — points to next entry */
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  color: var(--border-default);
+  gap: var(--spacing-xs);
+}
+
+.arrowGraphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowGraphic svg {
+  width: 24px;
+  height: 28px;
+}
+
+.arrowLabel {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 20em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+  text-align: left;
+}
+
+/* Small value (step label) — same treatment as Timeline */
+.value {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-primary);
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--typography-size-sm);
+  font-weight: var(--typography-weight-normal);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}
+
+/* Hairline separator above sections */
+.hairline {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: var(--spacing-md) 0;
+  width: 100%;
+}
+
+/* Sections (title + values as tags or text) */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.sectionTitle {
+  font-family: var(--font-metadata);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.sectionText {
+  font-family: var(--font-body);
+  font-size: var(--typography-size-sm);
+  line-height: var(--typography-line-height-normal);
+  color: var(--text-secondary);
+}
+
+
+/* Horizontal (carded) layout — stacks vertically on small screens */
+.listHorizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+@media (min-width: 600px) {
+  .listHorizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.itemHorizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .itemHorizontal {
+    flex-direction: row;
+    flex: 1 1 0;
+    min-width: 200px;
+    max-width: 360px;
+  }
+}
+
+.itemHorizontal .content {
+  flex: 1;
+  padding: var(--spacing-md);
+  background: var(--surface-secondary);
+  border: var(--border-width-xs) solid var(--border-subtle);
+  border-inline-start: var(--border-width-sm) solid var(--action-primary-hover);
+  border-radius: var(--radius-card);
+  min-width: 0;
+}
+
+.arrowHorizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+  flex-shrink: 0;
+  color: var(--border-default);
+}
+
+/* Arrow points down when stacked (small screens); same graphic as vertical flow */
+.arrowHorizontal .arrowGraphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowHorizontal .arrowGraphic svg {
+  width: 24px;
+  height: 28px;
+}
+
+@media (min-width: 600px) {
+  .arrowHorizontal {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Rotate to point right in horizontal row */
+  .arrowHorizontal .arrowGraphic svg {
+    transform: rotate(-90deg);
+  }
+}

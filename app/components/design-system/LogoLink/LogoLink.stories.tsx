@@ -51,7 +51,7 @@ export const CustomText: Story = {
 /** With logo image alongside text. */
 export const WithLogo: Story = {
   args: {
-    logo: 'https://via.placeholder.com/40x40?text=Logo',
+    logo: 'images/placeholder/yael-upside-down.jpg',
     logoAlt: 'Site logo',
     children: 'Elizabeth Means',
     href: '#home',
@@ -61,7 +61,7 @@ export const WithLogo: Story = {
 /** Logo only, no text (compact). */
 export const LogoOnly: Story = {
   args: {
-    logo: 'https://via.placeholder.com/40x40?text=EM',
+    logo: 'images/placeholder/yael-upside-down.jpg',
     logoAlt: 'Elizabeth Means',
     hideText: true,
     href: '#home',

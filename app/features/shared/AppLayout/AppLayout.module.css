@@ -124,3 +124,17 @@
     margin-top: 44px;
   }
 }
+
+
+.firstName {
+  font-weight: 700;
+}
+
+.lastName {
+  font-weight: 400;
+} 
+
+.period {
+  font-size: var(--typography-size-xl);
+  color: var(--action-primary-default);
+}
