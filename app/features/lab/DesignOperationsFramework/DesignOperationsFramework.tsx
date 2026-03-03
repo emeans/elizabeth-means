@@ -1,5 +1,5 @@
-import DelegationFramework from '@components/patterns/DelegationFramework'
-import FlowDiagram from '@components/patterns/FlowDiagram'
+import Flow from '@components/patterns/Flow'
+import RangeChart from '@components/patterns/RangeChart'
 import PageHeader from '@components/layout-structure/PageHeader'
 import Link from '@components/navigation/Link'
 import { designOperationsFrameworkEntry, getEntryMetadata } from '@features/lab/labEntries'
@@ -39,7 +39,7 @@ export default function DesignOperationsFramework() {
         }
       />
       <section className='section-content content-entry'>
-        <FlowDiagram
+        <Flow
           title='How the Templates Connect'
           items={[
             {
@@ -87,7 +87,7 @@ export default function DesignOperationsFramework() {
           </p>
           <aside className='aside inline'>
             <div className='asideInner'>
-              <FlowDiagram
+              <Flow
                 title='Design Philosophy'
                 intro={
                   <>
@@ -228,7 +228,7 @@ export default function DesignOperationsFramework() {
           </p>
           <aside className='aside inline'>
             <div className='asideInner'>
-              <DelegationFramework
+              <RangeChart
                 title='Autonomy by Role'
                 intro='Built so I could calibrate my involvement to whoever joined the team, at whatever level they arrived.'
                 levels={[

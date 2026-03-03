@@ -1,8 +1,8 @@
 import Tag from '@components/primitives/Tag'
-import styles from './FlowDiagram.module.css'
+import styles from './Flow.module.css'
 
 /** Section below the hairline: a title plus values shown as tags or plain text */
-export interface FlowDiagramSection {
+export interface FlowSection {
   /** Section label (e.g. "KEY OUTPUT(S)", "LED BY") */
   title: string
   /** Values to display */
@@ -11,7 +11,7 @@ export interface FlowDiagramSection {
   displayAs: 'tags' | 'text'
 }
 
-export interface FlowDiagramItem {
+export interface FlowItem {
   /** Short label (e.g. step number, phase name) — shown smaller above the title */
   value: React.ReactNode
   /** Main title for the step */
@@ -21,15 +21,15 @@ export interface FlowDiagramItem {
   /** Optional label on the arrow to the next step (what changes between this step and the next) */
   arrowLabel?: React.ReactNode
   /** Optional sections below a hairline: title + values as tags or text */
-  sections?: FlowDiagramSection[]
+  sections?: FlowSection[]
 }
 
-export interface FlowDiagramProps {
+export interface FlowProps {
   /** Optional title shown above the flow (e.g. overline style) */
   title?: React.ReactNode
   /** Optional intro/statement below the title */
   intro?: React.ReactNode
-  items: FlowDiagramItem[]
+  items: FlowItem[]
   /** Vertical (stacked) or horizontal (carded row) */
   layout?: 'vertical' | 'horizontal'
   className?: string
@@ -92,7 +92,7 @@ function FlowCardContent({
   item,
   showSections,
 }: {
-  item: FlowDiagramItem
+  item: FlowItem
   showSections: boolean
 }) {
   const hasSections = showSections && item.sections != null && item.sections.length > 0
@@ -141,13 +141,13 @@ function FlowCardContent({
  * support title + values as tags or plain text.
  *
  * @example
- * <FlowDiagram items={[
+ * <Flow items={[
  *   { value: 'Step 1', title: 'Discovery', description: 'Research and requirements.' },
  *   { value: 'Step 2', title: 'Design', description: 'Wireframes and prototypes.' },
  * ]} />
  *
  * @example Carded flow with sections
- * <FlowDiagram
+ * <Flow
  *   title="DESIGN PHILOSOPHY"
  *   intro="Poor information architecture can't be fixed with good visual design."
  *   layout="horizontal"
@@ -160,13 +160,13 @@ function FlowCardContent({
  *   ]}
  * />
  */
-export default function FlowDiagram({
+export default function Flow({
   title,
   intro,
   items,
   layout = 'vertical',
   className,
-}: FlowDiagramProps) {
+}: FlowProps) {
   if (items.length === 0) return null
 
   const isHorizontal = layout === 'horizontal'
@@ -175,8 +175,8 @@ export default function FlowDiagram({
   return (
     <div
       className={[
-        styles.flowDiagram,
-        isHorizontal ? styles.flowDiagramHorizontal : '',
+        styles.flow,
+        isHorizontal ? styles.flowHorizontal : '',
         className,
       ]
         .filter(Boolean)

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import DelegationFramework from './DelegationFramework'
-import type { DelegationLevel, DelegationRole, LegendItem } from './DelegationFramework'
+import RangeChart from './RangeChart'
+import type { DelegationLevel, DelegationRole, LegendItem } from './RangeChart'
 
 const meta = {
-  title: 'Patterns/DelegationFramework',
-  component: DelegationFramework,
+  title: 'Patterns/RangeChart',
+  component: RangeChart,
   parameters: {
     layout: 'padded',
     docs: {
@@ -14,7 +14,7 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DelegationFramework>
+} satisfies Meta<typeof RangeChart>
 
 export default meta
 

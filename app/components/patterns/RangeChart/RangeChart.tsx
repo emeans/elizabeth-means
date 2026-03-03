@@ -1,4 +1,4 @@
-import styles from './DelegationFramework.module.css'
+import styles from './RangeChart.module.css'
 
 /** Meaning of each circle on the progression track */
 export type IndicatorVariant = 'start' | 'growth' | 'ownership' | 'outside'
@@ -24,7 +24,7 @@ export interface LegendItem {
   label: string
 }
 
-export interface DelegationFrameworkProps {
+export interface RangeChartProps {
   /** Overline/title, e.g. "DELEGATION FRAMEWORK" */
   title: string
   /** Intro paragraph below the title */
@@ -60,20 +60,20 @@ function getTrackSegment(indicators: IndicatorVariant[]) {
 }
 
 /**
- * Delegation framework matrix: title + intro on an anchored band, level headers,
+ * Range chart matrix: title + intro on an anchored band, level headers,
  * role rows with progression tracks (circle indicators), and a legend.
  */
-export default function DelegationFramework({
+export default function RangeChart({
   title,
   intro,
   levels,
   roles,
   legend,
   className,
-}: DelegationFrameworkProps) {
+}: RangeChartProps) {
   return (
     <section
-      className={[styles.framework, className].filter(Boolean).join(' ')}
+      className={[styles.chart, className].filter(Boolean).join(' ')}
     >
       <header className={styles.header}>
         <div className={styles.title}>{title}</div>
