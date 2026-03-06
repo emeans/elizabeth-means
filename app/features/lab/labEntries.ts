@@ -38,9 +38,9 @@ export const designOperationsFrameworkEntry: LabEntry = {
   alt: 'Design Operations Framework',
   title: 'Design Operations Framework',
   subtitle:
-    'The process infrastructure I built to take a design practice from solo to collaborative: templates, standards, and a delegation framework.',
+    'The defaults I built to take a design practice from solo to collaborative: templates, standards, and a framework for knowing who owns what.',
   type: 'Design Operations',
-  lastUpdated: 'November 2025',
+  lastUpdated: 'March 2026',
   extraMetadata: [
     { label: 'Intended for', value: 'Design teams scaling from solo to collaborative' },
   ],
