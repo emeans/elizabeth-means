@@ -247,8 +247,8 @@ export default function DesignOperationsFramework() {
 
         <section>
           <p>
-            The templates don't work alone. Three additional systems support how the team operates,
-            communicates, and scales
+            The templates don't work alone. Six additional systems support how the team operates,
+            communicates, and scales.
           </p>
         </section>
 
