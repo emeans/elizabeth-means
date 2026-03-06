@@ -1,6 +1,5 @@
 import Link from '@components/navigation/Link'
 import MetricsCard from '@components/content-media/MetricsCard'
-import ContentImage from '@components/content-media/ContentImage'
 import Timeline from '@components/patterns/Timeline'
 export default function LearningToListen() {
   return (
@@ -95,12 +94,6 @@ export default function LearningToListen() {
         release cycles that plagued legacy systems. This design thinking became one of our key
         competitive differentiators.
       </p>
-      <ContentImage
-        src='/images/wic-case-study/wic-admin-food-package-configuration.png'
-        alt='WIC Admin Food Package Configuration'
-        caption='WIC Admin Food Package Configuration'
-        expandable
-      />
     </section>
   )
 }

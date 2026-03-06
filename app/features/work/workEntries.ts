@@ -13,7 +13,7 @@ export interface WorkEntry {
 
 export const wicCaseStudyEntry: WorkEntry = {
   href: '/work/wic-product-case-study',
-  image: '/images/wic-case-study/nwa-conferences.png',
+  image: '/images/wic-case-study/2025-nwa-minneapolis.jpg',
   alt: 'Attended 5 National WIC Association Conferences',
   title: 'Building the Playbook While Running the Play',
   subtitle: 'A 0-to-1 product built for a regulated industry: two years of discovery, design, and delivery on a WIC management information system, from research to national conference demonstrations.',
