@@ -1,6 +1,5 @@
 import Link from '@components/navigation/Link'
 import MetricsCard from '@components/content-media/MetricsCard'
-import ContentImage from '@components/content-media/ContentImage'
 import Timeline from '@components/patterns/Timeline'
 export default function LearningToListen() {
   return (
