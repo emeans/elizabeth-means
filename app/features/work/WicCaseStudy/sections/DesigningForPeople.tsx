@@ -12,12 +12,6 @@ export default function DesigningForPeople() {
         system, representing a shift from administrative case management to genuine supportive
         engagement.
       </p>
-      {/* <ContentImage
-        src='/images/wic-case-study/wic-admin-participant-summary.png'
-        alt='WIC Admin Participant Summary'
-        caption='WIC Admin Participant Summary'
-        expandable
-      /> */}
       <p>
         I applied Jakob's usability heuristics{' '}
         <Link href='#ref-4' className='citation-ref'>
