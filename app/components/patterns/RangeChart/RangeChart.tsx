@@ -1,21 +1,18 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import styles from './RangeChart.module.css'
 
-/** Meaning of each circle on the progression track */
 export type IndicatorVariant = 'start' | 'growth' | 'ownership' | 'outside'
 
 export interface RangeChartLevel {
-  /** e.g. "LEVEL 1" */
   label: string
-  /** e.g. "Directed Execution" */
   name: string
 }
 
 export interface RangeChartRole {
-  /** Role title, e.g. "Product Designer" */
   title: string
-  /** Short description under the title */
   description: string
-  /** One indicator per level (same length as levels) */
   indicators: IndicatorVariant[]
 }
 
@@ -25,17 +22,14 @@ export interface LegendItem {
 }
 
 export interface RangeChartProps {
-  /** Overline/title, e.g. "Autonomy by Role" */
   title: string
-  /** Intro paragraph below the title */
   intro: React.ReactNode
-  /** Level column headers (e.g. LEVEL 1–5 and names) */
   levels: RangeChartLevel[]
-  /** Role rows (title, description, track indicators) */
   roles: RangeChartRole[]
-  /** Legend items explaining circle variants */
   legend: LegendItem[]
   className?: string
+  /** Opt in to staggered row + line draw + dot pop animation on scroll entry */
+  animate?: boolean
 }
 
 function LevelIndicator({ variant }: { variant: IndicatorVariant }) {
@@ -47,7 +41,6 @@ function LevelIndicator({ variant }: { variant: IndicatorVariant }) {
   )
 }
 
-/** Segment of track between the two circles only (center of start → center of ownership) */
 function getTrackSegment(indicators: IndicatorVariant[]) {
   const startIdx = indicators.findIndex((v) => v === 'start')
   const ownershipIdx = indicators.findIndex((v) => v === 'ownership')
@@ -59,10 +52,6 @@ function getTrackSegment(indicators: IndicatorVariant[]) {
   }
 }
 
-/**
- * Range chart matrix: title + intro on an anchored band, level headers,
- * role rows with progression tracks (circle indicators), and a legend.
- */
 export default function RangeChart({
   title,
   intro,
@@ -70,21 +59,55 @@ export default function RangeChart({
   roles,
   legend,
   className,
+  animate,
 }: RangeChartProps) {
+  const ref = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (!animate) return
+    const el = ref.current
+    if (!el) return
+
+    const prefersReduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+    if (prefersReduced) {
+      setIsVisible(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return
+        setIsVisible(true)
+        observer.disconnect()
+      },
+      { threshold: 0, rootMargin: '0px 0px -200px 0px' }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [animate])
+
   return (
     <section
-      className={[styles.chart, className].filter(Boolean).join(' ')}
+      ref={ref}
+      className={[
+        styles.chart,
+        animate ? styles.chartAnimate : undefined,
+        animate && isVisible ? styles.chartVisible : undefined,
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
     >
       <header className={styles.header}>
         <div className={styles.title}>{title}</div>
         <div className={styles.intro}>{intro}</div>
       </header>
 
-      <div
-        className={styles.matrix}
-        role="grid"
-        aria-label={title}
-      >
+      <div className={styles.matrix} role="grid" aria-label={title}>
         <div className={styles.levelsRow} role="row">
           <div className={styles.levelsSpacer} role="columnheader">
             <span className={styles.visuallyHidden}>Role</span>
@@ -104,6 +127,8 @@ export default function RangeChart({
               className={styles.roleRow}
               role="row"
               aria-label={`${role.title}: ${role.description}`}
+              // --i drives stagger delay for this row AND its children
+              style={{ '--i': ri } as React.CSSProperties}
             >
               <div className={styles.roleInfo} role="gridcell">
                 <div className={styles.roleTitle}>{role.title}</div>
@@ -116,7 +141,10 @@ export default function RangeChart({
                   return segment != null ? (
                     <div
                       className={styles.trackLineHighlight}
-                      style={{ left: `${segment.left}%`, width: `${segment.width}%` }}
+                      style={{
+                        left: `${segment.left}%`,
+                        width: `${segment.width}%`,
+                      }}
                       aria-hidden
                     />
                   ) : null

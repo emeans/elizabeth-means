@@ -309,6 +309,7 @@ export default function DesignOperationsFramework() {
                   { variant: 'ownership', label: 'Full ownership potential' },
                   { variant: 'outside', label: 'Outside typical scope' },
                 ]}
+                animate
               />
             </div>
           </aside>

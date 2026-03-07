@@ -418,3 +418,64 @@
     height: 14px;
   }
 }
+
+/* ========================================
+   ANIMATE
+   Row fades in → highlight line draws → dots pop
+   All driven by chartVisible on the root;
+   --i on each roleRow provides stagger timing.
+   ======================================== */
+
+/* Initial states — only applied when animate prop is present */
+.chartAnimate .roleRow {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.chartAnimate .trackLineHighlight {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.chartAnimate .indicator {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Row entrance — staggered by --i */
+.chartVisible .roleRow {
+  animation: rowIn 700ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * 200ms);
+}
+
+/* Line draws after its row has started appearing */
+.chartVisible .trackLineHighlight {
+  animation: lineGrow 800ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * 200ms + 250ms);
+}
+
+/* Dots pop in after the line has drawn */
+.chartVisible .indicator {
+  animation: dotPop 400ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * 200ms + 750ms);
+}
+
+@keyframes rowIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dotPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
