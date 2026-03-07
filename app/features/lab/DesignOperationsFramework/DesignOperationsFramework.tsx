@@ -67,6 +67,7 @@ export default function DesignOperationsFramework() {
                 'Captures everything engineering needs to build accurately, from user flows and conditional logic to validation rules, edge cases, accessibility requirements.',
             },
           ]}
+          animate
         />
       </section>
       <section className='section-content content-entry'>
@@ -153,6 +154,7 @@ export default function DesignOperationsFramework() {
                     ],
                   },
                 ]}
+                animate
               />
             </div>
           </aside>

@@ -278,3 +278,68 @@
     transform: rotate(-90deg);
   }
 }
+
+/* ========================================
+   ANIMATE
+   Vertical: items stagger down (fade + translateY)
+   Horizontal: cards stagger in from left (fade + translateX),
+   arrows fade in after their preceding card lands
+   ======================================== */
+
+/* --- Vertical --- */
+.flowAnimate:not(.flowHorizontal) .item {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.flowAnimate:not(.flowHorizontal) .arrow {
+  opacity: 0;
+}
+
+.flowVisible:not(.flowHorizontal) .item {
+  animation: flowItemIn var(--duration-slow, 600ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * var(--duration-base, 350ms));
+}
+
+.flowVisible:not(.flowHorizontal) .arrow {
+  animation: flowFadeIn 400ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * var(--duration-base, 350ms) + 300ms);
+}
+
+/* --- Horizontal --- */
+.flowAnimate.flowHorizontal .itemHorizontal .content {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+.flowAnimate.flowHorizontal .arrowHorizontal {
+  opacity: 0;
+}
+
+.flowVisible.flowHorizontal .itemHorizontal .content {
+  animation: flowCardIn 700ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(150ms + var(--i) * var(--duration-base, 350ms));
+}
+
+.flowVisible.flowHorizontal .arrowHorizontal {
+  animation: flowFadeIn 400ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(150ms + var(--i) * var(--duration-base, 350ms) + 400ms);
+}
+
+@keyframes flowItemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flowCardIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flowFadeIn {
+  to { opacity: 1; }
+}

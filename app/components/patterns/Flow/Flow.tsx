@@ -1,60 +1,39 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import Tag from '@components/primitives/Tag'
 import styles from './Flow.module.css'
 
-/** Section below the hairline: a title plus values shown as tags or plain text */
 export interface FlowSection {
-  /** Section label (e.g. "KEY OUTPUT(S)", "LED BY") */
   title: string
-  /** Values to display */
   values: string[]
-  /** Render values as pill-style tags or as plain text lines */
   displayAs: 'tags' | 'text'
 }
 
 export interface FlowItem {
-  /** Short label (e.g. step number, phase name) — shown smaller above the title */
   value: React.ReactNode
-  /** Main title for the step */
   title: React.ReactNode
-  /** Optional longer description */
   description?: React.ReactNode
-  /** Optional label on the arrow to the next step (what changes between this step and the next) */
   arrowLabel?: React.ReactNode
-  /** Optional sections below a hairline: title + values as tags or text */
   sections?: FlowSection[]
 }
 
 export interface FlowProps {
-  /** Optional title shown above the flow (e.g. overline style) */
   title?: React.ReactNode
-  /** Optional intro/statement below the title */
   intro?: React.ReactNode
   items: FlowItem[]
-  /** Vertical (stacked) or horizontal (carded row) */
   layout?: 'vertical' | 'horizontal'
   className?: string
+  /** Opt in to staggered entrance animation on scroll entry */
+  animate?: boolean
 }
 
-/** Arrow between flow steps (vertical, points down), with optional annotation */
 function FlowArrowVertical({ label }: { label?: React.ReactNode }) {
   return (
     <div className={styles.arrow}>
       <div className={styles.arrowGraphic} aria-hidden>
-        <svg
-          width="24"
-          height="28"
-          viewBox="0 0 24 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="presentation"
-        >
-          <path
-            d="M12 2v20M6 18l6 6 6-6"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+        <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+          <path d="M12 2v20M6 18l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
       {label != null && <div className={styles.arrowLabel}>{label}</div>}
@@ -62,47 +41,25 @@ function FlowArrowVertical({ label }: { label?: React.ReactNode }) {
   )
 }
 
-/** Same arrow as vertical flow, oriented for horizontal layout (points right on desktop, down when stacked) */
 function FlowArrowHorizontal() {
   return (
     <div className={styles.arrowHorizontal} aria-hidden>
       <div className={styles.arrowGraphic}>
-        <svg
-          width="24"
-          height="28"
-          viewBox="0 0 24 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="presentation"
-        >
-          <path
-            d="M12 2v20M6 18l6 6 6-6"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+        <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+          <path d="M12 2v20M6 18l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </div>
   )
 }
 
-function FlowCardContent({
-  item,
-  showSections,
-}: {
-  item: FlowItem
-  showSections: boolean
-}) {
+function FlowCardContent({ item, showSections }: { item: FlowItem; showSections: boolean }) {
   const hasSections = showSections && item.sections != null && item.sections.length > 0
   return (
     <>
       <div className={styles.value}>{item.value}</div>
       <div className={`${styles.title} text-body text-bold`}>{item.title}</div>
-      {item.description != null && (
-        <p className={styles.description}>{item.description}</p>
-      )}
+      {item.description != null && <p className={styles.description}>{item.description}</p>}
       {hasSections && (
         <>
           <hr className={styles.hairline} />
@@ -112,17 +69,11 @@ function FlowCardContent({
                 <div className={styles.sectionTitle}>{section.title}</div>
                 {section.displayAs === 'tags' ? (
                   <div className={styles.tags}>
-                    {section.values.map((v, vi) => (
-                      <Tag key={vi} variant="secondary">
-                        {v}
-                      </Tag>
-                    ))}
+                    {section.values.map((v, vi) => <Tag key={vi} variant="secondary">{v}</Tag>)}
                   </div>
                 ) : (
                   <div className={styles.sectionText}>
-                    {section.values.map((v, vi) => (
-                      <div key={vi}>{v}</div>
-                    ))}
+                    {section.values.map((v, vi) => <div key={vi}>{v}</div>)}
                   </div>
                 )}
               </div>
@@ -134,39 +85,34 @@ function FlowCardContent({
   )
 }
 
-/**
- * Flow diagram built on the same card base as Timeline. Shows a sequence of steps
- * with an arrow between each entry. Use layout="vertical" (default) for a stacked
- * flow, or layout="horizontal" for a carded row. Optional sections below a hairline
- * support title + values as tags or plain text.
- *
- * @example
- * <Flow items={[
- *   { value: 'Step 1', title: 'Discovery', description: 'Research and requirements.' },
- *   { value: 'Step 2', title: 'Design', description: 'Wireframes and prototypes.' },
- * ]} />
- *
- * @example Carded flow with sections
- * <Flow
- *   title="DESIGN PHILOSOPHY"
- *   intro="Poor information architecture can't be fixed with good visual design."
- *   layout="horizontal"
- *   items={[
- *     { value: 'PHASE 01', title: 'Discovery', description: '...',
- *       sections: [
- *         { title: 'KEY OUTPUT(S)', values: ['User Research Insights'], displayAs: 'tags' },
- *         { title: 'LED BY', values: ['Product Designer', 'UX Designer'], displayAs: 'text' },
- *       ] },
- *   ]}
- * />
- */
-export default function Flow({
-  title,
-  intro,
-  items,
-  layout = 'vertical',
-  className,
-}: FlowProps) {
+export default function Flow({ title, intro, items, layout = 'vertical', className, animate }: FlowProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (!animate) return
+    const el = ref.current
+    if (!el) return
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) {
+      setIsVisible(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return
+        setIsVisible(true)
+        observer.disconnect()
+      },
+      { threshold: 0, rootMargin: '0px 0px -35% 0px' }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [animate])
+
   if (items.length === 0) return null
 
   const isHorizontal = layout === 'horizontal'
@@ -174,9 +120,12 @@ export default function Flow({
 
   return (
     <div
+      ref={ref}
       className={[
         styles.flow,
         isHorizontal ? styles.flowHorizontal : '',
+        animate ? styles.flowAnimate : '',
+        animate && isVisible ? styles.flowVisible : '',
         className,
       ]
         .filter(Boolean)
@@ -188,21 +137,21 @@ export default function Flow({
           {intro != null && <div className={styles.flowIntro}>{intro}</div>}
         </div>
       )}
-      {title == null && intro != null && (
-        <div className={styles.flowIntro}>{intro}</div>
-      )}
+      {title == null && intro != null && <div className={styles.flowIntro}>{intro}</div>}
+
       <ul className={isHorizontal ? styles.listHorizontal : styles.list}>
         {items.map((item, i) => (
-          <li key={i} className={isHorizontal ? styles.itemHorizontal : styles.item}>
+          <li
+            key={i}
+            className={isHorizontal ? styles.itemHorizontal : styles.item}
+            // --i on the item drives stagger for both the card and its following arrow
+            style={{ '--i': i } as React.CSSProperties}
+          >
             <div className={styles.content}>
               <FlowCardContent item={item} showSections={showSections} />
             </div>
             {i < items.length - 1 &&
-              (isHorizontal ? (
-                <FlowArrowHorizontal />
-              ) : (
-                <FlowArrowVertical label={item.arrowLabel} />
-              ))}
+              (isHorizontal ? <FlowArrowHorizontal /> : <FlowArrowVertical label={item.arrowLabel} />)}
           </li>
         ))}
       </ul>
