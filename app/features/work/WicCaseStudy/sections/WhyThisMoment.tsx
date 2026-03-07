@@ -58,7 +58,7 @@ export default function WhyThisMoment() {
             description='million federal grant was awarded to research modernization pathways for WIC systems nationally'
             animate
           />
-          <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." />
+          <PullQuote quote="We hadn't found product-market fit by chasing a funding signal. We had found it by listening carefully to the people closest to the problem." animate/>
         </div>
       </aside>
     </section>

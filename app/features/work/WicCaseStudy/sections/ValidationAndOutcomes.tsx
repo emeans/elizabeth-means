@@ -39,7 +39,7 @@ export default function ValidationAndOutcomes() {
         from the start proved essential to maintaining both compliance and usability.
       </p>
 
-      <PullQuote quote="Regulatory complexity reveals itself iteratively. You can't front-load all compliance discovery." />
+      <PullQuote quote="Regulatory complexity reveals itself iteratively. You can't front-load all compliance discovery." animate/>
       <aside className='aside inline'>
         <div className='asideInner'>
           <MetricsCard
@@ -65,7 +65,7 @@ export default function ValidationAndOutcomes() {
         resolved. That is what I would most want to do differently, and what I now understand most
         clearly.
       </p>
-      <PullQuote quote="The biggest challenge wasn't technical. It was shifting the mindset from 'build what this client needs' to 'build what enables all clients to succeed.'" />
+      <PullQuote quote="The biggest challenge wasn't technical. It was shifting the mindset from 'build what this client needs' to 'build what enables all clients to succeed.'" animate/>
       <p>
         These lessons shaped my understanding of what product management fundamentally is. In
         hindsight, I would have invested in operational infrastructure, design system, process
@@ -76,7 +76,7 @@ export default function ValidationAndOutcomes() {
         systems, documentation, and frameworks that empower the team to take ownership and execute
         independently.
       </p>
-      <PullQuote quote='The PM role in a 0-to-1 environment is about holding the vision while building the right structure: the systems, documentation, and frameworks that empower the team to take ownership and execute independently.' />
+      <PullQuote quote='The PM role in a 0-to-1 environment is about holding the vision while building the right structure: the systems, documentation, and frameworks that empower the team to take ownership and execute independently.' animate/>
       <p>
         That understanding doesn't belong to this product or this company. It's the thing I'd carry
         into any 0-to-1 environment and build from, earlier.

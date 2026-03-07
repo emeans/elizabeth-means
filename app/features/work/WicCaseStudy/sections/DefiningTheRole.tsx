@@ -31,7 +31,7 @@ export default function DefiningTheRole() {
       <aside className='aside inline'>
         <div className='asideInner'>
           <MetricsCard value="100%" description="retention over two years" animate/>
-          <PullQuote quote="We had become human-centered internally, too." />
+          <PullQuote quote="We had become human-centered internally, too." animate/>
         </div>
       </aside>
       <p>
