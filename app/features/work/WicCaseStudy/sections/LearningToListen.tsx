@@ -49,6 +49,7 @@ export default function LearningToListen() {
               'Showcased agency security and summaries, risk and referral management, and inventory management.',
           },
         ]}
+        animate
       />
       <p>
         I worked consistently with our internal SME in frequent meetings to understand regulations

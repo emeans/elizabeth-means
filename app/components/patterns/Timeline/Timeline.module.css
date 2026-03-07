@@ -107,3 +107,26 @@
   line-height: var(--typography-line-height-normal);
   color: var(--text-secondary);
 }
+
+/* ========================================
+   STAGGER ANIMATION
+   ======================================== */
+
+/* Initial hidden state — only applied when animate prop is present */
+.itemAnimate {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Visible state — triggered by IntersectionObserver adding itemVisible */
+.itemVisible {
+  animation: timelineItemIn var(--duration-slow, 600ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  animation-delay: calc(var(--i) * var(--duration-base, 350ms));
+}
+
+@keyframes timelineItemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
