@@ -26,7 +26,15 @@
     /* Layout alias */
     --max-width: var(--max-width-container);
     --border-radius: var(--border-radius-md);
-    --transition: all 0.1s ease;
+    --transition: all var(--duration-fast) var(--ease-out);
+
+    /* Motion tokens */
+    --duration-fast: 200ms;
+    --duration-base: 350ms;
+    --duration-slow: 600ms;
+    --duration-count: 1500ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 /* ========================================

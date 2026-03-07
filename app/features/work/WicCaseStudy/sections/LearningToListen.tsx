@@ -65,10 +65,10 @@ export default function LearningToListen() {
         <div className='asideInner'>
           <MetricsCard
             metrics={[
-              { value: '40+', description: 'discovery sessions' },
-              { value: '30+', description: 'distinct feature sets' },
-              { value: '5', description: 'NWA conferences' },
-              { value: '3', description: 'state focus groups' },
+              { value: '40+', description: 'discovery sessions', animate: true },
+              { value: '30+', description: 'distinct feature sets', animate: true },
+              { value: '5', description: 'NWA conferences', animate: true },
+              { value: '3', description: 'state focus groups', animate: true },
             ]}
           />
         </div>

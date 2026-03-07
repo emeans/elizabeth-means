@@ -48,9 +48,9 @@ export default function ValidationAndOutcomes() {
                 value: '4 to 10',
                 description: 'team members',
               },
-              { value: '100%', description: 'retention over two years' },
-              { value: '2', description: 'promotions' },
-              { value: '2', description: 'new engineering leads' },
+              { value: '100%', description: 'retention over two years', animate: true },
+              { value: '2', description: 'promotions', animate: true },
+              { value: '2', description: 'new engineering leads', animate: true },
             ]}
           />
         </div>
