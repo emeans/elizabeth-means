@@ -6,14 +6,13 @@ export default function Hero() {
       <div className='container'>
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
-            <h1>Hi, I'm Elizabeth.
-            </h1>
+            <h1>Hi, I'm Elizabeth.</h1>
             <p className={styles.heroSubtitle}>
-              I build the systems that help teams do their best work.
+              I bridge research, design, and engineering, in the work and in the culture.
             </p>
             <p className={styles.heroDescription}>
-                Product strategist, design thinker, and engineer — bridging user needs, technical
-                constraints, and human-centered culture.
+              Drawn to mission-driven teams where the problem is hard, the stakes are human, and
+              integrated product thinking shapes every decision.
             </p>
           </div>
         </div>
