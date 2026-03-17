@@ -23,10 +23,10 @@ export default function About() {
       <p>
         What I bring is rare: technical credibility from shipping production systems, design
         thinking from building design systems and leading discovery, and the people leadership to
-        grow a team that can operate without me. I'm currently completing a UX Research & Design
-        certification from the University of Michigan and actively seeking my next role with a
-        small, mission-driven team where the work is hard and integrated product thinking isn't
-        negotiable.
+        grow teams that continuously learn and sustain themselves. I'm currently completing a UX
+        Research & Design certification from the University of Michigan, formalizing a practice I've
+        been building for years, and actively seeking my next role with a small, mission-driven team
+        where the work is hard and integrated product thinking isn't negotiable.
       </p>
       <hr className='section-divider' />
       <p>
