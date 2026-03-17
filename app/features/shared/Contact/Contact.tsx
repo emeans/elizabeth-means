@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useRef, useEffect } from 'react'
 import styles from './Contact.module.css'
 
 const EMAIL = 'hi@elizabethmeans.com'
@@ -9,8 +10,24 @@ const EMAIL = 'hi@elizabethmeans.com'
  * to control layout (e.g. grid, order, stacking).
  */
 export default function Contact() {
-  function copyEmail() {
-    navigator.clipboard.writeText(EMAIL)
+  const [showCopied, setShowCopied] = useState(false)
+  const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current)
+    }
+  }, [])
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current)
+      setShowCopied(true)
+      hideTimeoutRef.current = setTimeout(() => setShowCopied(false), 5000)
+    } catch {
+      setShowCopied(false)
+    }
   }
 
   return (
@@ -38,6 +55,19 @@ export default function Contact() {
         </span>
         .
       </p>
+      {showCopied && (
+        <div
+          className={styles.toast}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <span className={`material-symbols-outlined ${styles.toastIcon}`} aria-hidden>
+            check
+          </span>
+          Email Copied!
+        </div>
+      )}
     </div>
   )
 }
