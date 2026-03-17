@@ -52,10 +52,7 @@ export default function DesignSystem() {
           through a custom script in the codebase that converts them to CSS custom properties. The
           output is a structured variables file that the component library consumes directly.
         </p>
-        <ContentImage
-          src='/images/design-system/figma-variables.png'
-          alt='Figma Variables'
-        />
+        <ContentImage src='/images/design-system/figma-variables.png' alt='Figma Variables' />
         <p>
           The script sits between the export and the codebase rather than using Style Dictionary,
           which was a deliberate choice for now. The overhead of Style Dictionary is worth it at
@@ -117,9 +114,10 @@ export default function DesignSystem() {
           alt='ZeroHeight Design System Documentation'
         />
         <p>
-          This system is incomplete and that is the point. The pipeline is real, the architecture is
-          sound, and the decisions are documented. Style Dictionary is next. After that, motion
-          tokens.
+          This is also how I approach design systems work in practice: document the decisions, not
+          just the components, so the next person understands the system well enough to extend it
+          rather than just use it. This system is incomplete and that is the point. Style Dictionary is
+          next. After that, motion tokens.
         </p>
       </section>
     </>

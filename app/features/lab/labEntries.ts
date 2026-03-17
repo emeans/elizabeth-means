@@ -23,7 +23,7 @@ export const designSystemEntry: LabEntry = {
   alt: 'Design System',
   title: 'Design System',
   subtitle:
-    'Built to practice what I preach. Figma tokens, CSS pipelines, and component architecture, actively evolving as I try new tools and techniques.',
+    'Built to practice what I advocate for in teams. A full pipeline from Figma tokens to production code, documented well enough that someone else could pick it up and contribute.',
   type: 'Design System',
   lastUpdated: 'March 2026',
   extraMetadata: [
@@ -38,7 +38,7 @@ export const designOperationsFrameworkEntry: LabEntry = {
   alt: 'Design Operations Framework',
   title: 'Design Operations Framework',
   subtitle:
-    'The defaults I built to take a design practice from solo to collaborative: templates, standards, and a framework for knowing who owns what.',
+    'The defaults I built to take a design practice from solo to collaborative, so integrated product thinking survives beyond any one person.',
   type: 'Design Operations',
   lastUpdated: 'March 2026',
   extraMetadata: [

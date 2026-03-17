@@ -17,7 +17,7 @@ export default function LabPage() {
         <PageHeader
           variant="standard"
           title="Lab"
-          description="The lab is living work — my workshop, not my gallery. Some things here are formed, some half-formed, all of it built in public and actively growing."
+          description="The lab is living work — my workshop, not my gallery. Some things here are formed, some half-formed, all of it built in public and actively growing. Everything is built to the standard I'd hold in client work. The only way to advocate for something is to actually do it."
         />
         <ul className="cardList" aria-label="Lab projects">
           {labEntries.map((entry) => (
