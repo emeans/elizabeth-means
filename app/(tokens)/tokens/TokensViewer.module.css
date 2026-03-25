@@ -1,0 +1,151 @@
+/* Tokens viewer UI for Zeroheight embedding */
+.topNav {
+  position: sticky;
+  top: 0px;
+  z-index: 5;
+  backdrop-filter: blur(10px) saturate(180%);
+  background: color-mix(in srgb, var(--surface-primary) 85%, transparent);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.topNavTitle {
+  font-weight: var(--typography-weight-bold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.topNavLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.topNavLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-focus, var(--border-radius-sm));
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-elevated);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--typography-size-xs);
+}
+
+.topNavLink:hover {
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.section {
+  scroll-margin-top: 96px;
+  padding: var(--spacing-lg) var(--spacing-lg);
+}
+
+.sectionTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+  font-size: var(--typography-size-2xl);
+  line-height: var(--typography-line-height-tight);
+  font-weight: var(--typography-weight-bold);
+}
+
+.sectionSubtitle {
+  color: var(--text-secondary);
+  font-size: var(--typography-size-sm);
+}
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: fit-content;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-input, var(--border-radius-md));
+  overflow: hidden;
+}
+
+.th {
+  text-align: left;
+  font-size: var(--typography-size-xs);
+  color: var(--text-secondary);
+  font-weight: var(--typography-weight-bold);
+  background: color-mix(in srgb, var(--surface-elevated) 80%, var(--surface-secondary));
+}
+
+.thCell {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.tdCell {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  font-size: var(--typography-size-sm);
+}
+
+.thCell:last-child,
+.tdCell:last-child {
+  border-right: none;
+}
+
+.tokenName {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+.swatchCell {
+  width: auto;
+}
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+}
+
+.colorCellLight {
+  background: var(--color-neutral-50);
+}
+
+.colorCellDark {
+  background: var(--color-raven-800);
+}
+
+.colorCellDark .valueMono {
+  color: var(--color-neutral-50);
+}
+
+.valueMono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+.note {
+  color: var(--text-secondary);
+  margin-top: var(--spacing-sm);
+  font-size: var(--typography-size-sm);
+}
+

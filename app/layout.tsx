@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Libre_Baskerville, Public_Sans } from 'next/font/google'
-import Script from 'next/script'
-import AppLayout from '@layouts/AppLayout'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -52,19 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <AppLayout>{children}</AppLayout>
-        <Script
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-          strategy="afterInteractive"
-          data-collect-dnt="true"
-        />
-        <noscript>
-          <img
-            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </noscript>
+        {children}
       </body>
     </html>
   )

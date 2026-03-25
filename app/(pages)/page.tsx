@@ -10,16 +10,17 @@ export const metadata: Metadata = {
   description: 'I bridge research, design, and engineering, in the work and in the culture.',
   openGraph: {
     title: 'Elizabeth Means — Product Manager & Design Engineer',
-    description: 'Drawn to mission-driven teams where the problem is hard, the stakes are human, and integrated product thinking shapes every decision.',
+    description:
+      'Drawn to mission-driven teams where the problem is hard, the stakes are human, and integrated product thinking shapes every decision.',
     url: 'https://elizabethmeans.com',
     images: [
       {
         url: 'https://elizabethmeans.com/images/wic-case-study/nwa-conferences.png',
         width: 1200,
         height: 630,
-      }
+      },
     ],
-  }
+  },
 }
 
 export default function Home() {
@@ -69,3 +70,4 @@ export default function Home() {
     </>
   )
 }
+

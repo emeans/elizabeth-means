@@ -9,6 +9,16 @@
   command = """
     if [ "$SITE_TYPE" = "storybook" ]; then
       npm run build-storybook && mv storybook-static out
+    elif [ "$SITE_TYPE" = "tokens" ]; then
+      # Build full static export, then publish ONLY the tokens viewer at /
+      npm run build
+      rm -rf out-tokens
+      mv out/tokens out-tokens
+      rm -rf out
+      mkdir out
+      mv out-tokens/* out/
+      # Ensure /tokens/* requests still resolve (useful for embedded URLs copied from the main app)
+      echo '/tokens/*    /index.html   200' > out/_redirects
     else
       # SPA routing for main portfolio only (not applied when SITE_TYPE=storybook)
       npm run build && echo '/*    /index.html   200' > out/_redirects
@@ -16,3 +26,11 @@
   """
   
   publish = "out"
+
+[[headers]]
+  # Allow Zeroheight to embed the tokens viewer inline via iframe.
+  # - Main site uses /tokens
+  # - Tokens subdomain serves viewer at / (and also accepts /tokens/* via redirect above)
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://zeroheight.com https://*.zeroheight.com"
