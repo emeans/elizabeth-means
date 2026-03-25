@@ -3,6 +3,24 @@ import NoiseTexture from '@components/primitives/NoiseTexture'
 import Card from '@components/content-media/Card'
 import { workEntries } from '@features/work/workEntries'
 import { labEntries } from '@features/lab/labEntries'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Elizabeth Means',
+  description: 'I bridge research, design, and engineering, in the work and in the culture.',
+  openGraph: {
+    title: 'Elizabeth Means — Product Manager & Design Engineer',
+    description: 'Drawn to mission-driven teams where the problem is hard, the stakes are human, and integrated product thinking shapes every decision.',
+    url: 'https://elizabethmeans.com',
+    images: [
+      {
+        url: 'https://elizabethmeans.com/images/wic-case-study/nwa-conferences.png',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  }
+}
 
 export default function Home() {
   return (

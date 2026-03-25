@@ -135,6 +135,7 @@
 } 
 
 .period {
-  font-size: var(--typography-size-xl);
-  color: var(--action-primary-default);
+  margin-left: -2px;
+  font-size: var(--typography-size-3xl);
+  color: var(--action-primary-hover);
 }
