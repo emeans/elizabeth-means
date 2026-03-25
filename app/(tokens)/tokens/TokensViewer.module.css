@@ -10,6 +10,36 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+.tabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-elevated);
+  color: var(--text-secondary);
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-focus, var(--border-radius-sm));
+  font-size: var(--typography-size-sm);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.tab[aria-selected='true'] {
+  color: var(--text-primary);
+  border-color: var(--border-default);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--action-primary-default) 35%, transparent);
+}
+
 .topNavTitle {
   font-weight: var(--typography-weight-bold);
   margin-bottom: var(--spacing-sm);
@@ -36,6 +66,15 @@
 .topNavLink:hover {
   color: var(--text-primary);
   border-color: var(--border-default);
+}
+
+.emptyState {
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-input, var(--border-radius-md));
+  padding: var(--spacing-lg);
+  color: var(--text-secondary);
+  max-width: 60ch;
+  margin: var(--spacing-lg);
 }
 
 .section {

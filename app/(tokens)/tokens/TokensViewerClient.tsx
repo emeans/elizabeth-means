@@ -13,9 +13,25 @@ type Props = {
   appliedMeta: Record<string, { lightRef: string | null; darkRef: string | null }>
 }
 
+type TabKey = 'core' | 'base' | 'applied'
+
 function resolveCssVar(varName: string): string {
   const v = getComputedStyle(document.documentElement).getPropertyValue(`--${varName}`)
   return (v || '').trim()
+}
+
+function readTabFromUrl(): TabKey {
+  if (typeof window === 'undefined') return 'core'
+  const params = new URLSearchParams(window.location.search)
+  const t = params.get('tab')
+  if (t === 'core' || t === 'base' || t === 'applied') return t
+  return 'core'
+}
+
+function writeTabToUrl(tab: TabKey) {
+  const url = new URL(window.location.href)
+  url.searchParams.set('tab', tab)
+  window.history.replaceState(null, '', url.toString())
 }
 
 export default function TokensViewerClient({
@@ -27,6 +43,7 @@ export default function TokensViewerClient({
   applied,
   appliedMeta,
 }: Props) {
+  const [tab, setTab] = useState<TabKey>('core')
   const [resolved, setResolved] = useState<Record<string, string>>({})
   const [appliedResolved, setAppliedResolved] = useState<{ light: Record<string, string>; dark: Record<string, string> }>({
     light: {},
@@ -37,6 +54,18 @@ export default function TokensViewerClient({
     () => [...baseSpace, ...baseSize, ...baseBorder, ...baseColor, ...baseFont, ...applied],
     [applied, baseBorder, baseColor, baseFont, baseSize, baseSpace],
   )
+
+  useEffect(() => {
+    setTab(readTabFromUrl())
+    const onPop = () => setTab(readTabFromUrl())
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    writeTabToUrl(tab)
+  }, [tab])
 
   useEffect(() => {
     const next: Record<string, string> = {}
@@ -134,36 +163,75 @@ export default function TokensViewerClient({
   }, [])
 
   return (
-    <div className={styles.page}>
+    <>
       <div className={styles.topNav} aria-label="Token viewer navigation">
         <div className={styles.topNavTitle}>Token Viewer</div>
-        <div className={styles.topNavLinks} role="navigation">
-          <a className={styles.topNavLink} href="#base-space">
-            base.space
-          </a>
-          <a className={styles.topNavLink} href="#base-size">
-            base.size
-          </a>
-          <a className={styles.topNavLink} href="#base-border">
-            base.border
-          </a>
-          <a className={styles.topNavLink} href="#base-color">
-            base.color
-          </a>
-          <a className={styles.topNavLink} href="#base-font">
-            base.font
-          </a>
-          <a className={styles.topNavLink} href="#applied">
-            applied
-          </a>
-          <a className={styles.topNavLink} href="#applied-colors">
-            applied.colors
-          </a>
-          <a className={styles.topNavLink} href="#applied-dimensions">
-            applied.dimensions
-          </a>
+        <div className={styles.tabRow} role="tablist" aria-label="Token sets">
+          <button
+            type="button"
+            className={styles.tab}
+            role="tab"
+            aria-selected={tab === 'core'}
+            onClick={() => setTab('core')}
+          >
+            Core
+          </button>
+          <button
+            type="button"
+            className={styles.tab}
+            role="tab"
+            aria-selected={tab === 'base'}
+            onClick={() => setTab('base')}
+          >
+            Base
+          </button>
+          <button
+            type="button"
+            className={styles.tab}
+            role="tab"
+            aria-selected={tab === 'applied'}
+            onClick={() => setTab('applied')}
+          >
+            Applied
+          </button>
+        </div>
+
+        <div className={styles.topNavLinks} role="navigation" aria-label="Sections">
+          {tab === 'core' && (
+            <>
+              <a className={styles.topNavLink} href="#base-space">
+                core.space
+              </a>
+              <a className={styles.topNavLink} href="#base-size">
+                core.size
+              </a>
+              <a className={styles.topNavLink} href="#base-border">
+                core.border
+              </a>
+              <a className={styles.topNavLink} href="#base-color">
+                core.color
+              </a>
+              <a className={styles.topNavLink} href="#base-font">
+                core.font
+              </a>
+            </>
+          )}
+
+          {tab === 'base' && (
+            <>
+              <a className={styles.topNavLink} href="#applied-colors">
+                base.colors
+              </a>
+              <a className={styles.topNavLink} href="#applied-dimensions">
+                base.dimensions
+              </a>
+            </>
+          )}
         </div>
       </div>
+
+      {tab === 'core' && (
+        <>
 
       <section className={styles.section} id="base-space">
         <div className={styles.sectionTitleRow}>
@@ -321,7 +389,11 @@ export default function TokensViewerClient({
           </table>
         </div>
       </section>
+        </>
+      )}
 
+      {tab === 'base' && (
+        <>
       <section className={styles.section} id="applied-colors">
         <div className={styles.sectionTitleRow}>
           <div>
@@ -444,7 +516,16 @@ export default function TokensViewerClient({
           </table>
         </div>
       </section>
-    </div>
+        </>
+      )}
+
+      {tab === 'applied' && (
+        <div className={styles.emptyState}>
+          Component-level tokens aren’t exported yet. Once you add a third token layer in Figma (core / base
+          / applied), this tab can render component tokens with the same tables.
+        </div>
+      )}
+    </>
   )
 }
 
