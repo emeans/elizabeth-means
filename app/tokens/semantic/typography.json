@@ -84,7 +84,7 @@
       },
       "type": "typography"
     },
-    "value": {
+    "data": {
       "value": {
         "fontFamily": "{family.sans}",
         "fontWeight": "{weight.demi}",
