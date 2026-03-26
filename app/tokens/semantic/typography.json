@@ -65,7 +65,17 @@
     "sm": {
       "value": {
         "fontFamily": "{family.sans}",
-        "fontWeight": "{weight.normal}",
+        "fontWeight": "{weight.thin}",
+        "fontSize": "{size.300}",
+        "lineHeight": "{leading.normal}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    },
+    "sm-bold": {
+      "value": {
+        "fontFamily": "{family.sans}",
+        "fontWeight": "{weight.demi}",
         "fontSize": "{size.300}",
         "lineHeight": "{leading.normal}",
         "letterSpacing": "{tracking.normal}"
