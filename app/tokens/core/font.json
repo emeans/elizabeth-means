@@ -1,5 +1,9 @@
 {
   "font": {
+    "decoration": {
+      "underline": { "value": "underline", "type": "other" },
+      "underline-offset-3": { "value": "3px", "type": "dimension" }
+    },
     "family": {
       "sans":  { "value": "Public Sans",      "type": "fontFamilies" },
       "serif": { "value": "Libre Baskerville", "type": "fontFamilies" }
@@ -11,7 +15,7 @@
       "bold":   { "value": "700", "type": "fontWeights" }
     },
     "style": {
-      "regular": { "value": "normal", "type": "other" },
+      "regular": { "value": "regular", "type": "other" },
       "italic":  { "value": "italic", "type": "other" }
     },
     "leading": {
@@ -43,6 +47,12 @@
       "1200": { "value": "{dimension.1200}", "type": "fontSizes" },
       "1600": { "value": "{dimension.1600}", "type": "fontSizes" },
       "2000": { "value": "{dimension.2000}", "type": "fontSizes" }
+    },
+    "transform": {
+      "none": { "value": "none", "type": "other" },
+      "uppercase": { "value": "uppercase", "type": "other" },
+      "lowercase": { "value": "lowercase", "type": "other" },
+      "capitalize": { "value": "capitalize", "type": "other" }
     }
   }
 }

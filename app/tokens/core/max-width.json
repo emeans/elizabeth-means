@@ -12,7 +12,10 @@
     "3xl":  { "value": "768px",  "type": "dimension" },
     "4xl":  { "value": "896px",  "type": "dimension" },
     "5xl":  { "value": "1024px", "type": "dimension" },
-    "6xl":  { "value": "1280px", "type": "dimension" },
-    "7xl":  { "value": "1536px", "type": "dimension" }
+    "6xl":  { "value": "1152px", "type": "dimension" },
+    "7xl":  { "value": "1280px", "type": "dimension" },
+    "8xl":  { "value": "1328px", "type": "dimension" },
+    "9xl":  { "value": "1536px", "type": "dimension" },
+    "10xl": { "value": "1728px", "type": "dimension" }
   }
 }
