@@ -1,65 +1,63 @@
 {
-  "base": {
-    "surface": {
-      "primary":    { "value": "{color.raven.800}",     "type": "color" },
-      "secondary":  { "value": "{color.raven.700}",     "type": "color" },
-      "elevated":   { "value": "{color.raven.600}",     "type": "color" },
-      "success":    { "value": "{color.success.900}",   "type": "color" },
-      "warning":    { "value": "{color.warning.900}",   "type": "color" },
-      "error":      { "value": "{color.error.900}",     "type": "color" },
-      "navigation": { "value": "rgba(10,10,10,0.8)",    "type": "color" },
-      "gradient":   { "value": "rgba(82,94,120,0.3)",   "type": "color" }
+  "surface": {
+    "primary":    { "value": "{color.raven.800}",     "type": "color" },
+    "secondary":  { "value": "{color.raven.700}",     "type": "color" },
+    "elevated":   { "value": "{color.raven.600}",     "type": "color" },
+    "success":    { "value": "{color.success.900}",   "type": "color" },
+    "warning":    { "value": "{color.warning.900}",   "type": "color" },
+    "error":      { "value": "{color.error.900}",     "type": "color" },
+    "navigation": { "value": "rgba(10,10,10,0.8)",    "type": "color" },
+    "gradient":   { "value": "rgba(82,94,120,0.3)",   "type": "color" }
+  },
+  "text": {
+    "primary":   { "value": "{color.neutral.300}",  "type": "color" },
+    "secondary": { "value": "{color.raven.300}",    "type": "color" },
+    "muted":     { "value": "{color.raven.400}",    "type": "color" },
+    "inverse":   { "value": "{color.neutral.900}",  "type": "color" },
+    "success":   { "value": "{color.success.200}",  "type": "color" },
+    "warning":   { "value": "{color.warning.200}",  "type": "color" },
+    "error":     { "value": "{color.error.200}",    "type": "color" },
+    "disabled":  { "value": "rgba(250,250,249,0.6)", "type": "color" }
+  },
+  "action": {
+    "primary": {
+      "default":  { "value": "{color.patina.500}",      "type": "color" },
+      "hover":    { "value": "{color.patina.400}",      "type": "color" },
+      "disabled": { "value": "rgba(189,136,98,0.6)",    "type": "color" }
     },
-    "text": {
-      "primary":   { "value": "{color.neutral.300}",  "type": "color" },
-      "secondary": { "value": "{color.raven.300}",    "type": "color" },
-      "muted":     { "value": "{color.raven.400}",    "type": "color" },
-      "inverse":   { "value": "{color.neutral.900}",  "type": "color" },
-      "success":   { "value": "{color.success.200}",  "type": "color" },
-      "warning":   { "value": "{color.warning.200}",  "type": "color" },
-      "error":     { "value": "{color.error.200}",    "type": "color" },
-      "disabled":  { "value": "rgba(250,250,249,0.6)", "type": "color" }
+    "secondary": {
+      "default":  { "value": "{color.raven.600}",       "type": "color" },
+      "hover":    { "value": "{color.raven.500}",       "type": "color" },
+      "disabled": { "value": "rgba(56,63,85,0.6)",      "type": "color" }
     },
-    "action": {
-      "primary": {
-        "default":  { "value": "{color.patina.500}",      "type": "color" },
-        "hover":    { "value": "{color.patina.400}",      "type": "color" },
-        "disabled": { "value": "rgba(189,136,98,0.6)",    "type": "color" }
-      },
-      "secondary": {
-        "default":  { "value": "{color.raven.600}",       "type": "color" },
-        "hover":    { "value": "{color.raven.500}",       "type": "color" },
-        "disabled": { "value": "rgba(56,63,85,0.6)",      "type": "color" }
-      },
-      "success": {
-        "default":  { "value": "{color.success.500}",     "type": "color" },
-        "hover":    { "value": "{color.success.400}",     "type": "color" }
-      },
-      "warning": {
-        "default":  { "value": "{color.warning.400}",     "type": "color" },
-        "hover":    { "value": "{color.warning.300}",     "type": "color" }
-      },
-      "error": {
-        "default":  { "value": "{color.error.500}",       "type": "color" },
-        "hover":    { "value": "{color.error.400}",       "type": "color" }
-      }
+    "success": {
+      "default":  { "value": "{color.success.500}",     "type": "color" },
+      "hover":    { "value": "{color.success.400}",     "type": "color" }
     },
-    "border": {
-      "default": { "value": "{color.raven.600}",  "type": "color" },
-      "subtle":  { "value": "{color.raven.500}",  "type": "color" },
-      "success": { "value": "{color.success.200}", "type": "color" },
-      "warning": { "value": "{color.warning.200}", "type": "color" },
-      "error":   { "value": "{color.error.200}",   "type": "color" }
+    "warning": {
+      "default":  { "value": "{color.warning.400}",     "type": "color" },
+      "hover":    { "value": "{color.warning.300}",     "type": "color" }
     },
-    "icon": {
-      "success": { "value": "{color.success.400}", "type": "color" },
-      "warning": { "value": "{color.warning.400}", "type": "color" },
-      "error":   { "value": "{color.error.400}",   "type": "color" }
-    },
-    "shadow": {
-      "subtle": { "value": "{color.alpha.dark.50}", "type": "color" },
-      "medium": { "value": "{color.alpha.dark.60}", "type": "color" },
-      "strong": { "value": "{color.alpha.dark.70}", "type": "color" }
+    "error": {
+      "default":  { "value": "{color.error.500}",       "type": "color" },
+      "hover":    { "value": "{color.error.400}",       "type": "color" }
     }
+  },
+  "border": {
+    "default": { "value": "{color.raven.600}",  "type": "color" },
+    "subtle":  { "value": "{color.raven.500}",  "type": "color" },
+    "success": { "value": "{color.success.200}", "type": "color" },
+    "warning": { "value": "{color.warning.200}", "type": "color" },
+    "error":   { "value": "{color.error.200}",   "type": "color" }
+  },
+  "icon": {
+    "success": { "value": "{color.success.400}", "type": "color" },
+    "warning": { "value": "{color.warning.400}", "type": "color" },
+    "error":   { "value": "{color.error.400}",   "type": "color" }
+  },
+  "shadow": {
+    "subtle": { "value": "{color.alpha.dark.50}", "type": "color" },
+    "medium": { "value": "{color.alpha.dark.60}", "type": "color" },
+    "strong": { "value": "{color.alpha.dark.70}", "type": "color" }
   }
 }
