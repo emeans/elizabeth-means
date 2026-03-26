@@ -1,19 +1,21 @@
 {
-  "action": {
+  "interaction": {
     "focus": {
       "outline":        { "value": "{border-width.sm}", "type": "borderWidth" },
       "outline-offset": { "value": "{border-width.md}", "type": "dimension" }
+    },
+    "disabled": {
+      "opacity": { "value": "0.4", "type": "opacity" }
     }
   },
   "radius": {
-    "button": { "value": "{border-radius.lg}", "type": "borderRadius" },
-    "card":   { "value": "{border-radius.lg}", "type": "borderRadius" },
-    "input":  { "value": "{border-radius.lg}", "type": "borderRadius" },
-    "focus":  { "value": "{border-radius.sm}", "type": "borderRadius" }
+    "interactive": { "value": "{border-radius.lg}", "type": "borderRadius" },
+    "container":   { "value": "{border-radius.lg}", "type": "borderRadius" },
+    "focus":       { "value": "{border-radius.sm}", "type": "borderRadius" }
   },
   "size": {
     "max-width": {
-      "container": { "value": "{max-width.6xl}",          "type": "dimension" },
+      "container": { "value": "{max-width.6xl}",           "type": "dimension" },
       "content":   { "value": "{max-width.prose-default}", "type": "dimension" }
     }
   }
