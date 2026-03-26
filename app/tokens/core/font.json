@@ -1,6 +1,6 @@
 {
   "decoration": {
-    "underline": { "value": "underline", "type": "other" },
+    "underline": { "value": "underline", "type": "string" },
     "underline-offset-3": { "value": "3px", "type": "dimension" }
   },
   "family": {
@@ -14,8 +14,8 @@
     "bold":   { "value": "700", "type": "fontWeights" }
   },
   "style": {
-    "regular": { "value": "regular", "type": "other" },
-    "italic":  { "value": "italic", "type": "other" }
+    "regular": { "value": "regular", "type": "string" },
+    "italic":  { "value": "italic", "type": "string" }
   },
   "leading": {
     "none":    { "value": "1",    "type": "lineHeights" },
@@ -48,9 +48,9 @@
     "2000": { "value": "{dimension.2000}", "type": "fontSizes" }
   },
   "transform": {
-    "none": { "value": "none", "type": "other" },
-    "uppercase": { "value": "uppercase", "type": "other" },
-    "lowercase": { "value": "lowercase", "type": "other" },
-    "capitalize": { "value": "capitalize", "type": "other" }
+    "none": { "value": "none", "type": "string" },
+    "uppercase": { "value": "uppercase", "type": "string" },
+    "lowercase": { "value": "lowercase", "type": "string" },
+    "capitalize": { "value": "capitalize", "type": "string" }
   }
 }
