@@ -1,0 +1,11 @@
+{
+  "spacing": {
+    "xs":  { "value": "{dimension.200}",  "type": "spacing" },
+    "sm":  { "value": "{dimension.300}",  "type": "spacing" },
+    "md":  { "value": "{dimension.400}",  "type": "spacing" },
+    "lg":  { "value": "{dimension.600}",  "type": "spacing" },
+    "xl":  { "value": "{dimension.800}",  "type": "spacing" },
+    "2xl": { "value": "{dimension.1200}", "type": "spacing" },
+    "3xl": { "value": "{dimension.1600}", "type": "spacing" }
+  }
+}

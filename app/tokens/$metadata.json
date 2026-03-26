@@ -1,0 +1,13 @@
+{
+  "tokenSetOrder": [
+    "core/color",
+    "core/dimension",
+    "core/typography",
+    "core/border",
+    "core/spacing",
+    "core/max-width",
+    "semantic/color-light",
+    "semantic/color-dark",
+    "semantic/shared"
+  ]
+}

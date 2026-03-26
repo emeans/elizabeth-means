@@ -1,0 +1,55 @@
+{
+  "base": {
+    "action": {
+      "focus": {
+        "outline":        { "value": "{border-width.sm}", "type": "borderWidth" },
+        "outline-offset": { "value": "{border-width.md}", "type": "dimension" }
+      }
+    },
+    "radius": {
+      "button": { "value": "{border-radius.lg}", "type": "borderRadius" },
+      "card":   { "value": "{border-radius.lg}", "type": "borderRadius" },
+      "input":  { "value": "{border-radius.lg}", "type": "borderRadius" },
+      "focus":  { "value": "{border-radius.sm}", "type": "borderRadius" }
+    },
+    "size": {
+      "max-width": {
+        "container": { "value": "{max-width.6xl}",          "type": "dimension" },
+        "content":   { "value": "{max-width.prose-default}", "type": "dimension" }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "sans":  { "value": "{font.family.sans}",  "type": "fontFamilies" },
+      "serif": { "value": "{font.family.serif}", "type": "fontFamilies" }
+    },
+    "leading": {
+      "none":   { "value": "{font.leading.none}",   "type": "lineHeights" },
+      "tight":  { "value": "{font.leading.tight}",  "type": "lineHeights" },
+      "normal": { "value": "{font.leading.normal}", "type": "lineHeights" },
+      "loose":  { "value": "{font.leading.loose}",  "type": "lineHeights" }
+    },
+    "tracking": {
+      "tighter": { "value": "{font.tracking.tighter}", "type": "letterSpacing" },
+      "tight":   { "value": "{font.tracking.tight}",   "type": "letterSpacing" },
+      "normal":  { "value": "{font.tracking.normal}",  "type": "letterSpacing" },
+      "wide":    { "value": "{font.tracking.wide}",    "type": "letterSpacing" },
+      "wider":   { "value": "{font.tracking.wider}",   "type": "letterSpacing" }
+    },
+    "size": {
+      "xs":   { "value": "{font.size.350}",  "type": "fontSizes" },
+      "sm":   { "value": "{font.size.400}",  "type": "fontSizes" },
+      "base": { "value": "{font.size.450}",  "type": "fontSizes" },
+      "lg":   { "value": "{font.size.600}",  "type": "fontSizes" },
+      "xl":   { "value": "{font.size.800}",  "type": "fontSizes" },
+      "2xl":  { "value": "{font.size.1000}", "type": "fontSizes" },
+      "3xl":  { "value": "{font.size.1400}", "type": "fontSizes" }
+    },
+    "weight": {
+      "normal": { "value": "{font.weight.normal}", "type": "fontWeights" },
+      "demi":   { "value": "{font.weight.demi}",   "type": "fontWeights" },
+      "bold":   { "value": "{font.weight.bold}",   "type": "fontWeights" }
+    }
+  }
+}

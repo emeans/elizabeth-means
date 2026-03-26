@@ -18,7 +18,8 @@ const libreBaskerville = Libre_Baskerville({
 })
 
 const publicSans = Public_Sans({
-  weight: ['400', '500', '600'],
+  weight: ['100','400', '600'],
+  style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-public-sans',
