@@ -1,0 +1,98 @@
+{
+  "heading": {
+    "h1": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.bold}",
+        "fontSize": "{size.1600}",
+        "lineHeight": "{leading.tight}",
+        "letterSpacing": "{tracking.tight}"
+      },
+      "type": "typography"
+    },
+    "h2": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.bold}",
+        "fontSize": "{size.1000}",
+        "lineHeight": "{leading.tight}",
+        "letterSpacing": "{tracking.tight}"
+      },
+      "type": "typography"
+    },
+    "h3": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.normal}",
+        "fontSize": "{size.800}",
+        "lineHeight": "{leading.tight}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    },
+    "h4": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.normal}",
+        "fontSize": "{size.600}",
+        "lineHeight": "{leading.normal}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    }
+  },
+  "body": {
+    "base": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.normal}",
+        "fontSize": "{size.450}",
+        "lineHeight": "{leading.normal}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    },
+    "base-bold": {
+      "value": {
+        "fontFamily": "{family.serif}",
+        "fontWeight": "{weight.bold}",
+        "fontSize": "{size.450}",
+        "lineHeight": "{leading.normal}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    },
+    "sm": {
+      "value": {
+        "fontFamily": "{family.sans}",
+        "fontWeight": "{weight.normal}",
+        "fontSize": "{size.300}",
+        "lineHeight": "{leading.normal}",
+        "letterSpacing": "{tracking.normal}"
+      },
+      "type": "typography"
+    }
+  },
+  "metadata": {
+    "label": {
+      "value": {
+        "fontFamily": "{family.sans}",
+        "fontWeight": "{weight.normal}",
+        "fontSize": "{size.250}",
+        "lineHeight": "{leading.tight}",
+        "letterSpacing": "{tracking.wide}"
+      },
+      "type": "typography"
+    },
+    "value": {
+      "value": {
+        "fontFamily": "{family.sans}",
+        "fontWeight": "{weight.demi}",
+        "fontSize": "{size.250}",
+        "lineHeight": "{leading.tight}",
+        "letterSpacing": "{tracking.wide}"
+      },
+      "type": "typography"
+    }
+  }
+}
