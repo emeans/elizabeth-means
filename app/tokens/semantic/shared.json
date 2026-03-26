@@ -1,13 +1,4 @@
 {
-  "interaction": {
-    "focus": {
-      "outline":        { "value": "{border-width.sm}", "type": "borderWidth" },
-      "outline-offset": { "value": "{border-width.md}", "type": "dimension" }
-    },
-    "disabled": {
-      "opacity": { "value": "0.4", "type": "opacity" }
-    }
-  },
   "radius": {
     "interactive": { "value": "{border-radius.lg}", "type": "borderRadius" },
     "container":   { "value": "{border-radius.lg}", "type": "borderRadius" },

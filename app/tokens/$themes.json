@@ -5,13 +5,15 @@
     "selectedTokenSets": {
       "core/color":       "enabled",
       "core/dimension":   "enabled",
-      "core/typography":  "enabled",
+      "core/font":  "enabled",
       "core/border":      "enabled",
       "core/spacing":     "enabled",
       "core/max-width":   "enabled",
+      "semantic/applied": "enabled",
       "semantic/color-light": "enabled",
       "semantic/color-dark":  "disabled",
-      "semantic/shared":  "enabled"
+      "semantic/shared":  "enabled",
+      "semantic/typography":  "enabled"
     }
   },
   {
@@ -20,13 +22,15 @@
     "selectedTokenSets": {
       "core/color":       "enabled",
       "core/dimension":   "enabled",
-      "core/typography":  "enabled",
+      "core/font":  "enabled",
       "core/border":      "enabled",
       "core/spacing":     "enabled",
       "core/max-width":   "enabled",
+      "semantic/applied": "enabled",
       "semantic/color-light": "disabled",
       "semantic/color-dark":  "enabled",
-      "semantic/shared":  "enabled"
+      "semantic/shared":  "enabled",
+      "semantic/typography":  "enabled"
     }
   }
 ]

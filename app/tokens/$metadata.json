@@ -6,6 +6,7 @@
     "core/font",
     "core/max-width",
     "core/spacing",
+    "semantic/applied",
     "semantic/color-dark",
     "semantic/color-light",
     "semantic/shared",
