@@ -13,7 +13,8 @@
       "semantic/color-light": "enabled",
       "semantic/color-dark":  "disabled",
       "semantic/shared":  "enabled",
-      "semantic/typography":  "enabled"
+      "semantic/typography":  "enabled",
+      "component/button": "enabled"
     }
   },
   {
@@ -30,7 +31,8 @@
       "semantic/color-light": "disabled",
       "semantic/color-dark":  "enabled",
       "semantic/shared":  "enabled",
-      "semantic/typography":  "enabled"
+      "semantic/typography":  "enabled",
+      "component/button": "enabled"
     }
   }
 ]

@@ -1,6 +1,16 @@
 {
+  "interaction": {
+    "transition": { "value": "all 0.1s ease", "type": "other" },
+    "focus": {
+      "outline":        { "value": "{border-width.sm}", "type": "borderWidth" },
+      "outline-offset": { "value": "{border-width.md}", "type": "dimension" }
+    },
+    "disabled": {
+      "opacity": { "value": "0.4", "type": "opacity" }
+    }
+  },
   "radius": {
-    "interactive": { "value": "{border-radius.lg}", "type": "borderRadius" },
+    "interactive": { "value": "{border-radius.md}", "type": "borderRadius" },
     "container":   { "value": "{border-radius.lg}", "type": "borderRadius" },
     "focus":       { "value": "{border-radius.sm}", "type": "borderRadius" }
   },
@@ -8,6 +18,18 @@
     "max-width": {
       "container": { "value": "{max-width.6xl}",           "type": "dimension" },
       "content":   { "value": "{max-width.prose-default}", "type": "dimension" }
+    },
+    "control": {
+      "height": {
+        "sm": { "value": "{dimension.1100}", "type": "dimension" },
+        "md": { "value": "{dimension.1200}", "type": "dimension" },
+        "lg": { "value": "{dimension.1400}", "type": "dimension" }
+      },
+      "min-width": {
+        "sm": { "value": "{dimension.2400}", "type": "dimension" },
+        "md": { "value": "{dimension.2800}", "type": "dimension" },
+        "lg": { "value": "{dimension.4000}", "type": "dimension" }
+      }
     }
   }
 }

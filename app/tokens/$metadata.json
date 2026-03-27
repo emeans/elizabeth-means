@@ -10,6 +10,7 @@
     "semantic/color-dark",
     "semantic/color-light",
     "semantic/shared",
-    "semantic/typography"
+    "semantic/typography",
+    "component/button"
   ]
 }
