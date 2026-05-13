@@ -38,6 +38,11 @@ export default function DesignOperationsFramework() {
       <section className='section-content content-entry'>
         <Flow
           title='How the Templates Connect'
+          intro={
+            <>
+              The templates do relate to phases of the design philosophy, but just like the phases, they are iterative and repeatable.
+            </>
+          }
           items={[
             {
               value: 'Template 1',
@@ -93,13 +98,13 @@ export default function DesignOperationsFramework() {
                 intro={
                   <>
                     Poor information architecture can&apos;t be fixed with good visual design. The
-                    phases are sequential for a reason.
+                    phases are iterative and repeatable for a reason.
                   </>
                 }
                 layout='horizontal'
                 items={[
                   {
-                    value: 'Phase 01',
+                    value: 'Phase 1',
                     title: 'Discovery',
                     description:
                       'Research and requirements gathering. Understand user needs, pain points, and design implications before defining scope or opening Figma.',
@@ -117,7 +122,7 @@ export default function DesignOperationsFramework() {
                     ],
                   },
                   {
-                    value: 'Phase 02',
+                    value: 'Phase 2',
                     title: 'Information Architecture',
                     description:
                       'Transform discovery insights into structure. Determine how information is grouped, what the navigation model is, and how the system maps to how users actually think rather than how the database is organized.',
@@ -135,7 +140,7 @@ export default function DesignOperationsFramework() {
                     ],
                   },
                   {
-                    value: 'Phase 03',
+                    value: 'Phase 3',
                     title: 'Design Development',
                     description:
                       'Create the concrete interfaces users interact with: flows, screens, interactions, and visual design. Validate against requirements and accessibility standards, then prepare for handoff.',
@@ -217,13 +222,13 @@ export default function DesignOperationsFramework() {
             Design Review Checklist Template
           </Link>
           <p>
-            Before this existed, reviews were inconsistent. Things surfaced in QA or after a
-            developer had already built them because the review was more of a quick check than a
-            real evaluation. This checklist makes reviews predictable without making them heavy. Six
-            areas: brief alignment, information architecture and logic, visual and UI quality, Figma
-            file hygiene, accessibility, and edge cases. The intent isn't that every item gets
-            checked on every ticket, but rather that anyone on the team can run a review against the
-            same standard.
+            Reviews can be inconsistent. Things were surfacing in QA or after a developer had already
+            built them because the review was more of a quick check than a real evaluation. This
+            checklist makes reviews predictable without making them heavy. Six areas: brief
+            alignment, information architecture and logic, visual and UI quality, Figma file
+            hygiene, accessibility, and edge cases. The intent isn't that every item gets checked on
+            every ticket, but rather that anyone on the team can run a review against the same
+            standard.
           </p>
         </section>
 
@@ -235,8 +240,7 @@ export default function DesignOperationsFramework() {
             Design to Developer Handoff Template
           </Link>
           <p>
-            Before this existed, engineers got a Figma link, a Jira ticket, and usually a
-            conversation. This template replaced the entire story-writing process. It captures
+            This template replaced the entire story-writing process. It captures
             everything needed to build accurately: the user flow, conditional logic, validation
             rules, edge cases, and accessibility requirements. It also includes a lightweight
             section for logging questions that come up during build, so the answers live in the
@@ -246,6 +250,7 @@ export default function DesignOperationsFramework() {
         </section>
 
         <section>
+        <h2 className='text-lg'>The Defaults for Scale</h2>
           <p>
             The templates don't work alone. Six additional systems support how the team operates,
             communicates, and scales.
@@ -256,7 +261,7 @@ export default function DesignOperationsFramework() {
           <Link
             variant='inline'
             external
-            href='https://www.notion.so/Design-Delegation-Playbook-31738d076934802888d7c9636ab9b18e?source'>
+            href='https://www.notion.so/Design-Delegation-Playbook-31738d076934802888d7c9636ab9b18e'>
             Design Delegation Playbook
           </Link>
           <p>
@@ -273,7 +278,18 @@ export default function DesignOperationsFramework() {
             <div className='asideInner'>
               <RangeChart
                 title='Autonomy by Role'
-                intro='Built so I could calibrate my involvement to whoever joined the team, at whatever level they arrived.'
+                intro={
+                  <>
+                    Built so I could calibrate my involvement to whoever joined the team, at whatever
+                    level they arrived.{' '}
+                    <Link
+                      variant='inline'
+                      external
+                      href='https://www.notion.so/Design-Delegation-Playbook-31738d076934802888d7c9636ab9b18e'>
+                      See more in the playbook
+                    </Link>
+                  </>
+                }
                 levels={[
                   { label: 'Level 1', name: 'Directed Execution' },
                   { label: 'Level 2', name: 'Guided Execution' },
@@ -298,7 +314,7 @@ export default function DesignOperationsFramework() {
                     indicators: ['start', 'growth', 'growth', 'ownership', 'outside'],
                   },
                   {
-                    title: 'Business Analyst',
+                    title: 'Technical Analyst',
                     description: 'Owns requirements and acceptance criteria',
                     indicators: ['start', 'growth', 'growth', 'growth', 'ownership'],
                   },
@@ -382,8 +398,8 @@ export default function DesignOperationsFramework() {
           </Link>
           <p>
             Most communication overhead comes not from having too much to say, but from not having a
-            clear habit for when and how to say it. A decision gets made and is never written down. A
-            scope change happens, and two people find out late.
+            clear habit for when and how to say it. A decision gets made and is never written down.
+            A scope change happens, and two people find out late.
           </p>
           <p>
             This guide covers four situations where design work consistently needs communication:

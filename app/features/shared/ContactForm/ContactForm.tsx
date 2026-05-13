@@ -195,48 +195,50 @@ export default function ContactForm() {
         )}
       </div>
 
-      <div className={styles.formGroup}>
-        <label htmlFor='name'>Name </label>
-        <input
-          type='text'
-          id='name'
-          name='name'
-          value={formData.name}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required
-          aria-required='true'
-          aria-invalid={formErrors.name ? 'true' : 'false'}
-          aria-describedby={formErrors.name ? 'name-error' : undefined}
-          className={formErrors.name ? styles.inputError : ''}
-        />
-        {formErrors.name && (
-          <div id='name-error' className={styles.fieldError} role='alert'>
-            {formErrors.name}
-          </div>
-        )}
-      </div>
+      <div className={styles.nameEmailRow}>
+        <div className={styles.formGroup}>
+          <label htmlFor='name'>Name </label>
+          <input
+            type='text'
+            id='name'
+            name='name'
+            value={formData.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required='true'
+            aria-invalid={formErrors.name ? 'true' : 'false'}
+            aria-describedby={formErrors.name ? 'name-error' : undefined}
+            className={formErrors.name ? styles.inputError : ''}
+          />
+          {formErrors.name && (
+            <div id='name-error' className={styles.fieldError} role='alert'>
+              {formErrors.name}
+            </div>
+          )}
+        </div>
 
-      <div className={styles.formGroup}>
-        <label htmlFor='email'>Email </label>
-        <input
-          type='email'
-          id='email'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required
-          aria-required='true'
-          aria-invalid={formErrors.email ? 'true' : 'false'}
-          aria-describedby={formErrors.email ? 'email-error' : undefined}
-          className={formErrors.email ? styles.inputError : ''}
-        />
-        {formErrors.email && (
-          <div id='email-error' className={styles.fieldError} role='alert'>
-            {formErrors.email}
-          </div>
-        )}
+        <div className={styles.formGroup}>
+          <label htmlFor='email'>Email </label>
+          <input
+            type='email'
+            id='email'
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required='true'
+            aria-invalid={formErrors.email ? 'true' : 'false'}
+            aria-describedby={formErrors.email ? 'email-error' : undefined}
+            className={formErrors.email ? styles.inputError : ''}
+          />
+          {formErrors.email && (
+            <div id='email-error' className={styles.fieldError} role='alert'>
+              {formErrors.email}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.formGroup}>
