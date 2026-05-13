@@ -29,6 +29,20 @@
     border-color var(--transition);
 }
 
+.nameEmailRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.nameEmailRow .formGroup {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
 .formGroup {
   margin-bottom: var(--spacing-sm);
 }
