@@ -7,7 +7,7 @@
     "watch-tokens": "nodemon --watch . --ext json --exec \"cd ../.. && npm run build-tokens\""
   },
   "devDependencies": {
-    "nodemon": "^3.0.0"
+    "nodemon": "^3.1.14"
   },
   "keywords": [
     "design-tokens",
